@@ -1,504 +1,220 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Suntの小破站</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="先测试一下">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Suntの小破站 - 你好!我是桑XD</title><meta name="author" content="SUNT桑"><meta name="copyright" content="SUNT桑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="心有所向，步履不停">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Suntの小破站">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://blog.suntuwu.me/index.html">
 <meta property="og:site_name" content="Suntの小破站">
-<meta property="og:description" content="先测试一下">
+<meta property="og:description" content="心有所向，步履不停">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.suntuwu.me/img/profile.jpeg">
 <meta property="article:author" content="SUNT桑">
+<meta property="article:tag" content="薮猫猫~, DIY, RMer, 结构">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Suntの小破站" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Suntの小破站</a>
-      </h1>
+<meta name="twitter:image" content="https://blog.suntuwu.me/img/profile.jpeg"><link rel="shortcut icon" href="/img/S_icon.png"><link rel="canonical" href="https://blog.suntuwu.me/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">一个小破站</a>
-        </h2>
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Suntの小破站',
+  isHighlightShrink: true,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/star.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/profile.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url(/img/banner_wolf.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/S_icon.png" alt="Logo"><span class="site-name">Suntの小破站</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Suntの小破站</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/SUNTuwu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/177960253" target="_blank" title="Bilibili"><i class="fab fa-youtube" style="color: #fb7299;"></i></a><a class="social-icon" href="mailto:sunt-li@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc masonry" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" title="我想做的项目与路径规划设想">我想做的项目与路径规划设想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T21:00:00.000Z" title="发表于 2025-06-27 05:00:00">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">路径规划</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%83%B3%E6%B3%95/">想法</a></span></div><div class="content"> 本文是一份整理性笔记，记录了我目前对仿生机器人方向的思考与项目规划，涵盖执行器、机器学习、结构设计等维度。若你也对这些领域感兴趣，欢迎交流！    🚀 我的终极目标仿生机器人（个人爱好） 认为很厉害的仿生机器人UP主 追求极致的仿生结构设计与面部肌肉还原 实现自然的表情 &#x2F; 姿态动画生成⮕（详见 机器学习方面 章节）  机器人商业化应用 陪伴型机器人（桌宠） 接入大模型、行为决策树 实时生成表情动画，带有情感反馈 示例：Vector 桌宠机器人    内容创作 &amp; 自媒体运营 我的B站主页 分享话题：仿生机器人 &#x2F; 桌面宠物 &#x2F; 软硬件DIY   🧠 主要研究方向1️⃣ 执行器方面当前难点 面部需要 20+ 微型执行器，要求： 绝对位置反馈（闭环） 力反馈感知（拟传感器） 成本控制 &amp; 可批量化制造   市面缺乏微型 + 闭环 + 平价 + 有输出力的线性执行器  🛠 解决设想（朋友聚聚正在研发中）使用丝杆步进电机 + 闭环检测 + 力矩检测：  丝杆自带减速比 → 提高输出稳定性 利用金属触点 +...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/Hexo/" title="Hexo">Hexo</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E5%85%B8/">字典</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/">网页搭建</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/hexo/">hexo</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a></span></div><div class="content">常用命令12345678hexo new &quot;name&quot;       # 新建文章hexo new page &quot;name&quot;  # 新建页面hexo g                # 生成页面hexo d                # 部署hexo g -d             # 生成页面并部署hexo s                # 本地预览hexo clean            # 清除缓存和已生成的静态文件hexo help             # 帮助 Github ActionGitHub Actions 来自动部署 Hexo - Tommy的文章 - 知乎https://zhuanlan.zhihu.com/p/170563000 1234567891011121314151617181920212223242526272829303132333435363738394041name: Hexo Deployon:  push:    branches:      - mainjobs:  build:...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/Markdown/" title="Markdown">Markdown</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E5%85%B8/">字典</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">软件[[Obsidian]]Marktext:lite 内部链接通过[[]]来链接库中任意一个文件。 1链接一篇笔记：[[内部链接]]。  链接一篇笔记：[[内部链接]]。  [[#内部链接]] 嵌入文件在笔记中插入其他文件（更多细节请阅读[[嵌入文件]]）。这里将演示如何插入一篇笔记的某个章节： 1![[Obsidian#什么是 Obsidian]]    小标题123456# 这是小标题 1## 这是小标题 2### 这是小标题 3 #### 这是小标题 4##### 这是小标题 5###### 这是小标题 6  强调12*这是斜体示例*_这是斜体的另一种写法_  这是斜体示例这是斜体的另一种写法 12**这是粗体示例**__这是粗体的另一种写法__  这是粗体示例这是粗体的另一种写法 1_你也**可以**将它们配合使用_  你也可以将它们配合使用  列表12345678910- 项目 1- 项目 2	- 项目 2a	- 项目 2b1. 项目 11. 项目 21. 项目 3   1. 项目 3a   1. 项目 3b  无序列表：  项目 1 项目 2 项目 2a 项目...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/Obsidian/" title="Markdown">Markdown</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E5%85%B8/">字典</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">特殊格式[[2_常用字典库&#x2F;Markdown]]所有块##所有标题 标签-形容词联系笔记上标$^a$ 1- [ ] todo  别名 123---aliases: --- callout  note abstract, summary, tldr info, todo tip, hint, important success, check, done question, help, faq warning, caution, attention failure, fail, missing danger, error bug example quote, cite  搜索  task:(...) 将使搜索对象变为任务列表。你可以使用task:&quot;&quot; 来在所有任务中检索相应任务。 task-todo:(...) 将使搜索对象变为任务列表中的待办任务。使用 task-todo:&quot;&quot; 来在未完成的任务中检索相应任务。 task-done:(...) 将使搜索对象变为任务列表中的已完成任务。...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/" title="css花体字">css花体字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span></div><div class="content"> sunt          Sunt   感谢Kaelvio的支持 TA的个人站</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/THIS-IS-A-TEST/" title="THIS IS A TEST">THIS IS A TEST</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span></div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/vim/" title="Markdown">Markdown</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%AD%97%E5%85%B8/">字典</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a></span></div><div class="content">正常模式编辑模式命令模式esc :vi(m) 文件名qq!wqxi · 插前Ia · 附后Ahjkl· 左下上右o · 新增下一行O - 新增上一行G - 到最后一行gg到第一行YY复制当前行dd · 删除当前行.重复前次操作u 撤销前次操作ctrl + r恢复前次操作dw 删除单词cw改变单词w下个单词首部e 下个单词尾部b 上个单词首部&#x2F; 搜索:％ s &#x2F; 旧 &#x2F; 新 &#x2F; g全局替换%表示全局yw复制单词p粘贴 n重复ci{&#x2F;[&#x2F;( 删除 { } 里内合ctrl + v可视化块 dshift+v可视化行 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/%E5%88%A9%E7%94%A8hexo%E5%92%8Cgit%E5%BF%AB%E9%80%9F%E5%9C%A8github%E4%BB%93%E5%BA%93%E4%B8%8B%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%AB%99/" title="利用hexo和git快速在github仓库下建立网站">利用hexo和git快速在github仓库下建立网站</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/">网页搭建</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/hexo/">hexo</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a></span></div><div class="content"> 主要参考这篇文章如何用Hexo搭建个人博客?内容有部分有问题&amp;不详细so请参考下文  文中问题纠正&amp;详解本地blog同步github进入本地用于放blog的文件夹右键空白处然后点Git bash here[[什么是bash]]  hexo安装&amp;项目依赖安装首先运行 1hexo init #初始化  如果你是想安装 Hexo 项目依赖，那么接下来就应该进入该目录，正确的做法是： 1npm install #这个命令会根据你项目目录下的 `package.json` 文件安装所有依赖项。  Hexo 默认不带部署功能，必须安装这个插件hexo-deployer-git后，才能使用一键部署 1npm install hexo-deployer-git --save  npm install：使用 Node.js 的包管理器 npm 安装一个依赖包。 hexo-deployer-git：这是 Hexo 官方推荐的 Git 部署插件，它让你可以通过 hexo d 命令将博客部署到 GitHub、Gitee 等平台。 --save：表示将这个依赖写入...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/%E5%AE%89%E8%A3%85nodejs%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="安装nodejs注意事项">安装nodejs注意事项</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/">网页搭建</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a></span></div><div class="content"> Node.js 的缓存可能会占用较多的 C 盘空间，尤其是在你频繁使用 npm 或 yarn 安装依赖、全局安装包，或者没有手动更改默认缓存路径的情况下。  npm是什么新版的Node.js已自带npm，安装Node.js时会一起安装，npm的作用就是对Node.js依赖的包进行管理，也可以理解为用来安装&#x2F;卸载Node.js需要装的东西 环境配置不改变缓存cache路径的情况下, 如果执行 1npm install express [-g] 会默认将安装的模块安装到C:\Users\用户名\AppData\Roaming\npm路径中，占C盘空间。 具体方法例如：我希望将全模块所在路径和缓存路径放在我node.js安装的文件夹中  则在我安装的文件夹【D:\Develop\nodejs】下创建两个文件夹【node_global】及【node_cache】 创建完两个空文件夹之后，打开cmd命令窗口，输入npm config set prefix &quot;D:\Develop\nodejs\node_global&quot;和 npm config set...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/06/27/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-06-26T20:05:59.453Z" title="发表于 2025-06-27 04:05:59">2025-06-27</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/profile.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">SUNT桑</div><div class="author-info-description">心有所向，步履不停</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/SUNTuwu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/SUNTuwu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="https://space.bilibili.com/177960253" target="_blank" title="Bilibili"><i class="fab fa-youtube" style="color: #fb7299;"></i></a><a class="social-icon" href="mailto:sunt-li@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This's my NEWWWW Blog=uwu=</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" title="我想做的项目与路径规划设想">我想做的项目与路径规划设想</a><time datetime="2025-06-26T21:00:00.000Z" title="发表于 2025-06-27 05:00:00">2025-06-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/27/Hexo/" title="Hexo">Hexo</a><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/27/Markdown/" title="Markdown">Markdown</a><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/27/Obsidian/" title="Markdown">Markdown</a><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/" title="css花体字">css花体字</a><time datetime="2025-06-26T20:42:23.000Z" title="发表于 2025-06-27 04:42:23">2025-06-27</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E7%BB%8F%E9%AA%8C/" style="font-size: 1.23em; color: #999ea6">经验</a> <a href="/tags/hexo/" style="font-size: 1.23em; color: #999ea6">hexo</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 1.1em; color: #999">项目</a> <a href="/tags/%E6%83%B3%E6%B3%95/" style="font-size: 1.1em; color: #999">想法</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.23em; color: #999ea6">笔记</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 1.5em; color: #99a9bf">字典</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA/" style="font-size: 1.37em; color: #99a4b2">网页搭建</a> <a href="/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" style="font-size: 1.1em; color: #999">路径规划</a> <a href="/tags/%E5%91%BD%E4%BB%A4/" style="font-size: 1.5em; color: #99a9bf">命令</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-我想做的项目及部分路径规划" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" class="article-date">
-  <time class="dt-published" datetime="2025-06-26T21:00:00.000Z" itemprop="datePublished">2025-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%83%B3%E6%B3%95/">想法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">我想做的项目&amp;部分路径规划</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <h3 id="个人终极目标"><a href="#个人终极目标" class="headerlink" title="个人终极目标"></a>个人终极目标</h3><ul>
-<li>仿生机器人-个人爱好<ul>
-<li>eg. <a target="_blank" rel="noopener" href="https://space.bilibili.com/3546653644556698">认为很厉害的制作仿生机器人的up主</a></li>
-<li>追求极致的仿生&#x2F;面部结构</li>
-<li>自然的表情动画&#x2F;姿态动画generate<ul>
-<li>&#x3D;&#x3D;自我训练&#x2F;生成式动作AI-“如何让动作变得自然”-见[[#2.机器学习方面]]&#x3D;&#x3D;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>机器人商业化<ul>
-<li>陪伴型机器人-社会情感需求<ul>
-<li><em>智能桌宠机器人</em><ul>
-<li>大模型接入&#x2F;行为决策树</li>
-<li>实时生成表情动画&#x2F;动画切换逻辑</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>eg. <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Gr4y1T7d7">Vector机器人</a></li>
-</ul>
-</li>
-<li>自媒体运营-<a target="_blank" rel="noopener" href="https://space.bilibili.com/177960253">我的b站主页</a><ul>
-<li><em>仿生机器人</em></li>
-<li><em>桌面宠物</em></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="主要研究方向"><a href="#主要研究方向" class="headerlink" title="主要研究方向"></a>主要研究方向</h3><h4 id="1-执行器方面"><a href="#1-执行器方面" class="headerlink" title="1. 执行器方面"></a>1. 执行器方面</h4><h6 id="目前待解决的问题"><a href="#目前待解决的问题" class="headerlink" title="目前待解决的问题:"></a>目前待解决的问题:</h6><ul>
-<li>面部肌肉极多(20+), 需要大量 <em>微型</em> &amp; <em>绝对位置编码(姿态闭环)</em> &amp; <em>力反馈(充当传感器)</em> 的线性执行器 or 绳驱(不稳定&#x2F;难量化)</li>
-<li>目前拟人化人形机器人的面部通常配备 <strong>20 到50个左右的执行器</strong>，用于驱动面部肌肉模拟表情。</li>
-<li>带有减速器的微型闭环电机价格贵, 研发成本过高, 减速比太大性能冗余</li>
-<li><em>市面上缺少一个微型&amp;闭环&amp;平价&amp;有一定力度的线性执行器</em></li>
-</ul>
-<h6 id="具体解决方式-正在和朋友研发ing"><a href="#具体解决方式-正在和朋友研发ing" class="headerlink" title="具体解决方式(正在和朋友研发ing):"></a>具体解决方式(正在和朋友研发ing):</h6><ul>
-<li>丝杆光驱步进电机位置闭环+电流检测(电流力矩映射)<ul>
-<li>思路:<ul>
-<li>丝杆作为减速器</li>
-<li>丝杆滑块上加金属触点, 使用电栅作为绝对位置编码器, 参考原理类似光编码器</li>
-<li>STC8H作为主控, 性能对标STM8S, 低成本, 低功耗</li>
-<li>双H桥电机驱动器DRV8836系列?? (MAX1.5A的输出电流)</li>
-<li>力矩-电流采样INA226</li>
-<li>私有协议-见[[私有协议初设想]]</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="2-机器学习方面"><a href="#2-机器学习方面" class="headerlink" title="2. 机器学习方面"></a>2. 机器学习方面</h4><h6 id="目前待解决的问题-1"><a href="#目前待解决的问题-1" class="headerlink" title="目前待解决的问题:"></a>目前待解决的问题:</h6><ul>
-<li>执行器动作与外部表现映射不准确: <ul>
-<li>人形机器人预设的执行器动作在实际表现中常常无法完美映射到外部(如皮肤表面). 这主要源于皮肤弹性&#x2F;电机抖动等因素，导致计算机控制的动作无法完整、准确地体现在机器人外观上。</li>
-<li>eg. 多个电机协同驱动以模仿微笑时，常出现扭曲或不自然的表情，需要大量人工微调。</li>
-</ul>
-</li>
-<li>海量表情&#x2F;动作的个性化调整成本高昂: <ul>
-<li>对于拥有丰富表情或动作库的人形机器人而言，手动为每一个动作进行精细调整的成本极高且效率低下。</li>
-</ul>
-</li>
-<li><em>缺乏客观、可量化的“自然度”评估标准</em>: <ul>
-<li>目前，对于机器人表情和动作是否“自然灵动”，缺乏统一且易于机器理解和量化的标准，导致训练和优化过程缺乏明确的方向</li>
-</ul>
-</li>
-</ul>
-<h6 id="可能的解决方式"><a href="#可能的解决方式" class="headerlink" title="可能的解决方式???:"></a>可能的解决方式???:</h6><ul>
-<li>“自我照镜子”式强化学习框架:<ul>
-<li>表情&#x2F;动作自然度评估模型:<ul>
-<li>数据收集与标注: 收集大量<em>夸张且自然的视频素材</em> (例如, 迪士尼动画中角色的面部表情和肢体动作?). 从这些视频中提取面部关键点帧序列或骨骼运动序列作为标准数据</li>
-<li>机器学习总结: 利用???训练一个 <em>判别模型</em>，该模型能够根据输入的机器人视觉数据（摄像头反馈）评估其表情或动作的 <em>“自然度 ”得分</em></li>
-</ul>
-</li>
-<li>电机运动补偿（矫正）模型:<ul>
-<li>机器人通过自身搭载的摄像头获取电机运动的视觉反馈</li>
-<li>将视觉反馈输入自然度评估模型，获取当前的“自然度”得分</li>
-<li>根据得分，利用强化学习或迭代优化算法调整各电机的驱动参数（如角度、力度、速度），以最大化“自然度”得分</li>
-<li>可以采用???方法，让机器人通过不断尝试和接收自然度反馈来学习最佳的电机控制策略</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>生成式动作学习:<ul>
-<li>思路: <ul>
-<li>等生成式模型，直接根据期望的表情或动作语义（如“微笑”、“惊讶”）生成对应的电机控制序列或面部关键点轨迹</li>
-</ul>
-</li>
-<li>仍然无法绕过传统的 <em>“评估-调整”</em> 循环，直接生成符合要求的动作，但需要大量的真实人类动作数据作为训练输入</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="3-结构设计方面"><a href="#3-结构设计方面" class="headerlink" title="3. 结构设计方面"></a>3. 结构设计方面</h4><h6 id="目前无法解决的问题"><a href="#目前无法解决的问题" class="headerlink" title="目前无法解决的问题:"></a>目前无法解决的问题:</h6><ul>
-<li>市面上缺少一个<em>既能做非标件建模又能方便得进行曲面编辑</em>的软件<ul>
-<li>solidworks适合做非标件, 对于装配体和动画也十分方便, 但是曲面非常难编辑,且难以后期修改维护</li>
-<li>我视频中的曲面模型均是用solidworks进行建模的, 使用体验极差, 但是没有更好的平替软件</li>
-<li>UG NX可以一定程度解决这个问题, 但是建模效率依旧很差</li>
-<li>设计用软件(多边形建模软件)中的mesh网格导入工业制造软件后难以编辑, 对性能影响极大</li>
-</ul>
-</li>
-<li>归因: _多边形 (Polygon) 建模和 CAD 参数化建模<strong>割裂</strong><ul>
-<li>仿生机器人既需要机械联动&#x2F;装配&#x2F;仿真, 又需要依托于多边形建模的外形 (美观度)</li>
-</ul>
-</li>
-<li>可能的解决方式:<ul>
-<li>机械建模和外表建模分别使用不同软件, 打造 <em>设计 to 内构 to 外壳</em> 的工作流</li>
-<li>在设计用软件(多边形建模软件)中构建插件, 根据骨骼位置自动生成电机安装平面, 导出mesh文件可直接作为工业制造软件的 <em>基准面</em> 参考, 极大程度上方便工业制造软件对电机的定位</li>
-</ul>
-</li>
-</ul>
-<h6 id="具体解决方式"><a href="#具体解决方式" class="headerlink" title="具体解决方式:"></a>具体解决方式:</h6><ul>
-<li>blender作为一款开源的多边形建模软件, 具有节点框架&#x2F;python接口等十分灵活的拓展工具. 可利用python制作插件, 根据绑骨后的模型(主要是骨骼)&amp;直线电机参数生成电机安装面<ul>
-<li>思路:<ul>
-<li>面部骨骼绑骨方向&#x3D;肌肉运动方向&#x3D;直线电机运动方向&#x2F;连杆拉伸方向</li>
-<li>遍历父骨骼对象下各骨骼, 获取各骨骼坐标和姿态四元数</li>
-<li>根据骨骼位置和姿态生成空间平面, 构建”电机安装面”参考</li>
-<li>导出obj格式mesh网格, 导入ug后”根据平面建立基准面”, 作为电机安装平面</li>
-<li>在参考壳体内部进行结构设计</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="我个人的理解"><a href="#我个人的理解" class="headerlink" title="我个人的理解"></a>我个人的理解</h3><h5 id="1-人形机器人踢正步-2-双足机器人足球赛"><a href="#1-人形机器人踢正步-2-双足机器人足球赛" class="headerlink" title="1.人形机器人踢正步&amp;2.双足机器人足球赛"></a>1.人形机器人踢正步&amp;2.双足机器人足球赛</h5><pre><code>s2r
-</code></pre>
-<h5 id="3-四足机器人巡检-4-四足机器人陪跑"><a href="#3-四足机器人巡检-4-四足机器人陪跑" class="headerlink" title="3.四足机器人巡检&amp;4.四足机器人陪跑"></a>3.四足机器人巡检&amp;4.四足机器人陪跑</h5><pre><code>slam/路径规划/视觉识别?
-</code></pre>
-<h5 id="5-大模型人机交互机器人"><a href="#5-大模型人机交互机器人" class="headerlink" title="5.大模型人机交互机器人"></a>5.大模型人机交互机器人</h5><pre><code>prompt工程/行为树
-</code></pre>
-<h5 id="6-艺术表演孔雀机器人"><a href="#6-艺术表演孔雀机器人" class="headerlink" title="6.艺术表演孔雀机器人"></a>6.艺术表演孔雀机器人</h5><pre><code>不清楚是否为人型
-</code></pre>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/06/">
+            <span class="card-archive-list-date">
+              六月 2025
+            </span>
+            <span class="card-archive-list-count">10</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" data-id="cmceh67ir0003s8nr6qmggdrz" data-title="我想做的项目&amp;部分路径规划" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" rel="tag">路径规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-06-27T14:00:57.638Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2025 By SUNT桑</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, {"typeSpeed":90,"startDelay":100,"backSpeed":30,"backDelay":2000,"loop":true,"loopCount":10,"showCursor":true,"cursorChar":"|","smartBackspace":true,"shuffle":false,"fadeOut":true,"contentType":"html"}))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["嗨！欢迎来到我的小窝！","静下心来，认真热爱"].slice()
 
-    </footer>
-  </div>
-  
-</article>
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
 
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
 
-
-  
-    <article id="post-THIS-IS-A-TEST" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/06/27/THIS-IS-A-TEST/" class="article-date">
-  <time class="dt-published" datetime="2025-06-26T20:42:23.000Z" itemprop="datePublished">2025-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/06/27/THIS-IS-A-TEST/">THIS IS A TEST</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/06/27/THIS-IS-A-TEST/" data-id="cmceh67id0000s8nr2ih453kd" data-title="THIS IS A TEST" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-css花体字" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/" class="article-date">
-  <time class="dt-published" datetime="2025-06-26T20:42:23.000Z" itemprop="datePublished">2025-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/">css花体字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <div style=" text-align: center; padding: 32px 0; background: linear-gradient(135deg, #ffe0c3 0%, #8ec5fc 100%); border-radius: 20px; box-shadow: 0 2px 16px rgba(30,30,70,0.15); "> <span style=" font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif; font-size: 3.5em; font-weight: bold; background: linear-gradient(92deg, #ff5858 0%, #f09819 42%, #43cea2 93%); color: transparent; -webkit-background-clip: text; background-clip: text; text-shadow: 0 2px 8px rgba(70,30,80,.20), 0 1px 0 #fff; letter-spacing: 0.18em; animation: fancy-glow 3.5s linear infinite alternate; padding: 0 18px; ">sunt</span> </div>
-
-<div style=" font-size: 2.5em; font-weight: bold; font-family: 'Arial Black', sans-serif; color: #ff6b6b; text-shadow: 3px 3px 0 #feca57, 6px 6px 0 #ff9ff3, 9px 9px 0 #1dd1a1; transform: rotate(-5deg); display: inline-block; padding: 15px; background: linear-gradient(135deg, #f5f6fa 0%, #dcdde1 100%); border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 2px dashed #e84393; "> sunt </div>
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=180&section=header&text=采薇Kaelvio&fontSize=50&fontAlignY=38&desc=保留迷惘的权利&descAlignY=60" />
-</div>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/" data-id="cmceh67ii0001s8nre9ct9ruw" data-title="css花体字" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/06/27/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-06-26T20:05:59.453Z" itemprop="datePublished">2025-06-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/06/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/06/27/hello-world/" data-id="cmceh67il0002s8nr70yi4giq" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%83%B3%E6%B3%95/">想法</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" rel="tag">路径规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag">项目</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/" style="font-size: 10px;">路径规划</a> <a href="/tags/%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">项目</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/06/">六月 2025</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/06/27/%E6%88%91%E6%83%B3%E5%81%9A%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8F%8A%E9%83%A8%E5%88%86%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">我想做的项目&amp;部分路径规划</a>
-          </li>
-        
-          <li>
-            <a href="/2025/06/27/THIS-IS-A-TEST/">THIS IS A TEST</a>
-          </li>
-        
-          <li>
-            <a href="/2025/06/27/css%E8%8A%B1%E4%BD%93%E5%AD%97/">css花体字</a>
-          </li>
-        
-          <li>
-            <a href="/2025/06/27/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 SUNT桑<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const from = '出自 ' + data.from
+      typedJSFn.processSubtitle(data.hitokoto, [from])
+    })
+    .catch(err => {
+      console.error('Failed to get the Hitokoto API:', err)
+      typedJSFn.processSubtitle(["嗨！欢迎来到我的小窝！","静下心来，认真热爱"])
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

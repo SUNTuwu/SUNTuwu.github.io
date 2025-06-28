@@ -3560,7 +3560,8 @@ figure.highlight pre .javascript .function {
 }
 #post-info .post-title {
   margin-bottom: 8px;
-  color: var(--white);
+  color: var(--light-grey);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   font-weight: normal;
   font-size: 2.5em;
   line-height: 1.5;
@@ -3810,7 +3811,7 @@ figure.highlight pre .javascript .function {
 }
 #pagination .page-number.current {
   background: #58bcce;
-  color: var(--white);
+  color: var(--light-grey);
 }
 #pagination .full-width {
   width: 100% !important;

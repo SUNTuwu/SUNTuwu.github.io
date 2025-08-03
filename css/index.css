@@ -3,7 +3,7 @@
 /* user-config */
 em {
   font-style: italic;
-  color: #64C18F;
+  color: #099D4E;
 }
 /* user-config */
 
@@ -38,7 +38,6 @@ pre {
 
 a {
   background-color: transparent;
-  text-decoration: underline;
 }
 
 abbr[title] {
@@ -1492,7 +1491,7 @@ button {
 }
 a {
   color: #99a9bf;
-  text-decoration: underline;
+  text-decoration: none;
   word-wrap: break-word;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;

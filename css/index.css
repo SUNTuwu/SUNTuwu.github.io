@@ -22,7 +22,8 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0
+  margin: .67em 0;
+  color: #08377D
 }
 
 hr {

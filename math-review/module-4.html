@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 4 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav active" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav active" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 4: Numerical Integration</h2>
+<div class="lectures">16 problems</div>
+</div>
+
+<div class="exercise" id="ex-L10-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-1</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#four-step-strategy-to-evaluate" target="_blank">four-step-strategy-to-evaluate</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\int \frac{\tan ^{3} x}{\cos ^{3} x} \mathrm{~d} x$</div>
+<div class="codebox">
+<pre id="latex-L10-1">Example $\int \frac{\tan ^{3} x}{\cos ^{3} x} \mathrm{~d} x$</pre>
+<button onclick="copyLaTeX(&quot;L10-1&quot;)" id="btn-L10-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-10</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a> <a class="tag" href="tags.html#trapezoidal-rule" target="_blank">trapezoidal-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use (a) the Trapezoidal Rule and (b) the Midpoint Rule with $n=5$ to approximate the integral $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$. Remark 1 - $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x=\left.\ln x\right|_{1} ^{2}=\ln 2=0.693147$ - Error in Trapezoidal Rule approximation for $n=5$ is $E_{T}=0.693147-0.695635=-0.002488$. - Error in Midpoint Rule approximation for $n=5$ is $E_{M}=0.693147-0.691908=0.001239$. - In general, $E_{T}=\int_{a}^{b} f(x) \mathrm{d} x-T_{n}$ and $E_{T}=\int_{a}^{b} f(x) \mathrm{d} x-M_{n}$. Approximation to $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ : | $n$ | $L_{n}$ | $R_{n}$ | $T_{n}$ | $M_{n}$ | | ---: | :---: | :---: | :---: | :---: | | 5 | 0.745635 | 0.645635 | 0.695635 | 0.691908 | | 10 | 0.718771 | 0.668771 | 0.693771 | 0.692835 | | 20 | 0.705803 | 0.680803 | 0.693303 | 0.693069 | Corresponding errors: | $n$ | $E_{L}$ | $E_{R}$ | $E_{T}$ | $E_{M}$ | | ---: | :---: | :---: | :---: | :---: | | 5 | -0.052488 | 0.047512 | -0.002488 | 0.001239 | | 10 | -0.025624 | 0.024376 | -0.000624 | 0.000312 | | 20 | -0.012656 | 0.012344 | -0.000156 | 0.000078 | (1) We get more accurate approximations when we increase the value of $n$. (2) The Trapezoidal and Midpoint Rules are much more accurate than the Left hand approximation and the Right hand approximation. (3) The size of the error in the Midpoint Rule is about half the size of the error in the Trapezoidal Rule. (4) $$ \begin{array}{ll} \frac{E_{L_{5}}}{E_{L_{10}}} \approx 2, & \frac{E_{L_{10}}}{E_{L_{20}}} \approx 2 \\ \frac{E_{R_{5}}}{E_{R_{10}}} \approx 2, & \frac{E_{R_{10}}}{E_{R_{20}}} \approx 2 \\ \frac{E_{T_{5}}}{E_{T_{10}}} \approx 4, & \frac{E_{T_{10}}}{E_{T_{20}}} \approx 4 \\ \frac{E_{M_{5}}}{E_{M_{10}}} \approx 4, & \frac{E_{M_{10}}}{E_{M_{20}}} \approx 4 \end{array} $$</div>
+<div class="codebox">
+<pre id="latex-L10-10">Use (a) the Trapezoidal Rule and (b) the Midpoint Rule with $n=5$ to approximate the integral $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$. Remark 1 - $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x=\left.\ln x\right|_{1} ^{2}=\ln 2=0.693147$ - Error in Trapezoidal Rule approximation for $n=5$ is $E_{T}=0.693147-0.695635=-0.002488$. - Error in Midpoint Rule approximation for $n=5$ is $E_{M}=0.693147-0.691908=0.001239$. - In general, $E_{T}=\int_{a}^{b} f(x) \mathrm{d} x-T_{n}$ and $E_{T}=\int_{a}^{b} f(x) \mathrm{d} x-M_{n}$. Approximation to $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ : | $n$ | $L_{n}$ | $R_{n}$ | $T_{n}$ | $M_{n}$ | | ---: | :---: | :---: | :---: | :---: | | 5 | 0.745635 | 0.645635 | 0.695635 | 0.691908 | | 10 | 0.718771 | 0.668771 | 0.693771 | 0.692835 | | 20 | 0.705803 | 0.680803 | 0.693303 | 0.693069 | Corresponding errors: | $n$ | $E_{L}$ | $E_{R}$ | $E_{T}$ | $E_{M}$ | | ---: | :---: | :---: | :---: | :---: | | 5 | -0.052488 | 0.047512 | -0.002488 | 0.001239 | | 10 | -0.025624 | 0.024376 | -0.000624 | 0.000312 | | 20 | -0.012656 | 0.012344 | -0.000156 | 0.000078 | (1) We get more accurate approximations when we increase the value of $n$. (2) The Trapezoidal and Midpoint Rules are much more accurate than the Left hand approximation and the Right hand approximation. (3) The size of the error in the Midpoint Rule is about half the size of the error in the Trapezoidal Rule. (4) $$ \begin{array}{ll} \frac{E_{L_{5}}}{E_{L_{10}}} \approx 2, & \frac{E_{L_{10}}}{E_{L_{20}}} \approx 2 \\ \frac{E_{R_{5}}}{E_{R_{10}}} \approx 2, & \frac{E_{R_{10}}}{E_{R_{20}}} \approx 2 \\ \frac{E_{T_{5}}}{E_{T_{10}}} \approx 4, & \frac{E_{T_{10}}}{E_{T_{20}}} \approx 4 \\ \frac{E_{M_{5}}}{E_{M_{10}}} \approx 4, & \frac{E_{M_{10}}}{E_{M_{20}}} \approx 4 \end{array} $$</pre>
+<button onclick="copyLaTeX(&quot;L10-10&quot;)" id="btn-L10-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-2</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#four-step-strategy-to-evaluate" target="_blank">four-step-strategy-to-evaluate</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\int e^{\sqrt{x}} d x$</div>
+<div class="codebox">
+<pre id="latex-L10-2">Example $\int e^{\sqrt{x}} d x$</pre>
+<button onclick="copyLaTeX(&quot;L10-2&quot;)" id="btn-L10-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-3</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#four-step-strategy-to-evaluate" target="_blank">four-step-strategy-to-evaluate</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\int \frac{x^{5}+1}{x^{3}-3 x^{2}-10 x} \mathrm{~d} x$</div>
+<div class="codebox">
+<pre id="latex-L10-3">Example $\int \frac{x^{5}+1}{x^{3}-3 x^{2}-10 x} \mathrm{~d} x$</pre>
+<button onclick="copyLaTeX(&quot;L10-3&quot;)" id="btn-L10-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-4</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\int \frac{\mathrm{d} x}{x \sqrt{\ln x}}$</div>
+<div class="codebox">
+<pre id="latex-L10-4">Example $\int \frac{\mathrm{d} x}{x \sqrt{\ln x}}$</pre>
+<button onclick="copyLaTeX(&quot;L10-4&quot;)" id="btn-L10-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-5</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\int \sqrt{\frac{1-x}{1+x}} \mathrm{~d} x$</div>
+<div class="codebox">
+<pre id="latex-L10-5">$\int \sqrt{\frac{1-x}{1+x}} \mathrm{~d} x$</pre>
+<button onclick="copyLaTeX(&quot;L10-5&quot;)" id="btn-L10-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-6</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question Can we integrate all continuous functions?</div>
+<div class="codebox">
+<pre id="latex-L10-6">Question Can we integrate all continuous functions?</pre>
+<button onclick="copyLaTeX(&quot;L10-6&quot;)" id="btn-L10-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-7</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Can we integrate all continuous functions? Answer: No! The following integrals cannot be integrated in terms of elementary functions: $$ \begin{aligned} & \int e^{x^{2}} \mathrm{~d} x, \quad \int \frac{e^{x}}{x} \mathrm{~d} x, \quad \int \sin \left(x^{2}\right) \mathrm{d} x, \quad \int \cos \left(e^{x}\right) \mathrm{d} x \\ & \int \sqrt{x^{3}+1} \mathrm{~d} x, \quad \int \frac{1}{\ln x} \mathrm{~d} x, \quad \int \frac{\sin x}{x} \mathrm{~d} x \end{aligned} $$ In fact, the majority of elementary functions don't have elementary antiderivatives.</div>
+<div class="codebox">
+<pre id="latex-L10-7">Can we integrate all continuous functions? Answer: No! The following integrals cannot be integrated in terms of elementary functions: $$ \begin{aligned} & \int e^{x^{2}} \mathrm{~d} x, \quad \int \frac{e^{x}}{x} \mathrm{~d} x, \quad \int \sin \left(x^{2}\right) \mathrm{d} x, \quad \int \cos \left(e^{x}\right) \mathrm{d} x \\ & \int \sqrt{x^{3}+1} \mathrm{~d} x, \quad \int \frac{1}{\ln x} \mathrm{~d} x, \quad \int \frac{\sin x}{x} \mathrm{~d} x \end{aligned} $$ In fact, the majority of elementary functions don't have elementary antiderivatives.</pre>
+<button onclick="copyLaTeX(&quot;L10-7&quot;)" id="btn-L10-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-8</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question When should be use Approximate Integration?</div>
+<div class="codebox">
+<pre id="latex-L10-8">Question When should be use Approximate Integration?</pre>
+<button onclick="copyLaTeX(&quot;L10-8&quot;)" id="btn-L10-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L10-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L10-9</span> <span class="exercise-lecture">(Lecture 10)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#definite-integral" target="_blank">definite-integral</a> <a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#riemann-sum" target="_blank">riemann-sum</a> <a class="tag" href="tags.html#trapezoidal-rule" target="_blank">trapezoidal-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">When should be use Approximate Integration? (a) It is difficult, or even impossible, to find an antiderivative, e.g., $\int e^{x^{2}} d x$. (b) The function is determined from a scientific experiment through instrument readings or collected data, i.e., no formula for the function. - The definite integral is defined as a limit of Riemann sums, so any Riemann sum could be used as an approximation to the integral. - Divide $[a, b]$ into $n$ subintervals of equal length $\Delta x=\frac{b-a}{n}$. Then $$ \int_{a}^{b} f(x) \mathrm{d} x \approx \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x, $$ where $x_{i}^{*} \in\left[x_{i-1}, x_{i}\right]$. (a) Left end approximation: choose $x_{i}^{*}=x_{i-1}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx L_{n}=\sum_{i=1}^{n} f\left(x_{i-1}\right) \Delta x $$ (b) Right end approximation: choose $x_{i}^{*}=x_{i}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx R_{n}=\sum_{i=1}^{n} f\left(x_{i}\right) \Delta x $$ (c) Midpoint Rule: choose $x_{i}^{*}=\bar{x}_{i}=\frac{x_{i-1}+x_{i}}{2}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx M_{n}=\Delta x\left[f\left(\bar{x}_{1}\right)+f\left(\bar{x}_{2}\right)+\cdots+f\left(\bar{x}_{n}\right)\right] $$ (d) Trapezoidal Rule: $\frac{L_{n}+R_{n}}{2}$ $$ \begin{aligned} & \int_{a}^{b} f(x) \mathrm{d} x \approx T_{n} \\ = & \frac{\Delta x}{2}\left[f\left(x_{0}\right)+2 f\left(x_{1}\right)+2 f\left(x_{2}\right)+\cdots+2 f\left(x_{n-1}\right)+f\left(x_{n}\right)\right] \end{aligned} $$ where $\Delta x=\frac{b-a}{n}$ and $x_{i}=a+i \Delta x$.</div>
+<div class="codebox">
+<pre id="latex-L10-9">When should be use Approximate Integration? (a) It is difficult, or even impossible, to find an antiderivative, e.g., $\int e^{x^{2}} d x$. (b) The function is determined from a scientific experiment through instrument readings or collected data, i.e., no formula for the function. - The definite integral is defined as a limit of Riemann sums, so any Riemann sum could be used as an approximation to the integral. - Divide $[a, b]$ into $n$ subintervals of equal length $\Delta x=\frac{b-a}{n}$. Then $$ \int_{a}^{b} f(x) \mathrm{d} x \approx \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x, $$ where $x_{i}^{*} \in\left[x_{i-1}, x_{i}\right]$. (a) Left end approximation: choose $x_{i}^{*}=x_{i-1}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx L_{n}=\sum_{i=1}^{n} f\left(x_{i-1}\right) \Delta x $$ (b) Right end approximation: choose $x_{i}^{*}=x_{i}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx R_{n}=\sum_{i=1}^{n} f\left(x_{i}\right) \Delta x $$ (c) Midpoint Rule: choose $x_{i}^{*}=\bar{x}_{i}=\frac{x_{i-1}+x_{i}}{2}$ $$ \int_{a}^{b} f(x) \mathrm{d} x \approx M_{n}=\Delta x\left[f\left(\bar{x}_{1}\right)+f\left(\bar{x}_{2}\right)+\cdots+f\left(\bar{x}_{n}\right)\right] $$ (d) Trapezoidal Rule: $\frac{L_{n}+R_{n}}{2}$ $$ \begin{aligned} & \int_{a}^{b} f(x) \mathrm{d} x \approx T_{n} \\ = & \frac{\Delta x}{2}\left[f\left(x_{0}\right)+2 f\left(x_{1}\right)+2 f\left(x_{2}\right)+\cdots+2 f\left(x_{n-1}\right)+f\left(x_{n}\right)\right] \end{aligned} $$ where $\Delta x=\frac{b-a}{n}$ and $x_{i}=a+i \Delta x$.</pre>
+<button onclick="copyLaTeX(&quot;L10-9&quot;)" id="btn-L10-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-1</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a> <a class="tag" href="tags.html#theorem-(error-bounds-for-midp" target="_blank">theorem-(error-bounds-for-midp</a> <a class="tag" href="tags.html#trapezoidal-rule" target="_blank">trapezoidal-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example How large should we take $n$ in order to guarantee that the Trapezoidal and Midpoint Rule approximations for $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ are accurate to within 0.0001 ?</div>
+<div class="codebox">
+<pre id="latex-L11-1">Example How large should we take $n$ in order to guarantee that the Trapezoidal and Midpoint Rule approximations for $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ are accurate to within 0.0001 ?</pre>
+<button onclick="copyLaTeX(&quot;L11-1&quot;)" id="btn-L11-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-2</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#facts" target="_blank">facts</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a> <a class="tag" href="tags.html#simpsons-rule" target="_blank">simpsons-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) Use the Midpoint Rule with $n=10$ to approximate the integral $$ \int_{0}^{1} e^{x^{2}} d x $$ (b) Give an upper bound for the error involved in this approximation. Simpson's Rule $$ \begin{aligned} & \int_{a}^{b} f(x) \mathrm{d} x \approx S_{n} \\ = & \frac{\Delta x}{3}\left[f\left(x_{0}\right)+4 f\left(x_{1}\right)+2 f\left(x_{2}\right)+4 f\left(x_{3}\right)+\cdots+2 f\left(x_{n-2}\right)+4 f\left(x_{n-1}\right)+f\left(x_{n}\right)\right] \end{aligned} $$ where $n$ is even and $\Delta x=\frac{b-a}{n}$.</div>
+<div class="codebox">
+<pre id="latex-L11-2">(a) Use the Midpoint Rule with $n=10$ to approximate the integral $$ \int_{0}^{1} e^{x^{2}} d x $$ (b) Give an upper bound for the error involved in this approximation. Simpson's Rule $$ \begin{aligned} & \int_{a}^{b} f(x) \mathrm{d} x \approx S_{n} \\ = & \frac{\Delta x}{3}\left[f\left(x_{0}\right)+4 f\left(x_{1}\right)+2 f\left(x_{2}\right)+4 f\left(x_{3}\right)+\cdots+2 f\left(x_{n-2}\right)+4 f\left(x_{n-1}\right)+f\left(x_{n}\right)\right] \end{aligned} $$ where $n$ is even and $\Delta x=\frac{b-a}{n}$.</pre>
+<button onclick="copyLaTeX(&quot;L11-2&quot;)" id="btn-L11-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-3</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#simpson's-rule" target="_blank">simpson's-rule</a> <a class="tag" href="tags.html#simpsons-rule" target="_blank">simpsons-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Use Simpson's Rule with $n=10$ to approximate $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L11-3">Example Use Simpson's Rule with $n=10$ to approximate $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L11-3&quot;)" id="btn-L11-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-4</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a> <a class="tag" href="tags.html#simpsons-rule" target="_blank">simpsons-rule</a> <a class="tag" href="tags.html#trapezoidal-rule" target="_blank">trapezoidal-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use Simpson's Rule with $n=10$ to approximate $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$. Remark $M_{10} \approx 0.692835, T_{10} \approx 0.693771, \ln 2 \approx 0.693147$ Simpson's Rule gives us a much better approximation than Midpoint Rule and Trapezoidal Rule. Suppose that $\left|f^{(4)}(x)\right| \leq k$ for $a \leq x \leq b$. If $E_{S}$ is the error involved in using Simpson's Rule, then $$ \left|E_{S}\right| \leq \frac{k(b-a)^{5}}{180 n^{4}} $$</div>
+<div class="codebox">
+<pre id="latex-L11-4">Use Simpson's Rule with $n=10$ to approximate $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$. Remark $M_{10} \approx 0.692835, T_{10} \approx 0.693771, \ln 2 \approx 0.693147$ Simpson's Rule gives us a much better approximation than Midpoint Rule and Trapezoidal Rule. Suppose that $\left|f^{(4)}(x)\right| \leq k$ for $a \leq x \leq b$. If $E_{S}$ is the error involved in using Simpson's Rule, then $$ \left|E_{S}\right| \leq \frac{k(b-a)^{5}}{180 n^{4}} $$</pre>
+<button onclick="copyLaTeX(&quot;L11-4&quot;)" id="btn-L11-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-5</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#simpsons-rule" target="_blank">simpsons-rule</a> <a class="tag" href="tags.html#theorem-(error-bound-for-simps" target="_blank">theorem-(error-bound-for-simps</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example How large should we take $n$ in order to guarantee that the Simpson's Rule approximation for $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ is accurate to within 0.0001 ?</div>
+<div class="codebox">
+<pre id="latex-L11-5">Example How large should we take $n$ in order to guarantee that the Simpson's Rule approximation for $\int_{1}^{2} \frac{1}{x} \mathrm{~d} x$ is accurate to within 0.0001 ?</pre>
+<button onclick="copyLaTeX(&quot;L11-5&quot;)" id="btn-L11-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L11-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L11-6</span> <span class="exercise-lecture">(Lecture 11)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#simpsons-rule" target="_blank">simpsons-rule</a> <a class="tag" href="tags.html#theorem-(error-bound-for-simps" target="_blank">theorem-(error-bound-for-simps</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) Use Simpson's Rule with $n=10$ to approximate the integral $$ \int_{0}^{1} e^{x^{2}} d x $$ (b) Estimate the error involved in this approximation.</div>
+<div class="codebox">
+<pre id="latex-L11-6">(a) Use Simpson's Rule with $n=10$ to approximate the integral $$ \int_{0}^{1} e^{x^{2}} d x $$ (b) Estimate the error involved in this approximation.</pre>
+<button onclick="copyLaTeX(&quot;L11-6&quot;)" id="btn-L11-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

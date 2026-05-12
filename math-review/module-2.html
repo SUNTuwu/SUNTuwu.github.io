@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 2 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav active" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav active" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 2: Advanced Integration Techniques</h2>
+<div class="lectures">47 problems</div>
+</div>
+
+<div class="exercise" id="ex-L6-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L6-1</span> <span class="exercise-lecture">(Lecture 6)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration-by-parts:-indefini" target="_blank">integration-by-parts:-indefini</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int x \sin x \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L6-1">Find $\int x \sin x \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L6-1&quot;)" id="btn-L6-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L6-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L6-2</span> <span class="exercise-lecture">(Lecture 6)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration-by-parts:-indefini" target="_blank">integration-by-parts:-indefini</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int e^{x} \sin x d x$.</div>
+<div class="codebox">
+<pre id="latex-L6-2">Evaluate $\int e^{x} \sin x d x$.</pre>
+<button onclick="copyLaTeX(&quot;L6-2&quot;)" id="btn-L6-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L6-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L6-3</span> <span class="exercise-lecture">(Lecture 6)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration-by-parts:-indefini" target="_blank">integration-by-parts:-indefini</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Prove the reduction formula $$ \int \sin ^{n} x \mathrm{~d} x=-\frac{1}{n} \cos x \sin ^{n-1} x+\frac{n-1}{n} \int \sin ^{n-2} x \mathrm{~d} x . $$</div>
+<div class="codebox">
+<pre id="latex-L6-3">Prove the reduction formula $$ \int \sin ^{n} x \mathrm{~d} x=-\frac{1}{n} \cos x \sin ^{n-1} x+\frac{n-1}{n} \int \sin ^{n-2} x \mathrm{~d} x . $$</pre>
+<button onclick="copyLaTeX(&quot;L6-3&quot;)" id="btn-L6-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L6-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L6-4</span> <span class="exercise-lecture">(Lecture 6)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Use the reduction formula to evaluate $\int \sin ^{4} x \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L6-4">Example Use the reduction formula to evaluate $\int \sin ^{4} x \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L6-4&quot;)" id="btn-L6-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L6-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L6-5</span> <span class="exercise-lecture">(Lecture 6)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Use the reduction formula to show that $$ \int_{0}^{\frac{\pi}{2}} \sin ^{n} x d x=\frac{n-1}{n} \int_{0}^{\frac{\pi}{2}} \sin ^{n-2} x d x $$</div>
+<div class="codebox">
+<pre id="latex-L6-5">Example Use the reduction formula to show that $$ \int_{0}^{\frac{\pi}{2}} \sin ^{n} x d x=\frac{n-1}{n} \int_{0}^{\frac{\pi}{2}} \sin ^{n-2} x d x $$</pre>
+<button onclick="copyLaTeX(&quot;L6-5&quot;)" id="btn-L6-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-1</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \sin ^{3} x \cos ^{4} x d x$.</div>
+<div class="codebox">
+<pre id="latex-L7-1">Example Find $\int \sin ^{3} x \cos ^{4} x d x$.</pre>
+<button onclick="copyLaTeX(&quot;L7-1&quot;)" id="btn-L7-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-10</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int \tan ^{3} x \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L7-10">Evaluate $\int \tan ^{3} x \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L7-10&quot;)" id="btn-L7-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-11</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \sec ^{3} x \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L7-11">Find $\int \sec ^{3} x \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L7-11&quot;)" id="btn-L7-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-2</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \sin ^{3} x \cos ^{4} x d x$. Remark An odd power of sine or cosine enabled us to separate a single factor and convert the remaining even power.</div>
+<div class="codebox">
+<pre id="latex-L7-2">Example Find $\int \sin ^{3} x \cos ^{4} x d x$. Remark An odd power of sine or cosine enabled us to separate a single factor and convert the remaining even power.</pre>
+<button onclick="copyLaTeX(&quot;L7-2&quot;)" id="btn-L7-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-3</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to evaluate $\int \sin m x \cos n x \mathrm{~d} x, \int \sin m x \sin n x \mathrm{~d} x$, or $\int \cos m x \cos n x \mathrm{~d} x$ ? (a) $\sin A \cos B=\frac{1}{2}[\sin (A-B)+\sin (A+B)]$ (b) $\sin A \sin B=\frac{1}{2}[\cos (A-B)-\cos (A+B)]$ (c) $\cos A \cos B=\frac{1}{2}[\cos (A-B)+\cos (A+B)]$</div>
+<div class="codebox">
+<pre id="latex-L7-3">How to evaluate $\int \sin m x \cos n x \mathrm{~d} x, \int \sin m x \sin n x \mathrm{~d} x$, or $\int \cos m x \cos n x \mathrm{~d} x$ ? (a) $\sin A \cos B=\frac{1}{2}[\sin (A-B)+\sin (A+B)]$ (b) $\sin A \sin B=\frac{1}{2}[\cos (A-B)-\cos (A+B)]$ (c) $\cos A \cos B=\frac{1}{2}[\cos (A-B)+\cos (A+B)]$</pre>
+<button onclick="copyLaTeX(&quot;L7-3&quot;)" id="btn-L7-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-5</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#identities" target="_blank">identities</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\int \sin 4 x \cos 5 x d x$.</div>
+<div class="codebox">
+<pre id="latex-L7-5">Example $\int \sin 4 x \cos 5 x d x$.</pre>
+<button onclick="copyLaTeX(&quot;L7-5&quot;)" id="btn-L7-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-6</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#identities" target="_blank">identities</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question How to evaluate $\int \tan ^{m} x \sec ^{n} x \mathrm{~d} x$ ?</div>
+<div class="codebox">
+<pre id="latex-L7-6">Question How to evaluate $\int \tan ^{m} x \sec ^{n} x \mathrm{~d} x$ ?</pre>
+<button onclick="copyLaTeX(&quot;L7-6&quot;)" id="btn-L7-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-8</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#identities" target="_blank">identities</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \tan ^{6} x \sec ^{4} x \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L7-8">Example Evaluate $\int \tan ^{6} x \sec ^{4} x \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L7-8&quot;)" id="btn-L7-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L7-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L7-9</span> <span class="exercise-lecture">(Lecture 7)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#identities" target="_blank">identities</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \tan ^{5} \theta \sec ^{7} \theta d \theta$. Strategy for Evaluating $\int \tan ^{m} x \sec ^{n} x \mathrm{~d} x$ (a) If $n=2 k, k \in \mathbb{N}$, then save a factor of $\sec ^{2} x$ and use $\sec ^{2} x=1+\tan ^{2} x$ to express the remaining factors in terms of $\tan x$ : $$ \begin{aligned} \int \tan ^{m} x \sec ^{2 k} x \mathrm{~d} x & =\int \tan ^{m} x \sec ^{2(k-1)} x \sec ^{2} x \mathrm{~d} x \\ & =\int \tan ^{m} x \sec ^{2(k-1)} \mathrm{d} \tan x \end{aligned} $$ Then substitute $u=\tan x$. (b) If $m=2 k+1$ and $n \geq 1$, then save sec $x \tan x$ and use $\tan ^{2}=\sec ^{2}-1$ to express the remaining factors in terms of $\sec x$ : $$ \begin{aligned} \int \tan ^{2 k+1} x \sec ^{n} x \mathrm{~d} x & =\int\left(\tan ^{2} x\right)^{k} \sec ^{n-1} x \sec x \tan x \mathrm{~d} x \\ & =\int\left(\sec ^{2} x-1\right)^{k} \sec ^{n-1} x \mathrm{~d} \sec x \end{aligned} $$ Then substitute $u=\sec x$. Strategy for Evaluating $\int \sin ^{m} x \cos ^{n} x \mathrm{~d} x$ (Cont'd) (c) Other cases: use identities, integration by parts, and occasionally a little ingenuity. Identities (I) $\int \tan x d x=\ln |\sec x|+C$ (II) $\int \sec x \mathrm{~d} x=\ln |\sec x+\tan x|+C$</div>
+<div class="codebox">
+<pre id="latex-L7-9">Find $\int \tan ^{5} \theta \sec ^{7} \theta d \theta$. Strategy for Evaluating $\int \tan ^{m} x \sec ^{n} x \mathrm{~d} x$ (a) If $n=2 k, k \in \mathbb{N}$, then save a factor of $\sec ^{2} x$ and use $\sec ^{2} x=1+\tan ^{2} x$ to express the remaining factors in terms of $\tan x$ : $$ \begin{aligned} \int \tan ^{m} x \sec ^{2 k} x \mathrm{~d} x & =\int \tan ^{m} x \sec ^{2(k-1)} x \sec ^{2} x \mathrm{~d} x \\ & =\int \tan ^{m} x \sec ^{2(k-1)} \mathrm{d} \tan x \end{aligned} $$ Then substitute $u=\tan x$. (b) If $m=2 k+1$ and $n \geq 1$, then save sec $x \tan x$ and use $\tan ^{2}=\sec ^{2}-1$ to express the remaining factors in terms of $\sec x$ : $$ \begin{aligned} \int \tan ^{2 k+1} x \sec ^{n} x \mathrm{~d} x & =\int\left(\tan ^{2} x\right)^{k} \sec ^{n-1} x \sec x \tan x \mathrm{~d} x \\ & =\int\left(\sec ^{2} x-1\right)^{k} \sec ^{n-1} x \mathrm{~d} \sec x \end{aligned} $$ Then substitute $u=\sec x$. Strategy for Evaluating $\int \sin ^{m} x \cos ^{n} x \mathrm{~d} x$ (Cont'd) (c) Other cases: use identities, integration by parts, and occasionally a little ingenuity. Identities (I) $\int \tan x d x=\ln |\sec x|+C$ (II) $\int \sec x \mathrm{~d} x=\ln |\sec x+\tan x|+C$</pre>
+<button onclick="copyLaTeX(&quot;L7-9&quot;)" id="btn-L7-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-1</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int x \sqrt{4-x^{2}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-1">Evaluate $\int x \sqrt{4-x^{2}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-1&quot;)" id="btn-L8-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-10</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int \frac{x}{\sqrt{3-2 x-x^{2}}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-10">Evaluate $\int \frac{x}{\sqrt{3-2 x-x^{2}}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-10&quot;)" id="btn-L8-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-11</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Evaluate the integral $\int \frac{x}{\sqrt{x^{2}+x+1}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-11">Exercise Evaluate the integral $\int \frac{x}{\sqrt{x^{2}+x+1}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-11&quot;)" id="btn-L8-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-12</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Find the length of the arc of the curve $y=\frac{1}{2} x^{2}$ from point $P\left(-1, \frac{1}{2}\right)$ to point $Q\left(1, \frac{1}{2}\right)$.</div>
+<div class="codebox">
+<pre id="latex-L8-12">Exercise Find the length of the arc of the curve $y=\frac{1}{2} x^{2}$ from point $P\left(-1, \frac{1}{2}\right)$ to point $Q\left(1, \frac{1}{2}\right)$.</pre>
+<button onclick="copyLaTeX(&quot;L8-12&quot;)" id="btn-L8-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-2</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#substitution-rule" target="_blank">substitution-rule</a> <a class="tag" href="tags.html#u-substitution" target="_blank">u-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to evaluate $\int \sqrt{4-x^{2}} \mathrm{~d} x$ ? | Expression | Substitution | Identity | | :--- | :--- | :--- | | $\sqrt{a^{2}-x^{2}}$ | $x=a \sin \theta, \quad-\frac{\pi}{2} \leqslant \theta \leqslant \frac{\pi}{2}$ | $1-\sin ^{2} \theta=\cos ^{2} \theta$ | | $\sqrt{a^{2}+x^{2}}$ | $x=a \tan \theta, \quad-\frac{\pi}{2}<\theta<\frac{\pi}{2}$ | $1+\tan ^{2} \theta=\sec ^{2} \theta$ | | $\sqrt{x^{2}-a^{2}}$ | $x=a \sec \theta, \quad 0 \leqslant \theta<\frac{\pi}{2}$ or $\pi \leqslant \theta<\frac{3 \pi}{2}$ | $\sec ^{2} \theta-1=\tan ^{2} \theta$ |</div>
+<div class="codebox">
+<pre id="latex-L8-2">How to evaluate $\int \sqrt{4-x^{2}} \mathrm{~d} x$ ? | Expression | Substitution | Identity | | :--- | :--- | :--- | | $\sqrt{a^{2}-x^{2}}$ | $x=a \sin \theta, \quad-\frac{\pi}{2} \leqslant \theta \leqslant \frac{\pi}{2}$ | $1-\sin ^{2} \theta=\cos ^{2} \theta$ | | $\sqrt{a^{2}+x^{2}}$ | $x=a \tan \theta, \quad-\frac{\pi}{2}<\theta<\frac{\pi}{2}$ | $1+\tan ^{2} \theta=\sec ^{2} \theta$ | | $\sqrt{x^{2}-a^{2}}$ | $x=a \sec \theta, \quad 0 \leqslant \theta<\frac{\pi}{2}$ or $\pi \leqslant \theta<\frac{3 \pi}{2}$ | $\sec ^{2} \theta-1=\tan ^{2} \theta$ |</pre>
+<button onclick="copyLaTeX(&quot;L8-2&quot;)" id="btn-L8-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-3</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-trigonometric-substit" target="_blank">table-of-trigonometric-substit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int \frac{\sqrt{9-x^{2}}}{x^{2}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-3">Evaluate $\int \frac{\sqrt{9-x^{2}}}{x^{2}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-3&quot;)" id="btn-L8-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-4</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#table-of-trigonometric-substit" target="_blank">table-of-trigonometric-substit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area enclosed by the ellipse: $$ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1 $$</div>
+<div class="codebox">
+<pre id="latex-L8-4">Find the area enclosed by the ellipse: $$ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1 $$</pre>
+<button onclick="copyLaTeX(&quot;L8-4&quot;)" id="btn-L8-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-5</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-trigonometric-substit" target="_blank">table-of-trigonometric-substit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \frac{1}{x^{2} \sqrt{x^{2}+4}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-5">Find $\int \frac{1}{x^{2} \sqrt{x^{2}+4}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-5&quot;)" id="btn-L8-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-6</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-trigonometric-substit" target="_blank">table-of-trigonometric-substit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \frac{x}{\sqrt{x^{2}+4}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-6">Find $\int \frac{x}{\sqrt{x^{2}+4}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-6&quot;)" id="btn-L8-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-7</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-trigonometric-substit" target="_blank">table-of-trigonometric-substit</a> <a class="tag" href="tags.html#trigonometric" target="_blank">trigonometric</a> <a class="tag" href="tags.html#u-substitution" target="_blank">u-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \frac{x}{\sqrt{x^{2}+4}} \mathrm{~d} x$. Remark Even when trigonometric substitutions are possible, they may not give the easiest solution. We should look for a simpler method first.</div>
+<div class="codebox">
+<pre id="latex-L8-7">Example Find $\int \frac{x}{\sqrt{x^{2}+4}} \mathrm{~d} x$. Remark Even when trigonometric substitutions are possible, they may not give the easiest solution. We should look for a simpler method first.</pre>
+<button onclick="copyLaTeX(&quot;L8-7&quot;)" id="btn-L8-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-8</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{\mathrm{d} x}{\sqrt{x^{2}-a^{2}}}$, where $a>0$.</div>
+<div class="codebox">
+<pre id="latex-L8-8">Example Evaluate $\int \frac{\mathrm{d} x}{\sqrt{x^{2}-a^{2}}}$, where $a>0$.</pre>
+<button onclick="copyLaTeX(&quot;L8-8&quot;)" id="btn-L8-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L8-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L8-9</span> <span class="exercise-lecture">(Lecture 8)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int_{0}^{\frac{3 \sqrt{3}}{2}} \frac{x^{3}}{\left(4 x^{2}+9\right)^{\frac{3}{2}}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L8-9">Find $\int_{0}^{\frac{3 \sqrt{3}}{2}} \frac{x^{3}}{\left(4 x^{2}+9\right)^{\frac{3}{2}}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L8-9&quot;)" id="btn-L8-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-1</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(partial-fraction)" target="_blank">definition-(partial-fraction)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \frac{x+5}{x^{2}+x-2} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-1">Example Find $\int \frac{x+5}{x^{2}+x-2} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-1&quot;)" id="btn-L9-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-11</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \frac{x^{4}-2 x^{2}+4 x+1}{x^{3}-x^{2}-x+1} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-11">Example Find $\int \frac{x^{4}-2 x^{2}+4 x+1}{x^{3}-x^{2}-x+1} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-11&quot;)" id="btn-L9-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-12</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Evaluate the integral $\int \frac{x^{2}+1}{(x-3)(x-2)^{2}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-12">Exercise Evaluate the integral $\int \frac{x^{2}+1}{(x-3)(x-2)^{2}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-12&quot;)" id="btn-L9-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-13</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question How to do Step 3? - CASE III: $Q(x)$ contains irreducible quadratic factors, none of which is repeated. If $Q(x)$ has a term $a x^{2}+b x+c$, where $b^{2}-4 a c<0$, then the expression for $\frac{R(x)}{Q(x)}$ will have a term $\frac{A x+B}{a x^{2}+b x+c}$.</div>
+<div class="codebox">
+<pre id="latex-L9-13">Question How to do Step 3? - CASE III: $Q(x)$ contains irreducible quadratic factors, none of which is repeated. If $Q(x)$ has a term $a x^{2}+b x+c$, where $b^{2}-4 a c<0$, then the expression for $\frac{R(x)}{Q(x)}$ will have a term $\frac{A x+B}{a x^{2}+b x+c}$.</pre>
+<button onclick="copyLaTeX(&quot;L9-13&quot;)" id="btn-L9-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-14</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the partial fraction decomposition for the following functions: (a) $\frac{x}{(x-2)\left(x^{2}+1\right)\left(x^{2}+4\right)}$ (b) $\frac{x^{2}-2 x-1}{(x-1)^{2}\left(x^{2}+1\right)}$</div>
+<div class="codebox">
+<pre id="latex-L9-14">Find the partial fraction decomposition for the following functions: (a) $\frac{x}{(x-2)\left(x^{2}+1\right)\left(x^{2}+4\right)}$ (b) $\frac{x^{2}-2 x-1}{(x-1)^{2}\left(x^{2}+1\right)}$</pre>
+<button onclick="copyLaTeX(&quot;L9-14&quot;)" id="btn-L9-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-15</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{2 x^{2}-x+4}{x^{3}+4 x} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-15">Example Evaluate $\int \frac{2 x^{2}-x+4}{x^{3}+4 x} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-15&quot;)" id="btn-L9-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-16</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{2 x^{2}-x+4}{x^{3}+4 x} d x$. Remark (1) $\int \frac{\mathrm{d} x}{x^{2}+a^{2}}=\frac{1}{a} \arctan \frac{x}{a}+C$ (2) For general term $\frac{B}{a x^{2}+b x+c}$, where $b^{2}-4 a c<0, a x^{2}+b x+c$ can be integrated by completing the square (if necessary) and using the formula in (1).</div>
+<div class="codebox">
+<pre id="latex-L9-16">Example Evaluate $\int \frac{2 x^{2}-x+4}{x^{3}+4 x} d x$. Remark (1) $\int \frac{\mathrm{d} x}{x^{2}+a^{2}}=\frac{1}{a} \arctan \frac{x}{a}+C$ (2) For general term $\frac{B}{a x^{2}+b x+c}$, where $b^{2}-4 a c<0, a x^{2}+b x+c$ can be integrated by completing the square (if necessary) and using the formula in (1).</pre>
+<button onclick="copyLaTeX(&quot;L9-16&quot;)" id="btn-L9-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-17</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{4 x^{2}-3 x+2}{4 x^{2}-4 x+3} d x$.</div>
+<div class="codebox">
+<pre id="latex-L9-17">Example Evaluate $\int \frac{4 x^{2}-3 x+2}{4 x^{2}-4 x+3} d x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-17&quot;)" id="btn-L9-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-18">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-18</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to do Step 3? - CASE III: $Q(x)$ contains irreducible quadratic factors, none of which is repeated. If $Q(x)$ has a term $a x^{2}+b x+c$, where $b^{2}-4 a c<0$, then the expression for $\frac{R(x)}{Q(x)}$ will have a term $\frac{A x+B}{a x^{2}+b x+c}$. - CASE IV: $Q(x)$ contains a repeated irreducible quadratic factor. If $Q(x)$ has the factor $\left(a x^{2}+b x+c\right)^{r}$, where $b^{2}-4 a c<0$, then the sum $$ \frac{A_{1} x+B_{1}}{a x^{2}+b x+c}+\frac{A_{2} x+B_{2}}{\left(a x^{2}+b x+c\right)^{2}}+\cdots+\frac{A_{r} x+B_{r}}{\left(a x^{2}+b x+c\right)^{r}} $$ occurs in the partial fraction decomposition of $\frac{R(x)}{Q(x)}$.</div>
+<div class="codebox">
+<pre id="latex-L9-18">How to do Step 3? - CASE III: $Q(x)$ contains irreducible quadratic factors, none of which is repeated. If $Q(x)$ has a term $a x^{2}+b x+c$, where $b^{2}-4 a c<0$, then the expression for $\frac{R(x)}{Q(x)}$ will have a term $\frac{A x+B}{a x^{2}+b x+c}$. - CASE IV: $Q(x)$ contains a repeated irreducible quadratic factor. If $Q(x)$ has the factor $\left(a x^{2}+b x+c\right)^{r}$, where $b^{2}-4 a c<0$, then the sum $$ \frac{A_{1} x+B_{1}}{a x^{2}+b x+c}+\frac{A_{2} x+B_{2}}{\left(a x^{2}+b x+c\right)^{2}}+\cdots+\frac{A_{r} x+B_{r}}{\left(a x^{2}+b x+c\right)^{r}} $$ occurs in the partial fraction decomposition of $\frac{R(x)}{Q(x)}$.</pre>
+<button onclick="copyLaTeX(&quot;L9-18&quot;)" id="btn-L9-18">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-19">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-19</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Write out the form of the partial fraction decomposition of the function $$ \frac{x^{3}+x^{2}+1}{x(x-1)\left(x^{2}+x+1\right)\left(x^{2}+1\right)^{3}} . $$</div>
+<div class="codebox">
+<pre id="latex-L9-19">Write out the form of the partial fraction decomposition of the function $$ \frac{x^{3}+x^{2}+1}{x(x-1)\left(x^{2}+x+1\right)\left(x^{2}+1\right)^{3}} . $$</pre>
+<button onclick="copyLaTeX(&quot;L9-19&quot;)" id="btn-L9-19">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-2</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(partial-fraction)" target="_blank">definition-(partial-fraction)</a> <a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How does the method of partial fraction work in general?</div>
+<div class="codebox">
+<pre id="latex-L9-2">How does the method of partial fraction work in general?</pre>
+<button onclick="copyLaTeX(&quot;L9-2&quot;)" id="btn-L9-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-20">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-20</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{1-x+2 x^{2}-x^{3}}{x\left(x^{2}+1\right)^{2}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-20">Example Evaluate $\int \frac{1-x+2 x^{2}-x^{3}}{x\left(x^{2}+1\right)^{2}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-20&quot;)" id="btn-L9-20">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-21">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-21</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#substitution-rule" target="_blank">substitution-rule</a> <a class="tag" href="tags.html#u-substitution" target="_blank">u-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{x^{2}+1}{x\left(x^{2}+3\right)} d x$. Some nonrational functions can be changed into rational functions by means of appropriate substitutions.</div>
+<div class="codebox">
+<pre id="latex-L9-21">Example Evaluate $\int \frac{x^{2}+1}{x\left(x^{2}+3\right)} d x$. Some nonrational functions can be changed into rational functions by means of appropriate substitutions.</pre>
+<button onclick="copyLaTeX(&quot;L9-21&quot;)" id="btn-L9-21">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-22">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-22</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(rationalizing-subs" target="_blank">definition-(rationalizing-subs</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{\sqrt{x+4}}{x} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-22">Example Evaluate $\int \frac{\sqrt{x+4}}{x} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-22&quot;)" id="btn-L9-22">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-23">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-23</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(rationalizing-subs" target="_blank">definition-(rationalizing-subs</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Evaluate $\int_{0}^{1} \frac{\mathrm{~d} x}{2 \sqrt{x+3}+x}$.</div>
+<div class="codebox">
+<pre id="latex-L9-23">Exercise Evaluate $\int_{0}^{1} \frac{\mathrm{~d} x}{2 \sqrt{x+3}+x}$.</pre>
+<button onclick="copyLaTeX(&quot;L9-23&quot;)" id="btn-L9-23">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-3</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(partial-fraction)" target="_blank">definition-(partial-fraction)</a> <a class="tag" href="tags.html#improper-integrals" target="_blank">improper-integrals</a> <a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How does the method of partial fraction work in general? Consider a rational function $f(x)=\frac{P(x)}{Q(x)}$, where $P$ and $Q$ are polynomials. If $P(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0}\left(a_{n} \neq 0\right)$, then the degree of $P$ is $n$ and denoted by $\operatorname{deg}(P)=n$. If $\operatorname{deg}(P)<\operatorname{deg}(Q)$, we call $f(x)=\frac{P(x)}{Q(x)}$ is proper; otherwise, it is improper. For a proper rational function, it is possible to express it as a sum of simpler fractions. - Step 1: If $f(x)$ is improper, perform the long division and get $$ f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)} $$ - Step 2: Factor the denominator as far as possible - Step 3: Express the proper rational function $\frac{R(x)}{Q(x)}$ as a sum of partial fractions of the form $$ \frac{A}{(a x+b)^{i}} \text { or } \frac{A x+B}{\left(a x^{2}+b x+c\right)^{j}} . $$</div>
+<div class="codebox">
+<pre id="latex-L9-3">How does the method of partial fraction work in general? Consider a rational function $f(x)=\frac{P(x)}{Q(x)}$, where $P$ and $Q$ are polynomials. If $P(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0}\left(a_{n} \neq 0\right)$, then the degree of $P$ is $n$ and denoted by $\operatorname{deg}(P)=n$. If $\operatorname{deg}(P)<\operatorname{deg}(Q)$, we call $f(x)=\frac{P(x)}{Q(x)}$ is proper; otherwise, it is improper. For a proper rational function, it is possible to express it as a sum of simpler fractions. - Step 1: If $f(x)$ is improper, perform the long division and get $$ f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)} $$ - Step 2: Factor the denominator as far as possible - Step 3: Express the proper rational function $\frac{R(x)}{Q(x)}$ as a sum of partial fractions of the form $$ \frac{A}{(a x+b)^{i}} \text { or } \frac{A x+B}{\left(a x^{2}+b x+c\right)^{j}} . $$</pre>
+<button onclick="copyLaTeX(&quot;L9-3&quot;)" id="btn-L9-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-4</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(degree)" target="_blank">definition-(degree)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int \frac{x^{3}+x}{x-1} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-4">Example Find $\int \frac{x^{3}+x}{x-1} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-4&quot;)" id="btn-L9-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-5</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(degree)" target="_blank">definition-(degree)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to do Step 3? - CASE I: The denominator $Q(x)$ is a product of distinct linear factors: $$ Q(x)=\left(a_{1} x+b_{1}\right)\left(a_{2} x+b_{2}\right) \cdots\left(a_{k} x+b_{k}\right) . $$ Then there exists $A_{1}, A_{2}, \ldots, A_{k}$ such that $$ \frac{R(x)}{Q(x)}=\frac{A_{1}}{a_{1} x+b_{1}}+\frac{A_{2}}{a_{2} x+b_{2}}+\cdots+\frac{A_{k}}{a_{k} x+b_{k}} . $$</div>
+<div class="codebox">
+<pre id="latex-L9-5">How to do Step 3? - CASE I: The denominator $Q(x)$ is a product of distinct linear factors: $$ Q(x)=\left(a_{1} x+b_{1}\right)\left(a_{2} x+b_{2}\right) \cdots\left(a_{k} x+b_{k}\right) . $$ Then there exists $A_{1}, A_{2}, \ldots, A_{k}$ such that $$ \frac{R(x)}{Q(x)}=\frac{A_{1}}{a_{1} x+b_{1}}+\frac{A_{2}}{a_{2} x+b_{2}}+\cdots+\frac{A_{k}}{a_{k} x+b_{k}} . $$</pre>
+<button onclick="copyLaTeX(&quot;L9-5&quot;)" id="btn-L9-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-6</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int \frac{x^{2}+2 x-1}{2 x^{3}+3 x^{2}-2 x} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-6">Example Evaluate $\int \frac{x^{2}+2 x-1}{2 x^{3}+3 x^{2}-2 x} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-6&quot;)" id="btn-L9-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-7</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#improper-integrals" target="_blank">improper-integrals</a> <a class="tag" href="tags.html#partial-fractions" target="_blank">partial-fractions</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Find $\int \frac{\mathrm{d} x}{x^{2}-a^{2}}$, where $a \neq 0$. - Step 1: If $f(x)$ is improper, perform the long division and get $$ f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)} $$ - Step 2: Factor the denominator as far as possible - Step 3: Express the proper rational function $\frac{R(x)}{Q(x)}$ as a sum of partial fractions of the form $$ \frac{A}{(a x+b)^{i}} \text { or } \frac{A x+B}{\left(a x^{2}+b x+c\right)^{j}} . $$</div>
+<div class="codebox">
+<pre id="latex-L9-7">Exercise Find $\int \frac{\mathrm{d} x}{x^{2}-a^{2}}$, where $a \neq 0$. - Step 1: If $f(x)$ is improper, perform the long division and get $$ f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)} $$ - Step 2: Factor the denominator as far as possible - Step 3: Express the proper rational function $\frac{R(x)}{Q(x)}$ as a sum of partial fractions of the form $$ \frac{A}{(a x+b)^{i}} \text { or } \frac{A x+B}{\left(a x^{2}+b x+c\right)^{j}} . $$</pre>
+<button onclick="copyLaTeX(&quot;L9-7&quot;)" id="btn-L9-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L9-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L9-9</span> <span class="exercise-lecture">(Lecture 9)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate the integral $\int \frac{x-4}{x\left(x^{2}-5 x+6\right)} \mathrm{d} x$.</div>
+<div class="codebox">
+<pre id="latex-L9-9">Example Evaluate the integral $\int \frac{x-4}{x\left(x^{2}-5 x+6\right)} \mathrm{d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L9-9&quot;)" id="btn-L9-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

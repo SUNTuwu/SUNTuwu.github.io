@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHTJbF6FaBobkUxkVgDnKwnzH6J2AAjv9zg&amp;s" type="image/png">
+<title>Home — MATH 1014 Final Review</title>
+<script>
+var examDate = new Date(2026, 4, 18, 12, 30, 0);
+function updateCountdown() {
+    var now = new Date();
+    var diff = examDate - now;
+    if (diff <= 0) { document.getElementById('cd').innerHTML = '考试开始了！加油！'; return; }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd').innerHTML =
+        '<span class="days-num">' + days + '</span><span class="unit">天</span><span class="sep"> </span>' +
+        String(hours).padStart(2,'0') + '<span class="unit">时</span><span class="sep"> </span>' +
+        String(mins).padStart(2,'0') + '<span class="unit">分</span><span class="sep"> </span>' +
+        String(secs).padStart(2,'0') + '<span class="unit">秒</span>';
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;padding:32px 48px;max-width:960px}
+.countdown-banner{background:linear-gradient(135deg,#1f6feb22,#23863622);border:1px solid #30363d;border-radius:12px;padding:24px 28px;margin-bottom:24px}
+.countdown-banner .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.countdown-info{font-size:15px;color:#e6edf3;line-height:1.7}
+.countdown-info strong{color:#58a6ff;font-size:2em}
+.countdown-timer{font-size:clamp(28px,6vw,56px);color:#f0f6fc;font-weight:800;letter-spacing:2px;text-shadow:0 0 40px rgba(88,166,255,0.15)}
+.countdown-timer .days-num{font-size:2.5em;font-weight:900;color:#D81630;line-height:1}
+.countdown-timer .unit{font-size:clamp(14px,2.5vw,24px);font-weight:600;color:#8b949e;margin-left:4px}
+.countdown-timer .sep{color:#30363d;margin:0 2px}
+.summary-section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin-bottom:24px}
+.summary-section h3{font-size:16px;color:#f0f6fc;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.stat-card{text-align:center;padding:12px;background:#0d1117;border-radius:8px}
+.stat-card .num{font-size:24px;font-weight:700;color:#58a6ff}
+.stat-card .label{font-size:11px;color:#8b949e;margin-top:4px}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+
+
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="#" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="#" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+
+<div class="countdown-banner">
+<div class="inner">
+<div class="countdown-info">
+<strong style="font-size:2em">MATH1014 FINAL EXAM</strong><br>
+<small style="font-size:1em;color:#8b949e;display:block;margin-top:4px">18 May · 12:30–15:30 · S H Ho Sports Hall</small>
+
+</div>
+<div class="countdown-timer" id="cd">加载中...</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h3>Overview</h3>
+<div class="stat-grid">
+<div class="stat-card"><div class="num">259</div><div class="label">Total Problems</div></div>
+<div class="stat-card"><div class="num">20</div><div class="label">Exercises</div></div>
+<div class="stat-card"><div class="num">8</div><div class="label">Modules</div></div>
+<div class="stat-card"><div class="num">21</div><div class="label">Lectures</div></div>
+</div>
+</div>
+
+<div style="margin-bottom:24px">
+<a href="tags.html" style="display:flex;align-items:center;justify-content:center;padding:20px 32px;background:linear-gradient(135deg,#1f6feb33,#23863633);border:1px solid #1f6feb66;border-radius:12px;color:#58a6ff;text-decoration:none;font-size:24px;font-weight:700;letter-spacing:2px;transition:all .25s;box-shadow:0 0 20px rgba(88,166,255,0.08)"
+   onmouseover="this.style.background='linear-gradient(135deg,#1f6feb55,#23863655)';this.style.borderColor='#58a6ff';this.style.boxShadow='0 0 30px rgba(88,166,255,0.2)'"
+   onmouseout="this.style.background='linear-gradient(135deg,#1f6feb33,#23863633)';this.style.borderColor='#1f6feb66';this.style.boxShadow='0 0 20px rgba(88,166,255,0.08)'">
+  👉🎯CLICK TO BROWSE BY TAGS
+</a>
+</div>
+
+<h2 style="color:#f0f6fc;margin-bottom:16px;font-size:20px">Choose a Module</h2>
+<div class="stat-grid">
+
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-1.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">40</div>
+<div class="label">Module 1<br>Foundations of Integration</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-2.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">47</div>
+<div class="label">Module 2<br>Advanced Integration Techniques</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-3.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">19</div>
+<div class="label">Module 3<br>Applications of Integration</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-4.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">16</div>
+<div class="label">Module 4<br>Numerical Integration</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-5.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">14</div>
+<div class="label">Module 5<br>Polar Coordinates</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-6.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">11</div>
+<div class="label">Module 6<br>Improper Integrals</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-7.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">61</div>
+<div class="label">Module 7<br>Infinite Sequences & Series</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px" onclick="window.location='module-8.html'"
+     onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'"
+     onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num" style="font-size:20px">51</div>
+<div class="label">Module 8<br>Power Series, Taylor & Applications</div>
+</div>
+</div>
+
+</div>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

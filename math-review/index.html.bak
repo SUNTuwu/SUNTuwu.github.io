@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATH 1014 — Calculus II Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=1778500496" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:block;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600}
+.module-nav .count{float:right;background:#21262d;padding:0 8px;border-radius:10px;font-size:11px;color:#8b949e}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;padding:32px 48px;max-width:960px}
+.module-section{display:none}
+.module-section.active{display:block}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px}
+.exercise-similar{font-size:12px;color:#8b949e;padding:8px 12px;background:#0d1117;border-radius:6px;margin-bottom:12px}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;color:#e6edf3;white-space:pre-wrap}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+.summary-section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin-bottom:24px}
+.summary-section h3{font-size:16px;color:#f0f6fc;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.stat-card{text-align:center;padding:12px;background:#0d1117;border-radius:8px}
+.stat-card .num{font-size:24px;font-weight:700;color:#58a6ff}
+.stat-card .label{font-size:11px;color:#8b949e;margin-top:4px}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+@media(max-width:768px){.sidebar{display:none}.content{padding:16px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="#" data-module="1" onclick="showModule(1);return false">Lec 1–2 &mdash; Foundations of Integration<span class="count">0</span></a>
+<a class="module-nav" href="#" data-module="2" onclick="showModule(2);return false">Lec 6–9 &mdash; Advanced Integration Techniques<span class="count">5</span></a>
+<a class="module-nav" href="#" data-module="3" onclick="showModule(3);return false">Lec 4–5 &mdash; Applications of Integration<span class="count">3</span></a>
+<a class="module-nav" href="#" data-module="4" onclick="showModule(4);return false">Lec 10–11 &mdash; Numerical Integration<span class="count">0</span></a>
+<a class="module-nav" href="#" data-module="5" onclick="showModule(5);return false">Lec 12–13 &mdash; Polar Coordinates & Parametric Curves<span class="count">1</span></a>
+<a class="module-nav" href="#" data-module="6" onclick="showModule(6);return false">Lec 14 &mdash; Improper Integrals<span class="count">0</span></a>
+<a class="module-nav" href="#" data-module="7" onclick="showModule(7);return false">Lec 15–18 &mdash; Infinite Sequences & Series<span class="count">5</span></a>
+<a class="module-nav" href="#" data-module="8" onclick="showModule(8);return false">Lec 19–22 &mdash; Power Series, Taylor Series & Applications<span class="count">7</span></a>
+<a class="outline-link" href="../study_outline.md" target="_blank">📖 Full Study Outline &rarr;</a>
+</div>
+<div class="content">
+
+<div class="summary-section">
+<h3>📊 Overview</h3>
+<div class="stat-grid">
+<div class="stat-card"><div class="num">21</div><div class="label">Total Exercises</div></div>
+<div class="stat-card"><div class="num">8</div><div class="label">Modules</div></div>
+<div class="stat-card"><div class="num">21</div><div class="label">Lectures</div></div>
+</div>
+</div>
+<div id="module-1" class="module-section active"><div class="module-header"><h2>Foundations of Integration</h2><div class="lectures">Lectures 1–2</div><a class="outline-link" href="../study_outline.md#module-1-foundations-of-integration" target="_blank">📖 Review in Study Outline &rarr;</a></div><div class="module-subtitle">No labeled exercises in this module. Work through the worked examples in the study outline.</div></div>
+<div id="module-2" class="module-section "><div class="module-header"><h2>Advanced Integration Techniques</h2><div class="lectures">Lectures 6–9</div><a class="outline-link" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">📖 Review in Study Outline &rarr;</a></div>
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L8-1</span> <span class="exercise-lecture">(Lecture 8)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">trig-substitution</a> <a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">completing-square</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $ \displaystyle\int \frac{x}{\sqrt{x^{2} + x + 1}} \,dx $</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 8 Example: ∫ x/√(3-2x-x²) dx (completing square + trig sub)</div>
+<div class="codebox">
+<pre id="latex-L8-1">\int \frac{x}{\sqrt{x^{2} + x + 1}} \;dx</pre>
+<button onclick="copyLaTeX('L8-1')" id="btn-L8-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L8-2</span> <span class="exercise-lecture">(Lecture 8)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">arc-length</a> <a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">trig-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the length of the arc of $ y = \frac{1}{2}x^{2} $ from $ P(-1,\frac{1}{2}) $ to $ Q(1,\frac{1}{2}) $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 4 Example: arc length of y²=x³ from (1,1) to (4,8)</div>
+<div class="codebox">
+<pre id="latex-L8-2">y = \frac{1}{2} x^{2},\quad P(-1,\tfrac{1}{2}),\ Q(1,\tfrac{1}{2})</pre>
+<button onclick="copyLaTeX('L8-2')" id="btn-L8-2">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L9-1</span> <span class="exercise-lecture">(Lecture 9)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">partial-fractions</a> <a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">distinct-linear</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $ \displaystyle\int \frac{dx}{x^{2} - a^{2}} $, where $ a \neq 0 $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 9 Example: ∫ (x+5)/(x²+x-2) dx (distinct linear factors)</div>
+<div class="codebox">
+<pre id="latex-L9-1">\int \frac{dx}{x^{2} - a^{2}},\qquad a \neq 0</pre>
+<button onclick="copyLaTeX('L9-1')" id="btn-L9-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L9-2</span> <span class="exercise-lecture">(Lecture 9)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">partial-fractions</a> <a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">repeated-linear</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $ \displaystyle\int \frac{x^{2} + 1}{(x-3)(x-2)^{2}} \,dx $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 9 Example: ∫ (x⁴-2x²+4x+1)/(x³-x²-x+1) dx (repeated linear)</div>
+<div class="codebox">
+<pre id="latex-L9-2">\int \frac{x^{2} + 1}{(x-3)(x-2)^{2}} \;dx</pre>
+<button onclick="copyLaTeX('L9-2')" id="btn-L9-2">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L9-3</span> <span class="exercise-lecture">(Lecture 9)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-2-advanced-integration-techniques" target="_blank">rationalizing-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $ \displaystyle\int_{0}^{1} \frac{dx}{2\sqrt{x + 3} + x} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 9 Example: ∫ √(x+4)/x dx (rationalizing sub u = √(x+4))</div>
+<div class="codebox">
+<pre id="latex-L9-3">\int_{0}^{1} \frac{dx}{2\sqrt{x + 3} + x}</pre>
+<button onclick="copyLaTeX('L9-3')" id="btn-L9-3">Copy LaTeX</button>
+</div>
+</div></div>
+</div>
+<div id="module-3" class="module-section "><div class="module-header"><h2>Applications of Integration</h2><div class="lectures">Lectures 4–5</div><a class="outline-link" href="../study_outline.md#module-3-applications-of-integration" target="_blank">📖 Review in Study Outline &rarr;</a></div>
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L4-1</span> <span class="exercise-lecture">(Lecture 4)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-3-applications-of-integration" target="_blank">arc-length</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the length of the arc of the curve $ y = \frac{1}{2}x^{2} $ from $ P(-1,\frac{1}{2}) $ to $ Q(1,\frac{1}{2}) $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 4 Example: y²=x³ from (1,1) to (4,8); y²=x from (0,0) to (1,1)</div>
+<div class="codebox">
+<pre id="latex-L4-1">y = \frac{1}{2} x^{2},\quad P(-1,\tfrac{1}{2}),\ Q(1,\tfrac{1}{2})</pre>
+<button onclick="copyLaTeX('L4-1')" id="btn-L4-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L5-1</span> <span class="exercise-lecture">(Lecture 5)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-3-applications-of-integration" target="_blank">surface-of-revolution</a> <a class="tag" href="../study_outline.md#module-3-applications-of-integration" target="_blank">rotation-about-x-axis</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the surface obtained by rotating $ x = 1 + 2y^{2},\ 1 \le y \le 2 $, about the $ x $-axis.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 5 Example: y=√(4-x²) rotated about x-axis; y=eˣ rotated about x-axis</div>
+<div class="codebox">
+<pre id="latex-L5-1">x = 1 + 2y^{2},\quad 1 \le y \le 2,\quad \text{about }x\text{-axis}</pre>
+<button onclick="copyLaTeX('L5-1')" id="btn-L5-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L5-2</span> <span class="exercise-lecture">(Lecture 5)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-3-applications-of-integration" target="_blank">surface-of-revolution</a> <a class="tag" href="../study_outline.md#module-3-applications-of-integration" target="_blank">rotation-about-x-axis</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the surface obtained by rotating $ 9x = y^{2} + 18,\ 2 \le x \le 6 $, about the $ x $-axis.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 5 Example: y=√(4-x²) rotated about x-axis; y=eˣ rotated about x-axis</div>
+<div class="codebox">
+<pre id="latex-L5-2">9x = y^{2} + 18,\quad 2 \le x \le 6,\quad \text{about }x\text{-axis}</pre>
+<button onclick="copyLaTeX('L5-2')" id="btn-L5-2">Copy LaTeX</button>
+</div>
+</div></div>
+</div>
+<div id="module-4" class="module-section "><div class="module-header"><h2>Numerical Integration</h2><div class="lectures">Lectures 10–11</div><a class="outline-link" href="../study_outline.md#module-4-numerical-integration" target="_blank">📖 Review in Study Outline &rarr;</a></div><div class="module-subtitle">No labeled exercises in this module. Work through the worked examples in the study outline.</div></div>
+<div id="module-5" class="module-section "><div class="module-header"><h2>Polar Coordinates & Parametric Curves</h2><div class="lectures">Lectures 12–13</div><a class="outline-link" href="../study_outline.md#module-5-polar-coordinates-parametric-curves" target="_blank">📖 Review in Study Outline &rarr;</a></div>
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L12-1</span> <span class="exercise-lecture">(Lecture 12)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-5-polar-coordinates-parametric-curves" target="_blank">polar-coordinates</a> <a class="tag" href="../study_outline.md#module-5-polar-coordinates-parametric-curves" target="_blank">tangents</a> <a class="tag" href="../study_outline.md#module-5-polar-coordinates-parametric-curves" target="_blank">horizontal-vertical-tangents</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the points on the curve $ r = 1 - \sin\theta $ where the tangent line is horizontal or vertical.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 12 Example: r=1+sinθ — find slope at θ=π/3; find horizontal/vertical tangents</div>
+<div class="codebox">
+<pre id="latex-L12-1">r = 1 - \sin\theta</pre>
+<button onclick="copyLaTeX('L12-1')" id="btn-L12-1">Copy LaTeX</button>
+</div>
+</div></div>
+</div>
+<div id="module-6" class="module-section "><div class="module-header"><h2>Improper Integrals</h2><div class="lectures">Lectures 14</div><a class="outline-link" href="../study_outline.md#module-6-improper-integrals" target="_blank">📖 Review in Study Outline &rarr;</a></div><div class="module-subtitle">No labeled exercises in this module. Work through the worked examples in the study outline.</div></div>
+<div id="module-7" class="module-section "><div class="module-header"><h2>Infinite Sequences & Series</h2><div class="lectures">Lectures 15–18</div><a class="outline-link" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">📖 Review in Study Outline &rarr;</a></div>
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L16-1</span> <span class="exercise-lecture">(Lecture 16)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">series-convergence</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">telescoping</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">partial-fractions</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether $ \displaystyle\sum_{n=2}^{\infty} \frac{1}{n^{2} - 1} $ converges or diverges. If convergent, find its sum.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 16 Example: ∑ 1/(n(n+1)) — telescoping via partial fractions</div>
+<div class="codebox">
+<pre id="latex-L16-1">\sum_{n=2}^{\infty} \frac{1}{n^{2} - 1}</pre>
+<button onclick="copyLaTeX('L16-1')" id="btn-L16-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L16-2</span> <span class="exercise-lecture">(Lecture 16)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">geometric-series</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">radius-of-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the values of $ x $ for which $ \displaystyle\sum_{n=1}^{\infty} (-5)^{n} x^{n} $ converges. Find the sum for those $ x $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 16 Example: ∑ 2^{2n} 3^{1-n} — geometric series convergence</div>
+<div class="codebox">
+<pre id="latex-L16-2">\sum_{n=1}^{\infty} (-5)^{n} x^{n}</pre>
+<button onclick="copyLaTeX('L16-2')" id="btn-L16-2">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L16-3</span> <span class="exercise-lecture">(Lecture 16)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">partial-sums</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">series-sum</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If the $ n $th partial sum is $ s_{n} = 3 - n\,2^{-n} $, find $ a_{n} $ and $ \displaystyle\sum_{n=1}^{\infty} a_{n} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 16 Example: s_n = 2n/(3n+5), find ∑ a_n</div>
+<div class="codebox">
+<pre id="latex-L16-3">s_{n} = 3 - n\,2^{-n}</pre>
+<button onclick="copyLaTeX('L16-3')" id="btn-L16-3">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L16-4</span> <span class="exercise-lecture">(Lecture 16)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">series-divergence</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">telescoping</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">divergence-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Show that $ \displaystyle\sum_{n=1}^{\infty} \ln\!\left(1 + \frac{1}{n}\right) $ diverges even though its terms approach 0.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 16 Example: harmonic series ∑ 1/n diverges despite terms → 0</div>
+<div class="codebox">
+<pre id="latex-L16-4">\sum_{n=1}^{\infty} \ln\!\left(1 + \frac{1}{n}\right)</pre>
+<button onclick="copyLaTeX('L16-4')" id="btn-L16-4">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L18-1</span> <span class="exercise-lecture">(Lecture 18)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">alternating-series</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">absolute-convergence</a> <a class="tag" href="../study_outline.md#module-7-infinite-sequences-series" target="_blank">conditional-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether $ \displaystyle\sum_{n=1}^{\infty} (-1)^{n-1} \frac{n}{n^{2} + 4} $ is absolutely convergent, conditionally convergent, or divergent.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 18 Examples: ∑ (-1)^{n-1}/n² (abs conv), ∑ (-1)^n/n (cond conv), ∑ (-1)^{n+1} n²/(n³+1)</div>
+<div class="codebox">
+<pre id="latex-L18-1">\sum_{n=1}^{\infty} (-1)^{n-1} \frac{n}{n^{2} + 4}</pre>
+<button onclick="copyLaTeX('L18-1')" id="btn-L18-1">Copy LaTeX</button>
+</div>
+</div></div>
+</div>
+<div id="module-8" class="module-section "><div class="module-header"><h2>Power Series, Taylor Series & Applications</h2><div class="lectures">Lectures 19–22</div><a class="outline-link" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">📖 Review in Study Outline &rarr;</a></div>
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L19-1</span> <span class="exercise-lecture">(Lecture 19)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">power-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">radius-of-convergence</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">interval-of-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the radius of convergence and interval of convergence of $ \displaystyle\sum_{n=0}^{\infty} \frac{n(x+2)^{n}}{3^{n+1}} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 19 Example: ∑ (-3)^n x^n/√(n+1) — find R and interval</div>
+<div class="codebox">
+<pre id="latex-L19-1">\sum_{n=0}^{\infty} \frac{n(x+2)^{n}}{3^{n+1}}</pre>
+<button onclick="copyLaTeX('L19-1')" id="btn-L19-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L20-1</span> <span class="exercise-lecture">(Lecture 20)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">power-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">geometric-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find a power series representation for $ \dfrac{1}{x+2} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 20 Example: express 1/(1+x²) as power series</div>
+<div class="codebox">
+<pre id="latex-L20-1">\frac{1}{x+2}</pre>
+<button onclick="copyLaTeX('L20-1')" id="btn-L20-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L20-2abc</span> <span class="exercise-lecture">(Lecture 20)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">power-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">differentiation</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">sum-of-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) From $ \sum x^{n} $, find $ \sum_{n=1}^{\infty} n x^{n-1} $. (b) Find $ \sum_{n=1}^{\infty} \frac{n}{2^{n}} $. (c) Find $ \sum_{n=1}^{\infty} \frac{n^{2}}{2^{n}} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 20 Example: express 1/(1-x)² via differentiation</div>
+<div class="codebox">
+<pre id="latex-L20-2abc">\sum_{n=1}^{\infty} n x^{n-1},\quad \sum_{n=1}^{\infty} \frac{n}{2^{n}},\quad \sum_{n=1}^{\infty} \frac{n^{2}}{2^{n}}</pre>
+<button onclick="copyLaTeX('L20-2abc')" id="btn-L20-2abc">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L20-3</span> <span class="exercise-lecture">(Lecture 20)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">power-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">integration</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">approximation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use a power series to approximate $ \displaystyle\int_{0}^{0.1} x \arctan(3x) \,dx $ correct to within $ 10^{-7} $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 20 Example: ∫ 1/(1+x⁷) as power series, approximate to 10⁻⁷</div>
+<div class="codebox">
+<pre id="latex-L20-3">\int_{0}^{0.1} x \arctan(3x) \,dx</pre>
+<button onclick="copyLaTeX('L20-3')" id="btn-L20-3">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L22-1</span> <span class="exercise-lecture">(Lecture 22)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">maclaurin-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">trigonometric-identities</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the Maclaurin series for $ f(x) = \sin^{2} x $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 22 Example: Maclaurin series for sin x and cos x</div>
+<div class="codebox">
+<pre id="latex-L22-1">f(x) = \sin^{2} x</pre>
+<button onclick="copyLaTeX('L22-1')" id="btn-L22-1">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L22-2</span> <span class="exercise-lecture">(Lecture 22)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">taylor-series</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">high-order-derivatives</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">maclaurin-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $ f(x) = \ln(1+x) $. Find $ f^{(10)}(0) $.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 22 Example: Maclaurin series for ln(1+x)</div>
+<div class="codebox">
+<pre id="latex-L22-2">f(x) = \ln(1+x),\quad f^{(10)}(0)</pre>
+<button onclick="copyLaTeX('L22-2')" id="btn-L22-2">Copy LaTeX</button>
+</div>
+</div></div>
+
+<div class="exercise">
+<div class="exercise-header">
+<div><span class="exercise-id">Exercise L22-3</span> <span class="exercise-lecture">(Lecture 22)</span></div>
+<div class="exercise-tags"><a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">taylor-inequality</a> <a class="tag" href="../study_outline.md#module-8-power-series-taylor-series-applications" target="_blank">error-estimation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use Taylor's Inequality to determine the number of terms of the Maclaurin series for $ e^{x} $ needed to estimate $ e^{0.1} $ to within 0.00001.</div>
+<div class="exercise-similar">📌 Similar examples: Lecture 22 Example: approximate ³√x by Taylor polynomial at a=8; error bounds for sin x</div>
+<div class="codebox">
+<pre id="latex-L22-3">e^{0.1},\quad \text{accuracy } 0.00001</pre>
+<button onclick="copyLaTeX('L22-3')" id="btn-L22-3">Copy LaTeX</button>
+</div>
+</div></div>
+</div>
+</div>
+
+<script>
+function showModule(id) {
+    document.querySelectorAll('.module-section').forEach(function(el){el.classList.remove('active')});
+    document.getElementById('module-' + id).classList.add('active');
+    document.querySelectorAll('.module-nav').forEach(function(el){el.classList.remove('active')});
+    var nav = document.querySelector('.module-nav[data-module="'+id+'"]');
+    if (nav) nav.classList.add('active');
+    if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('module-' + id)]);
+    }
+}
+function copyLaTeX(id) {
+    var pre = document.getElementById('latex-' + id);
+    var btn = document.getElementById('btn-' + id);
+    if (!pre || !btn) return;
+    navigator.clipboard.writeText(pre.textContent).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
+    });
+}
+</script>
+</body>
+</html>

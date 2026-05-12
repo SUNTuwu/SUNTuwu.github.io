@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 8 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav active" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav active" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 8: Power Series, Taylor & Applications</h2>
+<div class="lectures">51 problems</div>
+</div>
+
+<div class="exercise" id="ex-L19-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-1</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-ratio-test)" target="_blank">theorem-(the-ratio-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} \frac{\sqrt{n^{3}+1}}{3 n^{3}+4 n^{2}+2}, \quad \sum_{n=1}^{\infty} \frac{1}{2+3^{n}}$ (4) $\lim _{n \rightarrow \infty} a_{n} \neq 0 \Longrightarrow$ the Test for Divergence (5) $\sum(-1)^{n-1} b_{n},(-1)^{n} b_{n} \Longrightarrow$ Alternating Series Test (6) Series involving factorials or other products ⟹ Ratio Test (7) $a_{n}=\left(b_{n}\right)^{n} \Longrightarrow$ Root Test (8) $a_{n}=f(n), \int_{1}^{\infty} f(x) \mathrm{d} x$ easy to be evaluated and $f(x)$ is continuous, positive and decreasing on $(1,+\infty) \Longrightarrow$ the Integral Test</div>
+<div class="codebox">
+<pre id="latex-L19-1">Example $\sum_{n=1}^{\infty} \frac{\sqrt{n^{3}+1}}{3 n^{3}+4 n^{2}+2}, \quad \sum_{n=1}^{\infty} \frac{1}{2+3^{n}}$ (4) $\lim _{n \rightarrow \infty} a_{n} \neq 0 \Longrightarrow$ the Test for Divergence (5) $\sum(-1)^{n-1} b_{n},(-1)^{n} b_{n} \Longrightarrow$ Alternating Series Test (6) Series involving factorials or other products ⟹ Ratio Test (7) $a_{n}=\left(b_{n}\right)^{n} \Longrightarrow$ Root Test (8) $a_{n}=f(n), \int_{1}^{\infty} f(x) \mathrm{d} x$ easy to be evaluated and $f(x)$ is continuous, positive and decreasing on $(1,+\infty) \Longrightarrow$ the Integral Test</pre>
+<button onclick="copyLaTeX(&quot;L19-1&quot;)" id="btn-L19-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-10</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the domain of the Bessel function of order 0 defined by $$ J_{0}(x)=\sum_{n=0}^{\infty} \frac{(-1)^{n} x^{2 n}}{2^{2 n}(n!)^{2}} . $$ Theorem For a given power series $\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$, there are only three possibilities: (i) The series converges only when $x=a . \quad R=0$ (ii) The series converges for all $x$. $$ R=+\infty $$ (iii) There is a positive number $R$ such that the series converges if $|x-a|<R$ and diverges if $|x-a|>R$. The number $R$ in case (iii) is called the radius of convergence of the power series. For a given power series $\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$, there are only three possibilities: (i) The series converges only when $x=a . \quad R=0$ (ii) The series converges for all $x . \quad R=+\infty$ (iii) There is a positive number $R$ such that the series converges if $|x-a|<R$ and diverges if $|x-a|>R$. The number $R$ in case (iii) is called the radius of convergence of the power series. The interval of convergence of a power series is the interval that consists of all values of $x$ for which the series converges. |  | Series | Radius of convergence | Interval of convergence | | :--- | :--- | :--- | :--- | | Geometric series | $\sum_{n=0}^{\infty} x^{n}$ | $R=1$ | (-1, 1) | | Example 1 | $\sum_{n=0}^{\infty} n!x^{n}$ | $R=0$ | \{0\} | | Example 2 | $\sum_{n=1}^{\infty} \frac{(x-3)^{n}}{n}$ | $R=1$ | $[2,4)$ | | Example 3 | $\sum_{n=0}^{\infty} \frac{(-1)^{n} x^{2 n}}{2^{2 n}(n!)^{2}}$ | $R=\infty$ | ( $-\infty, \infty$ ) |</div>
+<div class="codebox">
+<pre id="latex-L19-10">Find the domain of the Bessel function of order 0 defined by $$ J_{0}(x)=\sum_{n=0}^{\infty} \frac{(-1)^{n} x^{2 n}}{2^{2 n}(n!)^{2}} . $$ Theorem For a given power series $\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$, there are only three possibilities: (i) The series converges only when $x=a . \quad R=0$ (ii) The series converges for all $x$. $$ R=+\infty $$ (iii) There is a positive number $R$ such that the series converges if $|x-a|<R$ and diverges if $|x-a|>R$. The number $R$ in case (iii) is called the radius of convergence of the power series. For a given power series $\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$, there are only three possibilities: (i) The series converges only when $x=a . \quad R=0$ (ii) The series converges for all $x . \quad R=+\infty$ (iii) There is a positive number $R$ such that the series converges if $|x-a|<R$ and diverges if $|x-a|>R$. The number $R$ in case (iii) is called the radius of convergence of the power series. The interval of convergence of a power series is the interval that consists of all values of $x$ for which the series converges. |  | Series | Radius of convergence | Interval of convergence | | :--- | :--- | :--- | :--- | | Geometric series | $\sum_{n=0}^{\infty} x^{n}$ | $R=1$ | (-1, 1) | | Example 1 | $\sum_{n=0}^{\infty} n!x^{n}$ | $R=0$ | \{0\} | | Example 2 | $\sum_{n=1}^{\infty} \frac{(x-3)^{n}}{n}$ | $R=1$ | $[2,4)$ | | Example 3 | $\sum_{n=0}^{\infty} \frac{(-1)^{n} x^{2 n}}{2^{2 n}(n!)^{2}}$ | $R=\infty$ | ( $-\infty, \infty$ ) |</pre>
+<button onclick="copyLaTeX(&quot;L19-10&quot;)" id="btn-L19-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-11</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the radius of convergence and interval of convergence of the series $\sum_{n=0}^{\infty} \frac{(-3)^{n} x^{n}}{\sqrt{n+1}}$.</div>
+<div class="codebox">
+<pre id="latex-L19-11">Find the radius of convergence and interval of convergence of the series $\sum_{n=0}^{\infty} \frac{(-3)^{n} x^{n}}{\sqrt{n+1}}$.</pre>
+<button onclick="copyLaTeX(&quot;L19-11&quot;)" id="btn-L19-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-2</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#theorem-(the-root-test)" target="_blank">theorem-(the-root-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} \frac{n-1}{2 n+1}$</div>
+<div class="codebox">
+<pre id="latex-L19-2">Example $\sum_{n=1}^{\infty} \frac{n-1}{2 n+1}$</pre>
+<button onclick="copyLaTeX(&quot;L19-2&quot;)" id="btn-L19-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-3</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#theorem-(the-root-test)" target="_blank">theorem-(the-root-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} \frac{\sqrt{n^{3}+1}}{3 n^{3}+4 n^{2}+2}$</div>
+<div class="codebox">
+<pre id="latex-L19-3">Example $\sum_{n=1}^{\infty} \frac{\sqrt{n^{3}+1}}{3 n^{3}+4 n^{2}+2}$</pre>
+<button onclick="copyLaTeX(&quot;L19-3&quot;)" id="btn-L19-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-4</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#the-main-strategy-for-testing-" target="_blank">the-main-strategy-for-testing-</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} n e^{-n^{2}}$</div>
+<div class="codebox">
+<pre id="latex-L19-4">Example $\sum_{n=1}^{\infty} n e^{-n^{2}}$</pre>
+<button onclick="copyLaTeX(&quot;L19-4&quot;)" id="btn-L19-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-5</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#the-main-strategy-for-testing-" target="_blank">the-main-strategy-for-testing-</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} n e^{-n^{2}}$ Remark We may use the Integral Test.</div>
+<div class="codebox">
+<pre id="latex-L19-5">Example $\sum_{n=1}^{\infty} n e^{-n^{2}}$ Remark We may use the Integral Test.</pre>
+<button onclick="copyLaTeX(&quot;L19-5&quot;)" id="btn-L19-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-6</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#the-main-strategy-for-testing-" target="_blank">the-main-strategy-for-testing-</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty}(-1)^{n} \frac{n^{3}}{n^{4}+1}$ $$ \begin{aligned} & \text { Example } \\ & \sum_{k=1}^{\infty} \frac{2^{k}}{k!} \end{aligned} $$ $$ \begin{aligned} & \text { Example } \\ & \sum_{n=1}^{\infty} \frac{1}{2+3^{n}} \end{aligned} $$ A power series is a series of the form $$ \sum_{n=0}^{\infty} c_{n} x^{n}=c_{0}+c_{1} x+c_{2} x^{2}+c_{3} x^{3}+\cdots $$ where $c_{n}$ are coefficients of the series. A power series is a series of the form $$ \sum_{n=0}^{\infty} c_{n} x^{n}=c_{0}+c_{1} x+c_{2} x^{2}+c_{3} x^{3}+\cdots $$ where $c_{n}$ are coefficients of the series.</div>
+<div class="codebox">
+<pre id="latex-L19-6">Example $\sum_{n=1}^{\infty}(-1)^{n} \frac{n^{3}}{n^{4}+1}$ $$ \begin{aligned} & \text { Example } \\ & \sum_{k=1}^{\infty} \frac{2^{k}}{k!} \end{aligned} $$ $$ \begin{aligned} & \text { Example } \\ & \sum_{n=1}^{\infty} \frac{1}{2+3^{n}} \end{aligned} $$ A power series is a series of the form $$ \sum_{n=0}^{\infty} c_{n} x^{n}=c_{0}+c_{1} x+c_{2} x^{2}+c_{3} x^{3}+\cdots $$ where $c_{n}$ are coefficients of the series. A power series is a series of the form $$ \sum_{n=0}^{\infty} c_{n} x^{n}=c_{0}+c_{1} x+c_{2} x^{2}+c_{3} x^{3}+\cdots $$ where $c_{n}$ are coefficients of the series.</pre>
+<button onclick="copyLaTeX(&quot;L19-6&quot;)" id="btn-L19-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-7</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $c_{n}=1$ for all $n$. $$ \sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+\cdots+x^{n}+\cdots $$ is a geometric series which converges when $-1<x<1$ and diverges when $|x| \geq 1$. Definition $$ \sum_{n=0}^{\infty} c_{n}(x-a)^{n}=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots $$ is called a power series in $(x-a)$ or a power series centered at $a$ or a power series about $a$. Definition $$ \sum_{n=0}^{\infty} c_{n}(x-a)^{n}=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots $$ is called a power series in $(x-a)$ or a power series centered at $a$ or a power series about $a$. Remark $f(x)=\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$ is a function whose domain is the set of all $x$ for which the series converges.</div>
+<div class="codebox">
+<pre id="latex-L19-7">Example $c_{n}=1$ for all $n$. $$ \sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+\cdots+x^{n}+\cdots $$ is a geometric series which converges when $-1<x<1$ and diverges when $|x| \geq 1$. Definition $$ \sum_{n=0}^{\infty} c_{n}(x-a)^{n}=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots $$ is called a power series in $(x-a)$ or a power series centered at $a$ or a power series about $a$. Definition $$ \sum_{n=0}^{\infty} c_{n}(x-a)^{n}=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots $$ is called a power series in $(x-a)$ or a power series centered at $a$ or a power series about $a$. Remark $f(x)=\sum_{n=0}^{\infty} c_{n}(x-a)^{n}$ is a function whose domain is the set of all $x$ for which the series converges.</pre>
+<button onclick="copyLaTeX(&quot;L19-7&quot;)" id="btn-L19-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-8</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example For what values of $x$ is the series $\sum_{n=0}^{\infty} n!x^{n}$ convergent?</div>
+<div class="codebox">
+<pre id="latex-L19-8">Example For what values of $x$ is the series $\sum_{n=0}^{\infty} n!x^{n}$ convergent?</pre>
+<button onclick="copyLaTeX(&quot;L19-8&quot;)" id="btn-L19-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L19-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L19-9</span> <span class="exercise-lecture">(Lecture 19)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example For what values of $x$ does the series $\sum_{n=1}^{\infty} \frac{(x-3)^{n}}{n}$ converge?</div>
+<div class="codebox">
+<pre id="latex-L19-9">Example For what values of $x$ does the series $\sum_{n=1}^{\infty} \frac{(x-3)^{n}}{n}$ converge?</pre>
+<button onclick="copyLaTeX(&quot;L19-9&quot;)" id="btn-L19-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-1</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</div>
+<div class="codebox">
+<pre id="latex-L20-1">$$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</pre>
+<button onclick="copyLaTeX(&quot;L20-1&quot;)" id="btn-L20-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-10</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find a power series representation for $\ln (1+x)$ and its radius of convergence.</div>
+<div class="codebox">
+<pre id="latex-L20-10">Find a power series representation for $\ln (1+x)$ and its radius of convergence.</pre>
+<button onclick="copyLaTeX(&quot;L20-10&quot;)" id="btn-L20-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-11</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find a power series representation for $f(x)=\tan ^{-1} x$.</div>
+<div class="codebox">
+<pre id="latex-L20-11">Find a power series representation for $f(x)=\tan ^{-1} x$.</pre>
+<button onclick="copyLaTeX(&quot;L20-11&quot;)" id="btn-L20-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-12</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example (a) Evaluate $\int \frac{1}{1+x^{7}}$ as a power series. (b) Use part (a) to approximate $\int_{0}^{0.5} \frac{1}{1+x^{7}} \mathrm{~d} x$ correct to within $10^{-7}$.</div>
+<div class="codebox">
+<pre id="latex-L20-12">Example (a) Evaluate $\int \frac{1}{1+x^{7}}$ as a power series. (b) Use part (a) to approximate $\int_{0}^{0.5} \frac{1}{1+x^{7}} \mathrm{~d} x$ correct to within $10^{-7}$.</pre>
+<button onclick="copyLaTeX(&quot;L20-12&quot;)" id="btn-L20-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-13</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) Starting with the geometric series $\sum_{n=0}^{\infty} x^{n}$, find the sum of the series $$ \sum_{n=1}^{\infty} n x^{n-1}, \quad|x|<1 . $$ (b) Find the sum of each of the following series. (i) $\sum_{n=1}^{\infty} n x^{n}, \quad|x|<1$ (ii) $\sum_{n=1}^{\infty} \frac{n}{2^{n}}$. (c) Find the sum of each of the following series. (i) $\sum_{n=2}^{\infty} n(n-1) x^{n-2}, \quad|x|<1$ (ii) $\sum_{n=2}^{\infty} \frac{n^{2}-n}{2^{n}}$ (iii) $\sum_{n=1}^{\infty} \frac{n^{2}}{2^{n}}$.</div>
+<div class="codebox">
+<pre id="latex-L20-13">(a) Starting with the geometric series $\sum_{n=0}^{\infty} x^{n}$, find the sum of the series $$ \sum_{n=1}^{\infty} n x^{n-1}, \quad|x|<1 . $$ (b) Find the sum of each of the following series. (i) $\sum_{n=1}^{\infty} n x^{n}, \quad|x|<1$ (ii) $\sum_{n=1}^{\infty} \frac{n}{2^{n}}$. (c) Find the sum of each of the following series. (i) $\sum_{n=2}^{\infty} n(n-1) x^{n-2}, \quad|x|<1$ (ii) $\sum_{n=2}^{\infty} \frac{n^{2}-n}{2^{n}}$ (iii) $\sum_{n=1}^{\infty} \frac{n^{2}}{2^{n}}$.</pre>
+<button onclick="copyLaTeX(&quot;L20-13&quot;)" id="btn-L20-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-14</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#definite-integral" target="_blank">definite-integral</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use a power series to approximate the definite integral $\int_{0}^{0.1} x \arctan (3 x) \mathrm{d} x$ correct to within $10^{-7}$.</div>
+<div class="codebox">
+<pre id="latex-L20-14">Use a power series to approximate the definite integral $\int_{0}^{0.1} x \arctan (3 x) \mathrm{d} x$ correct to within $10^{-7}$.</pre>
+<button onclick="copyLaTeX(&quot;L20-14&quot;)" id="btn-L20-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-2</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</div>
+<div class="codebox">
+<pre id="latex-L20-2">Example $$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</pre>
+<button onclick="copyLaTeX(&quot;L20-2&quot;)" id="btn-L20-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-3</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question Why should we represent a function as a power series?</div>
+<div class="codebox">
+<pre id="latex-L20-3">Question Why should we represent a function as a power series?</pre>
+<button onclick="copyLaTeX(&quot;L20-3&quot;)" id="btn-L20-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-5</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Why should we represent a function as a power series? Ans: Expressing a known function as a power series is useful for (1) integrating functions that don't have elementary antiderivatives; (2) solving differential equations; (c) approximating functions by polynomials.</div>
+<div class="codebox">
+<pre id="latex-L20-5">Why should we represent a function as a power series? Ans: Expressing a known function as a power series is useful for (1) integrating functions that don't have elementary antiderivatives; (2) solving differential equations; (c) approximating functions by polynomials.</pre>
+<button onclick="copyLaTeX(&quot;L20-5&quot;)" id="btn-L20-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-6</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Express $\frac{1}{1+x^{2}}$ as the sum of a power series and find the interval of convergence.</div>
+<div class="codebox">
+<pre id="latex-L20-6">Express $\frac{1}{1+x^{2}}$ as the sum of a power series and find the interval of convergence.</pre>
+<button onclick="copyLaTeX(&quot;L20-6&quot;)" id="btn-L20-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-7</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Find a power series representation for $\frac{1}{x+2}$. Theorem (term-by-term differentiation and integration) If the power series $\sum c_{n}(x-a)^{n}$ has radius of convergence $R>0$, then the function $f$ defined by $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots=\sum_{n=0}^{\infty} c_{n}(x-a)^{n} $$ is differentiable (and therefore continuous) on the interval ( $a-R, a+R$ ) and (i) $$ \begin{aligned} f^{\prime}(x) & =\frac{\mathrm{d}}{\mathrm{~d} x}\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right]=\sum_{n=0}^{\infty} \frac{\mathrm{d}}{\mathrm{~d} x}\left[c_{n}(x-a)^{n}\right] \\ & =c_{1}+2 c_{2}(x-a)+3 c_{3}(x-a)^{2}+\cdots=\sum_{n=1}^{\infty} n c_{n}(x-a)^{n-1} \end{aligned} $$ (ii) $\int\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right] \mathrm{d} x=\sum_{n=0}^{\infty} \int c_{n}(x-a)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \frac{c_{n}}{n+1}(x-a)^{n+1}+C$ The radii of convergence of the power series in Equations (i) and (ii) are both $R$. The radius of convergence remains the same when a power series is differentiated or integrated. However, the interval of convergence may be different.</div>
+<div class="codebox">
+<pre id="latex-L20-7">Exercise Find a power series representation for $\frac{1}{x+2}$. Theorem (term-by-term differentiation and integration) If the power series $\sum c_{n}(x-a)^{n}$ has radius of convergence $R>0$, then the function $f$ defined by $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots=\sum_{n=0}^{\infty} c_{n}(x-a)^{n} $$ is differentiable (and therefore continuous) on the interval ( $a-R, a+R$ ) and (i) $$ \begin{aligned} f^{\prime}(x) & =\frac{\mathrm{d}}{\mathrm{~d} x}\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right]=\sum_{n=0}^{\infty} \frac{\mathrm{d}}{\mathrm{~d} x}\left[c_{n}(x-a)^{n}\right] \\ & =c_{1}+2 c_{2}(x-a)+3 c_{3}(x-a)^{2}+\cdots=\sum_{n=1}^{\infty} n c_{n}(x-a)^{n-1} \end{aligned} $$ (ii) $\int\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right] \mathrm{d} x=\sum_{n=0}^{\infty} \int c_{n}(x-a)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \frac{c_{n}}{n+1}(x-a)^{n+1}+C$ The radii of convergence of the power series in Equations (i) and (ii) are both $R$. The radius of convergence remains the same when a power series is differentiated or integrated. However, the interval of convergence may be different.</pre>
+<button onclick="copyLaTeX(&quot;L20-7&quot;)" id="btn-L20-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-8</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Let $f(x)=\sum_{n=1}^{\infty} \frac{x^{n}}{n^{2}}$. Find the interval of convergence for $f, f^{\prime}$ and $f^{\prime \prime}$.</div>
+<div class="codebox">
+<pre id="latex-L20-8">Example Let $f(x)=\sum_{n=1}^{\infty} \frac{x^{n}}{n^{2}}$. Find the interval of convergence for $f, f^{\prime}$ and $f^{\prime \prime}$.</pre>
+<button onclick="copyLaTeX(&quot;L20-8&quot;)" id="btn-L20-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L20-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L20-9</span> <span class="exercise-lecture">(Lecture 20)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Express $\frac{1}{(1-x)^{2}}$ as a power series by differentiating $$ \frac{1}{1-x}=1+x+x^{2}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 . $$</div>
+<div class="codebox">
+<pre id="latex-L20-9">Example Express $\frac{1}{(1-x)^{2}}$ as a power series by differentiating $$ \frac{1}{1-x}=1+x+x^{2}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 . $$</pre>
+<button onclick="copyLaTeX(&quot;L20-9&quot;)" id="btn-L20-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-1</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question How to find power series representation for a certain restricted class of function? $$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</div>
+<div class="codebox">
+<pre id="latex-L21-1">Question How to find power series representation for a certain restricted class of function? $$ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{n=0}^{\infty} x^{n}, \quad|x|<1 $$</pre>
+<button onclick="copyLaTeX(&quot;L21-1&quot;)" id="btn-L21-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-10</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question If $f$ has derivatives of all orders, when is it true that $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}$ ? In the case of the Taylor series, the partial sums are $$ \begin{aligned} T_{n}(x) & =\sum_{i=0}^{n} \frac{f^{(i)}(a)}{i!}(x-a)^{i} \\ & =f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n} \end{aligned} $$ Notice that $T_{n}$ is a polynomial of degree $n$ called the $n$ th-degree Taylor polynomial of $f$ at $a$. If we let $$ R_{n}(x)=f(x)-T_{n}(x) $$ then $R_{n}(x)$ is called the remainder of the Taylor series. Theorem If $\lim _{n \rightarrow \infty} R_{n}(x)=0$ for $|x-a|<R$, then $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}, \quad|x-a|<R . $$ Theorem If $\lim _{n \rightarrow \infty} R_{n}(x)=0$ for $|x-a|<R$, then $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}, \quad|x-a|<R . $$ Theorem (Taylor's Inequality) If $\left|f^{(n+1)}(x)\right| \leq M$ for $|x-a| \leq d$, then $$ \left|R_{n}(x)\right| \leq \frac{M}{(n+1)!}|x-a|^{n+1}, \quad|x-a| \leq d . $$</div>
+<div class="codebox">
+<pre id="latex-L21-10">Question If $f$ has derivatives of all orders, when is it true that $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}$ ? In the case of the Taylor series, the partial sums are $$ \begin{aligned} T_{n}(x) & =\sum_{i=0}^{n} \frac{f^{(i)}(a)}{i!}(x-a)^{i} \\ & =f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n} \end{aligned} $$ Notice that $T_{n}$ is a polynomial of degree $n$ called the $n$ th-degree Taylor polynomial of $f$ at $a$. If we let $$ R_{n}(x)=f(x)-T_{n}(x) $$ then $R_{n}(x)$ is called the remainder of the Taylor series. Theorem If $\lim _{n \rightarrow \infty} R_{n}(x)=0$ for $|x-a|<R$, then $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}, \quad|x-a|<R . $$ Theorem If $\lim _{n \rightarrow \infty} R_{n}(x)=0$ for $|x-a|<R$, then $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}, \quad|x-a|<R . $$ Theorem (Taylor's Inequality) If $\left|f^{(n+1)}(x)\right| \leq M$ for $|x-a| \leq d$, then $$ \left|R_{n}(x)\right| \leq \frac{M}{(n+1)!}|x-a|^{n+1}, \quad|x-a| \leq d . $$</pre>
+<button onclick="copyLaTeX(&quot;L21-10&quot;)" id="btn-L21-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-11</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Prove that $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}$.</div>
+<div class="codebox">
+<pre id="latex-L21-11">Example Prove that $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}$.</pre>
+<button onclick="copyLaTeX(&quot;L21-11&quot;)" id="btn-L21-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-12</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the Taylor series for $f(x)=e^{x}$ at $a=2$.</div>
+<div class="codebox">
+<pre id="latex-L21-12">Example Find the Taylor series for $f(x)=e^{x}$ at $a=2$.</pre>
+<button onclick="copyLaTeX(&quot;L21-12&quot;)" id="btn-L21-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-13</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the Taylor series for $f(x)=e^{x}$ at $a=2$. Remark $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}$ is better if we are interested in values of $x$ near 0.</div>
+<div class="codebox">
+<pre id="latex-L21-13">Example Find the Taylor series for $f(x)=e^{x}$ at $a=2$. Remark $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}$ is better if we are interested in values of $x$ near 0.</pre>
+<button onclick="copyLaTeX(&quot;L21-13&quot;)" id="btn-L21-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-14</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the Maclaurin series for $\sin x$ and prove that it represents $\sin x$ for all $x$.</div>
+<div class="codebox">
+<pre id="latex-L21-14">Find the Maclaurin series for $\sin x$ and prove that it represents $\sin x$ for all $x$.</pre>
+<button onclick="copyLaTeX(&quot;L21-14&quot;)" id="btn-L21-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-15</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the Maclaurin series for $\cos x$.</div>
+<div class="codebox">
+<pre id="latex-L21-15">Find the Maclaurin series for $\cos x$.</pre>
+<button onclick="copyLaTeX(&quot;L21-15&quot;)" id="btn-L21-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-16</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the Maclaurin series for $f(x)=x \cos x$.</div>
+<div class="codebox">
+<pre id="latex-L21-16">Example Find the Maclaurin series for $f(x)=x \cos x$.</pre>
+<button onclick="copyLaTeX(&quot;L21-16&quot;)" id="btn-L21-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-17</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Represent $f(x)=\sin x$ as the sum of its Taylor series centered at $\frac{\pi}{3}$. $$ \begin{array}{ll} \frac{1}{1-x}=\sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+x^{3}+\cdots & R=1 \\ e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}=1+\frac{x}{1!}+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots & R=\infty \\ \sin x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{(2 n+1)!}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots & R=\infty \\ \cos x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n}}{(2 n)!}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots & R=\infty \\ \tan ^{-1} x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1}=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots & R=1 \\ \ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots & R=1 \\ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots & R=1 \\ \hline \end{array} $$</div>
+<div class="codebox">
+<pre id="latex-L21-17">Example Represent $f(x)=\sin x$ as the sum of its Taylor series centered at $\frac{\pi}{3}$. $$ \begin{array}{ll} \frac{1}{1-x}=\sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+x^{3}+\cdots & R=1 \\ e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}=1+\frac{x}{1!}+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots & R=\infty \\ \sin x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{(2 n+1)!}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots & R=\infty \\ \cos x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n}}{(2 n)!}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots & R=\infty \\ \tan ^{-1} x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1}=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots & R=1 \\ \ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots & R=1 \\ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots & R=1 \\ \hline \end{array} $$</pre>
+<button onclick="copyLaTeX(&quot;L21-17&quot;)" id="btn-L21-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-2</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\frac{1}{1-x^{2}}, \quad \frac{x^{3}}{x+2}$. Theorem (term-by-term differentiation and integration) If the power series $\sum c_{n}(x-a)^{n}$ has radius of convergence $R>0$, then the function $f$ defined by $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots=\sum_{n=0}^{\infty} c_{n}(x-a)^{n} $$ is differentiable (and therefore continuous) on the interval ( $a-R, a+R$ ) and (i) $$ \begin{aligned} f^{\prime}(x) & =\frac{\mathrm{d}}{\mathrm{~d} x}\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right]=\sum_{n=0}^{\infty} \frac{\mathrm{d}}{\mathrm{~d} x}\left[c_{n}(x-a)^{n}\right] \\ & =c_{1}+2 c_{2}(x-a)+3 c_{3}(x-a)^{2}+\cdots=\sum_{n=1}^{\infty} n c_{n}(x-a)^{n-1} \end{aligned} $$ (ii) $\int\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right] \mathrm{d} x=\sum_{n=0}^{\infty} \int c_{n}(x-a)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \frac{c_{n}}{n+1}(x-a)^{n+1}+C$ The radii of convergence of the power series in Equations (i) and (ii) are both $R$.</div>
+<div class="codebox">
+<pre id="latex-L21-2">Example $\frac{1}{1-x^{2}}, \quad \frac{x^{3}}{x+2}$. Theorem (term-by-term differentiation and integration) If the power series $\sum c_{n}(x-a)^{n}$ has radius of convergence $R>0$, then the function $f$ defined by $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+\cdots=\sum_{n=0}^{\infty} c_{n}(x-a)^{n} $$ is differentiable (and therefore continuous) on the interval ( $a-R, a+R$ ) and (i) $$ \begin{aligned} f^{\prime}(x) & =\frac{\mathrm{d}}{\mathrm{~d} x}\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right]=\sum_{n=0}^{\infty} \frac{\mathrm{d}}{\mathrm{~d} x}\left[c_{n}(x-a)^{n}\right] \\ & =c_{1}+2 c_{2}(x-a)+3 c_{3}(x-a)^{2}+\cdots=\sum_{n=1}^{\infty} n c_{n}(x-a)^{n-1} \end{aligned} $$ (ii) $\int\left[\sum_{n=0}^{\infty} c_{n}(x-a)^{n}\right] \mathrm{d} x=\sum_{n=0}^{\infty} \int c_{n}(x-a)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \frac{c_{n}}{n+1}(x-a)^{n+1}+C$ The radii of convergence of the power series in Equations (i) and (ii) are both $R$.</pre>
+<button onclick="copyLaTeX(&quot;L21-2&quot;)" id="btn-L21-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-3</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#differentiation-and-integratio" target="_blank">differentiation-and-integratio</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(1) $\ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}, \quad|x|<1 \Longrightarrow$ Use $$ \ln (1+x)+C=\int \frac{1}{1+x} \mathrm{~d} x $$ (2) $\arctan x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1} \Longrightarrow(\arctan x)^{\prime}=\frac{1}{1+x^{2}}$ (3) $\frac{1}{(1-x)^{2}}=\sum_{n=1}^{\infty} n x^{n-1} \Longrightarrow\left(\frac{1}{1-x}\right)^{\prime}=\frac{1}{(1-x)^{2}}$ The radius of convergence remains the same when a power series is differentiated or integrated. However, the interval of convergence may be different.</div>
+<div class="codebox">
+<pre id="latex-L21-3">(1) $\ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}, \quad|x|<1 \Longrightarrow$ Use $$ \ln (1+x)+C=\int \frac{1}{1+x} \mathrm{~d} x $$ (2) $\arctan x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1} \Longrightarrow(\arctan x)^{\prime}=\frac{1}{1+x^{2}}$ (3) $\frac{1}{(1-x)^{2}}=\sum_{n=1}^{\infty} n x^{n-1} \Longrightarrow\left(\frac{1}{1-x}\right)^{\prime}=\frac{1}{(1-x)^{2}}$ The radius of convergence remains the same when a power series is differentiated or integrated. However, the interval of convergence may be different.</pre>
+<button onclick="copyLaTeX(&quot;L21-3&quot;)" id="btn-L21-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-4</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(1) Which functions have power series representations? (2) How can we find such representations?</div>
+<div class="codebox">
+<pre id="latex-L21-4">(1) Which functions have power series representations? (2) How can we find such representations?</pre>
+<button onclick="copyLaTeX(&quot;L21-4&quot;)" id="btn-L21-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-6</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Suppose that $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+c_{3}(x-a)^{3}+c_{4}(x-a)^{4}+\cdots,|x-a|<R . $$ Determine the coefficients. If $f$ has a power series representation (expansion) at a, that is, if $$ f(x)=\sum_{n=0}^{\infty} c_{n}(x-a)^{n}, \quad|x-a|<R $$ then its coefficients are given by the formula $$ c_{n}=\frac{f^{(n)}(a)}{n!} \quad \text { (The coefficients are uniquely determined.) } $$ If $f$ has a power series expansion at $a$, then Taylor series of the function $f$ at $a$ : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots $$ Maclaurin series (Taylor series with $a=0$ ) : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^{n}=f(0)+\frac{f^{\prime}(0)}{1!} x+\frac{f^{\prime \prime}(0)}{2!} x^{2}+\cdots $$</div>
+<div class="codebox">
+<pre id="latex-L21-6">Suppose that $$ f(x)=c_{0}+c_{1}(x-a)+c_{2}(x-a)^{2}+c_{3}(x-a)^{3}+c_{4}(x-a)^{4}+\cdots,|x-a|<R . $$ Determine the coefficients. If $f$ has a power series representation (expansion) at a, that is, if $$ f(x)=\sum_{n=0}^{\infty} c_{n}(x-a)^{n}, \quad|x-a|<R $$ then its coefficients are given by the formula $$ c_{n}=\frac{f^{(n)}(a)}{n!} \quad \text { (The coefficients are uniquely determined.) } $$ If $f$ has a power series expansion at $a$, then Taylor series of the function $f$ at $a$ : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots $$ Maclaurin series (Taylor series with $a=0$ ) : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^{n}=f(0)+\frac{f^{\prime}(0)}{1!} x+\frac{f^{\prime \prime}(0)}{2!} x^{2}+\cdots $$</pre>
+<button onclick="copyLaTeX(&quot;L21-6&quot;)" id="btn-L21-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-7</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the Maclaurin series of the function $f(x)=e^{x}$ and its radius of convergence.</div>
+<div class="codebox">
+<pre id="latex-L21-7">Find the Maclaurin series of the function $f(x)=e^{x}$ and its radius of convergence.</pre>
+<button onclick="copyLaTeX(&quot;L21-7&quot;)" id="btn-L21-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L21-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L21-8</span> <span class="exercise-lecture">(Lecture 21)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!} ?$</div>
+<div class="codebox">
+<pre id="latex-L21-8">Question $e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!} ?$</pre>
+<button onclick="copyLaTeX(&quot;L21-8&quot;)" id="btn-L21-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-1</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the Maclaurin series for $f(x)=(1+x)^{k}$, where $k$ is any real number.</div>
+<div class="codebox">
+<pre id="latex-L22-1">Find the Maclaurin series for $f(x)=(1+x)^{k}$, where $k$ is any real number.</pre>
+<button onclick="copyLaTeX(&quot;L22-1&quot;)" id="btn-L22-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-10</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#error-estimation:" target="_blank">error-estimation:</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">In Einstein's theory of special relativity the mass of an object moving with velocity $v$ is $$ m=\frac{m_{0}}{\sqrt{1-\frac{v^{2}}{c^{2}}}} $$ where $m_{0}$ is the mass of the object when at rest and $c$ is the speed of light. The kinetic energy of the object is the difference between its total energy and its energy at rest: $$ K=m c^{2}-m_{0} c^{2} . $$ Show that when $v$ is very small compared with $c$, this expression for $K$ agrees with classical Newtonian physics: $$ K=\frac{1}{2} m_{0} v^{2} . $$</div>
+<div class="codebox">
+<pre id="latex-L22-10">In Einstein's theory of special relativity the mass of an object moving with velocity $v$ is $$ m=\frac{m_{0}}{\sqrt{1-\frac{v^{2}}{c^{2}}}} $$ where $m_{0}$ is the mass of the object when at rest and $c$ is the speed of light. The kinetic energy of the object is the difference between its total energy and its energy at rest: $$ K=m c^{2}-m_{0} c^{2} . $$ Show that when $v$ is very small compared with $c$, this expression for $K$ agrees with classical Newtonian physics: $$ K=\frac{1}{2} m_{0} v^{2} . $$</pre>
+<button onclick="copyLaTeX(&quot;L22-10&quot;)" id="btn-L22-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-11</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#applications-to-physics" target="_blank">applications-to-physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $f(x)=\ln (1+x)$. Find $f^{(10)}(0)$.</div>
+<div class="codebox">
+<pre id="latex-L22-11">Let $f(x)=\ln (1+x)$. Find $f^{(10)}(0)$.</pre>
+<button onclick="copyLaTeX(&quot;L22-11&quot;)" id="btn-L22-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-12</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#applications-to-physics" target="_blank">applications-to-physics</a> <a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use Taylor's Inequality to determine the number of terms of the Maclaurin series for $e^{x}$ that should be used to estimate $e^{0.1}$ to within 0.00001 .</div>
+<div class="codebox">
+<pre id="latex-L22-12">Use Taylor's Inequality to determine the number of terms of the Maclaurin series for $e^{x}$ that should be used to estimate $e^{0.1}$ to within 0.00001 .</pre>
+<button onclick="copyLaTeX(&quot;L22-12&quot;)" id="btn-L22-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-2</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the Maclaurin series for $f(x)=(1+x)^{k}$, where $k$ is any real number. Remark Binomial coefficient: $$ \binom{k}{n}=\frac{k(k-1) \cdots(k-n+1)}{n!} . $$ Definition (The Binomial Series) If $k$ is any real number and $|x|<1$, then $$ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots $$ If $k$ is any real number and $|x|<1$, then $$ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots $$ Remark - When $-1<k<0, \sum_{n=0}^{\infty}\binom{k}{n} x^{n}$ converges at $(-1,1]$. - When $k \geq 0, \sum_{n=0}^{\infty}\binom{k}{n} x^{n}$ converges at $[-1,1]$.</div>
+<div class="codebox">
+<pre id="latex-L22-2">Example Find the Maclaurin series for $f(x)=(1+x)^{k}$, where $k$ is any real number. Remark Binomial coefficient: $$ \binom{k}{n}=\frac{k(k-1) \cdots(k-n+1)}{n!} . $$ Definition (The Binomial Series) If $k$ is any real number and $|x|<1$, then $$ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots $$ If $k$ is any real number and $|x|<1$, then $$ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots $$ Remark - When $-1<k<0, \sum_{n=0}^{\infty}\binom{k}{n} x^{n}$ converges at $(-1,1]$. - When $k \geq 0, \sum_{n=0}^{\infty}\binom{k}{n} x^{n}$ converges at $[-1,1]$.</pre>
+<button onclick="copyLaTeX(&quot;L22-2&quot;)" id="btn-L22-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-3</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(the-binomial-serie" target="_blank">definition-(the-binomial-serie</a> <a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the Maclaurin series for the function $f(x)=\frac{1}{\sqrt{4-x}}$ and its radius of convergence. $$ \begin{array}{ll} \frac{1}{1-x}=\sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+x^{3}+\cdots & R=1 \\ e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}=1+\frac{x}{1!}+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots & R=\infty \\ \sin x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{(2 n+1)!}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots & R=\infty \\ \cos x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n}}{(2 n)!}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots & R=\infty \\ \tan ^{-1} x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1}=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots & R=1 \\ \ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots & R=1 \\ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots & R=1 \\ \hline \end{array} $$</div>
+<div class="codebox">
+<pre id="latex-L22-3">Example Find the Maclaurin series for the function $f(x)=\frac{1}{\sqrt{4-x}}$ and its radius of convergence. $$ \begin{array}{ll} \frac{1}{1-x}=\sum_{n=0}^{\infty} x^{n}=1+x+x^{2}+x^{3}+\cdots & R=1 \\ e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n!}=1+\frac{x}{1!}+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots & R=\infty \\ \sin x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{(2 n+1)!}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\frac{x^{7}}{7!}+\cdots & R=\infty \\ \cos x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n}}{(2 n)!}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\frac{x^{6}}{6!}+\cdots & R=\infty \\ \tan ^{-1} x=\sum_{n=0}^{\infty}(-1)^{n} \frac{x^{2 n+1}}{2 n+1}=x-\frac{x^{3}}{3}+\frac{x^{5}}{5}-\frac{x^{7}}{7}+\cdots & R=1 \\ \ln (1+x)=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{x^{n}}{n}=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\frac{x^{4}}{4}+\cdots & R=1 \\ (1+x)^{k}=\sum_{n=0}^{\infty}\binom{k}{n} x^{n}=1+k x+\frac{k(k-1)}{2!} x^{2}+\frac{k(k-1)(k-2)}{3!} x^{3}+\cdots & R=1 \\ \hline \end{array} $$</pre>
+<button onclick="copyLaTeX(&quot;L22-3&quot;)" id="btn-L22-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-4</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#some-important-maclaurin-serie" target="_blank">some-important-maclaurin-serie</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the sum of the series $$ \frac{1}{1 \cdot 2}-\frac{1}{2 \cdot 2^{2}}+\frac{1}{3 \cdot 2^{3}}-\frac{1}{4 \cdot 2^{4}}+\cdots $$</div>
+<div class="codebox">
+<pre id="latex-L22-4">Example Find the sum of the series $$ \frac{1}{1 \cdot 2}-\frac{1}{2 \cdot 2^{2}}+\frac{1}{3 \cdot 2^{3}}-\frac{1}{4 \cdot 2^{4}}+\cdots $$</pre>
+<button onclick="copyLaTeX(&quot;L22-4&quot;)" id="btn-L22-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-5</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#some-important-maclaurin-serie" target="_blank">some-important-maclaurin-serie</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Find the Maclaurin series for $f(x)=\sin ^{2} x$.</div>
+<div class="codebox">
+<pre id="latex-L22-5">Exercise Find the Maclaurin series for $f(x)=\sin ^{2} x$.</pre>
+<button onclick="copyLaTeX(&quot;L22-5&quot;)" id="btn-L22-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-6</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#some-important-maclaurin-serie" target="_blank">some-important-maclaurin-serie</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\lim _{x \rightarrow 0} \frac{e^{x}-1-x}{x^{2}}$ using Maclaurin series. Given $\sum_{n=0}^{\infty} a_{n} x^{n}$ and $\sum_{n=0}^{\infty} b_{n} x^{n},|x|<R$, then $$ \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left(\sum_{n=0}^{\infty} b_{n} x^{n}\right)=\sum_{n=0}^{\infty} c_{n} x^{n}, \quad|x|<R, $$ where $c_{n}=\sum_{i=0}^{n} a_{i} b_{n-i}$. (2) $$ \frac{\sum_{n=0}^{\infty} a_{n} x^{n}}{\sum_{n=0}^{\infty} b_{n} x^{n}}=\sum_{n=0}^{\infty} d_{n} x^{n}, \quad|x|<R, $$ where $d_{n}$ satisfies $a_{n}=\sum_{i=0}^{\infty} b_{i} d_{n-i}$.</div>
+<div class="codebox">
+<pre id="latex-L22-6">Example Evaluate $\lim _{x \rightarrow 0} \frac{e^{x}-1-x}{x^{2}}$ using Maclaurin series. Given $\sum_{n=0}^{\infty} a_{n} x^{n}$ and $\sum_{n=0}^{\infty} b_{n} x^{n},|x|<R$, then $$ \left(\sum_{n=0}^{\infty} a_{n} x^{n}\right)\left(\sum_{n=0}^{\infty} b_{n} x^{n}\right)=\sum_{n=0}^{\infty} c_{n} x^{n}, \quad|x|<R, $$ where $c_{n}=\sum_{i=0}^{n} a_{i} b_{n-i}$. (2) $$ \frac{\sum_{n=0}^{\infty} a_{n} x^{n}}{\sum_{n=0}^{\infty} b_{n} x^{n}}=\sum_{n=0}^{\infty} d_{n} x^{n}, \quad|x|<R, $$ where $d_{n}$ satisfies $a_{n}=\sum_{i=0}^{\infty} b_{i} d_{n-i}$.</pre>
+<button onclick="copyLaTeX(&quot;L22-6&quot;)" id="btn-L22-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-7</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="tags.html#maclaurin-series" target="_blank">maclaurin-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a> <a class="tag" href="tags.html#theorem-(multiplication-and-di" target="_blank">theorem-(multiplication-and-di</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the first three nonzero terms in the Maclaurin series for (a) $e^{x} \sin x$ (b) $\tan x$ Taylor series of the function $f$ at $a$ : $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}$ $n$ th-degree Taylor polynomial of $f$ at $a$ : $T_{n}(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n}$ Taylor series of the function $f$ at $a$ : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n} $$ $n$ th-degree Taylor polynomial of $f$ at a: $$ T_{n}(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n} $$ (1) If the series is alternating, use Alternating Series Estimation Theorem. (2) In all cases, we can use Taylor's Inequality: $$ \left|R_{n}(x)\right|=\left|f(x)-T_{n}(x)\right| \leq \frac{M}{(n+1)!}|x-a|^{n+1} $$</div>
+<div class="codebox">
+<pre id="latex-L22-7">Find the first three nonzero terms in the Maclaurin series for (a) $e^{x} \sin x$ (b) $\tan x$ Taylor series of the function $f$ at $a$ : $f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n}$ $n$ th-degree Taylor polynomial of $f$ at $a$ : $T_{n}(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n}$ Taylor series of the function $f$ at $a$ : $$ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^{n} $$ $n$ th-degree Taylor polynomial of $f$ at a: $$ T_{n}(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^{n} $$ (1) If the series is alternating, use Alternating Series Estimation Theorem. (2) In all cases, we can use Taylor's Inequality: $$ \left|R_{n}(x)\right|=\left|f(x)-T_{n}(x)\right| \leq \frac{M}{(n+1)!}|x-a|^{n+1} $$</pre>
+<button onclick="copyLaTeX(&quot;L22-7&quot;)" id="btn-L22-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-8</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#approximating-functions-by-pol" target="_blank">approximating-functions-by-pol</a> <a class="tag" href="tags.html#taylor-series" target="_blank">taylor-series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) Approximate the function $f(x)=\sqrt[3]{x}$ by a Taylor polynomial of degree 2 at $a=8$. (b) How accurate is this approximation when $7 \leq x \leq 9$ ?</div>
+<div class="codebox">
+<pre id="latex-L22-8">(a) Approximate the function $f(x)=\sqrt[3]{x}$ by a Taylor polynomial of degree 2 at $a=8$. (b) How accurate is this approximation when $7 \leq x \leq 9$ ?</pre>
+<button onclick="copyLaTeX(&quot;L22-8&quot;)" id="btn-L22-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L22-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L22-9</span> <span class="exercise-lecture">(Lecture 22)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#approximating-functions-by-pol" target="_blank">approximating-functions-by-pol</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) What is the maximum error possible in using the approximation $$ \sin x \approx x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!} $$ when $-0.3 \leq x \leq 0.3$ ? Use this approximation to find $\sin 12^{\circ}$ correct to six decimal places. (b) For what values of $x$ is this approximation accurate to within 0.00005 ?</div>
+<div class="codebox">
+<pre id="latex-L22-9">(a) What is the maximum error possible in using the approximation $$ \sin x \approx x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!} $$ when $-0.3 \leq x \leq 0.3$ ? Use this approximation to find $\sin 12^{\circ}$ correct to six decimal places. (b) For what values of $x$ is this approximation accurate to within 0.00005 ?</pre>
+<button onclick="copyLaTeX(&quot;L22-9&quot;)" id="btn-L22-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

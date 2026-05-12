@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 7 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav active" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav active" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 7: Infinite Sequences & Series</h2>
+<div class="lectures">61 problems</div>
+</div>
+
+<div class="exercise" id="ex-L15-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-1</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) $\left\{\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \cdots, \frac{n}{n+1}, \cdots\right\}$ (b) $\left\{-\frac{2}{3}, \frac{3}{9},-\frac{4}{27}, \frac{5}{81}, \cdots, \frac{(-1)^{n}(n+1)}{3^{n}}, \cdots\right\}$ (c) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{n-3}, \cdots\}$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ $$ \begin{gathered} \left\{\frac{n}{n+1}\right\}_{n=1}^{\infty} \\ \left\{\frac{(-1)^{n}(n+1)}{3^{n}}\right\}_{n=1}^{\infty} \\ \{\sqrt{n-3}\}_{n=3}^{\infty} \\ \left\{\cos \frac{n \pi}{6}\right\}_{n=0}^{\infty} \end{gathered} $$</div>
+<div class="codebox">
+<pre id="latex-L15-1">(a) $\left\{\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \cdots, \frac{n}{n+1}, \cdots\right\}$ (b) $\left\{-\frac{2}{3}, \frac{3}{9},-\frac{4}{27}, \frac{5}{81}, \cdots, \frac{(-1)^{n}(n+1)}{3^{n}}, \cdots\right\}$ (c) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{n-3}, \cdots\}$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ $$ \begin{gathered} \left\{\frac{n}{n+1}\right\}_{n=1}^{\infty} \\ \left\{\frac{(-1)^{n}(n+1)}{3^{n}}\right\}_{n=1}^{\infty} \\ \{\sqrt{n-3}\}_{n=3}^{\infty} \\ \left\{\cos \frac{n \pi}{6}\right\}_{n=0}^{\infty} \end{gathered} $$</pre>
+<button onclick="copyLaTeX(&quot;L15-1&quot;)" id="btn-L15-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-10</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem-(squeeze-theorem-for-s" target="_blank">theorem-(squeeze-theorem-for-s</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Discuss the convergence of the sequence $a_{n}=\frac{n!}{n^{n}}$, where $n!=1 \cdot 2 \cdot 3 \cdots n$.</div>
+<div class="codebox">
+<pre id="latex-L15-10">Example Discuss the convergence of the sequence $a_{n}=\frac{n!}{n^{n}}$, where $n!=1 \cdot 2 \cdot 3 \cdots n$.</pre>
+<button onclick="copyLaTeX(&quot;L15-10&quot;)" id="btn-L15-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-11</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem-(squeeze-theorem-for-s" target="_blank">theorem-(squeeze-theorem-for-s</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example For what values of $r$ is the sequence $\left\{r^{n}\right\}$ convergent?</div>
+<div class="codebox">
+<pre id="latex-L15-11">Example For what values of $r$ is the sequence $\left\{r^{n}\right\}$ convergent?</pre>
+<button onclick="copyLaTeX(&quot;L15-11&quot;)" id="btn-L15-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-12</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(squeeze-theorem-for-s" target="_blank">theorem-(squeeze-theorem-for-s</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">For what values of $r$ is the sequence $\left\{r^{n}\right\}$ convergent? The sequence $\left\{r^{n}\right\}$ is convergent if $-1<r \leq 1$ and divergent for all other values of $r$. $$ \lim _{n \rightarrow \infty} r^{n}= \begin{cases}0, & \text { if }-1<r<1 \\ 1, & \text { if } r=1\end{cases} $$ Theorem If $\lim _{n \rightarrow \infty} a_{n}=L$ and the function $f$ is continuous at $L$, then $$ \lim _{n \rightarrow \infty} f\left(a_{n}\right)=f(L) . $$</div>
+<div class="codebox">
+<pre id="latex-L15-12">For what values of $r$ is the sequence $\left\{r^{n}\right\}$ convergent? The sequence $\left\{r^{n}\right\}$ is convergent if $-1<r \leq 1$ and divergent for all other values of $r$. $$ \lim _{n \rightarrow \infty} r^{n}= \begin{cases}0, & \text { if }-1<r<1 \\ 1, & \text { if } r=1\end{cases} $$ Theorem If $\lim _{n \rightarrow \infty} a_{n}=L$ and the function $f$ is continuous at $L$, then $$ \lim _{n \rightarrow \infty} f\left(a_{n}\right)=f(L) . $$</pre>
+<button onclick="copyLaTeX(&quot;L15-12&quot;)" id="btn-L15-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-13</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#sequences" target="_blank">sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\lim _{n \rightarrow \infty} \sin \left(\frac{\pi}{n}\right)$. If $a_{n}<a_{n+1}$ for all $n \geq 1,\left\{a_{n}\right\}$ is called increasing. If $a_{n}>a_{n+1}$ for all $n \geq 1,\left\{a_{n}\right\}$ is called decreasing. A sequence is monotonic if it is either increasing or decreasing.</div>
+<div class="codebox">
+<pre id="latex-L15-13">Example Find $\lim _{n \rightarrow \infty} \sin \left(\frac{\pi}{n}\right)$. If $a_{n}<a_{n+1}$ for all $n \geq 1,\left\{a_{n}\right\}$ is called increasing. If $a_{n}>a_{n+1}$ for all $n \geq 1,\left\{a_{n}\right\}$ is called decreasing. A sequence is monotonic if it is either increasing or decreasing.</pre>
+<button onclick="copyLaTeX(&quot;L15-13&quot;)" id="btn-L15-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-14</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Show that $\left\{\frac{3}{n+5}\right\}$ is decreasing.</div>
+<div class="codebox">
+<pre id="latex-L15-14">Example Show that $\left\{\frac{3}{n+5}\right\}$ is decreasing.</pre>
+<button onclick="copyLaTeX(&quot;L15-14&quot;)" id="btn-L15-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-15</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#sequences" target="_blank">sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Show that the sequence $\left\{\frac{n}{n^{2}+1}\right\}$ is decreasing. If there is a number $M$ such that $$ a_{n} \leq M \text { for all } n \geq 1 $$ we call $\left\{a_{n}\right\}$ is bounded above. If there is a number $m$ such that $$ m \leq a_{n} \text { for all } n \geq 1 $$ we call $\left\{a_{n}\right\}$ is bounded below. If it is bounded above and below, then $\left\{a_{n}\right\}$ is a bounded sequence.</div>
+<div class="codebox">
+<pre id="latex-L15-15">Example Show that the sequence $\left\{\frac{n}{n^{2}+1}\right\}$ is decreasing. If there is a number $M$ such that $$ a_{n} \leq M \text { for all } n \geq 1 $$ we call $\left\{a_{n}\right\}$ is bounded above. If there is a number $m$ such that $$ m \leq a_{n} \text { for all } n \geq 1 $$ we call $\left\{a_{n}\right\}$ is bounded below. If it is bounded above and below, then $\left\{a_{n}\right\}$ is a bounded sequence.</pre>
+<button onclick="copyLaTeX(&quot;L15-15&quot;)" id="btn-L15-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-16</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#sequences" target="_blank">sequences</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example - $\{n\}$ is bounded below $\Leftarrow n \geq 1$ - $\left\{\frac{n}{n+1}\right\}$ is bounded $\Leftarrow 0<\frac{n}{n+1}<1$ - $\left\{(-1)^{n}\right\}$ is bounded $\Leftarrow-1 \leq(-1)^{n} \leq 1$ Theorem (Monotonic Sequence Theorem) Every bounded, monotonic sequence is convergent.</div>
+<div class="codebox">
+<pre id="latex-L15-16">Example - $\{n\}$ is bounded below $\Leftarrow n \geq 1$ - $\left\{\frac{n}{n+1}\right\}$ is bounded $\Leftarrow 0<\frac{n}{n+1}<1$ - $\left\{(-1)^{n}\right\}$ is bounded $\Leftarrow-1 \leq(-1)^{n} \leq 1$ Theorem (Monotonic Sequence Theorem) Every bounded, monotonic sequence is convergent.</pre>
+<button onclick="copyLaTeX(&quot;L15-16&quot;)" id="btn-L15-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-17</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#sequences" target="_blank">sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Investigate the sequence $\left\{a_{n}\right\}$ defined by the recurrence relation $$ a_{1}=2, \quad a_{n+1}=\frac{1}{2}\left(a_{n}+6\right) \text { for } n=1,2,3, \ldots $$</div>
+<div class="codebox">
+<pre id="latex-L15-17">Example Investigate the sequence $\left\{a_{n}\right\}$ defined by the recurrence relation $$ a_{1}=2, \quad a_{n+1}=\frac{1}{2}\left(a_{n}+6\right) \text { for } n=1,2,3, \ldots $$</pre>
+<button onclick="copyLaTeX(&quot;L15-17&quot;)" id="btn-L15-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-2</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#sequences" target="_blank">sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example (a) $\left\{\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \cdots, \frac{n}{n+1}, \cdots\right\}$ $$ \begin{gathered} \left\{\frac{n}{n+1}\right\}_{n=1}^{\infty} \\ \left\{\frac{(-1)^{n}(n+1)}{3^{n}}\right\}_{n=1}^{\infty} \\ \{\sqrt{n-3}\}_{n=3}^{\infty} \\ \left\{\cos \frac{n \pi}{6}\right\}_{n=0}^{\infty} \end{gathered} $$ (c) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{n-3}, \cdots\}$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ (b) $\left\{-\frac{2}{3}, \frac{3}{9},-\frac{4}{27}, \frac{5}{81}, \cdots, \frac{(-1)^{n}(n+1)}{3^{n}}, \cdots\right\}$ (C) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{ } n-3, \cdots$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ A sequence is a list of numbers written in a definite order: $$ a_{1}, a_{2}, a_{3}, a_{4}, \ldots, a_{n}, \ldots $$ Notation: $\left\{a_{1}, \ldots, a_{n}, \ldots\right\},\left\{a_{n}\right\}$ or $\left.\left\{a_{n}\right\}\right|_{n=1} ^{\infty}$</div>
+<div class="codebox">
+<pre id="latex-L15-2">Example (a) $\left\{\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \cdots, \frac{n}{n+1}, \cdots\right\}$ $$ \begin{gathered} \left\{\frac{n}{n+1}\right\}_{n=1}^{\infty} \\ \left\{\frac{(-1)^{n}(n+1)}{3^{n}}\right\}_{n=1}^{\infty} \\ \{\sqrt{n-3}\}_{n=3}^{\infty} \\ \left\{\cos \frac{n \pi}{6}\right\}_{n=0}^{\infty} \end{gathered} $$ (c) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{n-3}, \cdots\}$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ (b) $\left\{-\frac{2}{3}, \frac{3}{9},-\frac{4}{27}, \frac{5}{81}, \cdots, \frac{(-1)^{n}(n+1)}{3^{n}}, \cdots\right\}$ (C) $\{0,1, \sqrt{2}, \sqrt{3}, \cdots, \sqrt{ } n-3, \cdots$ (d) $\left\{1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \cdots, \cos \frac{n \pi}{6}, \cdots\right\}$ A sequence is a list of numbers written in a definite order: $$ a_{1}, a_{2}, a_{3}, a_{4}, \ldots, a_{n}, \ldots $$ Notation: $\left\{a_{1}, \ldots, a_{n}, \ldots\right\},\left\{a_{n}\right\}$ or $\left.\left\{a_{n}\right\}\right|_{n=1} ^{\infty}$</pre>
+<button onclick="copyLaTeX(&quot;L15-2&quot;)" id="btn-L15-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-3</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(sequence)" target="_blank">definition-(sequence)</a> <a class="tag" href="tags.html#sequence" target="_blank">sequence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find a formula for the general term $a_{n}$ of the sequence $$ \left\{\frac{3}{5},-\frac{4}{25}, \frac{5}{125},-\frac{6}{625}, \frac{7}{3125}, \cdots\right\} . $$ Not all sequences have a simple defining equation.</div>
+<div class="codebox">
+<pre id="latex-L15-3">Example Find a formula for the general term $a_{n}$ of the sequence $$ \left\{\frac{3}{5},-\frac{4}{25}, \frac{5}{125},-\frac{6}{625}, \frac{7}{3125}, \cdots\right\} . $$ Not all sequences have a simple defining equation.</pre>
+<button onclick="copyLaTeX(&quot;L15-3&quot;)" id="btn-L15-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-4</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(sequence)" target="_blank">definition-(sequence)</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) The sequence $\left\{P_{n}\right\}$, where $P_{n}$ is the population of the world as of January 1 in the year $n$. (b) The Fibonacci sequence $\left\{f_{n}\right\}$ is defined recursively by the conditions: $$ \begin{aligned} & f_{1}=1, f_{2}=1, f_{n}=f_{n-1}+f_{n-2}, n \geq 3 \\ & \{1,1,2,3,5,8,13,21, \cdots\} \end{aligned} $$ - Plotting its terms on a number line - Isolated points with coordinates A sequence $\left\{a_{n}\right\}$ has the limit $L$ and we write $$ \lim _{n \rightarrow \infty} a_{n}=L \quad \text { or } \quad a_{n} \rightarrow L \text { as } n \rightarrow \infty $$ if we can make the terms $a_{n}$ as close to $L$ as we like by taking $n$ sufficiently large. If $\lim _{n \rightarrow \infty} a_{n}$ exists, we say the sequence converges (or is convergent). Otherwise, we say the sequence diverges (or is divergent). Theorem If $\lim _{x \rightarrow \infty} f(x)=L$ and $f(n)=a_{n}$ when $n$ is an integer, then $\lim _{n \rightarrow \infty} a_{n}=L$.</div>
+<div class="codebox">
+<pre id="latex-L15-4">(a) The sequence $\left\{P_{n}\right\}$, where $P_{n}$ is the population of the world as of January 1 in the year $n$. (b) The Fibonacci sequence $\left\{f_{n}\right\}$ is defined recursively by the conditions: $$ \begin{aligned} & f_{1}=1, f_{2}=1, f_{n}=f_{n-1}+f_{n-2}, n \geq 3 \\ & \{1,1,2,3,5,8,13,21, \cdots\} \end{aligned} $$ - Plotting its terms on a number line - Isolated points with coordinates A sequence $\left\{a_{n}\right\}$ has the limit $L$ and we write $$ \lim _{n \rightarrow \infty} a_{n}=L \quad \text { or } \quad a_{n} \rightarrow L \text { as } n \rightarrow \infty $$ if we can make the terms $a_{n}$ as close to $L$ as we like by taking $n$ sufficiently large. If $\lim _{n \rightarrow \infty} a_{n}$ exists, we say the sequence converges (or is convergent). Otherwise, we say the sequence diverges (or is divergent). Theorem If $\lim _{x \rightarrow \infty} f(x)=L$ and $f(n)=a_{n}$ when $n$ is an integer, then $\lim _{n \rightarrow \infty} a_{n}=L$.</pre>
+<button onclick="copyLaTeX(&quot;L15-4&quot;)" id="btn-L15-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-5</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#graph" target="_blank">graph</a> <a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Calculate $\lim _{n \rightarrow \infty} \frac{\ln n}{n}$. If $\left\{a_{n}\right\}$ and $\left\{b_{n}\right\}$ are convergent sequences and $c$ is a constant, then - $\lim _{n \rightarrow \infty}\left(a_{n}+b_{n}\right)=\lim _{n \rightarrow \infty} a_{n}+\lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty}\left(a_{n}-b_{n}\right)=\lim _{n \rightarrow \infty} a_{n}-\lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty} c a_{n}=c \lim _{n \rightarrow \infty} a_{n}$ - $\lim _{n \rightarrow \infty} c=c$ - $\lim _{n \rightarrow \infty}\left(a_{n} b_{n}\right)=\lim _{n \rightarrow \infty} a_{n} \cdot \lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty} \frac{a_{n}}{b_{n}}=\frac{\lim _{n \rightarrow \infty} a_{n}}{\lim _{n \rightarrow \infty} b_{n}} \quad$ if $\lim _{n \rightarrow \infty} b_{n} \neq 0$ - $\lim _{n \rightarrow \infty} a_{n}^{p}=\left[\lim _{n \rightarrow \infty} a_{n}\right]^{p} \quad$ if $p>0$ and $a_{n}>0$ Theorem (Squeeze Theorem for Sequences) If $a_{n} \leq b_{n} \leq c_{n}$ for $n \geq n_{0}$ and $\lim _{n \rightarrow \infty} a_{n}=\lim _{n \rightarrow \infty} c_{n}=L$, then $\lim _{n \rightarrow \infty} b_{n}=L$. If $a_{n} \leq b_{n} \leq c_{n}$ for $n \geq n_{0}$ and $\lim _{n \rightarrow \infty} a_{n}=\lim _{n \rightarrow \infty} c_{n}=L$, then $\lim _{n \rightarrow \infty} b_{n}=L$. Theorem If $\lim _{n \rightarrow \infty}\left|a_{n}\right|=0$, then $\lim _{n \rightarrow \infty} a_{n}=0$.</div>
+<div class="codebox">
+<pre id="latex-L15-5">Example Calculate $\lim _{n \rightarrow \infty} \frac{\ln n}{n}$. If $\left\{a_{n}\right\}$ and $\left\{b_{n}\right\}$ are convergent sequences and $c$ is a constant, then - $\lim _{n \rightarrow \infty}\left(a_{n}+b_{n}\right)=\lim _{n \rightarrow \infty} a_{n}+\lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty}\left(a_{n}-b_{n}\right)=\lim _{n \rightarrow \infty} a_{n}-\lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty} c a_{n}=c \lim _{n \rightarrow \infty} a_{n}$ - $\lim _{n \rightarrow \infty} c=c$ - $\lim _{n \rightarrow \infty}\left(a_{n} b_{n}\right)=\lim _{n \rightarrow \infty} a_{n} \cdot \lim _{n \rightarrow \infty} b_{n}$ - $\lim _{n \rightarrow \infty} \frac{a_{n}}{b_{n}}=\frac{\lim _{n \rightarrow \infty} a_{n}}{\lim _{n \rightarrow \infty} b_{n}} \quad$ if $\lim _{n \rightarrow \infty} b_{n} \neq 0$ - $\lim _{n \rightarrow \infty} a_{n}^{p}=\left[\lim _{n \rightarrow \infty} a_{n}\right]^{p} \quad$ if $p>0$ and $a_{n}>0$ Theorem (Squeeze Theorem for Sequences) If $a_{n} \leq b_{n} \leq c_{n}$ for $n \geq n_{0}$ and $\lim _{n \rightarrow \infty} a_{n}=\lim _{n \rightarrow \infty} c_{n}=L$, then $\lim _{n \rightarrow \infty} b_{n}=L$. If $a_{n} \leq b_{n} \leq c_{n}$ for $n \geq n_{0}$ and $\lim _{n \rightarrow \infty} a_{n}=\lim _{n \rightarrow \infty} c_{n}=L$, then $\lim _{n \rightarrow \infty} b_{n}=L$. Theorem If $\lim _{n \rightarrow \infty}\left|a_{n}\right|=0$, then $\lim _{n \rightarrow \infty} a_{n}=0$.</pre>
+<button onclick="copyLaTeX(&quot;L15-5&quot;)" id="btn-L15-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-6</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#limit-laws-for-sequences" target="_blank">limit-laws-for-sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\lim _{n \rightarrow \infty} \frac{n}{n+1}$.</div>
+<div class="codebox">
+<pre id="latex-L15-6">Example Find $\lim _{n \rightarrow \infty} \frac{n}{n+1}$.</pre>
+<button onclick="copyLaTeX(&quot;L15-6&quot;)" id="btn-L15-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-7</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#limit-laws-for-sequences" target="_blank">limit-laws-for-sequences</a> <a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Is the sequence $a_{n}=\frac{n}{\sqrt{10+n}}$ convergent or divergent?</div>
+<div class="codebox">
+<pre id="latex-L15-7">Example Is the sequence $a_{n}=\frac{n}{\sqrt{10+n}}$ convergent or divergent?</pre>
+<button onclick="copyLaTeX(&quot;L15-7&quot;)" id="btn-L15-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-8</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#limit-laws-for-sequences" target="_blank">limit-laws-for-sequences</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\lim _{n \rightarrow \infty} \frac{(-1)^{n}}{n}$ if it exists.</div>
+<div class="codebox">
+<pre id="latex-L15-8">Evaluate $\lim _{n \rightarrow \infty} \frac{(-1)^{n}}{n}$ if it exists.</pre>
+<button onclick="copyLaTeX(&quot;L15-8&quot;)" id="btn-L15-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L15-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L15-9</span> <span class="exercise-lecture">(Lecture 15)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#sequence" target="_blank">sequence</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(squeeze-theorem-for-s" target="_blank">theorem-(squeeze-theorem-for-s</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the sequence $a_{n}=(-1)^{n}$ is convergent or divergent.</div>
+<div class="codebox">
+<pre id="latex-L15-9">Example Determine whether the sequence $a_{n}=(-1)^{n}$ is convergent or divergent.</pre>
+<button onclick="copyLaTeX(&quot;L15-9&quot;)" id="btn-L15-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-1</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(1) $1+2+3+4+5+6+7+8+\cdots+n+\cdots=\sum_{n=1}^{\infty} n$ (2) $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots+\frac{1}{2^{n}}+\cdots=\sum_{n=1}^{\infty} \frac{1}{2^{n}}$ (3) $\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\frac{1}{3 \cdot 4}+\cdots+\frac{1}{n(n+1)}+\cdots=\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$</div>
+<div class="codebox">
+<pre id="latex-L16-1">(1) $1+2+3+4+5+6+7+8+\cdots+n+\cdots=\sum_{n=1}^{\infty} n$ (2) $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots+\frac{1}{2^{n}}+\cdots=\sum_{n=1}^{\infty} \frac{1}{2^{n}}$ (3) $\frac{1}{1 \cdot 2}+\frac{1}{2 \cdot 3}+\frac{1}{3 \cdot 4}+\cdots+\frac{1}{n(n+1)}+\cdots=\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$</pre>
+<button onclick="copyLaTeX(&quot;L16-1&quot;)" id="btn-L16-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-10</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether $\sum_{n=2}^{\infty} \frac{1}{n^{2}-1}$ is convergent or divergent. If it is convergent, find its sum.</div>
+<div class="codebox">
+<pre id="latex-L16-10">Determine whether $\sum_{n=2}^{\infty} \frac{1}{n^{2}-1}$ is convergent or divergent. If it is convergent, find its sum.</pre>
+<button onclick="copyLaTeX(&quot;L16-10&quot;)" id="btn-L16-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-11</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Show that the harmonic series $$ \sum_{n=1}^{\infty} \frac{1}{n}=1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots $$ is divergent. If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. Remark $\sum a_{n}$ converges implies $\lim _{n \rightarrow \infty} s_{n}$ exists and $\lim _{n \rightarrow \infty} a_{n}=0$. Theorem If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. Remark $\sum a_{n}$ converges implies $\lim _{n \rightarrow \infty} s_{n}$ exists and $\lim _{n \rightarrow \infty} a_{n}=0$. Theorem (Test for Divergence) If $\lim _{n \rightarrow \infty} a_{n}$ does not exist or if $\lim _{n \rightarrow \infty} a_{n} \neq 0$, then the series $\left\{a_{n}\right\}$ is divergent.</div>
+<div class="codebox">
+<pre id="latex-L16-11">Show that the harmonic series $$ \sum_{n=1}^{\infty} \frac{1}{n}=1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\cdots $$ is divergent. If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. Remark $\sum a_{n}$ converges implies $\lim _{n \rightarrow \infty} s_{n}$ exists and $\lim _{n \rightarrow \infty} a_{n}=0$. Theorem If the series $\sum_{n=1}^{\infty} a_{n}$ is convergent, then $\lim _{n \rightarrow \infty} a_{n}=0$. Remark $\sum a_{n}$ converges implies $\lim _{n \rightarrow \infty} s_{n}$ exists and $\lim _{n \rightarrow \infty} a_{n}=0$. Theorem (Test for Divergence) If $\lim _{n \rightarrow \infty} a_{n}$ does not exist or if $\lim _{n \rightarrow \infty} a_{n} \neq 0$, then the series $\left\{a_{n}\right\}$ is divergent.</pre>
+<button onclick="copyLaTeX(&quot;L16-11&quot;)" id="btn-L16-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-12</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Show that the series $\sum_{n=1}^{\infty} \frac{n^{2}}{5 n^{2}+4}$ diverges.</div>
+<div class="codebox">
+<pre id="latex-L16-12">Example Show that the series $\sum_{n=1}^{\infty} \frac{n^{2}}{5 n^{2}+4}$ diverges.</pre>
+<button onclick="copyLaTeX(&quot;L16-12&quot;)" id="btn-L16-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-14</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example: $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges, $\frac{1}{n(n+1)}$ converges. If $\sum a_{n}$ and $\sum b_{n}$ are convergent series, then so are the series $\sum c a_{n}$ (where $c$ is a constant), $\sum\left(a_{n}+b_{n}\right)$, and $\sum\left(a_{n}-b_{n}\right)$, and (i) $\sum c a_{n}=c \sum a_{n}$ (ii) $\sum\left(a_{n}+b_{n}\right)=\sum a_{n}+\sum b_{n}$ (iii) $\sum\left(a_{n}-b_{n}\right)=\sum a_{n}-\sum b_{n}$</div>
+<div class="codebox">
+<pre id="latex-L16-14">Example: $\sum_{n=1}^{\infty} \frac{1}{n}$ diverges, $\frac{1}{n(n+1)}$ converges. If $\sum a_{n}$ and $\sum b_{n}$ are convergent series, then so are the series $\sum c a_{n}$ (where $c$ is a constant), $\sum\left(a_{n}+b_{n}\right)$, and $\sum\left(a_{n}-b_{n}\right)$, and (i) $\sum c a_{n}=c \sum a_{n}$ (ii) $\sum\left(a_{n}+b_{n}\right)=\sum a_{n}+\sum b_{n}$ (iii) $\sum\left(a_{n}-b_{n}\right)=\sum a_{n}-\sum b_{n}$</pre>
+<button onclick="copyLaTeX(&quot;L16-14&quot;)" id="btn-L16-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-15</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the sum of the series $\sum_{n=1}^{\infty}\left(\frac{3}{n(n+1)}+\frac{1}{2^{n}}\right)$. Remark $$ \begin{aligned} & \sum_{n=1}^{\infty} a_{n}=\sum_{n=1}^{N} a_{n}+\sum_{n=N+1}^{\infty} a_{n} \\ & \sum_{n=N+1}^{\infty} a_{n} \text { converges } \Leftrightarrow \sum_{n=1}^{\infty} a_{n} \text { converges } \\ & \sum_{n=N+1}^{\infty} a_{n} \text { diverges } \Leftrightarrow \sum_{n=1}^{\infty} a_{n} \text { diverges } \end{aligned} $$</div>
+<div class="codebox">
+<pre id="latex-L16-15">Example Find the sum of the series $\sum_{n=1}^{\infty}\left(\frac{3}{n(n+1)}+\frac{1}{2^{n}}\right)$. Remark $$ \begin{aligned} & \sum_{n=1}^{\infty} a_{n}=\sum_{n=1}^{N} a_{n}+\sum_{n=N+1}^{\infty} a_{n} \\ & \sum_{n=N+1}^{\infty} a_{n} \text { converges } \Leftrightarrow \sum_{n=1}^{\infty} a_{n} \text { converges } \\ & \sum_{n=N+1}^{\infty} a_{n} \text { diverges } \Leftrightarrow \sum_{n=1}^{\infty} a_{n} \text { diverges } \end{aligned} $$</pre>
+<button onclick="copyLaTeX(&quot;L16-15&quot;)" id="btn-L16-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-16</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the values of $x$ for which the series $\sum_{n=1}^{\infty}(-5)^{n} x^{n}$ converges. Find the sum of the series for those values of $x$.</div>
+<div class="codebox">
+<pre id="latex-L16-16">Find the values of $x$ for which the series $\sum_{n=1}^{\infty}(-5)^{n} x^{n}$ converges. Find the sum of the series for those values of $x$.</pre>
+<button onclick="copyLaTeX(&quot;L16-16&quot;)" id="btn-L16-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-17</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If the $n$th partial sum of a series $\sum_{n=1}^{\infty} a_{n}$ is $s_{n}=3-n 2^{-n}$, find $a_{n}$ and $\sum_{n=1}^{\infty} a_{n}$.</div>
+<div class="codebox">
+<pre id="latex-L16-17">If the $n$th partial sum of a series $\sum_{n=1}^{\infty} a_{n}$ is $s_{n}=3-n 2^{-n}$, find $a_{n}$ and $\sum_{n=1}^{\infty} a_{n}$.</pre>
+<button onclick="copyLaTeX(&quot;L16-17&quot;)" id="btn-L16-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-18">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-18</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem" target="_blank">theorem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Show that $\sum_{n=1}^{\infty} \ln \left(1+\frac{1}{n}\right)$ is a divergent series whose terms approach 0 .</div>
+<div class="codebox">
+<pre id="latex-L16-18">Exercise Show that $\sum_{n=1}^{\infty} \ln \left(1+\frac{1}{n}\right)$ is a divergent series whose terms approach 0 .</pre>
+<button onclick="copyLaTeX(&quot;L16-18&quot;)" id="btn-L16-18">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-3</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-(series)" target="_blank">definition-(series)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Suppose $s_{n}=a_{1}+a_{2}+\cdots+a_{n}=\frac{2 n}{3 n+5}$. Find $\sum_{n=1}^{\infty} a_{n}$.</div>
+<div class="codebox">
+<pre id="latex-L16-3">Example Suppose $s_{n}=a_{1}+a_{2}+\cdots+a_{n}=\frac{2 n}{3 n+5}$. Find $\sum_{n=1}^{\infty} a_{n}$.</pre>
+<button onclick="copyLaTeX(&quot;L16-3&quot;)" id="btn-L16-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-4</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Discuss the convergence of geometric series $a+a r+a r^{2}+\cdots+a r^{n-1}+\cdots=\sum_{n=1}^{\infty} a r^{n-1}, a \neq 0$. Remark $$ \sum_{n=0}^{\infty} a r^{n}=\left\{\begin{array}{l} \frac{a}{1-r}, \quad-1<r<1 \\ \text { diverges }, \quad|r| \geq 1 \end{array}\right. $$</div>
+<div class="codebox">
+<pre id="latex-L16-4">Example Discuss the convergence of geometric series $a+a r+a r^{2}+\cdots+a r^{n-1}+\cdots=\sum_{n=1}^{\infty} a r^{n-1}, a \neq 0$. Remark $$ \sum_{n=0}^{\infty} a r^{n}=\left\{\begin{array}{l} \frac{a}{1-r}, \quad-1<r<1 \\ \text { diverges }, \quad|r| \geq 1 \end{array}\right. $$</pre>
+<button onclick="copyLaTeX(&quot;L16-4&quot;)" id="btn-L16-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-5</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the sum of the geometric series $5-\frac{10}{3}+\frac{20}{9}-\frac{40}{27}+\cdots$.</div>
+<div class="codebox">
+<pre id="latex-L16-5">Example Find the sum of the geometric series $5-\frac{10}{3}+\frac{20}{9}-\frac{40}{27}+\cdots$.</pre>
+<button onclick="copyLaTeX(&quot;L16-5&quot;)" id="btn-L16-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-6</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Is the series $\sum_{n=1}^{\infty} 2^{2 n} 3^{1-n}$ convergent or divergent?</div>
+<div class="codebox">
+<pre id="latex-L16-6">Is the series $\sum_{n=1}^{\infty} 2^{2 n} 3^{1-n}$ convergent or divergent?</pre>
+<button onclick="copyLaTeX(&quot;L16-6&quot;)" id="btn-L16-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-7</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Write the number $2.3 \overline{17}=2.31717 \cdots$ as a ratio of integers.</div>
+<div class="codebox">
+<pre id="latex-L16-7">Write the number $2.3 \overline{17}=2.31717 \cdots$ as a ratio of integers.</pre>
+<button onclick="copyLaTeX(&quot;L16-7&quot;)" id="btn-L16-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-8</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the sum of the series $\sum_{n=0}^{\infty} x^{n}$, where $|x|<1$.</div>
+<div class="codebox">
+<pre id="latex-L16-8">Example Find the sum of the series $\sum_{n=0}^{\infty} x^{n}$, where $|x|<1$.</pre>
+<button onclick="copyLaTeX(&quot;L16-8&quot;)" id="btn-L16-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L16-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L16-9</span> <span class="exercise-lecture">(Lecture 16)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Show that the series $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent, and find its sum.</div>
+<div class="codebox">
+<pre id="latex-L16-9">Show that the series $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$ is convergent, and find its sum.</pre>
+<button onclick="copyLaTeX(&quot;L16-9&quot;)" id="btn-L16-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-1</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">It is not easy to find a simple formula for $s_{n}$ ⟹ It is difficult to find the exact sum of a series. Problem It is not easy to find a simple formula for $s_{n}$ ⟹ It is difficult to find the exact sum of a series.</div>
+<div class="codebox">
+<pre id="latex-L17-1">It is not easy to find a simple formula for $s_{n}$ ⟹ It is difficult to find the exact sum of a series. Problem It is not easy to find a simple formula for $s_{n}$ ⟹ It is difficult to find the exact sum of a series.</pre>
+<button onclick="copyLaTeX(&quot;L17-1&quot;)" id="btn-L17-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-10</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(a) Approximate the sum of the series $\sum \frac{1}{n^{3}}$ by using the sum of the first 10 terms. Estimate the error involved in this approximation. (b) How many terms are required to ensure that the sum is accurate to within 0.0005? Remark Notice that $R_{n}=s-s_{n}$ and $\int_{n+1}^{\infty} f(x) \mathrm{d} x \leq R_{n} \leq \int_{n}^{\infty} f(x) \mathrm{d} x$, we have $$ s_{n}+\int_{n+1}^{\infty} f(x) \mathrm{d} x \leq s \leq s_{n}+\int_{n}^{\infty} f(x) \mathrm{d} x $$</div>
+<div class="codebox">
+<pre id="latex-L17-10">(a) Approximate the sum of the series $\sum \frac{1}{n^{3}}$ by using the sum of the first 10 terms. Estimate the error involved in this approximation. (b) How many terms are required to ensure that the sum is accurate to within 0.0005? Remark Notice that $R_{n}=s-s_{n}$ and $\int_{n+1}^{\infty} f(x) \mathrm{d} x \leq R_{n} \leq \int_{n}^{\infty} f(x) \mathrm{d} x$, we have $$ s_{n}+\int_{n+1}^{\infty} f(x) \mathrm{d} x \leq s \leq s_{n}+\int_{n}^{\infty} f(x) \mathrm{d} x $$</pre>
+<button onclick="copyLaTeX(&quot;L17-10&quot;)" id="btn-L17-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-11</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Use (*) with $n=10$ to estimate the sum of the series $\sum_{n=1}^{\infty} \frac{1}{n^{3}}$.</div>
+<div class="codebox">
+<pre id="latex-L17-11">Example Use (*) with $n=10$ to estimate the sum of the series $\sum_{n=1}^{\infty} \frac{1}{n^{3}}$.</pre>
+<button onclick="copyLaTeX(&quot;L17-11&quot;)" id="btn-L17-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-13</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(comparison-theorem)" target="_blank">theorem-(comparison-theorem)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the series (a) $\sum_{n=1}^{\infty} \frac{1}{2^{n}+1}$ (b) $\sum_{n=1}^{\infty} \frac{5}{2 n^{2}+4 n+3}$ converges or diverges.</div>
+<div class="codebox">
+<pre id="latex-L17-13">Example Determine whether the series (a) $\sum_{n=1}^{\infty} \frac{1}{2^{n}+1}$ (b) $\sum_{n=1}^{\infty} \frac{5}{2 n^{2}+4 n+3}$ converges or diverges.</pre>
+<button onclick="copyLaTeX(&quot;L17-13&quot;)" id="btn-L17-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-14</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(comparison-theorem)" target="_blank">theorem-(comparison-theorem)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the series $\sum_{k=1}^{\infty} \frac{\ln k}{k}$ for convergence or divergence.</div>
+<div class="codebox">
+<pre id="latex-L17-14">Example Test the series $\sum_{k=1}^{\infty} \frac{\ln k}{k}$ for convergence or divergence.</pre>
+<button onclick="copyLaTeX(&quot;L17-14&quot;)" id="btn-L17-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-15</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-comparison-test)" target="_blank">theorem-(the-comparison-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the series $\sum_{n=1}^{\infty} \frac{1}{2^{n}-1}$ for convergence or divergence.</div>
+<div class="codebox">
+<pre id="latex-L17-15">Example Test the series $\sum_{n=1}^{\infty} \frac{1}{2^{n}-1}$ for convergence or divergence.</pre>
+<button onclick="copyLaTeX(&quot;L17-15&quot;)" id="btn-L17-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-16</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-comparison-test)" target="_blank">theorem-(the-comparison-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Test the series $\sum_{n=1}^{\infty} \frac{1}{2^{n}-1}$ for convergence or divergence. Suppose that $\sum a_{n}$ and $\sum b_{n}$ are series with $a_{n} \geq 0, b_{n}>0$. Assume $$ \lim _{n \rightarrow \infty} \frac{a_{n}}{b_{n}}=c $$ - If $0<c<\infty$ (that is, $c$ is a finite positive number), then $\sum a_{n}$ and $\sum b_{n}$ either both converge or both diverge. - If $c=0$ and $\sum b_{n}$ converges, then $\sum a_{n}$ converges. - If $c=\infty$ and $\sum b_{n}$ diverges, then $\sum a_{n}$ diverges.</div>
+<div class="codebox">
+<pre id="latex-L17-16">Test the series $\sum_{n=1}^{\infty} \frac{1}{2^{n}-1}$ for convergence or divergence. Suppose that $\sum a_{n}$ and $\sum b_{n}$ are series with $a_{n} \geq 0, b_{n}>0$. Assume $$ \lim _{n \rightarrow \infty} \frac{a_{n}}{b_{n}}=c $$ - If $0<c<\infty$ (that is, $c$ is a finite positive number), then $\sum a_{n}$ and $\sum b_{n}$ either both converge or both diverge. - If $c=0$ and $\sum b_{n}$ converges, then $\sum a_{n}$ converges. - If $c=\infty$ and $\sum b_{n}$ diverges, then $\sum a_{n}$ diverges.</pre>
+<button onclick="copyLaTeX(&quot;L17-16&quot;)" id="btn-L17-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-18">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-18</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-limit-comparison-" target="_blank">theorem-(the-limit-comparison-</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{2 n^{2}+3 n}{\sqrt{5+n^{5}}}$ converges or diverges. Suppose there are two series $\sum a_{n}$ and $\sum b_{n}$, and we know that $$ \begin{aligned} & R_{n}=s-s_{n}=a_{n+1}+a_{n+2}+\cdots, \\ & T_{n}=t-t_{n}=b_{n+1}+b_{n+2}+\cdots \end{aligned} $$ If $a_{n} \leq b_{n}$ (so we have $R_{n} \leq T_{n}$ ), then we can estimate $R_{n}$ by using the bound of $T_{n}$. (1) $\sum b_{n}$ is a $p$-series. (2) $\sum b_{n}$ is a geometric series.</div>
+<div class="codebox">
+<pre id="latex-L17-18">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{2 n^{2}+3 n}{\sqrt{5+n^{5}}}$ converges or diverges. Suppose there are two series $\sum a_{n}$ and $\sum b_{n}$, and we know that $$ \begin{aligned} & R_{n}=s-s_{n}=a_{n+1}+a_{n+2}+\cdots, \\ & T_{n}=t-t_{n}=b_{n+1}+b_{n+2}+\cdots \end{aligned} $$ If $a_{n} \leq b_{n}$ (so we have $R_{n} \leq T_{n}$ ), then we can estimate $R_{n}$ by using the bound of $T_{n}$. (1) $\sum b_{n}$ is a $p$-series. (2) $\sum b_{n}$ is a geometric series.</pre>
+<button onclick="copyLaTeX(&quot;L17-18&quot;)" id="btn-L17-18">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-19">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-19</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#error-bounds" target="_blank">error-bounds</a> <a class="tag" href="tags.html#estimating-sums" target="_blank">estimating-sums</a> <a class="tag" href="tags.html#series" target="_blank">series</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use the sum of the first 100 terms to approximate the sum of the series $\sum \frac{1}{n^{3}+1}$. Estimate the error involved in this approximation.</div>
+<div class="codebox">
+<pre id="latex-L17-19">Use the sum of the first 100 terms to approximate the sum of the series $\sum \frac{1}{n^{3}+1}$. Estimate the error involved in this approximation.</pre>
+<button onclick="copyLaTeX(&quot;L17-19&quot;)" id="btn-L17-19">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-2</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#problem" target="_blank">problem</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $$ \sum_{n=1}^{\infty} \frac{1}{n^{2}}=\frac{1}{1^{2}}+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\cdots+\frac{1}{n^{2}}+\cdots $$</div>
+<div class="codebox">
+<pre id="latex-L17-2">Example $$ \sum_{n=1}^{\infty} \frac{1}{n^{2}}=\frac{1}{1^{2}}+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\cdots+\frac{1}{n^{2}}+\cdots $$</pre>
+<button onclick="copyLaTeX(&quot;L17-2&quot;)" id="btn-L17-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-3</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#improper-integrals" target="_blank">improper-integrals</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#problem" target="_blank">problem</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$$ \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}=\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\frac{1}{\sqrt{4}}+\frac{1}{\sqrt{5}}+\cdots $$ Suppose $f$ is a continuous, positive, decreasing function on $[1, \infty)$ and let $a_{n}=f(n)$. Then the series $\sum_{n=1}^{\infty} a_{n}$ is convergent if and only if the improper integral $\int_{1}^{\infty} f(x) \mathrm{d} x$ is convergent. In other words: (i) If $\int_{1}^{\infty} f(x) \mathrm{d} x$ is convergent, then $\sum_{n=1}^{\infty} a_{n}$ is convergent. (ii) If $\int_{1}^{\infty} f(x) \mathrm{d} x$ is divergent, then $\sum_{n=1}^{\infty} a_{n}$ is divergent. Remark (1) We can start $n$ by any integer $k$. For example, $$ \sum_{n=4}^{\infty} \frac{1}{(n-3)^{2}} \longleftrightarrow \int_{4}^{\infty} \frac{1}{(x-3)^{2}} \mathrm{~d} x $$ (2) Since $\sum_{n=N}^{\infty} a_{n}$ converges implies $\sum_{n=1}^{\infty} a_{n}$ converges, we only need to make sure $f$ is decreasing for $x$ larger than some number $N$.</div>
+<div class="codebox">
+<pre id="latex-L17-3">$$ \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}=\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\frac{1}{\sqrt{4}}+\frac{1}{\sqrt{5}}+\cdots $$ Suppose $f$ is a continuous, positive, decreasing function on $[1, \infty)$ and let $a_{n}=f(n)$. Then the series $\sum_{n=1}^{\infty} a_{n}$ is convergent if and only if the improper integral $\int_{1}^{\infty} f(x) \mathrm{d} x$ is convergent. In other words: (i) If $\int_{1}^{\infty} f(x) \mathrm{d} x$ is convergent, then $\sum_{n=1}^{\infty} a_{n}$ is convergent. (ii) If $\int_{1}^{\infty} f(x) \mathrm{d} x$ is divergent, then $\sum_{n=1}^{\infty} a_{n}$ is divergent. Remark (1) We can start $n$ by any integer $k$. For example, $$ \sum_{n=4}^{\infty} \frac{1}{(n-3)^{2}} \longleftrightarrow \int_{4}^{\infty} \frac{1}{(x-3)^{2}} \mathrm{~d} x $$ (2) Since $\sum_{n=N}^{\infty} a_{n}$ converges implies $\sum_{n=1}^{\infty} a_{n}$ converges, we only need to make sure $f$ is decreasing for $x$ larger than some number $N$.</pre>
+<button onclick="copyLaTeX(&quot;L17-3&quot;)" id="btn-L17-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-4</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-integral-test)" target="_blank">theorem-(the-integral-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the series $\sum_{n=1}^{\infty} \frac{1}{n^{2}+1}$ for convergence or divergence.</div>
+<div class="codebox">
+<pre id="latex-L17-4">Example Test the series $\sum_{n=1}^{\infty} \frac{1}{n^{2}+1}$ for convergence or divergence.</pre>
+<button onclick="copyLaTeX(&quot;L17-4&quot;)" id="btn-L17-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-5</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem-(the-integral-test)" target="_blank">theorem-(the-integral-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example For what values of $p$ is the series $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$ convergent?</div>
+<div class="codebox">
+<pre id="latex-L17-5">Example For what values of $p$ is the series $\sum_{n=1}^{\infty} \frac{1}{n^{p}}$ convergent?</pre>
+<button onclick="copyLaTeX(&quot;L17-5&quot;)" id="btn-L17-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-7</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-integral-test)" target="_blank">theorem-(the-integral-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example (1) $\sum_{n=1}^{\infty} \frac{1}{n^{3}}$ converges, because it is a $p$-series with $p=3>1$. (2) $\sum_{n=1}^{\infty} \frac{1}{n^{\frac{1}{3}}}$ diverges, because it is a $p$-series with $p=\frac{1}{3}<1$.</div>
+<div class="codebox">
+<pre id="latex-L17-7">Example (1) $\sum_{n=1}^{\infty} \frac{1}{n^{3}}$ converges, because it is a $p$-series with $p=3>1$. (2) $\sum_{n=1}^{\infty} \frac{1}{n^{\frac{1}{3}}}$ diverges, because it is a $p$-series with $p=\frac{1}{3}<1$.</pre>
+<button onclick="copyLaTeX(&quot;L17-7&quot;)" id="btn-L17-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L17-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L17-9</span> <span class="exercise-lecture">(Lecture 17)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{\ln n}{n}$ converges or diverges. Theorem (Remainder Estimate for The Integral Test) Suppose $f(k)=a_{k}$, where $f$ is a continuous, positive, decreasing function for $x \geq n$ and $\sum a_{n}$ is convergent. If $R_{n}=s-s_{n}$, then $$ \int_{n+1}^{\infty} f(x) \mathrm{d} x \leq R_{n} \leq \int_{n}^{\infty} f(x) \mathrm{d} x . $$</div>
+<div class="codebox">
+<pre id="latex-L17-9">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{\ln n}{n}$ converges or diverges. Theorem (Remainder Estimate for The Integral Test) Suppose $f(k)=a_{k}$, where $f$ is a continuous, positive, decreasing function for $x \geq n$ and $\sum a_{n}$ is convergent. If $R_{n}=s-s_{n}$, then $$ \int_{n+1}^{\infty} f(x) \mathrm{d} x \leq R_{n} \leq \int_{n}^{\infty} f(x) \mathrm{d} x . $$</pre>
+<button onclick="copyLaTeX(&quot;L17-9&quot;)" id="btn-L17-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-1</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="tags.html#definition-(alternating-series" target="_blank">definition-(alternating-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(1) $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\frac{1}{6}+\cdots=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{1}{n}$ (2) $-\frac{1}{2}+\frac{2}{3}-\frac{3}{4}+\frac{4}{5}-\frac{5}{6}+\frac{6}{7}-\cdots=\sum_{n=1}^{\infty}(-1)^{n} \frac{n}{n+1}$ Theorem (Alternating Series Test) If the alternating series $$ \sum_{n=1}^{\infty}(-1)^{n+1} b_{n}=b_{1}-b_{2}+b_{3}-b_{4}+b_{5}-b_{6}+\cdots, \quad b_{n}>0 $$ satisfies (i) $b_{n+1} \leq b_{n}$ for all $n$ (ii) $\lim _{n \rightarrow \infty} b_{n}=0$ then the series is convergent.</div>
+<div class="codebox">
+<pre id="latex-L18-1">(1) $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\frac{1}{6}+\cdots=\sum_{n=1}^{\infty}(-1)^{n-1} \frac{1}{n}$ (2) $-\frac{1}{2}+\frac{2}{3}-\frac{3}{4}+\frac{4}{5}-\frac{5}{6}+\frac{6}{7}-\cdots=\sum_{n=1}^{\infty}(-1)^{n} \frac{n}{n+1}$ Theorem (Alternating Series Test) If the alternating series $$ \sum_{n=1}^{\infty}(-1)^{n+1} b_{n}=b_{1}-b_{2}+b_{3}-b_{4}+b_{5}-b_{6}+\cdots, \quad b_{n}>0 $$ satisfies (i) $b_{n+1} \leq b_{n}$ for all $n$ (ii) $\lim _{n \rightarrow \infty} b_{n}=0$ then the series is convergent.</pre>
+<button onclick="copyLaTeX(&quot;L18-1&quot;)" id="btn-L18-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-10</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#ratio-test" target="_blank">ratio-test</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the series $$ \sum_{n=1}^{\infty} \frac{\cos n}{n^{2}}=\frac{\cos 1}{1^{2}}+\frac{\cos 2}{2^{2}}+\frac{\cos 3}{3^{2}}+\cdots $$ is convergent or divergent. (i) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=L<1$, then the series $\sum a_{n}$ is absolutely convergent (and therefore convergent). (ii) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=L>1$ or $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=1$, the Ratio Test is inconclusive.</div>
+<div class="codebox">
+<pre id="latex-L18-10">Example Determine whether the series $$ \sum_{n=1}^{\infty} \frac{\cos n}{n^{2}}=\frac{\cos 1}{1^{2}}+\frac{\cos 2}{2^{2}}+\frac{\cos 3}{3^{2}}+\cdots $$ is convergent or divergent. (i) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=L<1$, then the series $\sum a_{n}$ is absolutely convergent (and therefore convergent). (ii) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=L>1$ or $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_{n}}\right|=1$, the Ratio Test is inconclusive.</pre>
+<button onclick="copyLaTeX(&quot;L18-10&quot;)" id="btn-L18-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-11</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem-(the-ratio-test)" target="_blank">theorem-(the-ratio-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the series $\sum_{n=1}^{\infty}(-1)^{n} \frac{n^{3}}{3^{n}}$ for absolute convergence.</div>
+<div class="codebox">
+<pre id="latex-L18-11">Example Test the series $\sum_{n=1}^{\infty}(-1)^{n} \frac{n^{3}}{3^{n}}$ for absolute convergence.</pre>
+<button onclick="copyLaTeX(&quot;L18-11&quot;)" id="btn-L18-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-13</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a> <a class="tag" href="tags.html#theorem-(the-ratio-test)" target="_blank">theorem-(the-ratio-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the convergence of the series $\sum_{n=1}^{\infty} \frac{n^{n}}{n!}$. Theorem (The Root Test) (i) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L<1$, then the series $\sum a_{n}$ is absolutely convergent. (ii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L>1$ or $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=1$, the Root Test is inconclusive. (i) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L<1$, then the series $\sum a_{n}$ is absolutely convergent. (ii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L>1$ or $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=1$, the Root Test is inconclusive. The Root Test is convenient when the $n$th power occurs.</div>
+<div class="codebox">
+<pre id="latex-L18-13">Example Test the convergence of the series $\sum_{n=1}^{\infty} \frac{n^{n}}{n!}$. Theorem (The Root Test) (i) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L<1$, then the series $\sum a_{n}$ is absolutely convergent. (ii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L>1$ or $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=1$, the Root Test is inconclusive. (i) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L<1$, then the series $\sum a_{n}$ is absolutely convergent. (ii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=L>1$ or $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=\infty$, then the series $\sum a_{n}$ is divergent. (iii) If $\lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=1$, the Root Test is inconclusive. The Root Test is convenient when the $n$th power occurs.</pre>
+<button onclick="copyLaTeX(&quot;L18-13&quot;)" id="btn-L18-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-14</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#theorem-(the-root-test)" target="_blank">theorem-(the-root-test)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the convergence of the series $\sum_{n=1}^{\infty}\left(\frac{2 n+3}{3 n+2}\right)^{n}$.</div>
+<div class="codebox">
+<pre id="latex-L18-14">Example Test the convergence of the series $\sum_{n=1}^{\infty}\left(\frac{2 n+3}{3 n+2}\right)^{n}$.</pre>
+<button onclick="copyLaTeX(&quot;L18-14&quot;)" id="btn-L18-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-2</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="tags.html#definition-(alternating-series" target="_blank">definition-(alternating-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Test the alternating harmonic series $$ 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} $$ for convergence or divergence.</div>
+<div class="codebox">
+<pre id="latex-L18-2">Test the alternating harmonic series $$ 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\cdots=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} $$ for convergence or divergence.</pre>
+<button onclick="copyLaTeX(&quot;L18-2&quot;)" id="btn-L18-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-3</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{(-1)^{n} 3 n}{4 n-1}$ converges or diverges.</div>
+<div class="codebox">
+<pre id="latex-L18-3">Example Determine whether the series $\sum_{n=1}^{\infty} \frac{(-1)^{n} 3 n}{4 n-1}$ converges or diverges.</pre>
+<button onclick="copyLaTeX(&quot;L18-3&quot;)" id="btn-L18-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-4</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Test the series $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{n^{2}}{n^{3}+1}$ for convergence or divergence. If $s=\sum(-1)^{n-1} b_{n}$ is the sum of an alternating series that satisfies (i) $b_{n+1} \leq b_{n}$ and (ii) $\lim _{n \rightarrow \infty} b_{n}=0$ then $\left|R_{n}\right|=\left|s-s_{n}\right| \leq b_{n+1}$.</div>
+<div class="codebox">
+<pre id="latex-L18-4">Example Test the series $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{n^{2}}{n^{3}+1}$ for convergence or divergence. If $s=\sum(-1)^{n-1} b_{n}$ is the sum of an alternating series that satisfies (i) $b_{n+1} \leq b_{n}$ and (ii) $\lim _{n \rightarrow \infty} b_{n}=0$ then $\left|R_{n}\right|=\left|s-s_{n}\right| \leq b_{n+1}$.</pre>
+<button onclick="copyLaTeX(&quot;L18-4&quot;)" id="btn-L18-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-5</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#estimating-sums" target="_blank">estimating-sums</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series $\sum_{n=0}^{\infty} \frac{(-1)^{n}}{n!}$ correct to three decimal places. A series $\sum a_{n}$ is called absolutely convergent if the series of absolute values $\sum\left|a_{n}\right|$ is convergent. Remark - $\sum\left|a_{n}\right|=\left|a_{1}\right|+\left|a_{2}\right|+\left|a_{3}\right|+\left|a_{4}\right|+\cdots+\left|a_{n}\right|+\cdots$ - If $a_{n}>0, \sum a_{n}=\sum\left|a_{n}\right|$</div>
+<div class="codebox">
+<pre id="latex-L18-5">Find the sum of the series $\sum_{n=0}^{\infty} \frac{(-1)^{n}}{n!}$ correct to three decimal places. A series $\sum a_{n}$ is called absolutely convergent if the series of absolute values $\sum\left|a_{n}\right|$ is convergent. Remark - $\sum\left|a_{n}\right|=\left|a_{1}\right|+\left|a_{2}\right|+\left|a_{3}\right|+\left|a_{4}\right|+\cdots+\left|a_{n}\right|+\cdots$ - If $a_{n}>0, \sum a_{n}=\sum\left|a_{n}\right|$</pre>
+<button onclick="copyLaTeX(&quot;L18-5&quot;)" id="btn-L18-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-6</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#estimating-sums" target="_blank">estimating-sums</a> <a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Check that the series $$ \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^{2}}=1-\frac{1}{2^{2}}+\frac{1}{3^{2}}-\frac{1}{4^{2}}+\cdots $$ is absolutely convergent.</div>
+<div class="codebox">
+<pre id="latex-L18-6">Check that the series $$ \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^{2}}=1-\frac{1}{2^{2}}+\frac{1}{3^{2}}-\frac{1}{4^{2}}+\cdots $$ is absolutely convergent.</pre>
+<button onclick="copyLaTeX(&quot;L18-6&quot;)" id="btn-L18-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-7</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} \frac{(-1)^{n}}{n}$ is convergent. But $\sum_{n=1}^{\infty}\left|\frac{(-1)^{n}}{n}\right|=\sum_{n=1}^{\infty} \frac{1}{n}$ is divergent. A series $\sum a_{n}$ is called conditionally convergent if it is convergent but not absolutely convergent. A series $\sum a_{n}$ is called conditionally convergent if it is convergent but not absolutely convergent.</div>
+<div class="codebox">
+<pre id="latex-L18-7">Example $\sum_{n=1}^{\infty} \frac{(-1)^{n}}{n}$ is convergent. But $\sum_{n=1}^{\infty}\left|\frac{(-1)^{n}}{n}\right|=\sum_{n=1}^{\infty} \frac{1}{n}$ is divergent. A series $\sum a_{n}$ is called conditionally convergent if it is convergent but not absolutely convergent. A series $\sum a_{n}$ is called conditionally convergent if it is convergent but not absolutely convergent.</pre>
+<button onclick="copyLaTeX(&quot;L18-7&quot;)" id="btn-L18-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-8</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example $\sum_{n=1}^{\infty} \frac{(-1)^{n}}{n}$ is conditionally convergent. Theorem If a series $\sum a_{n}$ is absolutely convergent, then it is convergent.</div>
+<div class="codebox">
+<pre id="latex-L18-8">Example $\sum_{n=1}^{\infty} \frac{(-1)^{n}}{n}$ is conditionally convergent. Theorem If a series $\sum a_{n}$ is absolutely convergent, then it is convergent.</pre>
+<button onclick="copyLaTeX(&quot;L18-8&quot;)" id="btn-L18-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L18-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L18-9</span> <span class="exercise-lecture">(Lecture 18)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#series" target="_blank">series</a> <a class="tag" href="tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="tags.html#series-divergence" target="_blank">series-divergence</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether the series $\sum_{n=1}^{\infty}(-1)^{n-1} \frac{n}{n^{2}+4}$ is absolutely convergent, conditionally convergent, or divergent.</div>
+<div class="codebox">
+<pre id="latex-L18-9">Determine whether the series $\sum_{n=1}^{\infty}(-1)^{n-1} \frac{n}{n^{2}+4}$ is absolutely convergent, conditionally convergent, or divergent.</pre>
+<button onclick="copyLaTeX(&quot;L18-9&quot;)" id="btn-L18-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 1 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav active" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav active" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 1: Foundations of Integration</h2>
+<div class="lectures">40 problems</div>
+</div>
+
+<div class="exercise" id="ex-L1-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-1</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#area-between-curves" target="_blank">area-between-curves</a> <a class="tag" href="tags.html#definite-integral" target="_blank">definite-integral</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#riemann-sum" target="_blank">riemann-sum</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Use rectangles to estimate the area under the parabola $y=x^{2}$ from 0 to 1 . We can repeat this procedure with a larger number of strips, e.g., eight strips of equal width. (a) Using left endpoints (b) Using right endpoints We could obtain better estimates by increasing the number of strips. | $n$ | $L_{n}$ | $R_{n}$ | | ---: | :---: | :---: | | 10 | 0.2850000 | 0.3850000 | | 20 | 0.3087500 | 0.3587500 | | 30 | 0.3168519 | 0.3501852 | | 50 | 0.3234000 | 0.3434000 | | 100 | 0.3283500 | 0.3383500 | | 1000 | 0.3328335 | 0.3338335 | We could obtain better estimates by increasing the number of strips. | $n$ | $L_{n}$ | $R_{n}$ | | ---: | :---: | :---: | | 10 | 0.2850000 | 0.3850000 | | 20 | 0.3087500 | 0.3587500 | | 30 | 0.3168519 | 0.3501852 | | 50 | 0.3234000 | 0.3434000 | | 100 | 0.3283500 | 0.3383500 | | 1000 | 0.3328335 | 0.3338335 | Q: How about we divide the interval $[0,1]$ into $n$ subintervals of equal width? - Given any continuous function $f$ defined on $[a, b]$, we can generalize the above procedure to find the area between the graph of $f$ and the $x$-axis on the interval $[a, b]$. - In fact, instead of using left endpoints and right endpoints, we could take the height of the $i$ th rectangle to be the value of $f$ at any number $x_{i}^{*}$ in the $i$ th subinterval $\left[x_{i-1}, x_{i}\right]$. We call the numbers $x_{1}^{*}, x_{2}^{*}, \cdots, x_{n}^{*}$ the sample points. If $f$ is a continuous function defined on $[a, b]$, we divide the interval $[a, b]$ into $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. We let $x_{0}(=a), x_{1}, x_{2}$, $\cdots, x_{n}(=b)$ be the endpoints of these subintervals and we let $x_{1}^{*}, x_{2}^{*}, \cdots$, $x_{n}^{*}$ be any sample point in these subintervals. The sum $$ \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x $$ is called a Riemann sum of $f$ on $[a, b]$. - If the $n$ sample points $x_{1}^{*} \in\left[x_{0}, x_{1}\right], x_{2}^{*} \in\left[x_{1}, x_{2}\right], \cdots, x_{n}^{*} \in\left[x_{n-1}, x_{n}\right]$ are chosen systematically, then we have some special names for the resulting Riemann sums. - Choose $x_{i}^{*}=x_{i-1}$ : the left Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(x_{i-1}\right) \Delta x . $$ - Choose $x_{i}^{*}=\frac{x_{i-1}+x_{i}}{2}$ : the mid-point Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(\frac{x_{i-1}+x_{i}}{2}\right) \Delta x . $$ - Choose $x_{i}^{*}=x_{i}$ : the right Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(x_{i}\right) \Delta x $$ - In general, let $f$ be a non-negative function defined on $[a, b]$. - If $f$ is increasing on $[a, b]$, then - every left Riemann sum of $f$ on $[a, b]$ underestimates the area under the graph of $f$. - every right Riemann sum of $f$ on $[a, b]$ overestimates the area under the graph of $f$. - If $f$ is decreasing on $[a, b]$, then - every left Riemann sum of $f$ on $[a, b]$ overestimates the area under the graph of $f$. - every right Riemann sum of $f$ on $[a, b]$ underestimates the area under the graph of $f$. - The area $A$ of the region $S$ that lies under the continuous function $f$ is the limit of the sum of the areas of approximating rectangles. $$ A=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=\lim _{n \rightarrow \infty}\left[f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x\right] $$ If f is a function defined for $a \leq x \leq b$, we divide the interval $[a, b]$ into $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. We let $x_{0}(=a), x_{1}, x_{2}, \ldots$, $x_{n}(=b)$ be the endpoints of these subintervals and we let $x_{1}^{*}, x_{2}^{*}, \ldots, x_{n}^{*}$ be any sample points in these subintervals, so $x_{i}^{*}$ lies in the $i$ th subinterval $\left[x_{i-1}, x_{i}\right]$. Then the definite integral of $f$ from $a$ to $b$ is $$ \int_{a}^{b} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x $$ provided that this limit exists. If it does exist, we say that $f$ is integrable on $[a, b]$. Fig. 1: If $f(x) \geq 0$, the Riemann sum $\sum f\left(x_{i}^{*}\right) \Delta x$ is the sum of areas of rectangles. Fig. 2: If $f(x) \geq 0$, the integral $\int_{a}^{b} f(x) \mathrm{d} x$ is the area under the curve $y=f(x)$ from $a$ to $b$.</div>
+<div class="codebox">
+<pre id="latex-L1-1">Use rectangles to estimate the area under the parabola $y=x^{2}$ from 0 to 1 . We can repeat this procedure with a larger number of strips, e.g., eight strips of equal width. (a) Using left endpoints (b) Using right endpoints We could obtain better estimates by increasing the number of strips. | $n$ | $L_{n}$ | $R_{n}$ | | ---: | :---: | :---: | | 10 | 0.2850000 | 0.3850000 | | 20 | 0.3087500 | 0.3587500 | | 30 | 0.3168519 | 0.3501852 | | 50 | 0.3234000 | 0.3434000 | | 100 | 0.3283500 | 0.3383500 | | 1000 | 0.3328335 | 0.3338335 | We could obtain better estimates by increasing the number of strips. | $n$ | $L_{n}$ | $R_{n}$ | | ---: | :---: | :---: | | 10 | 0.2850000 | 0.3850000 | | 20 | 0.3087500 | 0.3587500 | | 30 | 0.3168519 | 0.3501852 | | 50 | 0.3234000 | 0.3434000 | | 100 | 0.3283500 | 0.3383500 | | 1000 | 0.3328335 | 0.3338335 | Q: How about we divide the interval $[0,1]$ into $n$ subintervals of equal width? - Given any continuous function $f$ defined on $[a, b]$, we can generalize the above procedure to find the area between the graph of $f$ and the $x$-axis on the interval $[a, b]$. - In fact, instead of using left endpoints and right endpoints, we could take the height of the $i$ th rectangle to be the value of $f$ at any number $x_{i}^{*}$ in the $i$ th subinterval $\left[x_{i-1}, x_{i}\right]$. We call the numbers $x_{1}^{*}, x_{2}^{*}, \cdots, x_{n}^{*}$ the sample points. If $f$ is a continuous function defined on $[a, b]$, we divide the interval $[a, b]$ into $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. We let $x_{0}(=a), x_{1}, x_{2}$, $\cdots, x_{n}(=b)$ be the endpoints of these subintervals and we let $x_{1}^{*}, x_{2}^{*}, \cdots$, $x_{n}^{*}$ be any sample point in these subintervals. The sum $$ \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x $$ is called a Riemann sum of $f$ on $[a, b]$. - If the $n$ sample points $x_{1}^{*} \in\left[x_{0}, x_{1}\right], x_{2}^{*} \in\left[x_{1}, x_{2}\right], \cdots, x_{n}^{*} \in\left[x_{n-1}, x_{n}\right]$ are chosen systematically, then we have some special names for the resulting Riemann sums. - Choose $x_{i}^{*}=x_{i-1}$ : the left Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(x_{i-1}\right) \Delta x . $$ - Choose $x_{i}^{*}=\frac{x_{i-1}+x_{i}}{2}$ : the mid-point Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(\frac{x_{i-1}+x_{i}}{2}\right) \Delta x . $$ - Choose $x_{i}^{*}=x_{i}$ : the right Riemann sum of $f$ on $[a, b]$ is the sum $$ \sum_{i=1}^{n} f\left(x_{i}\right) \Delta x $$ - In general, let $f$ be a non-negative function defined on $[a, b]$. - If $f$ is increasing on $[a, b]$, then - every left Riemann sum of $f$ on $[a, b]$ underestimates the area under the graph of $f$. - every right Riemann sum of $f$ on $[a, b]$ overestimates the area under the graph of $f$. - If $f$ is decreasing on $[a, b]$, then - every left Riemann sum of $f$ on $[a, b]$ overestimates the area under the graph of $f$. - every right Riemann sum of $f$ on $[a, b]$ underestimates the area under the graph of $f$. - The area $A$ of the region $S$ that lies under the continuous function $f$ is the limit of the sum of the areas of approximating rectangles. $$ A=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=\lim _{n \rightarrow \infty}\left[f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x\right] $$ If f is a function defined for $a \leq x \leq b$, we divide the interval $[a, b]$ into $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. We let $x_{0}(=a), x_{1}, x_{2}, \ldots$, $x_{n}(=b)$ be the endpoints of these subintervals and we let $x_{1}^{*}, x_{2}^{*}, \ldots, x_{n}^{*}$ be any sample points in these subintervals, so $x_{i}^{*}$ lies in the $i$ th subinterval $\left[x_{i-1}, x_{i}\right]$. Then the definite integral of $f$ from $a$ to $b$ is $$ \int_{a}^{b} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x $$ provided that this limit exists. If it does exist, we say that $f$ is integrable on $[a, b]$. Fig. 1: If $f(x) \geq 0$, the Riemann sum $\sum f\left(x_{i}^{*}\right) \Delta x$ is the sum of areas of rectangles. Fig. 2: If $f(x) \geq 0$, the integral $\int_{a}^{b} f(x) \mathrm{d} x$ is the area under the curve $y=f(x)$ from $a$ to $b$.</pre>
+<button onclick="copyLaTeX(&quot;L1-1&quot;)" id="btn-L1-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-10</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-the-indefinite-integr" target="_blank">table-of-the-indefinite-integr</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question How to find $\int 2 x \sqrt{1+x^{2}} \mathrm{~d} x$ ? Solution: Let $u=1+x^{2}$. Then $\mathrm{d} u=2 x \mathrm{~d} x$ and $$ \int 2 x \sqrt{1+x^{2}} \mathrm{~d} x=\int \sqrt{u} \mathrm{~d} u=\frac{2}{3} u^{\frac{3}{2}}+C=\frac{2}{3}\left(x^{2}+1\right)^{\frac{3}{2}}+C $$</div>
+<div class="codebox">
+<pre id="latex-L1-10">Question How to find $\int 2 x \sqrt{1+x^{2}} \mathrm{~d} x$ ? Solution: Let $u=1+x^{2}$. Then $\mathrm{d} u=2 x \mathrm{~d} x$ and $$ \int 2 x \sqrt{1+x^{2}} \mathrm{~d} x=\int \sqrt{u} \mathrm{~d} u=\frac{2}{3} u^{\frac{3}{2}}+C=\frac{2}{3}\left(x^{2}+1\right)^{\frac{3}{2}}+C $$</pre>
+<button onclick="copyLaTeX(&quot;L1-10&quot;)" id="btn-L1-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-12</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int x^{3} \cos \left(x^{4}+2\right) d x$.</div>
+<div class="codebox">
+<pre id="latex-L1-12">Example Find $\int x^{3} \cos \left(x^{4}+2\right) d x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-12&quot;)" id="btn-L1-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-13</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#substitution-rule" target="_blank">substitution-rule</a> <a class="tag" href="tags.html#u-substitution" target="_blank">u-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int x^{3} \cos \left(x^{4}+2\right) d x$. (1) The main challenge is to think of an appropriate substitution. If your first guess doesn't work, try another substitution. (2) We can always check the solution by differentiation: $$ \left(\frac{1}{4} \sin \left(x^{4}+2\right)+C\right)^{\prime}=\frac{1}{4} \cos \left(x^{4}+2\right) \cdot 4 x^{3}=x^{3} \cos \left(x^{4}+2\right) . $$</div>
+<div class="codebox">
+<pre id="latex-L1-13">Example Find $\int x^{3} \cos \left(x^{4}+2\right) d x$. (1) The main challenge is to think of an appropriate substitution. If your first guess doesn't work, try another substitution. (2) We can always check the solution by differentiation: $$ \left(\frac{1}{4} \sin \left(x^{4}+2\right)+C\right)^{\prime}=\frac{1}{4} \cos \left(x^{4}+2\right) \cdot 4 x^{3}=x^{3} \cos \left(x^{4}+2\right) . $$</pre>
+<button onclick="copyLaTeX(&quot;L1-13&quot;)" id="btn-L1-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-14</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int \sqrt{2 x+1} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L1-14">Evaluate $\int \sqrt{2 x+1} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-14&quot;)" id="btn-L1-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-15</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \frac{x}{\sqrt{1-4 x^{2}}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L1-15">Find $\int \frac{x}{\sqrt{1-4 x^{2}}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-15&quot;)" id="btn-L1-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-16</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Calculate $\int e^{5 x} d x$.</div>
+<div class="codebox">
+<pre id="latex-L1-16">Example Calculate $\int e^{5 x} d x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-16&quot;)" id="btn-L1-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-17</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find $\int \sqrt{1+x^{2}} \cdot x^{5} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L1-17">Find $\int \sqrt{1+x^{2}} \cdot x^{5} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-17&quot;)" id="btn-L1-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-18">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-18</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definite-integral" target="_blank">definite-integral</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#substitution-rule" target="_blank">substitution-rule</a> <a class="tag" href="tags.html#u-substitution" target="_blank">u-substitution</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Calculate $\int \tan x \mathrm{~d} x$. Theorem (The Substitution Rule for Definite Integrals) If $g^{\prime}$ is continuous on $[a, b]$ and $f$ is continuous on the range of $u=g(x)$, then $$ \int_{a}^{b} f(g(x)) g^{\prime}(x) \mathrm{d} x=\int_{g(a)}^{g(b)} f(u) \mathrm{d} u $$</div>
+<div class="codebox">
+<pre id="latex-L1-18">Calculate $\int \tan x \mathrm{~d} x$. Theorem (The Substitution Rule for Definite Integrals) If $g^{\prime}$ is continuous on $[a, b]$ and $f$ is continuous on the range of $u=g(x)$, then $$ \int_{a}^{b} f(g(x)) g^{\prime}(x) \mathrm{d} x=\int_{g(a)}^{g(b)} f(u) \mathrm{d} u $$</pre>
+<button onclick="copyLaTeX(&quot;L1-18&quot;)" id="btn-L1-18">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-19">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-19</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int_{0}^{4} \sqrt{2 x+1} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L1-19">Evaluate $\int_{0}^{4} \sqrt{2 x+1} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-19&quot;)" id="btn-L1-19">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-2</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definite-integral" target="_blank">definite-integral</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#riemann-sum" target="_blank">riemann-sum</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the area under the parabola $y=x^{2}$ from 0 to 1 ? When $f$ takes on both positive and negative values, a definite integral can be interpreted as a net area, that is, a difference of areas: $$ \int_{a}^{b} f(x) \mathrm{d} x=A_{1}-A_{2} \quad \Longrightarrow \quad \text { called net area } $$ where $A_{1}$ is the area of the region above the $x$-axis and below the graph of $f, A_{2}$ is the area of the region below the $x$-axis and above the graph of $f$. When $f$ takes on both positive and negative values, a definite integral can be interpreted as a net area, that is, a difference of areas: $$ \int_{a}^{b} f(x) \mathrm{d} x=A_{1}-A_{2} \quad \Longrightarrow \quad \text { called net area } $$ where $A_{1}$ is the area of the region above the $x$-axis and below the graph of $f, A_{2}$ is the area of the region below the $x$-axis and above the graph of $f$. Fig. 1: $\sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x$ is an approximation to the net area. Fig. 2: $\int_{a}^{b} f(x) \mathrm{d} x$ is the net area. If $f$ is continuous on $[a, b]$, then when computing $\int_{a}^{b} f(x) \mathrm{d} x$ from definition, we may simplify the calculation by just choosing any convenient Riemann sums of $f$ (e.g., the right Riemann sum) with respect to $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. Specifically, for right Riemann sum: $$ x_{1}=a+\Delta x, \quad x_{2}=a+2 \Delta x, \quad x_{3}=a+3 \Delta x, \quad \cdots \cdots $$ In general, $x_{i}=a+i \Delta x$. Definition of definite integral simply becomes: $$ \int_{a}^{b} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f(a+i \Delta x) \Delta x . $$ On the interval $[a, b]=[0,1]: a=0, b=1, \Delta x=\frac{1-0}{n}=\frac{1}{n}$. So, this formula reduces further to $$ \int_{0}^{1} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(\frac{i}{n}\right) \cdot \frac{1}{n} . $$</div>
+<div class="codebox">
+<pre id="latex-L1-2">What is the area under the parabola $y=x^{2}$ from 0 to 1 ? When $f$ takes on both positive and negative values, a definite integral can be interpreted as a net area, that is, a difference of areas: $$ \int_{a}^{b} f(x) \mathrm{d} x=A_{1}-A_{2} \quad \Longrightarrow \quad \text { called net area } $$ where $A_{1}$ is the area of the region above the $x$-axis and below the graph of $f, A_{2}$ is the area of the region below the $x$-axis and above the graph of $f$. When $f$ takes on both positive and negative values, a definite integral can be interpreted as a net area, that is, a difference of areas: $$ \int_{a}^{b} f(x) \mathrm{d} x=A_{1}-A_{2} \quad \Longrightarrow \quad \text { called net area } $$ where $A_{1}$ is the area of the region above the $x$-axis and below the graph of $f, A_{2}$ is the area of the region below the $x$-axis and above the graph of $f$. Fig. 1: $\sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x$ is an approximation to the net area. Fig. 2: $\int_{a}^{b} f(x) \mathrm{d} x$ is the net area. If $f$ is continuous on $[a, b]$, then when computing $\int_{a}^{b} f(x) \mathrm{d} x$ from definition, we may simplify the calculation by just choosing any convenient Riemann sums of $f$ (e.g., the right Riemann sum) with respect to $n$ subintervals of equal width $\Delta x=\frac{b-a}{n}$. Specifically, for right Riemann sum: $$ x_{1}=a+\Delta x, \quad x_{2}=a+2 \Delta x, \quad x_{3}=a+3 \Delta x, \quad \cdots \cdots $$ In general, $x_{i}=a+i \Delta x$. Definition of definite integral simply becomes: $$ \int_{a}^{b} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f(a+i \Delta x) \Delta x . $$ On the interval $[a, b]=[0,1]: a=0, b=1, \Delta x=\frac{1-0}{n}=\frac{1}{n}$. So, this formula reduces further to $$ \int_{0}^{1} f(x) \mathrm{d} x=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} f\left(\frac{i}{n}\right) \cdot \frac{1}{n} . $$</pre>
+<button onclick="copyLaTeX(&quot;L1-2&quot;)" id="btn-L1-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-20">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-20</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate $\int_{1}^{2} \frac{\mathrm{~d} x}{(3-5 x)^{2}}$.</div>
+<div class="codebox">
+<pre id="latex-L1-20">Example Evaluate $\int_{1}^{2} \frac{\mathrm{~d} x}{(3-5 x)^{2}}$.</pre>
+<button onclick="copyLaTeX(&quot;L1-20&quot;)" id="btn-L1-20">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-21">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-21</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate $\int_{1}^{e} \frac{\ln x}{x} \mathrm{~d} x$. Theorem (Integrals of Symmetric Functions) Suppose $f$ is continuous on $[-a, a]$. (a) If $f$ is even (i.e., $f(-x)=f(x)$ ), then $\int_{-a}^{a} f(x) \mathrm{d} x=2 \int_{0}^{a} f(x) \mathrm{d} x$. (b) If $f$ is odd (i.e., $f(-x)=-f(x)$ ), then $\int_{-a}^{a} f(x) \mathrm{d} x=0$.</div>
+<div class="codebox">
+<pre id="latex-L1-21">Evaluate $\int_{1}^{e} \frac{\ln x}{x} \mathrm{~d} x$. Theorem (Integrals of Symmetric Functions) Suppose $f$ is continuous on $[-a, a]$. (a) If $f$ is even (i.e., $f(-x)=f(x)$ ), then $\int_{-a}^{a} f(x) \mathrm{d} x=2 \int_{0}^{a} f(x) \mathrm{d} x$. (b) If $f$ is odd (i.e., $f(-x)=-f(x)$ ), then $\int_{-a}^{a} f(x) \mathrm{d} x=0$.</pre>
+<button onclick="copyLaTeX(&quot;L1-21&quot;)" id="btn-L1-21">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-22">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-22</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#symmetry" target="_blank">symmetry</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int_{-2}^{2}\left(x^{6}+1\right) d x$.</div>
+<div class="codebox">
+<pre id="latex-L1-22">Example Find $\int_{-2}^{2}\left(x^{6}+1\right) d x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-22&quot;)" id="btn-L1-22">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-23">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-23</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#symmetry" target="_blank">symmetry</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find $\int_{-1}^{1} \frac{\tan x}{1+x^{2}+x^{4}} \mathrm{~d} x$.</div>
+<div class="codebox">
+<pre id="latex-L1-23">Example Find $\int_{-1}^{1} \frac{\tan x}{1+x^{2}+x^{4}} \mathrm{~d} x$.</pre>
+<button onclick="copyLaTeX(&quot;L1-23&quot;)" id="btn-L1-23">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-3</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#riemann-sum-to-integral" target="_blank">riemann-sum-to-integral</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Express the following limit as an integral on the interval $[0, \pi]$. $$ \lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left(x_{i}^{3}+x_{i} \sin x_{i}\right) \Delta x $$ where $\Delta x=\frac{\pi-0}{n}=\frac{\pi}{n}$ and $x_{i}=0+i \Delta x=i \Delta x(i=1,2, \ldots, n)$.</div>
+<div class="codebox">
+<pre id="latex-L1-3">Express the following limit as an integral on the interval $[0, \pi]$. $$ \lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left(x_{i}^{3}+x_{i} \sin x_{i}\right) \Delta x $$ where $\Delta x=\frac{\pi-0}{n}=\frac{\pi}{n}$ and $x_{i}=0+i \Delta x=i \Delta x(i=1,2, \ldots, n)$.</pre>
+<button onclick="copyLaTeX(&quot;L1-3&quot;)" id="btn-L1-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-4</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#riemann-sum-to-integral" target="_blank">riemann-sum-to-integral</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Express the following limit as an integral on the interval $[0,1]$. $$ \lim _{n \rightarrow \infty} \frac{6}{n}\left(\left(\frac{1}{n}\right)^{2}+\left(\frac{2}{n}\right)^{2}+\cdots+\left(\frac{n}{n}\right)^{2}\right) . $$</div>
+<div class="codebox">
+<pre id="latex-L1-4">Example Express the following limit as an integral on the interval $[0,1]$. $$ \lim _{n \rightarrow \infty} \frac{6}{n}\left(\left(\frac{1}{n}\right)^{2}+\left(\frac{2}{n}\right)^{2}+\cdots+\left(\frac{n}{n}\right)^{2}\right) . $$</pre>
+<button onclick="copyLaTeX(&quot;L1-4&quot;)" id="btn-L1-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-5</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#riemann-sum-to-integral" target="_blank">riemann-sum-to-integral</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Express the following limit as an integral: $$ \lim _{n \rightarrow \infty} \sum_{i=1}^{n} \frac{n^{2}}{(n+i)^{3}} . $$ (1) $\int_{b}^{a} f(x) \mathrm{d} x=-\int_{a}^{b} f(x) \mathrm{d} x$ (2) $\int_{a}^{a} f(x) \mathrm{d} x=0$ (3) $\int_{a}^{b} c \mathrm{~d} x=c(b-a)$ (4) $\int_{a}^{b}[f(x)+g(x)] \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x+\int_{a}^{b} g(x) \mathrm{d} x$ (5) $\int_{a}^{b} c f(x) \mathrm{d} x=c \int_{a}^{b} f(x) \mathrm{d} x$ (6) $\int_{a}^{b}[f(x)-g(x)] \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x-\int_{a}^{b} g(x) \mathrm{d} x$ (1) $\int_{a}^{c} f(x) \mathrm{d} x+\int_{c}^{b} f(x) \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x$ Theorem (Fundamental Theorem of Calculus) Suppose $f$ is continuous on $[a, b]$. (1) If $g(x)=\int_{a}^{x} f(t) \mathrm{d} t$, then $g^{\prime}(x)=\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(t) \mathrm{d} t=f(x)$. Theorem (Fundamental Theorem of Calculus) Suppose $f$ is continuous on $[a, b]$. (1) If $g(x)=\int_{a}^{x} f(t) \mathrm{d} t$, then $g^{\prime}(x)=\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(t) \mathrm{d} t=f(x)$. (2) $\int_{a}^{b} f(x) \mathrm{d} x=\left.F(x)\right|_{a} ^{b}=F(b)-F(a)$, where $F$ is any antiderivative of $f$, that is, $F^{\prime}=f$.</div>
+<div class="codebox">
+<pre id="latex-L1-5">Example Express the following limit as an integral: $$ \lim _{n \rightarrow \infty} \sum_{i=1}^{n} \frac{n^{2}}{(n+i)^{3}} . $$ (1) $\int_{b}^{a} f(x) \mathrm{d} x=-\int_{a}^{b} f(x) \mathrm{d} x$ (2) $\int_{a}^{a} f(x) \mathrm{d} x=0$ (3) $\int_{a}^{b} c \mathrm{~d} x=c(b-a)$ (4) $\int_{a}^{b}[f(x)+g(x)] \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x+\int_{a}^{b} g(x) \mathrm{d} x$ (5) $\int_{a}^{b} c f(x) \mathrm{d} x=c \int_{a}^{b} f(x) \mathrm{d} x$ (6) $\int_{a}^{b}[f(x)-g(x)] \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x-\int_{a}^{b} g(x) \mathrm{d} x$ (1) $\int_{a}^{c} f(x) \mathrm{d} x+\int_{c}^{b} f(x) \mathrm{d} x=\int_{a}^{b} f(x) \mathrm{d} x$ Theorem (Fundamental Theorem of Calculus) Suppose $f$ is continuous on $[a, b]$. (1) If $g(x)=\int_{a}^{x} f(t) \mathrm{d} t$, then $g^{\prime}(x)=\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(t) \mathrm{d} t=f(x)$. Theorem (Fundamental Theorem of Calculus) Suppose $f$ is continuous on $[a, b]$. (1) If $g(x)=\int_{a}^{x} f(t) \mathrm{d} t$, then $g^{\prime}(x)=\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(t) \mathrm{d} t=f(x)$. (2) $\int_{a}^{b} f(x) \mathrm{d} x=\left.F(x)\right|_{a} ^{b}=F(b)-F(a)$, where $F$ is any antiderivative of $f$, that is, $F^{\prime}=f$.</pre>
+<button onclick="copyLaTeX(&quot;L1-5&quot;)" id="btn-L1-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-6</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#derivative" target="_blank">derivative</a> <a class="tag" href="tags.html#properties-of-the-definite-int" target="_blank">properties-of-the-definite-int</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate each of the following derivatives. (a) $\frac{\mathrm{d}}{\mathrm{d} x} \int_{0}^{x} \sqrt{1-t^{2}} \mathrm{~d} t$ (b) $\frac{\mathrm{d}}{\mathrm{dx}} \int_{\sin x}^{1} \sqrt{1+t^{2}} \mathrm{~d} t$ (c) $\frac{\mathrm{d}}{\mathrm{d} x} \int_{0}^{1} \mathrm{e}^{x^{2}} \mathrm{~d} x$</div>
+<div class="codebox">
+<pre id="latex-L1-6">Evaluate each of the following derivatives. (a) $\frac{\mathrm{d}}{\mathrm{d} x} \int_{0}^{x} \sqrt{1-t^{2}} \mathrm{~d} t$ (b) $\frac{\mathrm{d}}{\mathrm{dx}} \int_{\sin x}^{1} \sqrt{1+t^{2}} \mathrm{~d} t$ (c) $\frac{\mathrm{d}}{\mathrm{d} x} \int_{0}^{1} \mathrm{e}^{x^{2}} \mathrm{~d} x$</pre>
+<button onclick="copyLaTeX(&quot;L1-6&quot;)" id="btn-L1-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-7</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#limit" target="_blank">limit</a> <a class="tag" href="tags.html#properties-of-the-definite-int" target="_blank">properties-of-the-definite-int</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate the limit $$ \lim _{x \rightarrow 0} \frac{1}{x} \int_{0}^{x} e^{-t^{2}} \mathrm{~d} t $$ if it exists.</div>
+<div class="codebox">
+<pre id="latex-L1-7">Example Evaluate the limit $$ \lim _{x \rightarrow 0} \frac{1}{x} \int_{0}^{x} e^{-t^{2}} \mathrm{~d} t $$ if it exists.</pre>
+<button onclick="copyLaTeX(&quot;L1-7&quot;)" id="btn-L1-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-8</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Evaluate the integral $\int_{0}^{3}\left(2 \sin x-e^{x}\right) d x$. (1) $\int c f(x) \mathrm{d} x=c \int f(x) \mathrm{d} x$ (2) $\int(f(x)+g(x)) \mathrm{d} x=\int f(x) \mathrm{d} x+\int g(x) \mathrm{d} x$ (3) $\int k \mathrm{~d} x=k x+C$ (4) $\int x^{n} \mathrm{~d} x=\frac{x^{n+1}}{n+1}+C(n \neq-1)$ (5) $\int \frac{1}{x} \mathrm{~d} x=\ln |x|+C$ (6) $\int e^{x} \mathrm{~d} x=e^{x}+C$ (7) $\int a^{x} \mathrm{~d} x=\frac{a^{x}}{\ln a}+C$ (8) $\int \sin x \mathrm{~d} x=-\cos x+C$ (9) $\int \cos x \mathrm{~d} x=\sin x+C$ (10) $\int \sec ^{2} x \mathrm{~d} x=\tan x+C$ (11) $\int \csc ^{2} x \mathrm{~d} x=-\cot x+C$ (12) $\int \sec x \tan x \mathrm{~d} x=\sec x+C$ (13) $\int \csc x \cot x \mathrm{~d} x=-\csc x+C$ (14) $\int \frac{1}{1+x^{2}} \mathrm{~d} x=\tan ^{-1} x+C$ (15) $\int \frac{1}{\sqrt{1-x^{2}}} \mathrm{~d} x=\sin ^{-1} x+C$</div>
+<div class="codebox">
+<pre id="latex-L1-8">Example Evaluate the integral $\int_{0}^{3}\left(2 \sin x-e^{x}\right) d x$. (1) $\int c f(x) \mathrm{d} x=c \int f(x) \mathrm{d} x$ (2) $\int(f(x)+g(x)) \mathrm{d} x=\int f(x) \mathrm{d} x+\int g(x) \mathrm{d} x$ (3) $\int k \mathrm{~d} x=k x+C$ (4) $\int x^{n} \mathrm{~d} x=\frac{x^{n+1}}{n+1}+C(n \neq-1)$ (5) $\int \frac{1}{x} \mathrm{~d} x=\ln |x|+C$ (6) $\int e^{x} \mathrm{~d} x=e^{x}+C$ (7) $\int a^{x} \mathrm{~d} x=\frac{a^{x}}{\ln a}+C$ (8) $\int \sin x \mathrm{~d} x=-\cos x+C$ (9) $\int \cos x \mathrm{~d} x=\sin x+C$ (10) $\int \sec ^{2} x \mathrm{~d} x=\tan x+C$ (11) $\int \csc ^{2} x \mathrm{~d} x=-\cot x+C$ (12) $\int \sec x \tan x \mathrm{~d} x=\sec x+C$ (13) $\int \csc x \cot x \mathrm{~d} x=-\csc x+C$ (14) $\int \frac{1}{1+x^{2}} \mathrm{~d} x=\tan ^{-1} x+C$ (15) $\int \frac{1}{\sqrt{1-x^{2}}} \mathrm{~d} x=\sin ^{-1} x+C$</pre>
+<button onclick="copyLaTeX(&quot;L1-8&quot;)" id="btn-L1-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L1-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L1-9</span> <span class="exercise-lecture">(Lecture 1)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#table-of-the-indefinite-integr" target="_blank">table-of-the-indefinite-integr</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Question How to find $\int 2 x \sqrt{1+x^{2}} \mathrm{~d} x$ ?</div>
+<div class="codebox">
+<pre id="latex-L1-9">Question How to find $\int 2 x \sqrt{1+x^{2}} \mathrm{~d} x$ ?</pre>
+<button onclick="copyLaTeX(&quot;L1-9&quot;)" id="btn-L1-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-1</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#areas-between-curves" target="_blank">areas-between-curves</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the region bounded above by $y=e^{x}$, bounded below by $y=x$, and bounded on the sides by $x=0$ and $x=1$.</div>
+<div class="codebox">
+<pre id="latex-L2-1">Find the area of the region bounded above by $y=e^{x}$, bounded below by $y=x$, and bounded on the sides by $x=0$ and $x=1$.</pre>
+<button onclick="copyLaTeX(&quot;L2-1&quot;)" id="btn-L2-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-12</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area enclosed by the line $y=x-1$ and the parabola $y^{2}=2 x+6$.</div>
+<div class="codebox">
+<pre id="latex-L2-12">Find the area enclosed by the line $y=x-1$ and the parabola $y^{2}=2 x+6$.</pre>
+<button onclick="copyLaTeX(&quot;L2-12&quot;)" id="btn-L2-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-14</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#cross-sections" target="_blank">cross-sections</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area enclosed by the line $y=x-1$ and the parabola $y^{2}=2 x+6$. The calculation is much more involved if we integrate with respect to $x$ instead of $y$. (a) Cylinder $V=A h$ (a) Cylinder $V=A h$ (b) Circular cylinder $V=\pi r^{2} h$ (a) Cylinder $V=A h$ (b) Circular cylinder $V=\pi r^{2} h$ (c) Rectangular box $V=l w h$ Let $S$ be a solid that lies between $x=a$ and $x=b$. If the cross-sectional area of $S$ in the plane $P_{x}$, through $x$ and perpendicular to the $x$-axis, is $A(x)$, where A is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(x_{i}^{*}\right) \Delta x=\int_{a}^{b} A(x) \mathrm{d} x $$ Let $S$ be a solid that lies between $x=a$ and $x=b$. If the cross-sectional area of $S$ in the plane $P_{x}$, through $x$ and perpendicular to the $x$-axis, is $A(x)$, where A is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(x_{i}^{*}\right) \Delta x=\int_{a}^{b} A(x) \mathrm{d} x . $$ - We normally say the above method as finding volume by using slices.</div>
+<div class="codebox">
+<pre id="latex-L2-14">Find the area enclosed by the line $y=x-1$ and the parabola $y^{2}=2 x+6$. The calculation is much more involved if we integrate with respect to $x$ instead of $y$. (a) Cylinder $V=A h$ (a) Cylinder $V=A h$ (b) Circular cylinder $V=\pi r^{2} h$ (a) Cylinder $V=A h$ (b) Circular cylinder $V=\pi r^{2} h$ (c) Rectangular box $V=l w h$ Let $S$ be a solid that lies between $x=a$ and $x=b$. If the cross-sectional area of $S$ in the plane $P_{x}$, through $x$ and perpendicular to the $x$-axis, is $A(x)$, where A is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(x_{i}^{*}\right) \Delta x=\int_{a}^{b} A(x) \mathrm{d} x $$ Let $S$ be a solid that lies between $x=a$ and $x=b$. If the cross-sectional area of $S$ in the plane $P_{x}$, through $x$ and perpendicular to the $x$-axis, is $A(x)$, where A is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(x_{i}^{*}\right) \Delta x=\int_{a}^{b} A(x) \mathrm{d} x . $$ - We normally say the above method as finding volume by using slices.</pre>
+<button onclick="copyLaTeX(&quot;L2-14&quot;)" id="btn-L2-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-15</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-of-volume" target="_blank">definition-of-volume</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Show that the volume of a sphere of radius $r$ is $V=\frac{4}{3} \pi r^{3}$.</div>
+<div class="codebox">
+<pre id="latex-L2-15">Show that the volume of a sphere of radius $r$ is $V=\frac{4}{3} \pi r^{3}$.</pre>
+<button onclick="copyLaTeX(&quot;L2-15&quot;)" id="btn-L2-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-16">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-16</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#definition-of-volume" target="_blank">definition-of-volume</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of the solid obtained by rotating about the $x$-axis the region under the curve $y=\sqrt{x}$ from 0 to 1 .</div>
+<div class="codebox">
+<pre id="latex-L2-16">Find the volume of the solid obtained by rotating about the $x$-axis the region under the curve $y=\sqrt{x}$ from 0 to 1 .</pre>
+<button onclick="copyLaTeX(&quot;L2-16&quot;)" id="btn-L2-16">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-17">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-17</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#cross-sections" target="_blank">cross-sections</a> <a class="tag" href="tags.html#definition-of-volume" target="_blank">definition-of-volume</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of the solid obtained by rotating the region bounded by $y=x^{3}, y=8$, and $x=0$ about the $y$-axis. If S is a solid that lies between $y=c$ and $y=d$ and if the cross-sectional area of $S$ through $y$ perpendicular to the $y$-axis is $A(y)$, where $A$ is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(y_{i}^{*}\right) \Delta y=\int_{c}^{d} A(y) \mathrm{d} y $$</div>
+<div class="codebox">
+<pre id="latex-L2-17">Find the volume of the solid obtained by rotating the region bounded by $y=x^{3}, y=8$, and $x=0$ about the $y$-axis. If S is a solid that lies between $y=c$ and $y=d$ and if the cross-sectional area of $S$ through $y$ perpendicular to the $y$-axis is $A(y)$, where $A$ is a continuous function, then the volume of $S$ is $$ V=\lim _{n \rightarrow \infty} \sum_{i=1}^{n} A\left(y_{i}^{*}\right) \Delta y=\int_{c}^{d} A(y) \mathrm{d} y $$</pre>
+<button onclick="copyLaTeX(&quot;L2-17&quot;)" id="btn-L2-17">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-18">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-18</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#rotation" target="_blank">rotation</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The region $\mathcal{R}$ enclosed by the curves $y=x$ and $y=x^{2}$ is rotated about the $x$-axis. Find the volume of the resulting solid.</div>
+<div class="codebox">
+<pre id="latex-L2-18">The region $\mathcal{R}$ enclosed by the curves $y=x$ and $y=x^{2}$ is rotated about the $x$-axis. Find the volume of the resulting solid.</pre>
+<button onclick="copyLaTeX(&quot;L2-18&quot;)" id="btn-L2-18">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-19">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-19</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#surface-of-revolution" target="_blank">surface-of-revolution</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of the solid obtained by rotating the region in previous example about the line $y=2$. A solid obtained by revolving a region about a line is called a solid of revolution. A solid obtained by revolving a region about a line is called a solid of revolution.</div>
+<div class="codebox">
+<pre id="latex-L2-19">Find the volume of the solid obtained by rotating the region in previous example about the line $y=2$. A solid obtained by revolving a region about a line is called a solid of revolution. A solid obtained by revolving a region about a line is called a solid of revolution.</pre>
+<button onclick="copyLaTeX(&quot;L2-19&quot;)" id="btn-L2-19">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-20">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-20</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#solids-of-revolution" target="_blank">solids-of-revolution</a> <a class="tag" href="tags.html#surface-of-revolution" target="_blank">surface-of-revolution</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to calculate the volume of a solid of revolution? A solid obtained by revolving a region about a line is called a solid of revolution.</div>
+<div class="codebox">
+<pre id="latex-L2-20">How to calculate the volume of a solid of revolution? A solid obtained by revolving a region about a line is called a solid of revolution.</pre>
+<button onclick="copyLaTeX(&quot;L2-20&quot;)" id="btn-L2-20">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-21">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-21</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#cross-sections" target="_blank">cross-sections</a> <a class="tag" href="tags.html#disk-method" target="_blank">disk-method</a> <a class="tag" href="tags.html#solids-of-revolution" target="_blank">solids-of-revolution</a> <a class="tag" href="tags.html#surface-of-revolution" target="_blank">surface-of-revolution</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a> <a class="tag" href="tags.html#washer-method" target="_blank">washer-method</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to calculate the volume of a solid of revolution? (1) Calculate $A(x)$ or $A(y)$ in one of the following ways: (a) If the cross-section is a disk, $$ A=\pi \cdot(\text { radius })^{2} $$ (6) If the cross-section is a washer, $$ A=\pi \cdot(\text { outer radius })^{2}-\pi \cdot(\text { inner radius })^{2} . $$ (2) Use formula $$ V=\int_{a}^{b} A(x) \mathrm{d} x \quad \text { or } \quad V=\int_{c}^{d} A(y) \mathrm{d} y $$ to find the volume of a solid of revolution.</div>
+<div class="codebox">
+<pre id="latex-L2-21">How to calculate the volume of a solid of revolution? (1) Calculate $A(x)$ or $A(y)$ in one of the following ways: (a) If the cross-section is a disk, $$ A=\pi \cdot(\text { radius })^{2} $$ (6) If the cross-section is a washer, $$ A=\pi \cdot(\text { outer radius })^{2}-\pi \cdot(\text { inner radius })^{2} . $$ (2) Use formula $$ V=\int_{a}^{b} A(x) \mathrm{d} x \quad \text { or } \quad V=\int_{c}^{d} A(y) \mathrm{d} y $$ to find the volume of a solid of revolution.</pre>
+<button onclick="copyLaTeX(&quot;L2-21&quot;)" id="btn-L2-21">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-22">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-22</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#question:" target="_blank">question:</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The region $\mathcal{R}$ is enclosed by the curves $y=x$ and $y=x^{2}$. Find the volume of the solid obtained by rotating $\mathcal{R}$ about the line $x=-1$.</div>
+<div class="codebox">
+<pre id="latex-L2-22">The region $\mathcal{R}$ is enclosed by the curves $y=x$ and $y=x^{2}$. Find the volume of the solid obtained by rotating $\mathcal{R}$ about the line $x=-1$.</pre>
+<button onclick="copyLaTeX(&quot;L2-22&quot;)" id="btn-L2-22">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-23">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-23</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#answer:" target="_blank">answer:</a> <a class="tag" href="tags.html#cross-sections" target="_blank">cross-sections</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of the solid with a circular base of radius 1 and cross-sections perpendicular to the base being equilateral triangles.</div>
+<div class="codebox">
+<pre id="latex-L2-23">Find the volume of the solid with a circular base of radius 1 and cross-sections perpendicular to the base being equilateral triangles.</pre>
+<button onclick="copyLaTeX(&quot;L2-23&quot;)" id="btn-L2-23">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-24">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-24</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of a pyramid whose base is a square with side $L$ and whose height is $h$.</div>
+<div class="codebox">
+<pre id="latex-L2-24">Find the volume of a pyramid whose base is a square with side $L$ and whose height is $h$.</pre>
+<button onclick="copyLaTeX(&quot;L2-24&quot;)" id="btn-L2-24">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-25">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-25</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#rotation" target="_blank">rotation</a> <a class="tag" href="tags.html#volume" target="_blank">volume</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A wedge is cut out of a circular cylinder of radius 4 by two planes. One plane is perpendicular to the axis of the cylinder. The other intersects the first at an angle of $30^{\circ}$ along a diameter of the cylinder. Find the volume of the wedge.</div>
+<div class="codebox">
+<pre id="latex-L2-25">A wedge is cut out of a circular cylinder of radius 4 by two planes. One plane is perpendicular to the axis of the cylinder. The other intersects the first at an angle of $30^{\circ}$ along a diameter of the cylinder. Find the volume of the wedge.</pre>
+<button onclick="copyLaTeX(&quot;L2-25&quot;)" id="btn-L2-25">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-3</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#formula-for-area-between-curve" target="_blank">formula-for-area-between-curve</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the region enclosed by the parabolas $y=x^{2}$ and $y=2 x-x^{2}$.</div>
+<div class="codebox">
+<pre id="latex-L2-3">Find the area of the region enclosed by the parabolas $y=x^{2}$ and $y=2 x-x^{2}$.</pre>
+<button onclick="copyLaTeX(&quot;L2-3&quot;)" id="btn-L2-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-5</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#area-between-curves" target="_blank">area-between-curves</a> <a class="tag" href="tags.html#midpoint-rule" target="_blank">midpoint-rule</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The figure below shows velocity curves for two cars, $A$ and $B$, that start side by side and move along the same road. What does the area between the curves represent? Use the Midpoint Rule with $n=4$ intervals to estimate it.</div>
+<div class="codebox">
+<pre id="latex-L2-5">The figure below shows velocity curves for two cars, $A$ and $B$, that start side by side and move along the same road. What does the area between the curves represent? Use the Midpoint Rule with $n=4$ intervals to estimate it.</pre>
+<button onclick="copyLaTeX(&quot;L2-5&quot;)" id="btn-L2-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-6">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-6</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#area-between-curves" target="_blank">area-between-curves</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to find area between the curves $y=f(x)$ and $y=g(x)$ where $f(x) \geq g(x)$ for some values of $x$ and $g(x) \geq f(x)$ for other values of $x$ ?</div>
+<div class="codebox">
+<pre id="latex-L2-6">How to find area between the curves $y=f(x)$ and $y=g(x)$ where $f(x) \geq g(x)$ for some values of $x$ and $g(x) \geq f(x)$ for other values of $x$ ?</pre>
+<button onclick="copyLaTeX(&quot;L2-6&quot;)" id="btn-L2-6">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L2-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L2-9</span> <span class="exercise-lecture">(Lecture 2)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the region bounded by the curves $y=\sin x, y=\cos x$, $x=0$, and $x=\frac{\pi}{2}$.</div>
+<div class="codebox">
+<pre id="latex-L2-9">Find the area of the region bounded by the curves $y=\sin x, y=\cos x$, $x=0$, and $x=\frac{\pi}{2}$.</pre>
+<button onclick="copyLaTeX(&quot;L2-9&quot;)" id="btn-L2-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

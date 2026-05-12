@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!-- v=1778527897 -->
+<title>Module 3 — MATH 1014 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js?t=20260511" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.sidebar .outline-link{display:block;padding:12px 20px 4px;font-size:12px;color:#8b949e;text-decoration:none}
+.sidebar .outline-link:hover{color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.module-header .outline-link{display:inline-block;margin-top:8px;font-size:12px;color:#58a6ff;text-decoration:none}
+.module-header .outline-link:hover{text-decoration:underline}
+.module-subtitle{font-size:14px;color:#8b949e;margin:8px 0 16px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0;display:none}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+@keyframes highlightFlash {0%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}20%{box-shadow:0 0 20px 4px rgba(88,166,255,0.3);border-color:#58a6ff}100%{box-shadow:0 0 0 0 rgba(88,166,255,0);border-color:#30363d}}
+.highlight{animation:highlightFlash 2s ease-out}
+
+
+
+
+.home-btn:hover{background:#388bfd}
+
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.module-header{margin-bottom:18px;padding-bottom:12px}.module-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6;min-width:0;word-break:break-word;overflow-wrap:break-word}.codebox{flex-direction:column;font-size:12px}.codebox pre{padding:10px 12px;line-height:1.6}.codebox button{width:100%;border-left:none;border-top:1px solid #30363d;border-radius:0 0 6px 6px;padding:9px 12px}}
+.exercise-problem img,.exercise-problem svg{max-width:100%;height:auto}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav active" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav active" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+<div class="content">
+<div class="module-header">
+<h2>Module 3: Applications of Integration</h2>
+<div class="lectures">19 problems</div>
+</div>
+
+<div class="exercise" id="ex-L4-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-1</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#average-value" target="_blank">average-value</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the average value of finite many numbers $y_{1}, y_{2}, \ldots, y_{n}$ ? $$ y_{\mathrm{ave}}=\frac{y_{1}+y_{2}+\cdots+y_{n}}{n} $$</div>
+<div class="codebox">
+<pre id="latex-L4-1">What is the average value of finite many numbers $y_{1}, y_{2}, \ldots, y_{n}$ ? $$ y_{\mathrm{ave}}=\frac{y_{1}+y_{2}+\cdots+y_{n}}{n} $$</pre>
+<button onclick="copyLaTeX(&quot;L4-1&quot;)" id="btn-L4-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-10">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-10</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to find the length of a curve defined by $y=f(x)$ ?</div>
+<div class="codebox">
+<pre id="latex-L4-10">How to find the length of a curve defined by $y=f(x)$ ?</pre>
+<button onclick="copyLaTeX(&quot;L4-10&quot;)" id="btn-L4-10">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-11">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-11</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#arc-length" target="_blank">arc-length</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">How to find the length of a curve defined by $y=f(x)$ ? (1) Divide $[a, b]$ into $n$ intervals with equal length $\Delta x=\frac{b-a}{n}, x_{i}=a+i \Delta x$, $i=0,1, \ldots, n$. (2) Line segment $P_{i-1} P_{i}$ is a good approximation of the curve segment $P_{i-1} P_{i}$ The length of the curve $C$ with equation $y=f(x)$ is $$ L=\lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left|P_{i-1} P_{i}\right| $$ Note that $\left|P_{i-1} P_{i}\right|=\sqrt{\left(x_{i}-x_{i-1}\right)^{2}+\left(f\left(x_{i}\right)-f\left(x_{i-1}\right)\right)^{2}}$. By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ f\left(x_{i}\right)-f\left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) $$ By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ \begin{aligned} f\left(x_{i}\right)-f & \left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) \\ \Longrightarrow \quad\left|P_{i-1} P_{i}\right| & =\sqrt{(\Delta x)^{2}+\left[f^{\prime}\left(x_{i}^{*}\right) \Delta x\right]^{2}} \\ & =\sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \end{aligned} $$ By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ \begin{aligned} f\left(x_{i}\right)-f & \left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) \\ \Longrightarrow \quad\left|P_{i-1} P_{i}\right| & =\sqrt{(\Delta x)^{2}+\left[f^{\prime}\left(x_{i}^{*}\right) \Delta x\right]^{2}} \\ & =\sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \end{aligned} $$ ⟹ By the definition, $$ \begin{aligned} L=\lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left|P_{i-1} P_{i}\right| & =\lim _{n \rightarrow \infty} \sum_{i=1}^{n} \sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \\ & =\int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x \end{aligned} $$ Theorem (Arc Length Formula: $y=f(x)$ ) If $f^{\prime}$ is continuous on $[a, b]$, then the length of the curve $y=f(x)$, $a \leq x \leq b$, is $$ L=\int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\int_{a}^{b} \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x $$</div>
+<div class="codebox">
+<pre id="latex-L4-11">How to find the length of a curve defined by $y=f(x)$ ? (1) Divide $[a, b]$ into $n$ intervals with equal length $\Delta x=\frac{b-a}{n}, x_{i}=a+i \Delta x$, $i=0,1, \ldots, n$. (2) Line segment $P_{i-1} P_{i}$ is a good approximation of the curve segment $P_{i-1} P_{i}$ The length of the curve $C$ with equation $y=f(x)$ is $$ L=\lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left|P_{i-1} P_{i}\right| $$ Note that $\left|P_{i-1} P_{i}\right|=\sqrt{\left(x_{i}-x_{i-1}\right)^{2}+\left(f\left(x_{i}\right)-f\left(x_{i-1}\right)\right)^{2}}$. By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ f\left(x_{i}\right)-f\left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) $$ By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ \begin{aligned} f\left(x_{i}\right)-f & \left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) \\ \Longrightarrow \quad\left|P_{i-1} P_{i}\right| & =\sqrt{(\Delta x)^{2}+\left[f^{\prime}\left(x_{i}^{*}\right) \Delta x\right]^{2}} \\ & =\sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \end{aligned} $$ By applying Mean Value Theorem on $\left[x_{i-1}, x_{i}\right]$, there is a number $x_{i}^{*}$ between $x_{i-1}$ and $x_{i}$ such that $$ \begin{aligned} f\left(x_{i}\right)-f & \left(x_{i-1}\right)=f^{\prime}\left(x_{i}^{*}\right)\left(x_{i}-x_{i-1}\right) \\ \Longrightarrow \quad\left|P_{i-1} P_{i}\right| & =\sqrt{(\Delta x)^{2}+\left[f^{\prime}\left(x_{i}^{*}\right) \Delta x\right]^{2}} \\ & =\sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \end{aligned} $$ ⟹ By the definition, $$ \begin{aligned} L=\lim _{n \rightarrow \infty} \sum_{i=1}^{n}\left|P_{i-1} P_{i}\right| & =\lim _{n \rightarrow \infty} \sum_{i=1}^{n} \sqrt{1+\left[f^{\prime}\left(x_{i}^{*}\right)\right]^{2}} \Delta x \\ & =\int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x \end{aligned} $$ Theorem (Arc Length Formula: $y=f(x)$ ) If $f^{\prime}$ is continuous on $[a, b]$, then the length of the curve $y=f(x)$, $a \leq x \leq b$, is $$ L=\int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\int_{a}^{b} \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x $$</pre>
+<button onclick="copyLaTeX(&quot;L4-11&quot;)" id="btn-L4-11">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-12">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-12</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#arc-length" target="_blank">arc-length</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the length of the arc of the semicubical parabola $y^{2}=x^{3}$ between the points $(1,1)$ and $(4,8)$. Theorem (Arc Length Formula: $x=g(y)$ ) If a curve has the equation $x=g(y), c \leq y \leq d$, and $g^{\prime}(y)$ is continuous. Then $$ L=\int_{c}^{d} \sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\int_{c}^{d} \sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y $$</div>
+<div class="codebox">
+<pre id="latex-L4-12">Find the length of the arc of the semicubical parabola $y^{2}=x^{3}$ between the points $(1,1)$ and $(4,8)$. Theorem (Arc Length Formula: $x=g(y)$ ) If a curve has the equation $x=g(y), c \leq y \leq d$, and $g^{\prime}(y)$ is continuous. Then $$ L=\int_{c}^{d} \sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\int_{c}^{d} \sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y $$</pre>
+<button onclick="copyLaTeX(&quot;L4-12&quot;)" id="btn-L4-12">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-13">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-13</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#approximate-integration" target="_blank">approximate-integration</a> <a class="tag" href="tags.html#arc-length" target="_blank">arc-length</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a> <a class="tag" href="tags.html#trigonometric-integrals" target="_blank">trigonometric-integrals</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the length of the arc of the parabola $y^{2}=x$ from $(0,0)$ to $(1,1)$. (Hint: $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$.) Remark 1 $$ \begin{aligned} \int \sec ^{3} \theta \mathrm{~d} \theta=\int \sec \theta \mathrm{d} \tan \theta & =\sec \theta \tan \theta-\int \tan \theta \mathrm{d} \sec \theta \\ & =\sec \theta \tan \theta-\int \tan \theta \cdot \tan \theta \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int\left(\sec ^{2} \theta-1\right) \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int \sec ^{3} \theta \mathrm{~d} \theta+\int \sec \theta \mathrm{d} \theta \end{aligned} $$ Hence, $\int \sec ^{3} \theta d \theta=\frac{1}{2}\left(\sec \theta \tan \theta+\int \sec \theta d \theta\right)$. On the other hand, $$ \begin{aligned} \int \sec \theta \mathrm{d} \theta & =\int \frac{\sec \theta(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \mathrm{d} \theta \\ & =\int \frac{\mathrm{d}(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \\ & =\ln |\sec \theta+\tan \theta|+C \end{aligned} $$ Hence, $\int \sec ^{3} \theta d \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$. The calculation of an arc length often leads to an integral that is very difficult or even impossible to evaluate explicitly. Sometimes, we need to use numerical methods to find the approximation to the integral.</div>
+<div class="codebox">
+<pre id="latex-L4-13">Example Find the length of the arc of the parabola $y^{2}=x$ from $(0,0)$ to $(1,1)$. (Hint: $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$.) Remark 1 $$ \begin{aligned} \int \sec ^{3} \theta \mathrm{~d} \theta=\int \sec \theta \mathrm{d} \tan \theta & =\sec \theta \tan \theta-\int \tan \theta \mathrm{d} \sec \theta \\ & =\sec \theta \tan \theta-\int \tan \theta \cdot \tan \theta \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int\left(\sec ^{2} \theta-1\right) \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int \sec ^{3} \theta \mathrm{~d} \theta+\int \sec \theta \mathrm{d} \theta \end{aligned} $$ Hence, $\int \sec ^{3} \theta d \theta=\frac{1}{2}\left(\sec \theta \tan \theta+\int \sec \theta d \theta\right)$. On the other hand, $$ \begin{aligned} \int \sec \theta \mathrm{d} \theta & =\int \frac{\sec \theta(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \mathrm{d} \theta \\ & =\int \frac{\mathrm{d}(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \\ & =\ln |\sec \theta+\tan \theta|+C \end{aligned} $$ Hence, $\int \sec ^{3} \theta d \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$. The calculation of an arc length often leads to an integral that is very difficult or even impossible to evaluate explicitly. Sometimes, we need to use numerical methods to find the approximation to the integral.</pre>
+<button onclick="copyLaTeX(&quot;L4-13&quot;)" id="btn-L4-13">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-14">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-14</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#arc-length" target="_blank">arc-length</a> <a class="tag" href="tags.html#remark-2" target="_blank">remark-2</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Exercise Find the length of the arc of the curve $y=\frac{1}{2} x^{2}$ from point $P\left(-1, \frac{1}{2}\right)$ to point $Q\left(1, \frac{1}{2}\right)$. Given a smooth curve $C: y=f(x), a \leq x \leq b$. Let $s(x)$ be the distance along $C$ from the initial point $P_{0}(a, f(a))$ to the point $Q(x, f(x))$. Then $s$ is a function, called the arc length function, and it is given by $$ s(x)=\int_{a}^{x} \sqrt{1+\left(f^{\prime}(t)\right)^{2}} \mathrm{~d} t $$ Given a smooth curve $C: y=f(x), a \leq x \leq b$. Let $s(x)$ be the distance along $C$ from the initial point $P_{0}(a, f(a))$ to the point $Q(x, f(x))$. Then $s$ is a function, called the arc length function, and it is given by $$ s(x)=\int_{a}^{x} \sqrt{1+\left(f^{\prime}(t)\right)^{2}} \mathrm{~d} t $$ By Part 1 of the Fundamental Theorem of Calculus: $$ \frac{\mathrm{d} s}{\mathrm{~d} x}=\sqrt{1+\left(f^{\prime}(x)\right)^{2}}=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \Leftrightarrow \mathrm{~d} s=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x \text { or }(\mathrm{d} s)^{2}=(\mathrm{d} x)^{2}+(\mathrm{d} y)^{2} $$ - Geometric Interpretation: $$ \begin{aligned} L & =\int \mathrm{d} s \\ \mathrm{~d} s & =\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x \\ \mathrm{~d} s & =\sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \end{aligned} $$</div>
+<div class="codebox">
+<pre id="latex-L4-14">Exercise Find the length of the arc of the curve $y=\frac{1}{2} x^{2}$ from point $P\left(-1, \frac{1}{2}\right)$ to point $Q\left(1, \frac{1}{2}\right)$. Given a smooth curve $C: y=f(x), a \leq x \leq b$. Let $s(x)$ be the distance along $C$ from the initial point $P_{0}(a, f(a))$ to the point $Q(x, f(x))$. Then $s$ is a function, called the arc length function, and it is given by $$ s(x)=\int_{a}^{x} \sqrt{1+\left(f^{\prime}(t)\right)^{2}} \mathrm{~d} t $$ Given a smooth curve $C: y=f(x), a \leq x \leq b$. Let $s(x)$ be the distance along $C$ from the initial point $P_{0}(a, f(a))$ to the point $Q(x, f(x))$. Then $s$ is a function, called the arc length function, and it is given by $$ s(x)=\int_{a}^{x} \sqrt{1+\left(f^{\prime}(t)\right)^{2}} \mathrm{~d} t $$ By Part 1 of the Fundamental Theorem of Calculus: $$ \frac{\mathrm{d} s}{\mathrm{~d} x}=\sqrt{1+\left(f^{\prime}(x)\right)^{2}}=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \Leftrightarrow \mathrm{~d} s=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x \text { or }(\mathrm{d} s)^{2}=(\mathrm{d} x)^{2}+(\mathrm{d} y)^{2} $$ - Geometric Interpretation: $$ \begin{aligned} L & =\int \mathrm{d} s \\ \mathrm{~d} s & =\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x \\ \mathrm{~d} s & =\sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \end{aligned} $$</pre>
+<button onclick="copyLaTeX(&quot;L4-14&quot;)" id="btn-L4-14">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-15">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-15</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#arc-length" target="_blank">arc-length</a> <a class="tag" href="tags.html#theorem-(arc-length-function)" target="_blank">theorem-(arc-length-function)</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the arc length function for the curve $y=x^{2}-\frac{1}{8} \ln x$ taking $P_{0}(1,1)$ as the starting point.</div>
+<div class="codebox">
+<pre id="latex-L4-15">Find the arc length function for the curve $y=x^{2}-\frac{1}{8} \ln x$ taking $P_{0}(1,1)$ as the starting point.</pre>
+<button onclick="copyLaTeX(&quot;L4-15&quot;)" id="btn-L4-15">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-2</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#answer:" target="_blank">answer:</a> <a class="tag" href="tags.html#average-value" target="_blank">average-value</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the average value of a function $y=f(x), a \leq x \leq b$ ?</div>
+<div class="codebox">
+<pre id="latex-L4-2">What is the average value of a function $y=f(x), a \leq x \leq b$ ?</pre>
+<button onclick="copyLaTeX(&quot;L4-2&quot;)" id="btn-L4-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-3</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#answer:" target="_blank">answer:</a> <a class="tag" href="tags.html#average-value" target="_blank">average-value</a> <a class="tag" href="tags.html#limit" target="_blank">limit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the average value of a function $y=f(x), a \leq x \leq b$ ? (1) Divide the interval $[a, b]$ into $n$ equal subintervals with length $\Delta x=\frac{b-a}{n}$. Moreover, we have $x_{i}=a+i \Delta x$ and choose $x_{i}^{*} \in\left[x_{i-1}, x_{i}\right]$. (2) The average of the numbers $f\left(x_{1}^{*}\right), f\left(x_{2}^{*}\right), \ldots, f\left(x_{n}^{*}\right)$ is $$ \begin{aligned} \frac{f\left(x_{1}^{*}\right)+f\left(x_{2}^{*}\right)+\cdots+f\left(x_{n}^{*}\right)}{n} & =\frac{f\left(x_{1}^{*}\right)+f\left(x_{2}^{*}\right)+\cdots+f\left(x_{n}^{*}\right)}{\frac{b-a}{\Delta x}} \\ & =\frac{1}{b-a}\left[f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x\right] \\ & =\frac{1}{b-a} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x \end{aligned} $$ (3) The limiting value is $\lim _{n \rightarrow \infty} \frac{1}{b-a} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=\frac{1}{b-a} \int_{a}^{b} f(x) \mathrm{d} x$. The average value of $f$ on the interval $[a, b]$ is defined as $$ f_{\mathrm{ave}}=\frac{1}{b-a} \int_{a}^{b} f(x) \mathrm{d} x $$</div>
+<div class="codebox">
+<pre id="latex-L4-3">What is the average value of a function $y=f(x), a \leq x \leq b$ ? (1) Divide the interval $[a, b]$ into $n$ equal subintervals with length $\Delta x=\frac{b-a}{n}$. Moreover, we have $x_{i}=a+i \Delta x$ and choose $x_{i}^{*} \in\left[x_{i-1}, x_{i}\right]$. (2) The average of the numbers $f\left(x_{1}^{*}\right), f\left(x_{2}^{*}\right), \ldots, f\left(x_{n}^{*}\right)$ is $$ \begin{aligned} \frac{f\left(x_{1}^{*}\right)+f\left(x_{2}^{*}\right)+\cdots+f\left(x_{n}^{*}\right)}{n} & =\frac{f\left(x_{1}^{*}\right)+f\left(x_{2}^{*}\right)+\cdots+f\left(x_{n}^{*}\right)}{\frac{b-a}{\Delta x}} \\ & =\frac{1}{b-a}\left[f\left(x_{1}^{*}\right) \Delta x+f\left(x_{2}^{*}\right) \Delta x+\cdots+f\left(x_{n}^{*}\right) \Delta x\right] \\ & =\frac{1}{b-a} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x \end{aligned} $$ (3) The limiting value is $\lim _{n \rightarrow \infty} \frac{1}{b-a} \sum_{i=1}^{n} f\left(x_{i}^{*}\right) \Delta x=\frac{1}{b-a} \int_{a}^{b} f(x) \mathrm{d} x$. The average value of $f$ on the interval $[a, b]$ is defined as $$ f_{\mathrm{ave}}=\frac{1}{b-a} \int_{a}^{b} f(x) \mathrm{d} x $$</pre>
+<button onclick="copyLaTeX(&quot;L4-3&quot;)" id="btn-L4-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-4</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#average-value" target="_blank">average-value</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the average value of the function $f(x)=1+x^{2}$ on the interval $[-1,2]$.</div>
+<div class="codebox">
+<pre id="latex-L4-4">Find the average value of the function $f(x)=1+x^{2}$ on the interval $[-1,2]$.</pre>
+<button onclick="copyLaTeX(&quot;L4-4&quot;)" id="btn-L4-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-5</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#average-value" target="_blank">average-value</a> <a class="tag" href="tags.html#integration" target="_blank">integration</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If $T(t)$ is the temperature at time $t$, is there a specific time when the temperature is the same as the average temperature?</div>
+<div class="codebox">
+<pre id="latex-L4-5">If $T(t)$ is the temperature at time $t$, is there a specific time when the temperature is the same as the average temperature?</pre>
+<button onclick="copyLaTeX(&quot;L4-5&quot;)" id="btn-L4-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-7">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-7</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#average-value" target="_blank">average-value</a> <a class="tag" href="tags.html#theorem-(the-mean-value-theore" target="_blank">theorem-(the-mean-value-theore</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $f(x)=\frac{1}{x}, x \in[1,3]$. (1) Find the average value of $f$ on the given interval. (1) Find $c$ such that $f_{\text {ave }}=f(c)$. - Sketch the graph of $f$ and a rectangle whose area is the same as the area under the graph of $f$.</div>
+<div class="codebox">
+<pre id="latex-L4-7">Let $f(x)=\frac{1}{x}, x \in[1,3]$. (1) Find the average value of $f$ on the given interval. (1) Find $c$ such that $f_{\text {ave }}=f(c)$. - Sketch the graph of $f$ and a rectangle whose area is the same as the area under the graph of $f$.</pre>
+<button onclick="copyLaTeX(&quot;L4-7&quot;)" id="btn-L4-7">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-8">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-8</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#average-value" target="_blank">average-value</a> <a class="tag" href="tags.html#theorem-(the-mean-value-theore" target="_blank">theorem-(the-mean-value-theore</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the number $b$ such that the average value of $f(x)=2+6 x-3 x^{2}$ on the interval $[0, b]$ is equal to 3 .</div>
+<div class="codebox">
+<pre id="latex-L4-8">Find the number $b$ such that the average value of $f(x)=2+6 x-3 x^{2}$ on the interval $[0, b]$ is equal to 3 .</pre>
+<button onclick="copyLaTeX(&quot;L4-8&quot;)" id="btn-L4-8">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L4-9">
+<div class="exercise-header">
+<div><span class="exercise-id">L4-9</span> <span class="exercise-lecture">(Lecture 4)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#theorem-(the-mean-value-theore" target="_blank">theorem-(the-mean-value-theore</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If $f$ is continuous and $\int_{1}^{3} f(x) \mathrm{d} x=8$, show that $f$ takes on the value 4 at least once on the interval $[1,3]$. - If the curve is a polygon, we can easily find its length.</div>
+<div class="codebox">
+<pre id="latex-L4-9">If $f$ is continuous and $\int_{1}^{3} f(x) \mathrm{d} x=8$, show that $f$ takes on the value 4 at least once on the interval $[1,3]$. - If the curve is a polygon, we can easily find its length.</pre>
+<button onclick="copyLaTeX(&quot;L4-9&quot;)" id="btn-L4-9">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L5-1">
+<div class="exercise-header">
+<div><span class="exercise-id">L5-1</span> <span class="exercise-lecture">(Lecture 5)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definition-(rotation-about-$x$" target="_blank">definition-(rotation-about-$x$</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The curve $y=\sqrt{4-x^{2}}(-1 \leq x \leq 1)$, is an arc of the circle $x^{2}+y^{2}=4$. Find the area of the surface obtained by rotating this arc about the $x$-axis.</div>
+<div class="codebox">
+<pre id="latex-L5-1">The curve $y=\sqrt{4-x^{2}}(-1 \leq x \leq 1)$, is an arc of the circle $x^{2}+y^{2}=4$. Find the area of the surface obtained by rotating this arc about the $x$-axis.</pre>
+<button onclick="copyLaTeX(&quot;L5-1&quot;)" id="btn-L5-1">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L5-2">
+<div class="exercise-header">
+<div><span class="exercise-id">L5-2</span> <span class="exercise-lecture">(Lecture 5)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definition-(rotation-about-$x$" target="_blank">definition-(rotation-about-$x$</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the surface obtained by rotating the curve $x=1+2 y^{2}$, $1 \leq y \leq 2$, about the $x$-axis.</div>
+<div class="codebox">
+<pre id="latex-L5-2">Find the area of the surface obtained by rotating the curve $x=1+2 y^{2}$, $1 \leq y \leq 2$, about the $x$-axis.</pre>
+<button onclick="copyLaTeX(&quot;L5-2&quot;)" id="btn-L5-2">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L5-3">
+<div class="exercise-header">
+<div><span class="exercise-id">L5-3</span> <span class="exercise-lecture">(Lecture 5)</span> <span class="badge-exercise">Exercise</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definition-(rotation-about-$x$" target="_blank">definition-(rotation-about-$x$</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the surface obtained by rotating the curve $9 x=y^{2}+18$, $2 \leq x \leq 6$, about the $x$-axis. - Surface area obtained by rotating the curve $y=f(x), a \leq x \leq b$, about the $y$-axis is $$ S=\int 2 \pi x \mathrm{~d} s=\int_{a}^{b} 2 \pi x \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\int_{a}^{b} 2 \pi x \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x $$ where $y=f(x)$ and $\mathrm{d} s=\sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x$. - If the curve is described as $x=g(y), c \leq y \leq d$, then the formula for surface area becomes $$ \begin{aligned} & S=\int 2 \pi x \mathrm{~d} s=\int_{c}^{d} 2 \pi g(y) \sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\int_{c}^{d} 2 \pi g(y) \sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \\ & \text { where } \mathrm{d} s=\sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \end{aligned} $$</div>
+<div class="codebox">
+<pre id="latex-L5-3">Find the area of the surface obtained by rotating the curve $9 x=y^{2}+18$, $2 \leq x \leq 6$, about the $x$-axis. - Surface area obtained by rotating the curve $y=f(x), a \leq x \leq b$, about the $y$-axis is $$ S=\int 2 \pi x \mathrm{~d} s=\int_{a}^{b} 2 \pi x \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\int_{a}^{b} 2 \pi x \sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x $$ where $y=f(x)$ and $\mathrm{d} s=\sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x=\sqrt{1+\left(\frac{\mathrm{d} y}{\mathrm{~d} x}\right)^{2}} \mathrm{~d} x$. - If the curve is described as $x=g(y), c \leq y \leq d$, then the formula for surface area becomes $$ \begin{aligned} & S=\int 2 \pi x \mathrm{~d} s=\int_{c}^{d} 2 \pi g(y) \sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\int_{c}^{d} 2 \pi g(y) \sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \\ & \text { where } \mathrm{d} s=\sqrt{1+\left[g^{\prime}(y)\right]^{2}} \mathrm{~d} y=\sqrt{1+\left(\frac{\mathrm{d} x}{\mathrm{~d} y}\right)^{2}} \mathrm{~d} y \end{aligned} $$</pre>
+<button onclick="copyLaTeX(&quot;L5-3&quot;)" id="btn-L5-3">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L5-4">
+<div class="exercise-header">
+<div><span class="exercise-id">L5-4</span> <span class="exercise-lecture">(Lecture 5)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definition-(rotation-about-$y$" target="_blank">definition-(rotation-about-$y$</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The arc of the parabola $y=x^{2}$ from ( 1,1 ) to ( 2,4 ) is rotated about the $y$-axis. Find the area of the resulting surface.</div>
+<div class="codebox">
+<pre id="latex-L5-4">The arc of the parabola $y=x^{2}$ from ( 1,1 ) to ( 2,4 ) is rotated about the $y$-axis. Find the area of the resulting surface.</pre>
+<button onclick="copyLaTeX(&quot;L5-4&quot;)" id="btn-L5-4">Copy LaTeX</button>
+</div>
+</div>
+</div>
+<div class="exercise" id="ex-L5-5">
+<div class="exercise-header">
+<div><span class="exercise-id">L5-5</span> <span class="exercise-lecture">(Lecture 5)</span> <span class="badge-example">Example</span></div>
+<div class="exercise-tags"><a class="tag" href="tags.html#area" target="_blank">area</a> <a class="tag" href="tags.html#definition-(rotation-about-$y$" target="_blank">definition-(rotation-about-$y$</a> <a class="tag" href="tags.html#rotation" target="_blank">rotation</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Example Find the area of the surface generated by rotating the curve $y=e^{x}$, $0 \leq x \leq 1$, about the $x$-axis. (Hint: $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$ ) Remark $$ \begin{aligned} \int \sec ^{3} \theta \mathrm{~d} \theta=\int \sec \theta \mathrm{d} \tan \theta & =\sec \theta \tan \theta-\int \tan \theta \mathrm{d} \sec \theta \\ & =\sec \theta \tan \theta-\int \tan \theta \cdot \tan \theta \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int\left(\sec ^{2} \theta-1\right) \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int \sec ^{3} \theta \mathrm{~d} \theta+\int \sec \theta \mathrm{d} \theta \end{aligned} $$ Hence, $\int \sec ^{3} \theta=\frac{1}{2}\left(\sec \theta \tan \theta+\int \sec \theta \mathrm{d} \theta\right)$. On the other hand, $$ \begin{aligned} \int \sec \theta \mathrm{d} \theta=\int \frac{\sec \theta(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \mathrm{d} \theta & =\int \frac{\mathrm{d}(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \\ & =\ln |\sec \theta+\tan \theta|+C \end{aligned} $$ Hence, $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$. (2) Let $\alpha=\tan ^{-1} e$. Then $\tan \alpha=e$. Hence, $\sec ^{2} \alpha=1+\tan ^{2} \alpha=1+e^{2}$ and $\sec \alpha=\sqrt{1+e^{2}}$, i.e., $\sec \left(\tan ^{-1} e\right)=\sqrt{1+e^{2}}$.</div>
+<div class="codebox">
+<pre id="latex-L5-5">Example Find the area of the surface generated by rotating the curve $y=e^{x}$, $0 \leq x \leq 1$, about the $x$-axis. (Hint: $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$ ) Remark $$ \begin{aligned} \int \sec ^{3} \theta \mathrm{~d} \theta=\int \sec \theta \mathrm{d} \tan \theta & =\sec \theta \tan \theta-\int \tan \theta \mathrm{d} \sec \theta \\ & =\sec \theta \tan \theta-\int \tan \theta \cdot \tan \theta \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int\left(\sec ^{2} \theta-1\right) \sec \theta \mathrm{d} \theta \\ & =\sec \theta \tan \theta-\int \sec ^{3} \theta \mathrm{~d} \theta+\int \sec \theta \mathrm{d} \theta \end{aligned} $$ Hence, $\int \sec ^{3} \theta=\frac{1}{2}\left(\sec \theta \tan \theta+\int \sec \theta \mathrm{d} \theta\right)$. On the other hand, $$ \begin{aligned} \int \sec \theta \mathrm{d} \theta=\int \frac{\sec \theta(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \mathrm{d} \theta & =\int \frac{\mathrm{d}(\sec \theta+\tan \theta)}{\sec \theta+\tan \theta} \\ & =\ln |\sec \theta+\tan \theta|+C \end{aligned} $$ Hence, $\int \sec ^{3} \theta \mathrm{~d} \theta=\frac{1}{2}(\sec \theta \tan \theta+\ln |\sec \theta+\tan \theta|)+C$. (2) Let $\alpha=\tan ^{-1} e$. Then $\tan \alpha=e$. Hence, $\sec ^{2} \alpha=1+\tan ^{2} \alpha=1+e^{2}$ and $\sec \alpha=\sqrt{1+e^{2}}$, i.e., $\sec \left(\tan ^{-1} e\right)=\sqrt{1+e^{2}}$.</pre>
+<button onclick="copyLaTeX(&quot;L5-5&quot;)" id="btn-L5-5">Copy LaTeX</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function copyLaTeX(id) {
+    var btn = document.getElementById("btn-" + id);
+    if (!btn) return;
+    var ex = btn.closest(".exercise");
+    if (!ex) return;
+    var prob = ex.querySelector(".exercise-problem");
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            copiedFeedback(btn);
+        }).catch(function() {
+            fallbackCopy(text, btn);
+        });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand("copy");
+        copiedFeedback(btn);
+    } catch(e) {
+        btn.textContent = "Failed";
+    }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = "Copied!";
+    btn.classList.add("copied");
+    setTimeout(function(){btn.textContent="Copy LaTeX";btn.classList.remove("copied")}, 2000);
+}
+function scrollToHighlight() {
+    var hash = window.location.hash;
+    if (hash) {
+        var el = document.querySelector(hash);
+        if (el) {
+            el.scrollIntoView({behavior:"smooth", block:"center"});
+            el.classList.add("highlight");
+            setTimeout(function(){el.classList.remove("highlight")}, 2500);
+        }
+    }
+}
+window.addEventListener("load", scrollToHighlight);
+window.addEventListener("hashchange", scrollToHighlight);
+</script>
+
+
+<script>
+function toggleMobileMenu(){
+ var s=document.getElementById("mobileSidebar");
+ var o=document.getElementById("mobileOverlay");
+ var isOpen=s.classList.toggle("open");
+ o.classList.toggle("open", isOpen);
+}
+</script>
+
+</body>
+</html>

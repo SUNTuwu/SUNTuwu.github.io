@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHTJbF6FaBobkUxkVgDnKwnzH6J2AAjv9zg&amp;s" type="image/png">
+<title>Study Outline — MATH 1014 Final Review</title>
+<script>
+MathJax = {
+    tex: {inlineMath: [['$','$']], displayMath: [['$$','$$']]},
+    svg: {fontCache: 'global'}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}}
+
+.content{flex:1;padding:32px 48px;max-width:960px;min-width:0}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #30363d}
+.page-header h1{font-size:28px;color:#f0f6fc;margin-bottom:8px}
+.page-header p{color:#8b949e;font-size:14px}
+
+.module-section{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:20px;overflow:hidden}
+.module-header{padding:16px 20px;background:#1c2128;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .15s}
+.module-header:hover{background:#21262d}
+.module-header h2{font-size:16px;color:#58a6ff;margin:0}
+.module-header .meta{color:#8b949e;font-size:12px}
+.module-header .toggle-icon{font-size:12px;color:#8b949e;transition:transform .2s}
+.module-header.open .toggle-icon{transform:rotate(90deg)}
+.module-body{padding:0 20px 16px;display:none}
+.module-body.open{display:block}
+
+.topics-section{margin:16px 0}
+.topics-section h3{font-size:14px;color:#f0f6fc;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+.topics-section ul{margin-left:20px;color:#c9d1d9;font-size:13px;line-height:1.8}
+.topics-section li{margin-bottom:4px}
+.topics-section p{color:#c9d1d9;font-size:13px;line-height:1.7;margin-bottom:8px}
+
+.formula-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.formula-table th{background:#1c2128;color:#f0f6fc;padding:10px 12px;text-align:left;font-weight:600;border:1px solid #30363d}
+.formula-table td{padding:10px 12px;border:1px solid #21262d;color:#c9d1d9}
+.formula-table tr:hover td{background:#1c2128}
+.formula-table code{background:#0d1117;padding:2px 6px;border-radius:4px;font-family:'SF Mono',monospace;font-size:12px}
+
+.recommendations{background:#1c2128;border-left:3px solid #238636;padding:12px 16px;margin-top:12px;border-radius:0 6px 6px 0}
+.recommendations h3{font-size:13px;color:#3fb950;margin-bottom:8px}
+.recommendations p{color:#8b949e;font-size:12px;line-height:1.7}
+.recommendations ul{margin-left:16px;color:#8b949e;font-size:12px;line-height:1.7}
+.recommendations li{margin-bottom:4px}
+
+.back-link{display:inline-block;margin-bottom:20px;color:#58a6ff;text-decoration:none;font-size:13px}
+.back-link:hover{text-decoration:underline}
+
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Review</small></h1>
+<a class="module-nav" href="index.html">Home</a>
+<a class="module-nav" href="module-1.html">Foundations of Integration<span class="count">40</span></a>
+<a class="module-nav" href="module-2.html">Advanced Integration Techniques<span class="count">47</span></a>
+<a class="module-nav" href="module-3.html">Applications of Integration<span class="count">19</span></a>
+<a class="module-nav" href="module-4.html">Numerical Integration<span class="count">16</span></a>
+<a class="module-nav" href="module-5.html">Polar Coordinates<span class="count">14</span></a>
+<a class="module-nav" href="module-6.html">Improper Integrals<span class="count">11</span></a>
+<a class="module-nav" href="module-7.html">Infinite Sequences & Series<span class="count">61</span></a>
+<a class="module-nav" href="module-8.html">Power Series, Taylor & Applications<span class="count">51</span></a>
+</div>
+
+<div class="content">
+<a class="back-link" href="index.html">← Back to Home</a>
+<div class="page-header">
+<h1>Study Outline</h1>
+<p>8 thematic modules with key formulas, topics, and study recommendations</p>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 1: Foundations of Integration</h2>
+<div class="meta">Lectures 1–2   · 3–4 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Derivative Review</strong></p>
+<ul>
+<li>Derivative rules (power, product, quotient, chain rule)</li>
+<li>Trigonometric derivatives</li>
+<li>Derivative table (all basic functions)</li>
+</ul>
+<p>2. <strong>Riemann Sums & the Definite Integral</strong></p>
+<ul>
+<li>Riemann sum definition (right/left/midpoint endpoints)</li>
+<li>Definite integral as limit of Riemann sums</li>
+<li>Properties of definite integrals (linearity, order reversal, zero-width, sum of intervals)</li>
+</ul>
+<p>3. <strong>Fundamental Theorem of Calculus (FTC)</strong></p>
+<ul>
+<li>FTC Part 1: derivative of an integral</li>
+<li>FTC Part 2: evaluating definite integrals via antiderivatives</li>
+</ul>
+<p>4. <strong>The Substitution Rule</strong></p>
+<ul>
+<li>U-substitution for indefinite integrals</li>
+<li>Changing limits for definite integrals</li>
+<li>Symmetry: integrating even/odd functions over symmetric intervals</li>
+</ul>
+<p>5. <strong>Areas Between Curves</strong></p>
+<ul>
+<li><code>A = ∫_a^b [f(x) − g(x)] dx</code> (top minus bottom)</li>
+<li>Region bounded by intersecting curves</li>
+<li>Handling <code>y</code> as function of <code>x</code></li>
+</ul>
+<p>6. <strong>Volumes</strong></p>
+<ul>
+<li><strong>By cross-section:</strong> <code>V = ∫_a^b A(x) dx</code></li>
+<li><strong>Solids of revolution:</strong></li>
+<li>Disk method: <code>V = ∫ π [R(x)]² dx</code> (rotation about x-axis)</li>
+<li>Washer method: <code>V = ∫ π ([R_out(x)]² − [R_in(x)]²) dx</code></li>
+<li>Rotating about lines other than axes (y = c, x = c)</li>
+<li>Rotating about the y-axis (<code>y</code> as variable)</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫_a^b f(x) dx = lim_{n→∞} Σ f(x_i*) Δx`</code></td><td>Riemann sum definition</td></tr><tr><td><code>`FTC: d/dx ∫_a^x f(t) dt = f(x)`</code></td><td>Derivative of an integral</td></tr><tr><td><code>`FTC: ∫_a^b f(x) dx = F(b) − F(a)`</code></td><td>Evaluating definite integrals</td></tr><tr><td><code>`∫_a^b f(x) dx = ∫_a^b f(g(u)) g'(u) du`</code></td><td>Substitution rule</td></tr><tr><td><code>`∫_{-a}^a [even] dx = 2∫_0^a`</code></td><td>Even function symmetry</td></tr><tr><td><code>`∫_{-a}^a [odd] dx = 0`</code></td><td>Odd function symmetry</td></tr><tr><td><code>`A = ∫_a^b (top − bottom) dx`</code></td><td>Area between curves</td></tr><tr><td><code>`V = ∫ π [R(x)]² dx`</code></td><td>Disk method</td></tr><tr><td><code>`V = ∫ π ([R_out]² − [R_in]²) dx`</code></td><td>Washer method</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>High priority:</strong> FTC (both parts) and u-substitution are used throughout every later module</li>
+<li><strong>Common mistakes:</strong> Forgetting to change limits in definite u-sub; using wrong radius function in washer method; missing the <code>π</code> factor in volume formulas</li>
+<li><strong>Practice strategy:</strong> Before attempting any volume problem, draw the region and axis of rotation. Identify whether disks, washers, or cross-sections apply.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 2: Advanced Integration Techniques</h2>
+<div class="meta">Lectures 6–9   · 6–8 hours (largest and most technical module)</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Integration by Parts</strong></p>
+<ul>
+<li>Formula: <code>∫ u dv = uv − ∫ v du</code></li>
+<li>Choosing <code>u</code> and <code>dv</code> (LIATE / ILATE priority)</li>
+<li>Repeated integration by parts (cyclic integrals like <code>∫ e^x sin x dx</code>)</li>
+<li>Definite integrals with parts</li>
+</ul>
+<p>2. <strong>Reduction Formulas</strong></p>
+<ul>
+<li>For <code>∫ sin^n x dx</code></li>
+<li>Using reduction to lower powers iteratively</li>
+</ul>
+<p>3. <strong>Trigonometric Integrals</strong></p>
+<ul>
+<li><strong>Case 1 (sin^m cos^n):</strong></li>
+<li>If m odd: save sin, convert rest to cos, sub u = cos x</li>
+<li>If n odd: save cos, convert rest to sin, sub u = sin x</li>
+<li>If both even: use half-angle identities (sin²x = (1−cos 2x)/2, cos²x = (1+cos 2x)/2)</li>
+<li>Product-to-sum identities for sin(mx) cos(nx), etc.</li>
+<li><strong>Case 2 (tan^m sec^n):</strong></li>
+<li>If n even: save sec², convert rest to tan, sub u = tan x</li>
+<li>If m odd: save sec x tan x, convert rest to sec, sub u = sec x</li>
+</ul>
+<p>4. <strong>Trigonometric Substitution</strong></p>
+<ul>
+<li>Three substitution patterns:</li>
+<li><code>√(a² − x²)</code> → <code>x = a sin θ</code></li>
+<li><code>√(a² + x²)</code> → <code>x = a tan θ</code></li>
+<li><code>√(x² − a²)</code> → <code>x = a sec θ</code></li>
+<li>Completing the square before substitution</li>
+<li>Converting back to x using reference triangles</li>
+</ul>
+<p>5. <strong>Partial Fractions</strong></p>
+<ul>
+<li><strong>Case 1:</strong> Distinct linear factors</li>
+<li><strong>Case 2:</strong> Repeated linear factors</li>
+<li><strong>Case 3:</strong> Irreducible quadratic factors</li>
+<li><strong>Case 4:</strong> Repeated irreducible quadratic factors</li>
+<li>General steps: (1) long division if degree num ≥ degree den; (2) factor denominator; (3) set up decomposition; (4) solve for coefficients</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫ u dv = uv − ∫ v du`</code></td><td>Integration by parts</td></tr><tr><td><code>`∫ sin^n x dx = −1/n sin^{n−1} x cos x + (n−1)/n ∫ sin^{n−2} x dx`</code></td><td>Reduction for sine</td></tr><tr><td><code>`x = a sin θ, dx = a cos θ dθ`</code></td><td>Sub for √(a²−x²)</td></tr><tr><td><code>`x = a tan θ, dx = a sec² θ dθ`</code></td><td>Sub for √(a²+x²)</td></tr><tr><td><code>`x = a sec θ, dx = a sec θ tan θ dθ`</code></td><td>Sub for √(x²−a²)</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>High priority:</strong> Integration by parts and partial fractions appear most frequently in exam problems</li>
+<li><strong>Common mistakes:</strong> Forgetting the <code>−</code> sign in parts; wrong choice of <code>u</code>; missing the <code>dx = a cos θ dθ</code> in trig sub; not doing long division first in partial fractions</li>
+<li><strong>Practice strategy:</strong> For partial fractions, always check if numerator degree ≥ denominator degree first. For trig integrals, classify the form (sin/cos vs tan/sec) before choosing the method. For trig sub, draw the reference triangle every time.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 3: Applications of Integration</h2>
+<div class="meta">Lectures 4–5   · 2–3 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Average Value of a Function</strong></p>
+<ul>
+<li><code>f_avg = (1/(b−a)) ∫_a^b f(x) dx</code></li>
+<li>Geometric interpretation: rectangle with area equal to the integral</li>
+</ul>
+<p>2. <strong>Mean Value Theorem for Integrals</strong></p>
+<ul>
+<li>If f continuous on [a,b], then ∃ c ∈ [a,b] such that <code>f(c) = f_avg</code></li>
+<li>Connection to MVT for derivatives</li>
+</ul>
+<p>3. <strong>Arc Length</strong></p>
+<ul>
+<li>For <code>y = f(x)</code>: <code>L = ∫_a^b √(1 + [f'(x)]²) dx</code></li>
+<li>For <code>x = g(y)</code>: <code>L = ∫_c^d √(1 + [g'(y)]²) dy</code></li>
+<li>The arc length function: <code>s(x) = ∫_a^x √(1 + [f'(t)]²) dt</code></li>
+</ul>
+<p>4. <strong>Area of a Surface of Revolution</strong></p>
+<ul>
+<li>About x-axis (<code>y = f(x)</code>): <code>S = ∫_a^b 2π y √(1 + [y']²) dx</code></li>
+<li>About y-axis (<code>y = f(x)</code>): <code>S = ∫_a^b 2π x √(1 + [y']²) dx</code></li>
+<li>For <code>x = g(y)</code> about y-axis: <code>S = ∫_c^d 2π y √(1 + [x']²) dy</code></li>
+<li>Derivation: frustum of a cone (lateral surface area = 2πrl)</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`f_avg = 1/(b−a) ∫_a^b f(x) dx`</code></td><td>Average value</td></tr><tr><td><code>MVT: `∃ c: f(c) = f_avg`</code></td><td>Mean Value Theorem for Integrals</td></tr><tr><td><code>`L = ∫ √(1 + (dy/dx)²) dx`</code></td><td>Arc length (y = f(x))</td></tr><tr><td><code>`L = ∫ √(1 + (dx/dy)²) dy`</code></td><td>Arc length (x = g(y))</td></tr><tr><td><code>`S = ∫ 2πr √(1 + (dy/dx)²) dx`</code></td><td>Surface of revolution (r = radius to axis)</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>Medium priority:</strong> These topics are narrower but frequently appear as exam questions</li>
+<li><strong>Common mistakes:</strong> Confusing arc length formula with area formula; forgetting the <code>2πr</code> factor in surface area; using wrong radius for rotation axis</li>
+<li><strong>Practice strategy:</strong> Arc length integrals often result in messy algebra — practice simplifying the integrand before integrating. Surface area is more common on exams than average value.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 4: Numerical Integration</h2>
+<div class="meta">Lectures 10–11   · 2–3 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Strategy for Integration (4-Step Framework)</strong></p>
+<ul>
+<li>(1) Simplify (algebraic manipulation)</li>
+<li>(2) Substitute (choose substitution)</li>
+<li>(3) Classify (identify form: parts, trig, partial fractions, etc.)</li>
+<li>(4) Try again (if stuck, revisit steps)</li>
+<li>Reference: 16-formula table of integrals</li>
+</ul>
+<p>2. <strong>Approximate Integration Rules</strong></p>
+<ul>
+<li><strong>Left/Right Endpoint:</strong> <code>L_n = Δx Σ f(x_{i−1})</code>, <code>R_n = Δx Σ f(x_i)</code></li>
+<li><strong>Midpoint Rule:</strong> <code>M_n = Δx Σ f(x̄_i)</code> where <code>x̄_i</code> is midpoint</li>
+<li><strong>Trapezoidal Rule:</strong> <code>T_n = (Δx/2)[f(x₀)+2f(x₁)+2f(x₂)+⋯+f(x_n)]</code></li>
+</ul>
+<p>3. <strong>Error Bounds</strong></p>
+<ul>
+<li>Trapezoidal: <code>|E_T| ≤ K(b−a)³ / (12n²)</code> where <code>|f''(x)| ≤ K</code></li>
+<li>Midpoint: <code>|E_M| ≤ K(b−a)³ / (24n²)</code></li>
+<li>Using error bounds to find minimum n for given tolerance</li>
+</ul>
+<p>4. <strong>Simpson's Rule</strong></p>
+<ul>
+<li><code>S_n = (Δx/3)[f(x₀) + 4f(x₁) + 2f(x₂) + 4f(x₃) + ⋯ + f(x_n)]</code></li>
+<li><strong>n must be even</strong></li>
+<li>Error bound: <code>|E_S| ≤ K(b−a)⁵ / (180n⁴)</code> where <code>|f⁽⁴⁾(x)| ≤ K</code></li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`T_n = Δx/2[f₀+2f₁+2f₂+⋯+f_n]`</code></td><td>Trapezoidal Rule</td></tr><tr><td><code>`M_n = Δx Σ f(midpoints)`</code></td><td>Midpoint Rule</td></tr><tr><td><code>`S_n = Δx/3[f₀+4f₁+2f₂+4f₃+⋯+f_n]`</code></td><td>Simpson's Rule (n even)</td></tr><tr><td><code>`</code></td><td>E_T</td></tr><tr><td><code>`</code></td><td>E_M</td></tr><tr><td><code>`</code></td><td>E_S</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>Medium priority:</strong> Numerical integration is less emphasized in pure calculus courses but essential for applications</li>
+<li><strong>Common mistakes:</strong> Using odd n for Simpson's Rule; forgetting the alternating 4-2-4-2 pattern; confusing error bound formulas</li>
+<li><strong>Practice strategy:</strong> For error bound problems, always take the absolute value of the max of the relevant derivative over the interval. Memorize which error formula uses which derivative order.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 5: Polar Coordinates & Parametric Curves</h2>
+<div class="meta">Lectures 12-1, 13-1   · 2–3 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Polar Coordinates</strong></p>
+<ul>
+<li>Conversion: <code>x = r cos θ</code>, <code>y = r sin θ</code>; <code>r² = x² + y²</code>, <code>tan θ = y/x</code></li>
+<li>Multiple representations: <code>(r, θ)</code> and <code>(r, θ+2π)</code>; <code>(−r, θ) = (r, θ+π)</code></li>
+<li>Symmetry tests (x-axis, y-axis, origin)</li>
+</ul>
+<p>2. <strong>Tangents to Polar Curves</strong></p>
+<ul>
+<li><code>dy/dx = ( (dr/dθ) sin θ + r cos θ ) / ( (dr/dθ) cos θ − r sin θ )</code></li>
+<li>Horizontal tangents: numerator = 0, denominator ≠ 0</li>
+<li>Vertical tangents: denominator = 0, numerator ≠ 0</li>
+</ul>
+<p>3. <strong>Area in Polar Coordinates</strong></p>
+<ul>
+<li><code>A = ∫_α^β ½ [f(θ)]² dθ</code></li>
+<li>Area between two polar curves: <code>A = ∫_α^β ½ ([r_out]² − [r_in]²) dθ</code></li>
+<li>Finding intersection points</li>
+</ul>
+<p>4. <strong>Arc Length in Polar Coordinates</strong></p>
+<ul>
+<li><code>L = ∫_α^β √(r² + (dr/dθ)²) dθ</code></li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`x = r cos θ, y = r sin θ`</code></td><td>Polar to Cartesian</td></tr><tr><td><code>`r² = x² + y², tan θ = y/x`</code></td><td>Cartesian to polar</td></tr><tr><td><code>`dy/dx = (r' sin θ + r cos θ)/(r' cos θ − r sin θ)`</code></td><td>Tangent slope in polar</td></tr><tr><td><code>`A = ∫ ½ r² dθ`</code></td><td>Area in polar</td></tr><tr><td><code>`A = ∫ ½ (r_out² − r_in²) dθ`</code></td><td>Area between polar curves</td></tr><tr><td><code>`L = ∫ √(r² + (dr/dθ)²) dθ`</code></td><td>Arc length in polar</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>Medium-high priority:</strong> Polar area and arc length are common exam topics</li>
+<li><strong>Common mistakes:</strong> Forgetting the <code>½</code> in the area formula; not squaring r in arc length formula; using wrong limits of integration when finding intersection points</li>
+<li><strong>Practice strategy:</strong> For area between polar curves, graph both curves first to visualize which is outer. For tangents, the formula is derived from parametric differentiation — understand the derivation rather than just memorizing.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 6: Improper Integrals</h2>
+<div class="meta">Lecture 14-1   · 1.5–2 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Type 1: Infinite Intervals</strong></p>
+<ul>
+<li><code>∫_a^∞ f(x) dx = lim_{t→∞} ∫_a^t f(x) dx</code></li>
+<li><code>∫_{-∞}^b f(x) dx = lim_{t→−∞} ∫_t^b f(x) dx</code></li>
+<li><code>∫_{-∞}^∞ f(x) dx = ∫_{-∞}^c + ∫_c^∞</code> (both must converge)</li>
+</ul>
+<p>2. <strong>Type 2: Discontinuous Integrands</strong></p>
+<ul>
+<li>If f has vertical asymptote at x = a: <code>∫_a^b f(x) dx = lim_{t→a⁺} ∫_t^b f(x) dx</code></li>
+<li>If f has vertical asymptote at x = b: <code>∫_a^b f(x) dx = lim_{t→b⁻} ∫_a^t f(x) dx</code></li>
+<li>If f has discontinuity at interior c: split at c</li>
+</ul>
+<p>3. <strong>p-Integrals</strong></p>
+<ul>
+<li><code>∫_1^∞ (1/x^p) dx</code>: converges if p > 1, diverges if p ≤ 1</li>
+<li><code>∫_0^1 (1/x^p) dx</code>: converges if p < 1, diverges if p ≥ 1</li>
+</ul>
+<p>4. <strong>Comparison Theorem</strong></p>
+<ul>
+<li>If 0 ≤ f(x) ≤ g(x) on [a,∞):</li>
+<li>If <code>∫ g</code> converges, then <code>∫ f</code> converges</li>
+<li>If <code>∫ f</code> diverges, then <code>∫ g</code> diverges</li>
+<li>Limit comparison test variant</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫_a^∞ f(x) dx = lim_{t→∞} ∫_a^t f(x) dx`</code></td><td>Type 1 definition</td></tr><tr><td><code>`∫_a^b f(x) dx = lim_{t→a⁺} ∫_t^b f(x) dx`</code></td><td>Type 2 (asymptote at a)</td></tr><tr><td><code>`∫_1^∞ 1/x^p dx` conv p>1, div p≤1</code></td><td>p-test for infinite</td></tr><tr><td><code>`∫_0^1 1/x^p dx` conv p<1, div p≥1</code></td><td>p-test for finite</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>High priority:</strong> Improper integrals appear frequently as both standalone questions and within series convergence tests</li>
+<li><strong>Common mistakes:</strong> Not handling both limits independently for double-infinite integrals; forgetting to check for vertical asymptotes within the interval; using comparison theorem backwards</li>
+<li><strong>Practice strategy:</strong> Always identify the type (infinite limit vs. discontinuous integrand, or both) before setting up the limit. For comparison, find a simpler function that bounds yours.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 7: Infinite Sequences & Series</h2>
+<div class="meta">Lectures 15–18   · 5–7 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Sequences</strong></p>
+<ul>
+<li>Definition, limit of a sequence</li>
+<li>Limit laws (same as function limits)</li>
+<li>Squeeze theorem for sequences</li>
+<li>Monotonic sequences (increasing/decreasing)</li>
+<li>Bounded sequences (bounded above/below)</li>
+<li>Monotonic sequence theorem: bounded monotonic sequences converge</li>
+</ul>
+<p>2. <strong>Infinite Series</strong></p>
+<ul>
+<li>Partial sums: <code>S_n = Σ_{i=1}^n a_i</code></li>
+<li>Convergence: <code>lim_{n→∞} S_n = S</code> (finite)</li>
+<li>Geometric series: <code>Σ ar^{n−1}</code> converges to <code>a/(1−r)</code> if |r| < 1</li>
+<li>Necessary condition: If Σ a_n converges, then <code>lim a_n = 0</code></li>
+<li>Test for divergence: If <code>lim a_n ≠ 0</code>, series diverges</li>
+<li>Algebra of convergent series (linearity)</li>
+</ul>
+<p>3. <strong>Integral Test & p-Series</strong></p>
+<ul>
+<li>If f is positive, continuous, decreasing on [1,∞), then Σ f(n) and ∫_1^∞ f(x) dx converge/diverge together</li>
+<li>p-series: Σ 1/n^p converges if p > 1, diverges if p ≤ 1</li>
+<li>Remainder estimate: <code>R_n = S − S_n</code>, bounds via integral</li>
+</ul>
+<p>4. <strong>Comparison Tests</strong></p>
+<ul>
+<li><strong>Direct Comparison:</strong> If 0 ≤ a_n ≤ b_n and Σ b_n converges, then Σ a_n converges</li>
+<li><strong>Limit Comparison:</strong> <code>lim a_n/b_n = c > 0</code> ⇒ both converge or both diverge</li>
+<li>Estimating sums via comparison</li>
+</ul>
+<p>5. <strong>Alternating Series</strong></p>
+<ul>
+<li>Alternating series test: If b_n decreasing → 0, then Σ (−1)^{n−1} b_n converges</li>
+<li>Alternating series estimation theorem: <code>|R_n| ≤ b_{n+1}</code></li>
+<li>Absolute vs. conditional convergence</li>
+</ul>
+<p>6. <strong>Ratio & Root Tests</strong></p>
+<ul>
+<li><strong>Ratio test:</strong> <code>lim |a_{n+1}/a_n| = L</code>; L < 1 ⇒ converges, L > 1 ⇒ diverges, L = 1 ⇒ inconclusive</li>
+<li><strong>Root test:</strong> <code>lim ⁿ√|a_n| = L</code>; same criteria</li>
+<li>When to use each (factorials → ratio, nth powers → root)</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`lim_{n→∞} a_n = L`</code></td><td>Sequence converges to L</td></tr><tr><td><code>Monotonic Sequence Theorem</code></td><td>Bounded monotonic ⇒ converges</td></tr><tr><td><code>`Σ ar^{n−1} = a/(1−r)` for</code></td><td>r</td></tr><tr><td><code>Divergence test: lim a_n ≠ 0 ⇒ diverges</code></td><td>Test for divergence</td></tr><tr><td><code>p-series: Σ 1/n^p</code></td><td>p>1 conv, p≤1 div</td></tr><tr><td><code>Integral test</code></td><td>∫ f and Σ f(n) same convergence</td></tr><tr><td><code>Alternating Series Test</code></td><td>b_n decreasing→0 ⇒ converges</td></tr><tr><td><code>`</code></td><td>R_n</td></tr><tr><td><code>Ratio test: lim</code></td><td>a_{n+1}/a_n</td></tr><tr><td><code>Root test: lim ⁿ√</code></td><td>a_n</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>High priority:</strong> This is the most content-heavy module and a major exam focus</li>
+<li><strong>Common mistakes:</strong> Applying divergence test incorrectly (lim a_n = 0 does NOT guarantee convergence); forgetting that p-series requires p > 1 for convergence; using ratio test when L=1 and not knowing what to do next</li>
+<li><strong>Practice strategy:</strong> Create a decision tree for series — first check p-series/geometric forms, then divergence test, then comparison, then alternating, then ratio/root. Practice identifying which test applies quickly.</li>
+</ul></div>
+</div>
+</div>
+
+<div class="module-section">
+<div class="module-header" onclick="toggleModule(this)">
+<div>
+<h2>Module 8: Power Series, Taylor Series & Applications</h2>
+<div class="meta">Lectures 19–22   · 5–7 hours</div>
+</div>
+<span class="toggle-icon">▶</span>
+</div>
+<div class="module-body">
+<div class="topics-section">
+<h3>Topics</h3>
+<p>1. <strong>Strategy for Testing Series (Decision Tree)</strong></p>
+<ul>
+<li>Quick checks: p-series, geometric, compare to known forms</li>
+<li>Divergence test</li>
+<li>Alternating series test</li>
+<li>Ratio test (general purpose)</li>
+<li>Root test (nth powers)</li>
+<li>Integral test (last resort for decreasing positive terms)</li>
+</ul>
+<p>2. <strong>Power Series</strong></p>
+<ul>
+<li>Definition: <code>Σ c_n (x − a)^n</code></li>
+<li>Radius of convergence R (via ratio or root test)</li>
+<li>Interval of convergence (test endpoints separately)</li>
+<li>Endpoint behavior: may converge at one, both, or neither endpoint</li>
+</ul>
+<p>3. <strong>Power Series Representations</strong></p>
+<ul>
+<li>Geometric series: <code>1/(1−x) = Σ x^n</code> for |x| < 1</li>
+<li>Differentiation of power series (term-by-term)</li>
+<li>Integration of power series (term-by-term)</li>
+<li>Building series for: <code>1/(1+x²)</code>, <code>1/(1−x)²</code>, <code>ln(1+x)</code>, <code>arctan x</code></li>
+</ul>
+<p>4. <strong>Taylor & Maclaurin Series</strong></p>
+<ul>
+<li>Taylor series at a: <code>f(x) = Σ f^{(n)}(a)/n! (x−a)^n</code></li>
+<li>Maclaurin series (a = 0)</li>
+<li>Taylor polynomials: <code>T_n(x) = Σ_{k=0}^n f^{(k)}(a)/k! (x−a)^k</code></li>
+<li>Remainder: <code>R_n(x) = f(x) − T_n(x)</code></li>
+<li>Taylor's inequality: <code>|R_n(x)| ≤ M/(n+1)! |x−a|^{n+1}</code> where <code>|f^{(n+1)}(u)| ≤ M</code></li>
+<li>Table of important Maclaurin series (eˣ, sin x, cos x, 1/(1−x), ln(1+x), arctan x, etc.)</li>
+</ul>
+<p>5. <strong>Binomial Series</strong></p>
+<ul>
+<li><code>(1+x)^k = Σ (k choose n) x^n</code> for |x| < 1</li>
+<li>Generalized binomial coefficients: <code>(k choose n) = k(k−1)⋯(k−n+1)/n!</code></li>
+</ul>
+<p>6. <strong>Operations with Power Series</strong></p>
+<ul>
+<li>Multiplication of power series</li>
+<li>Division of power series</li>
+<li>Applications: relativistic kinetic energy approximation</li>
+</ul>
+</div>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`Σ c_n (x−a)^n`</code></td><td>Power series centered at a</td></tr><tr><td><code>`R = 1 / lim sup ⁿ√</code></td><td>c_n</td></tr><tr><td><code>`1/(1−x) = Σ x^n` for</code></td><td>x</td></tr><tr><td><code>`f(x) = Σ f^{(n)}(a)/n! (x−a)^n`</code></td><td>Taylor series</td></tr><tr><td><code>`eˣ = Σ x^n/n!`</code></td><td>Maclaurin for eˣ</td></tr><tr><td><code>`sin x = Σ (−1)^n x^{2n+1}/(2n+1)!`</code></td><td>Maclaurin for sine</td></tr><tr><td><code>`cos x = Σ (−1)^n x^{2n}/(2n)!`</code></td><td>Maclaurin for cosine</td></tr><tr><td><code>`Taylor's inequality:</code></td><td>R_n</td></tr><tr><td><code>`(1+x)^k = Σ (k choose n) x^n`</code></td><td>Binomial series</td></tr></tbody></table>
+<div class="recommendations"><h3>Study Recommendations</h3><ul>
+<li><strong>High priority:</strong> Taylor/Maclaurin series and power series are a major exam focus and a capstone topic</li>
+<li><strong>Common mistakes:</strong> Forgetting to test endpoints when finding interval of convergence (separately for each endpoint); applying Taylor's inequality with wrong derivative order; confusing Taylor series with Maclaurin series</li>
+<li><strong>Practice strategy:</strong> Memorize the 7 Maclaurin series in the table above. For finding power series, always start from a known series (usually geometric) and transform via substitution, differentiation, or integration. For Taylor series, compute derivatives systematically at the center point.</li>
+</ul></div>
+</div>
+</div>
+
+</div>
+
+<script>
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+function toggleModule(header) {
+    var body = header.nextElementSibling;
+    var isOpen = body.classList.toggle('open');
+    header.classList.toggle('open', isOpen);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    var firstHeader = document.querySelector('.module-header');
+    if (firstHeader) toggleModule(firstHeader);
+});
+</script>
+</body>
+</html>

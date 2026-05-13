@@ -11,7 +11,11 @@
 <script>
 MathJax = {
     tex: {inlineMath: [['$','$']], displayMath: [['$$','$$']]},
-    svg: {fontCache: 'global'}
+    svg: {fontCache: 'global'},
+    options: {
+        ignoreHtmlClass: 'sidebar|sidebar-mobile|hamburger|home-btn',
+        processHtmlClass: 'content|formula-table|math-inline'
+    }
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
@@ -67,6 +71,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .formula-table th{background:#1c2128;color:#f0f6fc;padding:10px 12px;text-align:left;font-weight:600;border:1px solid #30363d}
 .formula-table td{padding:10px 12px;border:1px solid #21262d;color:#c9d1d9}
 .formula-table tr:hover td{background:#1c2128}
+.formula-table .math-inline{background:#0d1117;padding:2px 6px;border-radius:4px;font-family:'SF Mono',monospace;font-size:12px}
 .formula-table code{background:#0d1117;padding:2px 6px;border-radius:4px;font-family:'SF Mono',monospace;font-size:12px}
 
 .recommendations{background:#1c2128;border-left:3px solid #238636;padding:12px 16px;margin-top:12px;border-radius:0 6px 6px 0}
@@ -174,7 +179,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>Rotating about the y-axis (<code>y</code> as variable)</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫_a^b f(x) dx = lim_{n→∞} Σ f(x_i*) Δx`</code></td><td>Riemann sum definition</td></tr><tr><td><code>`FTC: d/dx ∫_a^x f(t) dt = f(x)`</code></td><td>Derivative of an integral</td></tr><tr><td><code>`FTC: ∫_a^b f(x) dx = F(b) − F(a)`</code></td><td>Evaluating definite integrals</td></tr><tr><td><code>`∫_a^b f(x) dx = ∫_a^b f(g(u)) g'(u) du`</code></td><td>Substitution rule</td></tr><tr><td><code>`∫_{-a}^a [even] dx = 2∫_0^a`</code></td><td>Even function symmetry</td></tr><tr><td><code>`∫_{-a}^a [odd] dx = 0`</code></td><td>Odd function symmetry</td></tr><tr><td><code>`A = ∫_a^b (top − bottom) dx`</code></td><td>Area between curves</td></tr><tr><td><code>`V = ∫ π [R(x)]² dx`</code></td><td>Disk method</td></tr><tr><td><code>`V = ∫ π ([R_out]² − [R_in]²) dx`</code></td><td>Washer method</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$∫_a^b f(x) dx = lim_{n→∞} Σ f(x_i*) Δx$</span></td><td>Riemann sum definition</td></tr><tr><td><span class="math-inline">$FTC: d/dx ∫_a^x f(t) dt = f(x)$</span></td><td>Derivative of an integral</td></tr><tr><td><span class="math-inline">$FTC: ∫_a^b f(x) dx = F(b) − F(a)$</span></td><td>Evaluating definite integrals</td></tr><tr><td><span class="math-inline">$∫_a^b f(x) dx = ∫_a^b f(g(u)) g'(u) du$</span></td><td>Substitution rule</td></tr><tr><td><span class="math-inline">$∫_{-a}^a [even] dx = 2∫_0^a$</span></td><td>Even function symmetry</td></tr><tr><td><span class="math-inline">$∫_{-a}^a [odd] dx = 0$</span></td><td>Odd function symmetry</td></tr><tr><td><span class="math-inline">$A = ∫_a^b (top − bottom) dx$</span></td><td>Area between curves</td></tr><tr><td><span class="math-inline">$V = ∫ π [R(x)]² dx$</span></td><td>Disk method</td></tr><tr><td><span class="math-inline">$V = ∫ π ([R_out]² − [R_in]²) dx$</span></td><td>Washer method</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>High priority:</strong> FTC (both parts) and u-substitution are used throughout every later module</li>
 <li><strong>Common mistakes:</strong> Forgetting to change limits in definite u-sub; using wrong radius function in washer method; missing the <code>π</code> factor in volume formulas</li>
@@ -235,7 +240,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>General steps: (1) long division if degree num ≥ degree den; (2) factor denominator; (3) set up decomposition; (4) solve for coefficients</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫ u dv = uv − ∫ v du`</code></td><td>Integration by parts</td></tr><tr><td><code>`∫ sin^n x dx = −1/n sin^{n−1} x cos x + (n−1)/n ∫ sin^{n−2} x dx`</code></td><td>Reduction for sine</td></tr><tr><td><code>`x = a sin θ, dx = a cos θ dθ`</code></td><td>Sub for √(a²−x²)</td></tr><tr><td><code>`x = a tan θ, dx = a sec² θ dθ`</code></td><td>Sub for √(a²+x²)</td></tr><tr><td><code>`x = a sec θ, dx = a sec θ tan θ dθ`</code></td><td>Sub for √(x²−a²)</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$∫ u dv = uv − ∫ v du$</span></td><td>Integration by parts</td></tr><tr><td><span class="math-inline">$∫ sin^n x dx = −1/n sin^{n−1} x cos x + (n−1)/n ∫ sin^{n−2} x dx$</span></td><td>Reduction for sine</td></tr><tr><td><span class="math-inline">$x = a sin θ, dx = a cos θ dθ$</span></td><td>Sub for √(a²−x²)</td></tr><tr><td><span class="math-inline">$x = a tan θ, dx = a sec² θ dθ$</span></td><td>Sub for √(a²+x²)</td></tr><tr><td><span class="math-inline">$x = a sec θ, dx = a sec θ tan θ dθ$</span></td><td>Sub for √(x²−a²)</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>High priority:</strong> Integration by parts and partial fractions appear most frequently in exam problems</li>
 <li><strong>Common mistakes:</strong> Forgetting the <code>−</code> sign in parts; wrong choice of <code>u</code>; missing the <code>dx = a cos θ dθ</code> in trig sub; not doing long division first in partial fractions</li>
@@ -279,7 +284,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>Derivation: frustum of a cone (lateral surface area = 2πrl)</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`f_avg = 1/(b−a) ∫_a^b f(x) dx`</code></td><td>Average value</td></tr><tr><td><code>MVT: `∃ c: f(c) = f_avg`</code></td><td>Mean Value Theorem for Integrals</td></tr><tr><td><code>`L = ∫ √(1 + (dy/dx)²) dx`</code></td><td>Arc length (y = f(x))</td></tr><tr><td><code>`L = ∫ √(1 + (dx/dy)²) dy`</code></td><td>Arc length (x = g(y))</td></tr><tr><td><code>`S = ∫ 2πr √(1 + (dy/dx)²) dx`</code></td><td>Surface of revolution (r = radius to axis)</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$f_avg = 1/(b−a) ∫_a^b f(x) dx$</span></td><td>Average value</td></tr><tr><td><code>MVT: `∃ c: f(c) = f_avg`</code></td><td>Mean Value Theorem for Integrals</td></tr><tr><td><span class="math-inline">$L = ∫ √(1 + (dy/dx)²) dx$</span></td><td>Arc length (y = f(x))</td></tr><tr><td><span class="math-inline">$L = ∫ √(1 + (dx/dy)²) dy$</span></td><td>Arc length (x = g(y))</td></tr><tr><td><span class="math-inline">$S = ∫ 2πr √(1 + (dy/dx)²) dx$</span></td><td>Surface of revolution (r = radius to axis)</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>Medium priority:</strong> These topics are narrower but frequently appear as exam questions</li>
 <li><strong>Common mistakes:</strong> Confusing arc length formula with area formula; forgetting the <code>2πr</code> factor in surface area; using wrong radius for rotation axis</li>
@@ -326,7 +331,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>Error bound: <code>|E_S| ≤ K(b−a)⁵ / (180n⁴)</code> where <code>|f⁽⁴⁾(x)| ≤ K</code></li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`T_n = Δx/2[f₀+2f₁+2f₂+⋯+f_n]`</code></td><td>Trapezoidal Rule</td></tr><tr><td><code>`M_n = Δx Σ f(midpoints)`</code></td><td>Midpoint Rule</td></tr><tr><td><code>`S_n = Δx/3[f₀+4f₁+2f₂+4f₃+⋯+f_n]`</code></td><td>Simpson's Rule (n even)</td></tr><tr><td><code>`</code></td><td>E_T</td></tr><tr><td><code>`</code></td><td>E_M</td></tr><tr><td><code>`</code></td><td>E_S</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$T_n = Δx/2[f₀+2f₁+2f₂+⋯+f_n]$</span></td><td>Trapezoidal Rule</td></tr><tr><td><span class="math-inline">$M_n = Δx Σ f(midpoints)$</span></td><td>Midpoint Rule</td></tr><tr><td><span class="math-inline">$S_n = Δx/3[f₀+4f₁+2f₂+4f₃+⋯+f_n]$</span></td><td>Simpson's Rule (n even)</td></tr><tr><td><span class="math-inline">$</code></td><td>E_T</td></tr><tr><td><code>$</span></td><td>E_M</td></tr><tr><td><code>`</code></td><td>E_S</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>Medium priority:</strong> Numerical integration is less emphasized in pure calculus courses but essential for applications</li>
 <li><strong>Common mistakes:</strong> Using odd n for Simpson's Rule; forgetting the alternating 4-2-4-2 pattern; confusing error bound formulas</li>
@@ -369,7 +374,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li><code>L = ∫_α^β √(r² + (dr/dθ)²) dθ</code></li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`x = r cos θ, y = r sin θ`</code></td><td>Polar to Cartesian</td></tr><tr><td><code>`r² = x² + y², tan θ = y/x`</code></td><td>Cartesian to polar</td></tr><tr><td><code>`dy/dx = (r' sin θ + r cos θ)/(r' cos θ − r sin θ)`</code></td><td>Tangent slope in polar</td></tr><tr><td><code>`A = ∫ ½ r² dθ`</code></td><td>Area in polar</td></tr><tr><td><code>`A = ∫ ½ (r_out² − r_in²) dθ`</code></td><td>Area between polar curves</td></tr><tr><td><code>`L = ∫ √(r² + (dr/dθ)²) dθ`</code></td><td>Arc length in polar</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$x = r cos θ, y = r sin θ$</span></td><td>Polar to Cartesian</td></tr><tr><td><span class="math-inline">$r² = x² + y², tan θ = y/x$</span></td><td>Cartesian to polar</td></tr><tr><td><span class="math-inline">$dy/dx = (r' sin θ + r cos θ)/(r' cos θ − r sin θ)$</span></td><td>Tangent slope in polar</td></tr><tr><td><span class="math-inline">$A = ∫ ½ r² dθ$</span></td><td>Area in polar</td></tr><tr><td><span class="math-inline">$A = ∫ ½ (r_out² − r_in²) dθ$</span></td><td>Area between polar curves</td></tr><tr><td><span class="math-inline">$L = ∫ √(r² + (dr/dθ)²) dθ$</span></td><td>Arc length in polar</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>Medium-high priority:</strong> Polar area and arc length are common exam topics</li>
 <li><strong>Common mistakes:</strong> Forgetting the <code>½</code> in the area formula; not squaring r in arc length formula; using wrong limits of integration when finding intersection points</li>
@@ -414,7 +419,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>Limit comparison test variant</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`∫_a^∞ f(x) dx = lim_{t→∞} ∫_a^t f(x) dx`</code></td><td>Type 1 definition</td></tr><tr><td><code>`∫_a^b f(x) dx = lim_{t→a⁺} ∫_t^b f(x) dx`</code></td><td>Type 2 (asymptote at a)</td></tr><tr><td><code>`∫_1^∞ 1/x^p dx` conv p>1, div p≤1</code></td><td>p-test for infinite</td></tr><tr><td><code>`∫_0^1 1/x^p dx` conv p<1, div p≥1</code></td><td>p-test for finite</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$∫_a^∞ f(x) dx = lim_{t→∞} ∫_a^t f(x) dx$</span></td><td>Type 1 definition</td></tr><tr><td><span class="math-inline">$∫_a^b f(x) dx = lim_{t→a⁺} ∫_t^b f(x) dx$</span></td><td>Type 2 (asymptote at a)</td></tr><tr><td><code>`∫_1^∞ 1/x^p dx` conv p>1, div p≤1</code></td><td>p-test for infinite</td></tr><tr><td><code>`∫_0^1 1/x^p dx` conv p<1, div p≥1</code></td><td>p-test for finite</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>High priority:</strong> Improper integrals appear frequently as both standalone questions and within series convergence tests</li>
 <li><strong>Common mistakes:</strong> Not handling both limits independently for double-infinite integrals; forgetting to check for vertical asymptotes within the interval; using comparison theorem backwards</li>
@@ -477,7 +482,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>When to use each (factorials → ratio, nth powers → root)</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`lim_{n→∞} a_n = L`</code></td><td>Sequence converges to L</td></tr><tr><td><code>Monotonic Sequence Theorem</code></td><td>Bounded monotonic ⇒ converges</td></tr><tr><td><code>`Σ ar^{n−1} = a/(1−r)` for</code></td><td>r</td></tr><tr><td><code>Divergence test: lim a_n ≠ 0 ⇒ diverges</code></td><td>Test for divergence</td></tr><tr><td><code>p-series: Σ 1/n^p</code></td><td>p>1 conv, p≤1 div</td></tr><tr><td><code>Integral test</code></td><td>∫ f and Σ f(n) same convergence</td></tr><tr><td><code>Alternating Series Test</code></td><td>b_n decreasing→0 ⇒ converges</td></tr><tr><td><code>`</code></td><td>R_n</td></tr><tr><td><code>Ratio test: lim</code></td><td>a_{n+1}/a_n</td></tr><tr><td><code>Root test: lim ⁿ√</code></td><td>a_n</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$lim_{n→∞} a_n = L$</span></td><td>Sequence converges to L</td></tr><tr><td><code>Monotonic Sequence Theorem</code></td><td>Bounded monotonic ⇒ converges</td></tr><tr><td><span class="math-inline">$Σ ar^{n−1} = a/(1−r)` for</code></td><td>r</td></tr><tr><td><code>Divergence test: lim a_n ≠ 0 ⇒ diverges</code></td><td>Test for divergence</td></tr><tr><td><code>p-series: Σ 1/n^p</code></td><td>p>1 conv, p≤1 div</td></tr><tr><td><code>Integral test</code></td><td>∫ f and Σ f(n) same convergence</td></tr><tr><td><code>Alternating Series Test</code></td><td>b_n decreasing→0 ⇒ converges</td></tr><tr><td><code>$</span></td><td>R_n</td></tr><tr><td><code>Ratio test: lim</code></td><td>a_{n+1}/a_n</td></tr><tr><td><code>Root test: lim ⁿ√</code></td><td>a_n</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>High priority:</strong> This is the most content-heavy module and a major exam focus</li>
 <li><strong>Common mistakes:</strong> Applying divergence test incorrectly (lim a_n = 0 does NOT guarantee convergence); forgetting that p-series requires p > 1 for convergence; using ratio test when L=1 and not knowing what to do next</li>
@@ -541,7 +546,7 @@ mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overf
 <li>Applications: relativistic kinetic energy approximation</li>
 </ul>
 </div>
-<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><code>`Σ c_n (x−a)^n`</code></td><td>Power series centered at a</td></tr><tr><td><code>`R = 1 / lim sup ⁿ√</code></td><td>c_n</td></tr><tr><td><code>`1/(1−x) = Σ x^n` for</code></td><td>x</td></tr><tr><td><code>`f(x) = Σ f^{(n)}(a)/n! (x−a)^n`</code></td><td>Taylor series</td></tr><tr><td><code>`eˣ = Σ x^n/n!`</code></td><td>Maclaurin for eˣ</td></tr><tr><td><code>`sin x = Σ (−1)^n x^{2n+1}/(2n+1)!`</code></td><td>Maclaurin for sine</td></tr><tr><td><code>`cos x = Σ (−1)^n x^{2n}/(2n)!`</code></td><td>Maclaurin for cosine</td></tr><tr><td><code>`Taylor's inequality:</code></td><td>R_n</td></tr><tr><td><code>`(1+x)^k = Σ (k choose n) x^n`</code></td><td>Binomial series</td></tr></tbody></table>
+<table class="formula-table"><thead><tr><th>Formula</th><th>Description</th></tr></thead><tbody><tr><td><span class="math-inline">$Σ c_n (x−a)^n$</span></td><td>Power series centered at a</td></tr><tr><td><span class="math-inline">$R = 1 / lim sup ⁿ√</code></td><td>c_n</td></tr><tr><td><code>`1/(1−x) = Σ x^n` for</code></td><td>x</td></tr><tr><td><code>`f(x) = Σ f^{(n)}(a)/n! (x−a)^n$</span></td><td>Taylor series</td></tr><tr><td><span class="math-inline">$eˣ = Σ x^n/n!$</span></td><td>Maclaurin for eˣ</td></tr><tr><td><span class="math-inline">$sin x = Σ (−1)^n x^{2n+1}/(2n+1)!$</span></td><td>Maclaurin for sine</td></tr><tr><td><span class="math-inline">$cos x = Σ (−1)^n x^{2n}/(2n)!$</span></td><td>Maclaurin for cosine</td></tr><tr><td><span class="math-inline">$Taylor's inequality:</code></td><td>R_n</td></tr><tr><td><code>`(1+x)^k = Σ (k choose n) x^n$</span></td><td>Binomial series</td></tr></tbody></table>
 <div class="recommendations"><h3>Study Recommendations</h3><ul>
 <li><strong>High priority:</strong> Taylor/Maclaurin series and power series are a major exam focus and a capstone topic</li>
 <li><strong>Common mistakes:</strong> Forgetting to test endpoints when finding interval of convergence (separately for each endpoint); applying Taylor's inequality with wrong derivative order; confusing Taylor series with Maclaurin series</li>

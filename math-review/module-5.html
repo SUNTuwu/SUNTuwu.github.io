@@ -373,6 +373,13 @@ function toggleMobileMenu(){
  var isOpen=s.classList.toggle("open");
  o.classList.toggle("open", isOpen);
 }
+document.addEventListener("DOMContentLoaded", function(){
+ var mobileSidebar=document.getElementById("mobileSidebar");
+ if(!mobileSidebar) return;
+ mobileSidebar.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click", toggleMobileMenu);
+ });
+});
 </script>
 
 </body>

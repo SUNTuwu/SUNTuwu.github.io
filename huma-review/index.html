@@ -468,7 +468,7 @@
       display: block !important;
     }
     .sidebar-mobile {
-      display: none;
+      display: none !important;
       position: fixed;
       top: 0;
       left: -300px;
@@ -499,12 +499,6 @@
       color: var(--text);
     }
 
-    @media (max-width: 1080px) {
-      .sidebar-mobile {
-        display: block;
-      }
-    }
-
     @media (max-width: 720px) {
       .layout {
         padding: 16px 14px 56px;
@@ -512,7 +506,7 @@
       }
 
       .layout > .sidebar {
-        display: none;
+        display: none !important;
       }
 
       .hamburger {

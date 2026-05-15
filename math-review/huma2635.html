@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUMA2635 Exam Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --bg: #f6f5f4;
+      --surface: #ffffff;
+      --surface-alt: #f6f5f4;
+      --text: rgba(0, 0, 0, 0.95);
+      --text-secondary: #615d59;
+      --accent: #0075de;
+      --accent-soft: rgba(0, 117, 222, 0.08);
+      --border: rgba(0, 0, 0, 0.1);
+      --shadow-stack: 0 1px 2px rgba(15, 23, 42, 0.05), 0 12px 28px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --content-width: 1000px;
+      --sidebar-width: 292px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171614;
+        --surface: #1f1d1a;
+        --surface-alt: #25231f;
+        --text: rgba(255, 255, 255, 0.92);
+        --text-secondary: #b8b2aa;
+        --accent: #4ea1ff;
+        --accent-soft: rgba(78, 161, 255, 0.12);
+        --border: rgba(255, 255, 255, 0.1);
+        --shadow-stack: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 40px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.03);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0, 117, 222, 0.09), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(0, 117, 222, 0.05), transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, var(--surface-alt) 100%);
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .layout {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+      display: grid;
+      grid-template-columns: minmax(248px, var(--sidebar-width)) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-stack);
+      border-radius: var(--radius-xl);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      padding: 18px;
+    }
+
+    .sidebar-header {
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+
+    .sidebar-title,
+    .hero-title,
+    .section-heading {
+      letter-spacing: -0.03em;
+    }
+
+    .sidebar-title {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .sidebar-note,
+    .hero-subtitle,
+    .section-summary,
+    .meta-chip,
+    .nav-meta {
+      color: var(--text-secondary);
+    }
+
+    .sidebar-note {
+      margin: 8px 0 0;
+      font-size: 0.93rem;
+    }
+
+    .nav {
+      display: grid;
+      gap: 12px;
+    }
+
+    .nav-group {
+      display: grid;
+      gap: 6px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
+    }
+
+    .nav-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin-bottom: 2px;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      transition: background-color 140ms ease, color 140ms ease, transform 140ms ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--text);
+      background: var(--accent-soft);
+      text-decoration: none;
+      outline: none;
+      transform: translateX(1px);
+    }
+
+    .nav-link.section-link {
+      font-weight: 600;
+      color: var(--text);
+      background: rgba(0, 117, 222, 0.05);
+      border: 1px solid rgba(0, 117, 222, 0.12);
+    }
+
+    .nav-link.topic-link {
+      font-size: 0.95rem;
+      padding-left: 12px;
+    }
+
+    .nav-link.active {
+      color: var(--text);
+      background: var(--accent-soft);
+      box-shadow: inset 0 0 0 1px rgba(0, 117, 222, 0.18);
+    }
+
+    .main {
+      width: min(100%, calc(var(--content-width) + 48px));
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .hero,
+    .doc-section {
+      padding: 28px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(0, 117, 222, 0.1), transparent 30%),
+        linear-gradient(180deg, var(--surface) 0%, var(--surface-alt) 100%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto -120px -140px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 117, 222, 0.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.04;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      margin: 14px 0 0;
+      max-width: 60ch;
+      font-size: 1rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+      font-size: 0.92rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .meta-chip {
+        background: rgba(255, 255, 255, 0.03);
+      }
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .section-summary {
+      margin: 8px 0 0;
+      max-width: 60ch;
+      font-size: 0.98rem;
+    }
+
+    .markdown-body {
+      font-size: 1rem;
+      min-width: 0;
+    }
+
+    .markdown-body > :first-child {
+      margin-top: 0;
+    }
+
+    .markdown-body > :last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4 {
+      margin: 2rem 0 0.85rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      scroll-margin-top: 96px;
+    }
+
+    .markdown-body h1 {
+      font-size: clamp(1.55rem, 2.5vw, 2rem);
+    }
+
+    .markdown-body h2 {
+      font-size: clamp(1.28rem, 2.15vw, 1.55rem);
+    }
+
+    .markdown-body h3 {
+      font-size: 1.08rem;
+    }
+
+    .markdown-body p,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body blockquote {
+      margin: 0.95rem 0;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 1.3rem;
+    }
+
+    .markdown-body li + li {
+      margin-top: 0.42rem;
+    }
+
+    .markdown-body strong {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .markdown-body strong {
+        color: #ffffff;
+      }
+    }
+
+    .markdown-body hr {
+      border: 0;
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+
+    .markdown-body blockquote {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, var(--accent-soft) 0%, var(--surface-alt) 100%);
+      color: var(--text-secondary);
+    }
+
+    .markdown-body blockquote > :first-child {
+      margin-top: 0;
+    }
+
+    .markdown-body blockquote > :last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+      font-size: 0.94em;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.12em 0.4em;
+    }
+
+    .table-wrap {
+      margin: 1.2rem 0;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    }
+
+    .markdown-body table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      margin: 0;
+    }
+
+    .markdown-body thead th {
+      background: var(--surface-alt);
+      font-weight: 600;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .markdown-body tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--text);
+      box-shadow: var(--shadow-stack);
+      backdrop-filter: blur(12px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .back-to-top {
+        background: rgba(31, 29, 26, 0.88);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 10px;
+        z-index: 20;
+        max-height: none;
+      }
+
+      .nav {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .main {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .layout {
+        padding: 16px 14px 56px;
+        gap: 16px;
+      }
+
+      .sidebar,
+      .hero,
+      .doc-section {
+        padding: 20px;
+      }
+
+      .section-top {
+        flex-direction: column;
+      }
+
+      .nav {
+        grid-template-columns: 1fr;
+      }
+
+      .markdown-body {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar card" aria-label="Sidebar navigation">
+      <div class="sidebar-header">
+        <p class="eyebrow">HUMA2635</p>
+        <h1 class="sidebar-title">Exam Review</h1>
+        <p class="sidebar-note">Outline, term explanations, and short essays collected into one review page.</p>
+      </div>
+      <nav id="sidebar-nav" class="nav" aria-label="Section and topic navigation"></nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero card" id="top">
+        <p class="eyebrow">Single-File Preview</p>
+        <h2 class="hero-title">HUMA2635 final exam review, in one page.</h2>
+        <p class="hero-subtitle">This preview preserves the full contents of the three reference documents and organizes them with section navigation, responsive layout, and light/dark presentation.</p>
+        <div class="meta-row">
+          <span class="meta-chip">3 source files</span>
+          <span class="meta-chip">Sticky sidebar</span>
+          <span class="meta-chip">Smooth scroll</span>
+          <span class="meta-chip">Dark mode</span>
+        </div>
+      </header>
+
+      <section class="doc-section card" id="outline-section" data-nav-label="Outline" data-topic-selector="h2">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">Section 1</p>
+            <h2 class="section-heading">Outline</h2>
+            <p class="section-summary">Full content embedded from <code>outline.md</code>.</p>
+          </div>
+        </div>
+        <div class="markdown-body">
+          <h1>HUMA 2635 Final Exam Outline — 关键词与整理指导</h1>
+<blockquote>
+<p>基于 <code>2635_final_exam_outline2026.txt</code> 提取，供后续整理复习材料使用。</p>
+</blockquote>
+<hr>
+<h2>一、Term Explanation（名词解释）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>题目</th>
+<th>核心关键词 / 概念锚点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Culturalism and Manyi barbarians</strong></td>
+<td>华夷之辨、天下观、文化主义 vs 种族主义、儒家文明等级、Sinification</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Nation-state after 1911</strong></td>
+<td>辛亥革命、中华民国、五族共和、民族国家建构、主权转型、从帝国到民族国家</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Debates between Constitutional monarchists and Revolutionaries</strong></td>
+<td>立宪派 vs 革命派、保皇党（康有为）、革命党（孙中山）、君主立宪 vs 共和革命、《民报》vs《新民丛报》</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Chiang Kai-shek’s arguments about peoples in China</strong></td>
+<td>蒋介石、中华民族、宗族论、国族建构、单一中华民族、五族同源、国民党民族政策</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>The Dalai Lama and the Panchen Lama</strong></td>
+<td>达赖喇嘛、班禅额尔德尼、格鲁派、活佛转世、金瓶掣签、政教合一、西藏宗教政治体系</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>The formulation of historical materialism</strong></td>
+<td>历史唯物主义、马克思主义民族理论、斯大林定义、生产方式、阶级分析、民族形成的物质基础</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Identification of nationalities</strong></td>
+<td>民族识别（1950s）、56个民族、斯大林四标准（语言/地域/经济生活/心理素质）、田野调查、分类政治</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>The Sufism orders in China</strong></td>
+<td>苏菲派、门宦制度、虎夫耶/哲赫忍耶/嘎德忍耶/库布林耶、西北伊斯兰教、回族/维吾尔族信仰形态</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>The oases structure in Xinjiang</strong></td>
+<td>绿洲农业、天山南北、灌溉系统（坎儿井）、丝绸之路、定居游牧二元结构、生态与文明</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>The Yi and the Miao</strong></td>
+<td>彝族（诺苏/毕摩文化/奴隶制/凉山）、苗族（迁徙史/银饰/蛊文化/山地农业）、西南少数民族、族群边界</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>The tea and horse trade</strong></td>
+<td>茶马贸易、唐宋边茶政策、川藏/滇藏茶马古道、经济交换与政治控制、马政</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Ethnicity classification and major ethnic groups in Hong Kong</strong></td>
+<td>香港族群分类、华人/南亚裔（印度/巴基斯坦/尼泊尔）、菲佣/印佣、外籍家庭佣工、少数族裔政策、族群平等</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>二、Short Essay（简答题）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>题目</th>
+<th>核心框架 / 必答要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Meaning of culturalism and process of Sinification</strong></td>
+<td>文化主义定义（以文化分华夷，非血统）→ Sinification（汉化）的历史过程：语言/服饰/制度/宗教/姓氏 → 案例：北魏孝文帝、辽金元清</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Gaitu Guiliu policy</strong></td>
+<td>改土归流（明清）、土司制度 → 流官制度、中央集权、国家整合、西南少数民族地区、政治控制与文化同化</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Debates about New Qing History and cultural legitimacy theory</strong></td>
+<td>新清史学派（Pamela Crossley/Evelyn Rawski）vs 传统学派 → 汉化论 vs 内亚视角 → 文化正统性（cultural legitimacy）、清朝作为多民族帝国的性质</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>&ldquo;Three metaphors&rdquo; and civilizing centers</strong></td>
+<td>三个隐喻（需根据课程内容确认：如“华夏/蛮夷/化外”或“中心/边缘/通道”）→ 文明中心论（civilizing center）→ 朝贡体系、天下观、边缘向中心的文明流动</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Compare Xinjiang and Tibet</strong></td>
+<td><strong>地理</strong>：高原 vs 盆地绿洲；<strong>文化</strong>：藏传佛教 vs 伊斯兰教/多元信仰；<strong>与汉族关系</strong>：历史整合路径（唐蕃/和亲 vs 西域都护/屯垦）、当代自治政策、经济发展模式差异</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Social changes and Buddhism development in Tibet</strong></td>
+<td>社会变迁：政教合一 → 民主改革 → 现代化；佛教发展：前弘期/后弘期、格鲁派兴起、活佛体系、1959年后流亡与留守、当代宗教政策</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>三、通用复习策略</h2>
+<ol>
+<li><strong>时间线梳理</strong>：每个名词/简答都建议按 <strong>古代 → 近代 → 当代</strong> 或 <strong>背景 → 内容 → 影响</strong> 组织。</li>
+<li><strong>对比框架</strong>：涉及两个对象的题目（如 Xinjiang vs Tibet、立宪 vs 革命）统一使用 <strong>地理/文化/政治/与汉族关系</strong> 四维度。</li>
+<li><strong>理论+史实结合</strong>：名词解释需给出 <strong>定义 + 历史背景 + 具体案例 + 学术争议（如有）</strong>。</li>
+<li><strong>香港相关题目（#12）</strong>：注意结合本地语境，提及政府统计处的族群分类及少数族裔支援政策。</li>
+<li><strong>新清史相关（#3）</strong>：准备 <strong>新清史核心论点、批评声音、文化正统性概念</strong> 三方内容。</li>
+</ol>
+<hr>
+<p><em>生成时间：2026-04-28</em><br>
+<em>来源：<code>2635_final_exam_outline2026.txt</code></em></p>
+        </div>
+      </section>
+
+      <section class="doc-section card" id="terms-section" data-nav-label="Term Explanations" data-topic-selector="h1" data-skip-first-topic="true">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">Section 2</p>
+            <h2 class="section-heading">Term Explanations</h2>
+            <p class="section-summary">Full content embedded from <code>Term_Explanation_organized.md</code>.</p>
+          </div>
+        </div>
+        <div class="markdown-body">
+          <h1>Term Explanation 术语解释（按Definition → Structure → Mechanism → Historical Facts整理）</h1>
+<blockquote>
+<p><strong>格式说明</strong>：每个概念尽量按 <strong>Definition（定义）</strong> → <strong>Structure（结构/身份区分）</strong> → <strong>Mechanism（机制/运作方式）</strong> → <strong>Historical facts（历史事实）</strong> 逻辑组织。<br>
+<strong>加粗</strong> = 核心关键词/概念名。<br>
+（Source: 标注来源页码）</p>
+</blockquote>
+<hr>
+<h1>1. Culturalism and Manyi barbarians</h1>
+<p><strong>Logic:</strong> Definition → Structure → Mechanism → Historical facts</p>
+<p><strong>Definition:</strong> (<strong>culture-based community</strong>) A <strong>political</strong> community based on <strong>shared cultural values</strong> and <strong>Confucian theories</strong>, rather than ethnicity.
+(Source: HUMA2635_5.pdf p.3)</p>
+<p><strong>Structure:</strong> (<strong>Han self-identification</strong>) Distinct from an exclusive ethnic-based community founded on a <strong>self-description of a people as Han</strong>.
+(Source: HUMA2635_5.pdf p.3)</p>
+<p><strong>Mechanism:</strong> (<strong>education, imitation, and Sinification</strong>) Through <strong>education and imitation</strong>, &ldquo;barbarians&rdquo; could become part of the cultural community and distinguish themselves from other &ldquo;barbarians&rdquo; who did not share these values.
+(Source: HUMA2635_5.pdf p.3)</p>
+<blockquote>
+<p>与&rdquo;生熟&rdquo;不同，这个是<strong>主观的文化上归属与否</strong>；&rdquo;生熟&rdquo;是<strong>客观的行政上管理范围的内外</strong>。</p>
+</blockquote>
+<p><strong>Historical facts:</strong> (<strong>four barbarian categories &amp; Huaxia expansion</strong>) The Huaxia group called the non-Huaxia peoples of four directions: <strong>eastern Yi</strong> (东夷), <strong>western Rong</strong> (西戎), <strong>northern Di</strong> (北狄), and <strong>southern Man</strong> (南蛮). The early &ldquo;Chinese&rdquo; state was small (the <strong>Yellow River plain and the Yangtze River delta</strong>). The rest of what is now China was ruled by groups called <strong>barbarians</strong> by the Huaxia — a process of <strong>gradual expansion</strong> (逐步扩展).
+(Source: HUMA2635_2.pdf p.3)</p>
+<hr>
+<h1>2. Nation-state after 1911</h1>
+<p><strong>Logic:</strong> Origin → Theory → Basis → Consequences</p>
+<p><strong>Definition (Origin):</strong> (<strong>Western-style nationalism</strong>) After the Qing, republican leaders were <strong>heavily influenced by Western-style nationalism</strong> and used it to found a new state.
+(Source: HUMA2635_5.pdf p.11)</p>
+<p><strong>Structure (KMT Theory):</strong> (<strong>unique community / empire vs nation / tradition vs modernity</strong>) The KMT viewed the nation as a <strong>unique and unprecedented</strong> form of community, which finds its place in the oppositions between <strong>empire and nation</strong>, <strong>tradition and modernity</strong>.
+(Source: HUMA2635_5.pdf p.13)</p>
+<p><strong>Mechanism (Basis):</strong> (<strong>modernization theory / collective subject of modernity</strong>) Western theories of nationalism are deeply embedded in <strong>modernization theory</strong>. This theory regards the nation as a <strong>collective subject of modernity</strong>, but it <strong>obscures</strong> the nature of national identity.
+(Source: HUMA2635_5.pdf pp.11, 13)</p>
+<blockquote>
+<p>现代性理论<strong>掩盖</strong>了民族身份认同的本质。</p>
+</blockquote>
+<p><strong>Historical facts (Consequences):</strong>
+- (<strong>novel consciousness</strong>) National identity is a <strong>radically novel</strong> form of consciousness, and nationalism is a form of identification based on the <strong>modern nation-state system</strong>.
+  (Source: HUMA2635_5.pdf p.13)
+- (<strong>only legitimate polity</strong>) The nation-state system regards the <strong>nation-state as the only legitimate</strong> form of polity.
+  (Source: HUMA2635_5.pdf p.14)
+- (<strong>penetration of state power</strong>) The ideology of the nation-state system has sanctioned the <strong>penetration of state power</strong> into areas once dominated by local structures.
+  (Source: HUMA2635_5.pdf p.14)
+- (<strong>popular sovereignty / source of legitimacy</strong>) The statement of <strong>the people as sovereign</strong> remains the single most important <strong>source of legitimacy</strong> of the nation-state within China.
+  (Source: HUMA2635_5.pdf p.8)</p>
+<hr>
+<h1>3. Debates between Constitutional monarchists and Revolutionaries (pre-1911)</h1>
+<p><strong>Logic:</strong> Core debate → Constitutional monarchist view → Revolutionary view → Revolutionary theoretical tool</p>
+<p><strong>Definition (Core debate):</strong> (<strong>culture vs. race</strong>) The foundation of China&rsquo;s future political community: <strong>culture vs. race</strong>.
+(Source: HUMA2635_5.pdf p.6)</p>
+<p><strong>Structure (Constitutional monarchists&rsquo; view):</strong> (<strong>shared culture</strong>) (Led by <strong>Kang Youwei</strong>) They inherited the <strong>Confucian culturalist notion</strong> of community, composed of people with a <strong>shared culture</strong> and <strong>not restricted to a race or ethnic group</strong>.
+(Source: HUMA2635_5.pdf p.6)</p>
+<p><strong>Mechanism (Revolutionaries&rsquo; view):</strong> (<strong>Social Darwinism</strong>) (Led by <strong>Zhang Binglin</strong>, <strong>Zou Rong</strong>, and <strong>Wang Jingwei</strong>) They adopted a <strong>Social Darwinist</strong> conception of the <strong>survival of the fittest races</strong>.
+(Source: HUMA2635_5.pdf p.6)</p>
+<p><strong>Historical facts (Revolutionary theoretical tool):</strong> (<strong>Han ethnocentrism</strong>) Used the <strong>&ldquo;survival of the fittest&rdquo;</strong> idea to justify the old <strong>ethnocentric celebration of the Han</strong>. This marked a <strong>sharp ideological split</strong> between an <strong>inclusive, culture-based vision</strong> of China and an <strong>exclusive, race-based one</strong>.
+(Source: HUMA2635_5.pdf p.6)</p>
+<hr>
+<h1>4. Chiang Kai-shek&rsquo;s arguments about peoples in China</h1>
+<p><strong>Logic:</strong> Core claim → Explanation of differences → Political conclusion</p>
+<p><strong>Definition (Core claim):</strong> (<strong>same racial stock</strong>) &ldquo;Our various clans (氏族) actually belong to the <strong>same racial stock</strong> (种族).&rdquo;
+(Source: HUMA2635_5.pdf p.17)</p>
+<p><strong>Structure (Explanation of differences):</strong> (<strong>religion and geography</strong>) The designation of <strong>five peoples</strong> (汉满蒙回藏) in China is <strong>not due to differences of race or blood</strong> but to <strong>religion and geographical environment</strong>.
+(Source: HUMA2635_5.pdf p.17)</p>
+<p><strong>Mechanism:</strong> (implicit — <strong>minimizing ethnic distinctions</strong>) By attributing ethnic differences to <strong>religion and geography</strong>, Chiang <strong>reinforced a narrative of inherent racial unity</strong> among all groups, including <strong>Mongols, Manchus, and Tibetans</strong>, under a single Chinese nationality.
+(Inferred from HUMA2635_5.pdf p.17)</p>
+<p><strong>Historical facts (Political conclusion):</strong> (<strong>single cultural-political whole</strong>) The Chinese people form a <strong>&ldquo;Single Cultural and Political whole&rdquo;</strong> (统一的民族与政治整体).
+(Source: HUMA2635_5.pdf p.17)</p>
+<hr>
+<h1>5. The Dalai Lama and the Panchen Lama</h1>
+<p><strong>Logic:</strong> Recognition &amp; Reincarnation → Spiritual identity → Structural tension → Institutional regulation → Historical conflict</p>
+<p><strong>Definition:</strong> (<strong>temporal and spiritual rule /政教合一 / reincarnation system</strong>) In Tibet, the <strong>temporal as well as the spiritual rule</strong> of the Dalai Lama was recognized. The system of <strong>reincarnation</strong> was set up in <strong>1447 during the Ming dynasty</strong>.
+(Source: HUMA2635_10.pdf p.6)</p>
+<p><strong>Structure (Spiritual identity):</strong> (<strong>Avalokitesvara 观世音菩萨 / Amitabha 阿弥陀佛</strong>) The Dalai Lama is the reincarnation of <strong>Avalokitesvara</strong>. The <strong>Fifth Dalai Lama</strong> proclaimed the Panchen Lama the reincarnation of <strong>Amitabha</strong>, who was the <strong>teacher of Avalokitesvara</strong>.
+(Source: HUMA2635_10.pdf p.9)</p>
+<p><strong>Mechanism (Structural tension):</strong> (<strong>spiritual vs. temporal — inverted hierarchy</strong>) Although <strong>Amitabha is higher</strong> in the Buddhist view — and some have argued the Panchen Lama is therefore <strong>spiritually superior</strong> — the Panchen Lama&rsquo;s <strong>temporal powers were minimal</strong>, while those of the Dalai Lama were recognized as <strong>supreme</strong>.
+(Source: HUMA2635_10.pdf p.9)</p>
+<p><strong>Historical facts:</strong>
+- (<strong>Qing reforms / commoner reincarnation / Amban</strong>) Since powerful families often sought to have the Dalai Lama declared reincarnated in their own families, choosing the reincarnation became <strong>power politics</strong>. Reform by the Qing government required the Dalai Lama be reincarnated in a <strong>commoner&rsquo;s family</strong>. <strong>The resident Amban</strong> (驻藏大臣) was responsible for supervising these regulations. The net effect began to <strong>bureaucratize</strong> Tibetan administration and to <strong>increase the power</strong> of the Dalai Lama relative to noble families.
+  (Source: HUMA2635_10.pdf p.7)
+- (<strong>13th Dalai Lama / 9th Panchen Lama / Britain-China alliances</strong>) The <strong>13th Dalai Lama</strong> used an alliance with <strong>Britain</strong> to strengthen his control over semi-feudal components, including the areas of the <strong>9th Panchen Lama</strong>. This led the Panchen Lama to turn to the <strong>Chinese central government</strong> for aid against their common enemies — the Dalai Lama and Britain.
+  (Source: HUMA2635_10.pdf p.9)</p>
+<hr>
+<h1>6. The formulation of historical materialism</h1>
+<p><strong>Logic:</strong> Base → Mechanism → Stages → Stage markers → Example</p>
+<p><strong>Definition:</strong> (<strong>superstructure based on economic base</strong>) A <strong>superstructure</strong> is based on an <strong>economic base</strong>.
+(Source: HUMA2635_6.pdf p.7)</p>
+<p><strong>Structure:</strong> (<strong>modes of production determine social forms</strong>) The forms of the family (as cultural system / superstructure) changed as a result of changes in the <strong>modes of production</strong>.
+(Source: HUMA2635_6.pdf p.7)</p>
+<p><strong>Mechanism (Five historical stages):</strong> Human history proceeds through distinct stages: <strong>Primitive → Slavery → Feudal → Capitalist → Socialist → Communist</strong>. Each stage consists of a complex of related cultural traits; people displaying certain traits must be representative of the <strong>particular stage</strong> in which those traits occur.
+(Source: HUMA2635_6.pdf p.8)</p>
+<blockquote>
+<p>写作five读作六（共产是结果/目标，不算stage）</p>
+</blockquote>
+<p><strong>Historical facts (Example):</strong> The <strong>Mosuo&rsquo;s matriliny</strong> (摩梭母系制) means that they are at the <strong>second substage of the primitive stage</strong>.
+(Source: HUMA2635_6.pdf p.8)</p>
+<hr>
+<h1>7. Identification of nationalities (民族识别)</h1>
+<p><strong>Logic:</strong> Theory (Stalin) → Scope of classification → Outcome examples</p>
+<p><strong>Definition (Theory):</strong> (<strong>language, territory, economy, and psychology</strong>) Nationality is a <strong>historically constituted, stable community of people</strong>, formed on the basis of a <strong>common language, territory, economic life, and psychological make-up</strong> manifested in a common culture.
+(Source: HUMA2635_6.pdf p.25)</p>
+<p><strong>Structure (Scope of classification):</strong> (<strong>400+ → 55</strong>) By <strong>1979</strong>, the number of <strong>55 nationalities</strong> was reached, identified from more than <strong>400 ethnic groups</strong>.
+(Source: HUMA2635_6.pdf p.25)</p>
+<p><strong>Mechanism:</strong> (<strong>objective criteria + state categorization</strong>) The identification involved both <strong>objective criteria</strong> (Stalin&rsquo;s definition) and <strong>state categorization</strong> — not purely based on cultural distinctiveness.
+(Inferred from HUMA2635_6.pdf p.25; HUMA2635_1.pdf p.20)</p>
+<p><strong>Historical facts (Examples):</strong>
+- (<strong>Hakkas = Han</strong>) The <strong>Hakkas</strong> (客家), though culturally, linguistically, and socially distinct, are classified as part of the <strong>Han majority</strong>.
+  (Source: HUMA2635_1.pdf p.20)
+- (<strong>Mosuo = Naxi branch</strong>) The <strong>Mosuo</strong> (摩梭) are not recognized as a separate nationality; they are considered a <strong>branch of the Naxi</strong> (纳西族).
+  (Source: HUMA2635_1.pdf p.20)</p>
+<hr>
+<h1>8. The Sufism orders in China</h1>
+<p><strong>Logic:</strong> Arrival → Institutional form → Internal transmission → Spatial practice → Cultural expression → Example</p>
+<p><strong>Definition (Historical arrival):</strong> (<strong>late 17th century / early Qing</strong>) Sufism did not begin to make a <strong>substantial impact</strong> in China until the <strong>late 17th century</strong>. Many Sufi reforms spread throughout <strong>Northwest China</strong> during the early decades of the Qing dynasty.
+(Source: HUMA2635_7.pdf p.38)</p>
+<p><strong>Structure (Institutional form):</strong> (<strong>menhuan 门宦 / saintly lineages</strong>) Sufi orders were gradually <strong>institutionalized</strong> into such forms as <strong>menhuan</strong>, meaning <strong>&ldquo;saintly lineages&rdquo;</strong> — combining blood-based secular power with sectarian religious authority.
+(Source: HUMA2635_7.pdf pp.38, 43)</p>
+<p><strong>Mechanism (Internal transmission):</strong> (<strong>baraka 口唤/神圣祝福 / biological descent vs. teacher-disciple</strong>) Divine Blessing (<strong>baraka</strong>) flows from God to the charismatic leader (<strong>shaykh</strong>). Baraka transmission could occur by <strong>biological descent</strong> — thus sanctioning menhuan — or by <strong>teacher-disciple transmission</strong>. Questioning the legitimacy of transmission can lead to <strong>conflict, violence, and schism</strong>.
+(Source: HUMA2635_7.pdf pp.42-44)</p>
+<blockquote>
+<p>Four major orders: <strong>Qadiriyya</strong> (嘎得林耶), <strong>Jahriyya</strong> (哲赫忍耶), <strong>Khufiyya</strong> (虎夫耶), and <strong>Kubrawiyya</strong> (庫布忍耶).</p>
+</blockquote>
+<p><strong>Historical facts:</strong>
+- (<strong>gongbei 拱北 / spatial practice</strong>) Each saint&rsquo;s tomb had a shrine, or <strong>gongbei</strong> (拱北), and the main shrines became <strong>centers of devotional activity</strong>.
+  (Source: HUMA2635_7.pdf p.44)
+- (<strong>syncretism</strong> / cultural expression) Chinese Sufi mysticism is similar to <strong>Daoism</strong>. <strong>Confucian moral tenets, Daoist mystical concepts, and Buddhist folk rituals</strong> infused with new Islamic content pervade Qadiriyya Sufism.
+  (Source: HUMA2635_7.pdf p.48)
+- (<strong>Jahriyya / Ma Mingxin</strong>) The <strong>Jahriyya</strong> order was founded by <strong>Ma Mingxin</strong> (马明心, 1719-1781), who studied in the Middle East and Yemen for <strong>16 years</strong>. After disputes escalated and Qing troops arrested Ma Mingxin in <strong>1781</strong>, uprisings erupted. Following their failure, the Jahriyya became more secretive and dispersed, leading to <strong>five main branch orders</strong>.
+  (Source: HUMA2635_7.pdf pp.48-49)</p>
+<hr>
+<h1>9. The Oases Structure in Xinjiang</h1>
+<p><strong>Logic:</strong> Defining feature → Major oases &amp; characteristics → Social contrasts → Overall significance</p>
+<p><strong>Definition (Feature):</strong> (<strong>diversity through isolation</strong>) Social and cultural diversity are fostered throughout history by the <strong>great distances separating the oases</strong> from one another.
+(Source: HUMA2635_8.pdf p.37)</p>
+<p><strong>Structure (Major oases &amp; towns):</strong> The most significant oases are <strong>Kashgar</strong> (喀什), <strong>Khotan</strong> (和阗), <strong>Turpan</strong> (吐鲁番), <strong>Hami</strong> (哈密), <strong>Ili</strong> (伊犁), and <strong>Urumchi</strong> (乌鲁木齐 — the capital).
+(Source: HUMA2635_8.pdf p.37)</p>
+<p><strong>Mechanism (Each oasis&rsquo;s role):</strong>
+- <strong>Kashgar</strong> — (<strong>Islam heartland &amp; conservative</strong>) Islam arrived by <strong>950 C.E.</strong> It remains the <strong>Islamic heartland</strong> of Xinjiang; more <strong>conservative</strong> Islamic life, women completely covered in brown cloth.
+  (Source: HUMA2635_8.pdf pp.39, 52)
+- <strong>Khotan</strong> — (<strong>Silk Road southern branch</strong>) A major cultural center in Central Asia, key position on the <strong>southern branch of the Silk Road</strong>, linking to <strong>South Asia and Tibet</strong> via <strong>Karakorum Mountains</strong>.
+  (Source: HUMA2635_8.pdf pp.43-44)
+- <strong>Turpan</strong> — (<strong>Uyghur cultural center</strong>) The <strong>historic center of Uyghur culture</strong>; settled by the Uyghur non-Islamic <strong>Gaochang kingdom</strong> after <strong>840 A.D.</strong>; women only wear headscarves, viewed as more trustworthy by Han.
+  (Source: HUMA2635_8.pdf pp.50, 52)
+- <strong>Ili</strong> — (<strong>richest &amp; Kazakhstan-oriented</strong>) Always considered the <strong>richest area</strong> in Xinjiang; geographically isolated from southern Xinjiang and physically oriented toward <strong>Kazakhstan</strong>; posed the greatest <strong>Turkic political threat</strong> to Chinese government.
+  (Source: HUMA2635_8.pdf pp.45, 47)</p>
+<p><strong>Historical facts (Overall significance):</strong> Oases identities and <strong>oases economic-political structure</strong> set the <strong>basic feature</strong> for Xinjiang society.
+(Source: HUMA2635_8.pdf p.53)</p>
+<hr>
+<h1>10. The Yi and the Miao</h1>
+<p><strong>Logic:</strong> Internal diversity → Yi (language + structure) → Miao (label + subgroups + identity) → Competition pattern</p>
+<p><strong>Definition (Yi diversity — language):</strong> (<strong>less than 50% shared vocabulary</strong>) Languages are <strong>not mutually understandable</strong>; there is only <strong>20-42% shared vocabulary</strong> between the Northern Dialect standard and other five regional dialects.
+(Source: HUMA2635_9.pdf p.5)</p>
+<p><strong>Structure (Yi structural contrast):</strong> (<strong>Yunnan vs. Liangshan castes</strong>) <strong>Yunnan Yi</strong> feature lowland agriculture, Han-style housing, and <strong>patrilocal</strong> (从父居住) marriage; <strong>Nuosu (Liangshan Yi)</strong> feature <strong>neolocal</strong> (从新居住) marriage, a highly developed <strong>patriclan</strong> (父系氏族) system, strict <strong>social castes</strong> (种姓/等级), and are <strong>stratum-endogamous</strong> (阶层内通婚).
+(Source: HUMA2635_9.pdf p.9)</p>
+<p><strong>Mechanism (Miao historical label):</strong> (<strong>interchangeable barbarian label</strong>) In the Ming period, the term &ldquo;Miao&rdquo; was applied to many indigenous peoples, used <strong>interchangeably with &ldquo;Man&rdquo; or &ldquo;Yi&rdquo;</strong> , all meaning <strong>&ldquo;barbarians&rdquo;</strong> .
+(Source: HUMA2635_9.pdf p.16)</p>
+<p><strong>Historical facts:</strong>
+- (<strong>color-based subgroups</strong>) Miao subgroups distinguished by dominant color of women&rsquo;s costumes: <strong>White Miao, Black Miao, Green Miao, Red Miao, and Hua Miao</strong>.
+  (Source: HUMA2635_9.pdf pp.17, 19)
+- (<strong>externally named identity / no internal contact</strong>) Because of a lack of contact among the scattered subgroups, these peoples are called Miao only because they have <strong>always been called so by others</strong>. They <strong>do not possess a common self-identity</strong>.
+  (Source: HUMA2635_9.pdf p.22)
+- (<strong>external competition pattern</strong>) Competition for political office or economic advantages is usually <strong>not between subgroups of Miao</strong>, but between <strong>local Miao and Han or other ethnic groups</strong> in the area.
+  (Source: HUMA2635_9.pdf p.22)</p>
+<hr>
+<h1>11. The Tea and Horse Trade (茶馬貿易)</h1>
+<p><strong>Logic:</strong> Definition → Tang (informal) → Song (institutionalized) → Ming (expanded + regulated) → Tibetan significance</p>
+<p><strong>Definition:</strong> (<strong>tea-for-horses barter</strong>) <strong>Barter</strong> (物物交换) commercial trade between <strong>agriculturists of interior provinces</strong> and <strong>nomads of Tibet and Mongolia</strong>; mainly <strong>tea and horses</strong> but not limited to these.
+(Source: HUMA2635_10.pdf p.19)</p>
+<p><strong>Structure (Tang — informal):</strong> (<strong>no formal institution</strong>) Only <strong>sporadic</strong> (零星) and <strong>irregular</strong> trade, usually using silk; <strong>no trade institution</strong> formed.
+(Source: HUMA2635_10.pdf p.19)</p>
+<p><strong>Mechanism (Song — institutionalized):</strong> (<strong>茶馬司 / Xining period</strong>) During <strong>Xining period</strong> (熙寧, 1068-1077), government set up a <strong>tea farm department</strong> (Chengdu) and a <strong>horse buying office</strong> (Lintao, Gansu); the official trade unit became known as the <strong>&ldquo;division of tea and horse trade&rdquo;</strong> (茶馬司).
+(Source: HUMA2635_10.pdf p.19)</p>
+<p><strong>Historical facts:</strong>
+- (<strong>Ming — expanded + regulated</strong>) Established <strong>12 tea and horse trade divisions</strong> in northwest and southwest regions. Also implemented a <strong>tea patrol system</strong> (巡查制度), regularly dispatching officials to <strong>Shaanxi and Sichuan</strong> to supervise trade and <strong>prohibit private tea</strong> (prevent smuggling).
+  (Source: HUMA2635_10.pdf p.19)
+- (<strong>Tibetan staple since 7th century</strong>) Tea has been a <strong>staple</strong> (主食) in Tibetan homes and culture since the <strong>7th century A.D.</strong> ; compressed into <strong>rock-hard bricks</strong> kept for decades; <strong>buttered tea</strong> believed to warm the body, fight hunger, and aid digestion.
+  (Source: HUMA2635_10.pdf p.16)</p>
+<hr>
+<h1>12. Ethnicity classification in Hong Kong</h1>
+<p><strong>Logic:</strong> Classification &amp; contrast with mainland → Population → Ethnic hierarchy → Semi-ethnocracy → Examples</p>
+<p><strong>Definition (Classification):</strong> (<strong>self-identification, UN standards vs. minzu system</strong>) Determined by <strong>self-identification</strong> based on cultural origins, nationality, color, and language, following <strong>UN recommendations</strong>; it does <strong>not</strong> use the state-recognized official (<strong>minzu</strong>) nationalities system of mainland China.
+(Source: HUMA2635_12.pdf pp.12, 22)</p>
+<p><strong>Structure (Population):</strong> (<strong>Cantonese dominant, major minorities</strong>) <strong>Cantonese speakers</strong> are the dominant majority; major minority groups include <strong>Filipinos</strong>, <strong>Indonesians</strong>, <strong>South Asians</strong>, <strong>Mixed</strong>, and <strong>Whites</strong>.
+(Source: HUMA2635_12.pdf pp.3, 7)</p>
+<p><strong>Mechanism (Ethnic hierarchy):</strong> (<strong>internal Chinese hierarchy</strong>) A hierarchy exists where <strong>Shanghainese</strong> are <strong>elites</strong>, <strong>Chaozhou/Minnanese</strong> are <strong>intermediate</strong>, <strong>Hakka</strong> are <strong>low-income</strong>, <strong>South Asians</strong> occupy <strong>lower class</strong>, and <strong>Southeast Asian domestic workers</strong> form the <strong>base</strong>.
+(Source: HUMA2635_12.pdf p.3)</p>
+<p><strong>Historical facts (Semi-ethnocracy + Examples):</strong>
+- (<strong>Semi-ethnocracy</strong>) One ethnic group <strong>dominates without total exclusion</strong>; non-dominant elites occupy scattered positions of influence; <strong>exclusionary laws and norms (hegemony)</strong> disable other groups.
+  (Source: HUMA2635_12.pdf pp.10-11)
+- (<strong>two-year contract &amp; two-week rule</strong>) Foreign domestic workers are restricted to <strong>two-year contracts</strong> and cannot change employment; if terminated, they must <strong>leave within two weeks</strong> unless proving non-responsibility.
+  (Source: HUMA2635_12.pdf pp.14, 16)
+- (<strong>SAR passport exclusion / three-year rule</strong>) Non-ethnic Chinese permanent residents <strong>ineligible for SAR passports</strong> even if born in Hong Kong; non-Chinese <strong>lose right of abode</strong> by living abroad for <strong>over three years</strong>, while PRC citizens never lose it.
+  (Source: HUMA2635_12.pdf p.18)</p>
+<hr>
+<blockquote>
+<p>文件生成时间：2026-05-15<br>
+基于原始文件 <code>Term_Explanation.md</code> 重新按 <strong>Definition → Structure → Mechanism → Historical facts</strong> 逻辑整理</p>
+</blockquote>
+        </div>
+      </section>
+
+      <section class="doc-section card" id="essays-section" data-nav-label="Short Essays" data-topic-selector="h1" data-skip-first-topic="true">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">Section 3</p>
+            <h2 class="section-heading">Short Essays</h2>
+            <p class="section-summary">Full content embedded from <code>Short_Essay_organized.md</code>.</p>
+          </div>
+        </div>
+        <div class="markdown-body">
+          <h1>Short Essay 简答题（整理版）</h1>
+<blockquote>
+<p><strong>格式说明</strong>：每道题按 <strong>清晰分段</strong> 组织，每个段落内 <strong>加粗 = 核心概念/关键词</strong>，每点标注 <code>(Source: ...)</code>。
+Must-have Points 保留，Bonus Points 用 <code>&gt;</code> 标注在对应段落下方作为补充。</p>
+</blockquote>
+<hr>
+<h1>1. What is the meaning of culturalism and the process of Sinification?</h1>
+<p><strong>Logic:</strong> Define Culturalism → Process of Sinification (mechanisms + examples) → Conclusion &amp; Synthesis</p>
+<hr>
+<h2>Paragraph 1: Defining Culturalism</h2>
+<h3>Must-have Points</h3>
+<p><strong>Culturalism</strong> was a <strong>political community model</strong> in imperial China based on <strong>shared cultural values</strong> and <strong>Confucian doctrines</strong>, not ethnicity or race. (Source: HUMA2635_5.pdf p.3)</p>
+<p>Through <strong>education and imitation</strong> (教化与模仿), &ldquo;barbarians&rdquo; could become part of this community, distinguishing themselves from those who did not share these values. (Source: HUMA2635_5.pdf p.3)</p>
+<p>The <strong>Huaxia</strong> group categorized surrounding non-Huaxia peoples as the <strong>four barbarians</strong>: <strong>eastern Yi</strong> (东夷), <strong>western Rong</strong> (西戎), <strong>northern Di</strong> (北狄), <strong>southern Man</strong> (南蛮). (Source: HUMA2635_2.pdf p.3)</p>
+<p>Culturalism contrasts with an <strong>ethnic-based identity</strong> founded on a <strong>self-description of a people as Han</strong>. (Source: HUMA2635_5.pdf p.3)</p>
+<blockquote>
+<p><strong>Bonus:</strong> Culturalism was premised on the belief that China was the <strong>cultural center of the world</strong> (&ldquo;All under Heaven&rdquo; 天下). Foreign rulers were expected to recognize Chinese superiority through the <strong>ke-tou</strong> (叩头) ritual. (Source: HUMA2635_3.pdf p.4)</p>
+<p>Culturalism saw people as <strong>subjects of an absolute authority</strong>, while modern nationalism regards them as <strong>citizens with equal rights</strong>; the shift involves a transformation from <strong>soft boundaries</strong> to <strong>hard boundaries</strong>. (Source: HUMA2635_3.pdf p.3)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 2: The Process of Sinification</h2>
+<h3>Must-have Points</h3>
+<p><strong>Sinification</strong> (漢化) is the <strong>assimilation</strong> (同化) of non-Han people into Han identity through <strong>military conquest</strong> (军事占领) and <strong>cultural influence</strong> (文化影响); expansion <strong>southward</strong> was generally easier than <strong>northward</strong> because northern areas were populated by <strong>nomadic tribes</strong> on inhospitable terrain. (Source: HUMA2635_2.pdf pp.11,13)</p>
+<p><strong>Non-Han dynasties</strong> that ruled over Han Chinese include: <strong>Northern Wei</strong> (Topa 拓跋), <strong>Liao</strong> (Khitan 契丹), <strong>Jin</strong> (Jurchen 女真), <strong>Yuan</strong> (Mongol 蒙古), and <strong>Qing</strong> (Manchu 满清). (Source: HUMA2635_2.pdf p.13)</p>
+<p><strong>Institutional mechanisms</strong>:
+- The <strong>Tusi system</strong> (土司制度) since the <strong>Yuan dynasty</strong>: native chieftains were absorbed into the government hierarchy, and ethnic groups were classified as <strong>&ldquo;cooked&rdquo;</strong> (shu 熟, ripe) if incorporated, or <strong>&ldquo;raw&rdquo;</strong> (sheng 生) if outside. (Source: HUMA2635_2.pdf p.23)
+- <strong>Gaitu guiliu</strong> (改土歸流): under <strong>Ming and Qing</strong>, native offices were replaced by <strong>regular administration</strong> where sinification had progressed. (Source: HUMA2635_2.pdf p.24)</p>
+<p><strong>Concrete example</strong>: The <strong>Nanzhao kingdom</strong> (南诏) requested <strong>Tang imperial education</strong> for its princes, captured Chengdu artisans and scholars, and <strong>10 of the 22 Dali kings</strong> became <strong>Buddhist monks</strong>. (Source: HUMA2635_2.pdf pp.14,21)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The process was <strong>not one-way</strong>: both &ldquo;we&rdquo; (Han/min) and &ldquo;they&rdquo; (yi/man) evolved; the standards of sinification — <strong>Chinese script, household registration, civil examinations, ancestral sacrifice</strong> — themselves changed over time. This is <strong>David Faure&rsquo;s cultural legitimacy theory</strong>. (Source: HUMA2635_4.pdf p.12)</p>
+<p><strong>State nationalism</strong> after 1911 demanded <strong>&ldquo;nation-building&rdquo;</strong> that rejected the idea that Chinese history and culture were purely a Han affair. (Source: HUMA2635_3.pdf p.7)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Conclusion &amp; Synthesis</h2>
+<h3>Must-have Points</h3>
+<p><strong>Culturalism</strong> provided the <strong>ideological framework</strong> of a culture-based hierarchy; <strong>Sinification</strong> was the <strong>dynamic political and institutional process</strong> that expanded this order.</p>
+<p>The practice of <strong>demarcation</strong> (划分界定) between Han and non-Han continued from Ming-Qing to the present; its mechanisms have been <strong>remarkably consistent</strong>. (Source: HUMA2635_2.pdf p.30)</p>
+<p><strong>&ldquo;Majorities are made, not born&rdquo;</strong> : ethnic identities are constructed through <strong>marking differences</strong>, and the idea of a majority presupposes <strong>homogeneity</strong>. (Source: HUMA2635_2.pdf p.29)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The early 20th-century affirmation of <strong>&ldquo;five major nationalities&rdquo;</strong> and the PRC&rsquo;s later classification of <strong>55 minorities</strong> are essentially <strong>continuations of imperial demarcation exercises</strong>. (Source: HUMA2635_2.pdf p.31)</p>
+</blockquote>
+<hr>
+<h1>2. What is Gaitu Guiliu policy in Chinese history?</h1>
+<p><strong>Logic:</strong> Define Gaitu Guiliu → Preceding Tusi system → Implementation &amp; Significance</p>
+<hr>
+<h2>Paragraph 1: Defining Gaitu Guiliu</h2>
+<h3>Must-have Points</h3>
+<p><strong>Gaitu guiliu</strong> (改土歸流) refers to the policy of <strong>replacing native chieftains with regular government officials</strong> appointed by the imperial state. (Source: HUMA2635_2.pdf p.24)</p>
+<p>The term literally means <strong>&ldquo;replacing native with regular&rdquo;</strong> — abolishing the <strong>hereditary tusi</strong> (世袭土司) system and integrating minority territories into the <strong>standard provincial administration</strong>.</p>
+<p>This policy was implemented primarily during the <strong>Ming and Qing dynasties</strong>, aiming to <strong>consolidate state control</strong> over frontier regions.</p>
+<blockquote>
+<p><strong>Bonus:</strong> The policy was <strong>not applied uniformly</strong>; it was enacted <strong>selectively</strong> in areas where the sinification of minority peoples had progressed sufficiently to make native officials unnecessary. (Source: HUMA2635_2.pdf p.24)</p>
+<p>Gaitu guiliu reflects the long-term imperial strategy of <strong>administrative absorption</strong> rather than purely military conquest.</p>
+</blockquote>
+<hr>
+<h2>Paragraph 2: The Tusi System as Predecessor</h2>
+<h3>Must-have Points</h3>
+<p>Since the <strong>Yuan dynasty</strong>, the imperial government had set up the <strong>Tusi system</strong> (土司制度), <strong>absorbing native non-Han leaders</strong> into the lower levels of the government hierarchy. (Source: HUMA2635_2.pdf p.23)</p>
+<p>Native chieftains received official titles prefixed with the character <strong>Tu</strong> (土), meaning &ldquo;native,&rdquo; and these positions were <strong>hereditary</strong> (世袭).</p>
+<p>Ethnic groups brought under the Tusi system were classified as <strong>&ldquo;cooked&rdquo;</strong> (shu 熟, ripe), while those remaining outside were termed <strong>&ldquo;raw&rdquo;</strong> (sheng 生). (Source: HUMA2635_2.pdf p.23)</p>
+<p>The <strong>Han Chinese were encouraged to migrate</strong> into these areas, accelerating <strong>cultural integration</strong> and preparing the ground for administrative reform. (Source: HUMA2635_2.pdf p.23)</p>
+<blockquote>
+<p><strong>Bonus:</strong> In some regions, efforts were made to <strong>weaken individual native officials</strong> by <strong>increasing their numbers</strong>, thereby reducing the size of the territory each controlled. (Source: HUMA2635_2.pdf p.24)</p>
+<p>This <strong>fragmentation strategy</strong> was a <strong>precursor</strong> (前奏/预演) to later Gaitu guiliu, making it easier for the state to eventually dismantle native power structures.</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Implementation and Significance</h2>
+<h3>Must-have Points</h3>
+<p>Based on the <strong>progress of sinification</strong>, the Ming and Qing governments initiated the change from native to regular administration, formally called <strong>Gaitu guiliu</strong>. (Source: HUMA2635_2.pdf p.24)</p>
+<p>The policy served to <strong>centralize imperial authority</strong>, <strong>eliminate hereditary power bases</strong> that could challenge the state, and bring frontier populations into the <strong>standard tax system</strong>.</p>
+<p>Gaitu guiliu was a crucial mechanism in the <strong>territorial and administrative integration</strong> of what is now <strong>southwestern China</strong> into the Chinese state.</p>
+<blockquote>
+<p><strong>Bonus:</strong> The policy can be understood within the broader framework of the <strong>culturalism-to-nationalism transformation</strong>: imperial absorption of frontiers later became the territorial basis for <strong>modern nation-state claims</strong>. (Source: HUMA2635_3.pdf pp.3-4)</p>
+<p>Along with the Tusi system, Gaitu guiliu illustrates how the imperial state&rsquo;s approach to minorities was <strong>pluralistic</strong> (多元化) but ultimately <strong>centralizing</strong>, aiming at <strong>control</strong> rather than deep cultural assimilation in the short term. (Source: HUMA2635_2.pdf p.26)</p>
+</blockquote>
+<hr>
+<h1>3. What are the main arguments of the debates about New Qing History and cultural legitimacy theory?</h1>
+<p><strong>Logic:</strong> Sinicization Thesis → New Qing History Counter Arguments → Cultural Legitimacy Theory as Resolution</p>
+<hr>
+<h2>Paragraph 1: The Sinicization Thesis (Traditional View)</h2>
+<h3>Must-have Points</h3>
+<p>According to the <strong>Sinicization thesis</strong>, Chinese history is interpreted as a narrative of <strong>continuing dynastic replacement</strong> from Han to Tang, Song, Yuan, and Qing. <strong>Non-Han groups</strong> who invaded the central plain gained governance legitimacy <strong>only after being educated by Confucianism</strong> and becoming <strong>culturally Han</strong>. (Source: HUMA2635_4.pdf p.2)</p>
+<p>This view holds that the <strong>Han Chinese were advanced</strong> not because of territorial scale but because of their <strong>cultural power to assimilate</strong> other groups. This process of <strong>civilizing — Sinicization</strong> — is presented as the <strong>central thread</strong> of Chinese history, including during the Qing dynasty. (Source: HUMA2635_4.pdf p.2)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The Sinicization narrative historically operated on a geographic axis centered on the <strong>Yellow River plain and the Yangtze River delta</strong>, treating <strong>Inner Asia</strong> as remote frontiers. (Source: HUMA2635_4.pdf p.4)</p>
+<p>This framework was classically articulated by <strong>Ping-ti Ho</strong> (1968), who argued the <strong>Manchus were effectively Sinicized</strong> into the Chinese cultural world. (Source: HUMA2635_4.pdf p.2)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 2: New Qing History&rsquo;s Counter Arguments</h2>
+<h3>Must-have Points</h3>
+<p><strong>New Qing historians</strong> <strong>separate the concept of the Qing empire from China</strong>. They argue the Manchu success lay in using <strong>different governance models</strong> for different peoples in different regions, not in Sinicization. (Source: HUMA2635_4.pdf p.3)</p>
+<p>The <strong>Manchu rulers</strong> maintained their distinct ethnic identity through the <strong>Eight Banner system</strong> (八旗制度), the <strong>Manchu language</strong>, and traditions of <strong>hunting and riding</strong>. The Qing court also adopted <strong>Tibetan Buddhism and Shamanism</strong> for its rituals. (Source: HUMA2635_4.pdf p.3)</p>
+<p>The <strong>Qing emperors performed multiple roles simultaneously</strong>: <strong>Confucian emperors</strong> for the Han, <strong>Khans</strong> for the Mongols, and <strong>Reincarnated Buddhas</strong> for the Tibetans. Thus, <strong>Inner Asia</strong> (Mongolia, Tibet, Xinjiang) were <strong>different components of the Qing empire</strong>, not merely peripheral frontiers of &ldquo;China.&rdquo; (Source: HUMA2635_4.pdf p.4)</p>
+<blockquote>
+<p><strong>Bonus:</strong> New Qing historians (James Millward) proposed the model of <strong>&ldquo;Five Nations Under Heaven&rdquo;</strong> (天下五族), in which <strong>Han, Manchu, Tibetan, Mongol, and Muslim</strong> occupy <strong>parallel positions</strong> in relation to the Qing imperial house. (Source: HUMA2635_4.pdf p.11)</p>
+<p>This argument has <strong>political implications</strong>: if the Qing was an empire distinct from &ldquo;China,&rdquo; then <strong>Xinjiang, Tibet, and Mongolia</strong> were not inherently part of a Chinese territorial inheritance. (Source: HUMA2635_4.pdf p.14)</p>
+<p>The Qing summer capital at <strong>Chengde</strong> (Bishu Shanzhuang 避暑山庄) served as a new political center replicating key cultural monuments of China, Tibet, and Central Asia, symbolizing the empire&rsquo;s <strong>multi-ethnic integration</strong>. (Source: HUMA2635_4.pdf pp.9-10)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Cultural Legitimacy Theory as Resolution</h2>
+<h3>Must-have Points</h3>
+<p><strong>Cultural legitimacy theory</strong> was proposed as a response to this debate. It argues that even if &ldquo;Han&rdquo; may be taken as an ethnic term, <strong>&ldquo;min&rdquo;</strong> (民) was a <strong>legal status</strong>. The process of sinification was <strong>not one-way</strong>: the standards of being &ldquo;Chinese&rdquo; — <strong>Chinese script</strong> (汉字), <strong>household registration</strong> (户籍), <strong>civil examinations</strong> (科举), <strong>ancestral sacrifice</strong> (祭祖) — were themselves <strong>evolving</strong> among both &ldquo;we&rdquo; and &ldquo;they&rdquo; from the 15th to the 20th centuries. (Source: HUMA2635_4.pdf p.12)</p>
+<p><strong>Local society</strong> did not accept imperial imposition <strong>without negotiation</strong>. The Chinese imperial state was built on a <strong>loose structure</strong> that presumed much greater political unity than its institutions could actually deliver. (Source: HUMA2635_4.pdf p.15)</p>
+<p>Whether or not local rituals were standardized, they could be <strong>legitimized</strong> through real or imagined <strong>master-disciple transmission</strong> (师徒传承), through the <strong>power of writing</strong> and <strong>state authority</strong>. This long process produced <strong>overlapping but not identical bodies of legitimizing symbols</strong> across different regions. (Source: HUMA2635_4.pdf p.12)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The study of <strong>religious markers</strong> may be a way to explain Chinese political and cultural unification through the perspective of a <strong>legitimizing process</strong> over varied geographic regions. (Source: HUMA2635_4.pdf p.15)</p>
+<p>This theory bridges the debate by showing how <strong>both center and periphery</strong> (边缘) participated in negotiating cultural identity, rather than one simply absorbing the other. <strong>The history of China and the history of the parts are equally important as the history of the whole.</strong> (Source: HUMA2635_4.pdf p.15)</p>
+</blockquote>
+<hr>
+<h1>4. What are &ldquo;the three metaphors&rdquo; and their relationship with the civilizing centers?</h1>
+<p><strong>Logic:</strong> Civilizing projects concept → Metaphor 1 (women) → Metaphor 2 (children) → Metaphor 3 (ancient) → Synthesis</p>
+<hr>
+<h2>Paragraph 1: Introducing Civilizing Projects and the Three Metaphors</h2>
+<h3>Must-have Points</h3>
+<p>Over the last few centuries, <strong>&ldquo;minorities&rdquo; have been subjected</strong> to a series of attempts by dominant powers to transform them, to make them more like the transformers, or to <strong>&ldquo;civilize&rdquo;</strong> them. (Source: HUMA2635_11.pdf p.2)</p>
+<p>This is a kind of interaction in which the <strong>civilizing center</strong> interacts with peripheral peoples in terms of a particular kind of <strong>inequality</strong>. (Source: HUMA2635_11.pdf p.2)</p>
+<p>Three major <strong>civilizing centers</strong> have operated in Chinese history: the <strong>Confucians</strong> (儒家), the <strong>Western missionaries</strong> (传教士), and the <strong>Communists</strong> (共产主义). (Source: HUMA2635_11.pdf p.4)</p>
+<p>The civilizers portray peripheral peoples through <strong>three metaphors</strong>: as <strong>women</strong>, as <strong>children</strong>, and as <strong>ancient/historical</strong> (先祖/历史). (Source: HUMA2635_11.pdf pp.9,18,20)</p>
+<blockquote>
+<p><strong>Bonus:</strong> Each civilizing center began with a different assumption of hierarchy: the Confucians based on <strong>moral values</strong>, the missionaries on the <strong>revealed truth of Christianity</strong>, and the Communists on a <strong>scientific scale of material stages</strong> of social process. (Source: HUMA2635_11.pdf p.4)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 2: First Metaphor — Ethnic Minorities as Women</h2>
+<h3>Must-have Points</h3>
+<p>The civilizers have seen peripheral peoples (minorities) as both <strong>erotic and promiscuous</strong> (情色与放荡) in their behavior, as being at a <strong>lower level of culture</strong> where they have not yet learned proper civilized morals of <strong>sexual repression and/or hypocrisy</strong> (性压抑/虚伪). (Source: HUMA2635_11.pdf p.9)</p>
+<p>An <strong>objectification</strong> (物化) of the category of civilizers and peripheral peoples occurs: the <strong>Han majority and non-Han minorities</strong> is similar to the relationship between <strong>male and female</strong>. (Source: HUMA2635_11.pdf p.13)</p>
+<p>Both minorities and women are <strong>subordinate categories</strong> (从属类别) under the <strong>tutelage of the state&rsquo;s civilizing project</strong>. (Source: HUMA2635_11.pdf p.13)</p>
+<p>The logic is circular: <strong>minorities are like women, so women represent minorities</strong>. (Source: HUMA2635_11.pdf p.13)</p>
+<blockquote>
+<p><strong>Bonus:</strong> This metaphor positions the Han (or European) center as implicitly <strong>male</strong>, which by contrast legitimately assumes the task of civilizing and the <strong>superior political and moral position</strong> from which the project can be carried out. (Source: HUMA2635_11.pdf p.25)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Second Metaphor — Ethnic Minorities as Children</h2>
+<h3>Must-have Points</h3>
+<p>Seeing peripheral peoples as <strong>children</strong> represents them as both <strong>inferior and educable</strong> (低等但可教育). (Source: HUMA2635_11.pdf p.18)</p>
+<p>The task of the civilizing center is to <strong>civilize them</strong>, because children can be taught and raised to maturity. (Source: HUMA2635_11.pdf p.18)</p>
+<p>In official discourse, the Han and minorities are described as <strong>xiongdi minzu</strong> (兄弟民族), or <strong>big-brother / little-brother minzu</strong> (老大哥/小兄弟), with the Han occupying the <strong>elder sibling role</strong>. (Source: HUMA2635_11.pdf p.18)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The child metaphor reinforces the <strong>temporal dimension</strong> (时间维度): just as children grow into adults, peripheral peoples can, in theory, develop into full participants in the civilizing center&rsquo;s modernity. This makes the inequality appear <strong>temporary and benevolent</strong> (暂时、仁慈) rather than permanent and oppressive.</p>
+</blockquote>
+<hr>
+<h2>Paragraph 4: Third Metaphor — Ethnic Minorities as Ancient, and Synthesis</h2>
+<h3>Must-have Points</h3>
+<p>Peripheral peoples are portrayed as <strong>ancient, unchanged</strong>, not so far along on the same scale as the people of the civilizer center. (Source: HUMA2635_11.pdf p.20)</p>
+<p>If the <strong>ancestors of the center</strong> were once as primitive as the periphery is now, then the project of trying to civilize them has <strong>some chance of success</strong>. (Source: HUMA2635_11.pdf p.20)</p>
+<p>Almost any difference between center and periphery can be translated into a <strong>historical gap</strong> (历史差距) between the way things are done now and the way they were done at the <strong>evolutionary stage</strong> represented by the peripheral peoples. (Source: HUMA2635_11.pdf p.22)</p>
+<blockquote>
+<p><strong>⭐ 关键总结 (Synthesis):</strong> By portraying peripheral peoples as <strong>female, childlike, and historical</strong>, the Han (or European) center — which is by implicit contrast <strong>male, adult, and modern</strong> — legitimately assumes the task of <strong>civilizing</strong>, and with it the <strong>superior political and moral position</strong> from which the civilizing project can be carried out. (Source: HUMA2635_11.pdf p.25)</p>
+<p><strong>Bonus (Example):</strong> The <strong>Mosuo</strong> (摩梭) are treated as a <strong>&ldquo;historical remainder&rdquo;</strong> — their matrilineal system places them at an <strong>earlier evolutionary stage</strong> according to historical materialism. (Source: HUMA2635_11.pdf p.21; connection to HUMA2635_6.pdf p.8)</p>
+<p>After <strong>1999</strong>, <strong>tourism and mass media</strong> have added new dimensions beyond the three metaphors, with more <strong>imaginary elements and performances</strong> of local culture being represented for tourist consumption. (Source: HUMA2635_11.pdf pp.31-32)</p>
+</blockquote>
+<hr>
+<h1>5. Compare two minority autonomous regions: Xinjiang and Tibet</h1>
+<p><strong>Logic:</strong> Geography → Cultural Differences → Relationship with Han Majority</p>
+<hr>
+<h2>Paragraph 1: Geography</h2>
+<h3>Must-have Points</h3>
+<p><strong>Xinjiang</strong>&rsquo;s geography is characterized by <strong>oases separated by great distances</strong>, which fostered <strong>social and cultural diversity</strong>. (Source: HUMA2635_8.pdf p.37)</p>
+<p><strong>Tibet</strong> is defined by <strong>high altitude and marginal lands</strong>, where indigenous peoples relied on <strong>cold-resistant crops</strong> and <strong>inland tea</strong>. (Source: HUMA2635_10.pdf p.8)</p>
+<hr>
+<h2>Paragraph 2: Cultural Differences</h2>
+<h3>Must-have Points</h3>
+<p><strong>Xinjiang</strong> — Identity is tied to <strong>Islam</strong>, being one of the <strong>10 Muslim nationalities</strong> in China. <strong>Kashgar</strong> is the <strong>conservative Islamic heartland</strong>; <strong>Turpan</strong> is a <strong>less conservative historic center</strong> of Uyghur culture. Unlike the <strong>&ldquo;scattered&rdquo; distribution</strong> (散居) of the Hui, Xinjiang&rsquo;s Muslims are more <strong>concentrated in oases</strong>. (Source: HUMA2635_7.pdf p.3; HUMA2635_8.pdf pp.37, 39)</p>
+<p><strong>Tibet</strong> — Society centers on <strong>Lamaist Buddhism</strong> (喇嘛教), where the <strong>Dalai Lama</strong> holds <strong>temporal and spiritual rule</strong> as a <strong>Living Buddha</strong> (活佛). (Source: HUMA2635_10.pdf p.6)</p>
+<blockquote>
+<p><strong>Bonus:</strong> While groups like the <strong>Hui</strong> used <strong>traditional Chinese ideologies</strong> to interpret Islamic traditions, Xinjiang&rsquo;s <strong>Uyghur culture</strong> remains more distinct, centered around oases like Kashgar. (Source: HUMA2635_7.pdf p.56; HUMA2635_8.pdf p.52)</p>
+<p>The avoidance of <strong>pork</strong> serves as a <strong>vital social forbidden</strong> for identity formation among Xinjiang&rsquo;s Muslim groups. (Source: HUMA2635_7.pdf p.56)</p>
+<p>The Qing government reformed Tibetan administration by requiring the Dalai Lama to be reincarnated in a <strong>commoner&rsquo;s family</strong> and supervised by a resident <strong>amban</strong> (驻藏大臣). (Source: HUMA2635_10.pdf p.7)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Relationship with the Han Majority</h2>
+<h3>Must-have Points</h3>
+<p><strong>Xinjiang</strong> — The relationship is defined by <strong>massive Han immigration</strong>: the Han population rose from <strong>10% (1949)</strong> to approximately <strong>40%</strong> recently. (Source: HUMA2635_8.pdf p.9)</p>
+<p><strong>Tibet</strong> — The Han population remains <strong>small (around 8%)</strong> , and the relationship was historically maintained through the <strong>tea and horse trade</strong> (茶馬貿易). (Source: HUMA2635_10.pdf pp.8, 19)</p>
+<blockquote>
+<p><strong>Bonus:</strong> Unlike the <strong>Hui</strong>, who expanded through <strong>migration and intermarriage with Han</strong> (often adopting Han children), Xinjiang and Tibet exhibit <strong>less demographic blending</strong> and more <strong>distinct ethnic boundaries</strong>. (Source: HUMA2635_7.pdf p.55)</p>
+<p>Historically, Tibetans and the Han interacted economically through the <strong>tea and horse trade</strong>, a barter system exchanging interior agricultural goods like tea for nomad horses. (Source: HUMA2635_10.pdf p.19)</p>
+</blockquote>
+<hr>
+<h1>6. Describe social changes and Buddhism development in Tibet</h1>
+<p><strong>Logic:</strong> Traditional Theocratic Society → Social Changes (1911–1950s) → Tibetan Buddhism under Changing Regimes</p>
+<hr>
+<h2>Paragraph 1: Traditional Theocratic Society and Centrality of Buddhism</h2>
+<h3>Must-have Points</h3>
+<p>In Tibet, the <strong>temporal as well as the spiritual rule</strong> of the <strong>Dalai Lama</strong> was recognized; the system of <strong>reincarnation</strong> was set up in <strong>1447 during the Ming dynasty</strong>. (Source: HUMA2635_10.pdf p.6)</p>
+<p>This <strong>Lamaist hierarchy</strong> was also supported by the <strong>Qing government</strong>, applying to both Mongolia and Tibet. The <strong>Court of Colonial Affairs</strong> (理藩院) handled relations. (Source: HUMA2635_10.pdf p.6)</p>
+<p>The Dalai Lama is the reincarnation of <strong>Avalokitesvara</strong> (观世音菩萨); the <strong>Fifth Dalai Lama</strong> proclaimed the <strong>Panchen Lama</strong> the reincarnation of <strong>Amitabha</strong> (阿弥陀佛), the teacher of Avalokitesvara. Although Amitabha is higher in the Buddhist view, the Panchen Lama&rsquo;s <strong>temporal powers were minimal</strong>, while the Dalai Lama&rsquo;s were <strong>supreme</strong>. (Source: HUMA2635_10.pdf p.9)</p>
+<blockquote>
+<p><strong>Bonus:</strong> Tibetan Buddhism was <strong>not a monolithic entity</strong>: the <strong>Kangba</strong> (康巴) people spoke different dialects and had customs distinct from Lhasa, and indigenous populations were <strong>fiercely independent</strong>. (Source: HUMA2635_10.pdf p.8)</p>
+<p><strong>Tea and butter</strong> were staples linked to Buddhist culture; tea compressed into <strong>bricks</strong> came from inland China, and <strong>buttered tea</strong> was believed to warm the body, fight hunger, and aid digestion — a cultural tie between Tibet and the rest of China since the <strong>7th century</strong>. (Source: HUMA2635_10.pdf p.16)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 2: Social Changes from 1911 to the 1950s and Beyond</h2>
+<h3>Must-have Points</h3>
+<p>The <strong>1911 revolution</strong> enabled Tibetans to <strong>free themselves of Qing troops</strong>. In <strong>1914</strong>, Britain called the <strong>Simla Conference</strong> (西姆拉会议) proposing that an <strong>amban</strong> with only 300 soldiers reside in Lhasa and no other Chinese troops be sent, but the republican government <strong>refused to acknowledge</strong> the convention. (Source: HUMA2635_5.pdf p.48)</p>
+<p>The <strong>Kuomintang government</strong> created the province of <strong>Xikang</strong> (西康) in <strong>1939</strong>, ruled by <strong>Liu Wenhui</strong> (刘文辉), extending its boundary far west of the <strong>Jinsha River</strong>. In <strong>1940</strong>, the <strong>14th Dalai Lama</strong> was inaugurated, while the Nationalist government continued to treat the <strong>Panchen Lama with great care</strong>. (Source: HUMA2635_5.pdf p.48)</p>
+<p>After <strong>1949</strong>, a system of <strong>regional autonomy</strong> was provided for minority-concentrated areas. In <strong>1950</strong>, the <strong>PLA crossed the Jinsha River</strong> and marched to <strong>Changdu</strong> (昌都). In <strong>1951</strong>, the <strong>Seventeen Point Agreement</strong> (十七条协议) was signed: the PLA would enter Tibet to consolidate national defense, and the Tibetan army would be integrated into the PLA. (Source: HUMA2635_6.pdf p.19)</p>
+<p><strong>Democratic reforms</strong> were gradually introduced; party structures were created and <strong>People&rsquo;s governments</strong> replaced traditional structures. (Source: HUMA2635_6.pdf p.27)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The <strong>Yan&rsquo;an period&rsquo;s minorities policy</strong> served as a working model for future enlargement; the <strong>Inner Mongolia Autonomous Region (1947)</strong> provided a precedent for Tibet&rsquo;s later autonomous status. (Source: HUMA2635_6.pdf p.18)</p>
+<p>Social transformation was justified by <strong>historical materialism</strong>: Tibet&rsquo;s traditional <strong>feudal-theocratic system</strong> was placed at a particular stage that needed to progress through democratic reform toward socialism. (Source: HUMA2635_6.pdf pp.7-8, 27)</p>
+</blockquote>
+<hr>
+<h2>Paragraph 3: Developments in Tibetan Buddhism under Changing Regimes</h2>
+<h3>Must-have Points</h3>
+<p><strong>Reincarnation politics</strong> were often manipulated by powerful families. <strong>Qing reforms</strong> required the Dalai Lama to be reincarnated in a <strong>commoner&rsquo;s family</strong>, and the resident <strong>amban</strong> (驻藏大臣) supervised these regulations, leading to a <strong>bureaucratization of Tibetan administration</strong> and an increase in the Dalai Lama&rsquo;s power vis-à-vis noble families. (Source: HUMA2635_10.pdf p.7)</p>
+<p>The <strong>13th Dalai Lama</strong> used an <strong>alliance with Britain</strong> to strengthen his government&rsquo;s control over semi-feudal components, including areas of the <strong>9th Panchen Lama</strong>. This prompted the Panchen Lama to turn to the <strong>Chinese central government</strong> for aid against their common enemies — the Dalai Lama and Britain. (Source: HUMA2635_10.pdf p.9)</p>
+<p>After <strong>1951</strong>, the CCP&rsquo;s policy toward religion in minority areas emphasized <strong>freedom of religion</strong> and respect for customs, while also incorporating <strong>&ldquo;patriotic upper strata&rdquo;</strong> into governmental hierarchy and promoting the party line against both <strong>Great Han chauvinism</strong> and <strong>local nationalism</strong>. (Source: HUMA2635_6.pdf pp.16,22)</p>
+<blockquote>
+<p><strong>Bonus:</strong> The CCP&rsquo;s early strategy included <strong>&ldquo;doing good and making friends&rdquo;</strong> : small PLA work teams won trust by dispensing seeds, tools, and learning local languages, while propagandizing party doctrine and nationalities policy — a <strong>soft approach</strong> that gradually transformed the religious-political landscape. (Source: HUMA2635_6.pdf p.24)</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>文件生成时间：2026-05-15<br>
+基于原始文件 <code>Short_Essay.md</code> 重新按清晰分段 + 重点加粗 + 来源标注整理</p>
+</blockquote>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+
+  <script>
+    (() => {
+      const slugCounts = new Map();
+
+      const slugify = (text, fallback) => {
+        const normalized = text
+          .toLowerCase()
+          .normalize('NFKD')
+          .replace(/[̀-ͯ]/g, '')
+          .replace(/[^\p{Letter}\p{Number}\s-]/gu, '')
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+
+        const base = normalized || fallback;
+        const seen = slugCounts.get(base) || 0;
+        slugCounts.set(base, seen + 1);
+        return seen ? `${base}-${seen + 1}` : base;
+      };
+
+      document.querySelectorAll('.markdown-body table').forEach((table) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrap';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      });
+
+      const nav = document.getElementById('sidebar-nav');
+      const observedTargets = [];
+
+      document.querySelectorAll('.doc-section').forEach((section, sectionIndex) => {
+        if (!section.id) {
+          section.id = slugify(section.dataset.navLabel || `section-${sectionIndex + 1}`, `section-${sectionIndex + 1}`);
+        }
+
+        const group = document.createElement('div');
+        group.className = 'nav-group';
+
+        const label = document.createElement('div');
+        label.className = 'nav-label';
+        label.textContent = `Section ${sectionIndex + 1}`;
+        group.appendChild(label);
+
+        const sectionLink = document.createElement('a');
+        sectionLink.className = 'nav-link section-link';
+        sectionLink.href = `#${section.id}`;
+        sectionLink.textContent = section.dataset.navLabel || `Section ${sectionIndex + 1}`;
+        group.appendChild(sectionLink);
+        observedTargets.push(section);
+
+        const selector = section.dataset.topicSelector || 'h2';
+        let headings = Array.from(section.querySelectorAll(`.markdown-body ${selector}`));
+        if (section.dataset.skipFirstTopic === 'true') {
+          headings = headings.slice(1);
+        }
+
+        headings.forEach((heading, headingIndex) => {
+          if (!heading.id) {
+            heading.id = slugify(heading.textContent, `topic-${sectionIndex + 1}-${headingIndex + 1}`);
+          }
+
+          const topicLink = document.createElement('a');
+          topicLink.className = 'nav-link topic-link';
+          topicLink.href = `#${heading.id}`;
+          topicLink.textContent = heading.textContent.trim();
+          group.appendChild(topicLink);
+          observedTargets.push(heading);
+        });
+
+        nav.appendChild(group);
+      });
+
+      const linkMap = new Map(
+        Array.from(document.querySelectorAll('.nav-link')).map((link) => [link.getAttribute('href').slice(1), link])
+      );
+
+      const setActive = (id) => {
+        linkMap.forEach((link) => link.classList.remove('active'));
+        const active = linkMap.get(id);
+        if (active) {
+          active.classList.add('active');
+        }
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+          if (visible.length) {
+            setActive(visible[0].target.id);
+          }
+        },
+        {
+          rootMargin: '-18% 0px -72% 0px',
+          threshold: 0.05,
+        }
+      );
+
+      observedTargets.forEach((target) => observer.observe(target));
+
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash && linkMap.has(initialHash)) {
+        setActive(initialHash);
+      } else {
+        setActive('outline-section');
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -343,14 +343,7 @@
     }
 
     .markdown-body strong {
-      font-weight: 900;
-      color: #ffffff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .markdown-body strong {
-        color: #ffffff;
-      }
+      font-weight: 700;
     }
 
     .markdown-body hr {
@@ -441,24 +434,74 @@
       }
     }
 
+    /* ---------- Hamburger & Mobile Sidebar ---------- */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1001;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 22px;
+      padding: 7px 12px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      line-height: 1;
+      user-select: none;
+    }
+    .hamburger-overlay {
+      display: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      background: rgba(0,0,0,0.5);
+    }
+    .hamburger-overlay.open {
+      display: block !important;
+    }
+    .sidebar-mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100vh;
+      z-index: 1000;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+      overflow-y: auto;
+      transition: left .3s ease;
+    }
+    .sidebar-mobile.open {
+      left: 0;
+    }
+    .sidebar-mobile .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .sidebar-mobile .close-btn:hover {
+      color: var(--text);
+    }
+
     @media (max-width: 1080px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: sticky;
-        top: 10px;
-        z-index: 20;
-        max-height: none;
-      }
-
-      .nav {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .main {
-        width: 100%;
+      .sidebar-mobile {
+        display: block;
       }
     }
 
@@ -468,7 +511,28 @@
         gap: 16px;
       }
 
-      .sidebar,
+      .layout > .sidebar {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .sidebar-mobile {
+        display: block;
+      }
+
+      .sidebar-mobile .sidebar-header {
+        padding: 0 20px 16px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 12px;
+      }
+
+      .sidebar-mobile .nav {
+        padding: 0 8px;
+      }
+
       .hero,
       .doc-section {
         padding: 20px;
@@ -478,10 +542,6 @@
         flex-direction: column;
       }
 
-      .nav {
-        grid-template-columns: 1fr;
-      }
-
       .markdown-body {
         font-size: 0.98rem;
       }
@@ -489,6 +549,17 @@
   </style>
 </head>
 <body>
+  <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+  <div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+  <div class="sidebar-mobile" id="mobileSidebar">
+    <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+    <div class="sidebar-header">
+      <p class="eyebrow">HUMA2635</p>
+      <h1 class="sidebar-title">Exam Review</h1>
+      <p class="sidebar-note">Outline, term explanations, and short essays collected into one review page.</p>
+    </div>
+    <nav id="sidebar-nav-mobile" class="nav" aria-label="Section and topic navigation (mobile)"></nav>
+  </div>
   <div class="layout">
     <aside class="sidebar card" aria-label="Sidebar navigation">
       <div class="sidebar-header">
@@ -724,7 +795,7 @@
 (Source: HUMA2635_5.pdf p.17)</p>
 <p><strong>Structure (Explanation of differences):</strong> (<strong>religion and geography</strong>) The designation of <strong>five peoples</strong> (汉满蒙回藏) in China is <strong>not due to differences of race or blood</strong> but to <strong>religion and geographical environment</strong>.
 (Source: HUMA2635_5.pdf p.17)</p>
-<p><strong>Mechanism:</strong> (implicit — <strong>minimizing ethnic distinctions</strong>) By attributing ethnic differences to <strong>religion and geography</strong>, Chiang <strong>reinforced a narrative of inherent racial unity</strong> among all groups, including <strong>Mongols, Manchus, Uyghurs and Tibetans</strong>, under a single Chinese nationality.
+<p><strong>Mechanism:</strong> (implicit — <strong>minimizing ethnic distinctions</strong>) By attributing ethnic differences to <strong>religion and geography</strong>, Chiang <strong>reinforced a narrative of inherent racial unity</strong> among all groups, including <strong>Mongols, Manchus, and Tibetans</strong>, under a single Chinese nationality.
 (Inferred from HUMA2635_5.pdf p.17)</p>
 <p><strong>Historical facts (Political conclusion):</strong> (<strong>single cultural-political whole</strong>) The Chinese people form a <strong>&ldquo;Single Cultural and Political whole&rdquo;</strong> (统一的民族与政治整体).
 (Source: HUMA2635_5.pdf p.17)</p>
@@ -1094,6 +1165,13 @@ Must-have Points 保留，Bonus Points 用 <code>&gt;</code> 标注在对应段�
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
   <script>
+    function toggleMobileMenu(){
+      var s=document.getElementById("mobileSidebar");
+      var o=document.getElementById("mobileOverlay");
+      var isOpen=s.classList.toggle("open");
+      o.classList.toggle("open", isOpen);
+    }
+
     (() => {
       const slugCounts = new Map();
 
@@ -1164,6 +1242,15 @@ Must-have Points 保留，Bonus Points 用 <code>&gt;</code> 标注在对应段�
 
         nav.appendChild(group);
       });
+
+      // Clone nav links into mobile sidebar
+      var mobileNav = document.getElementById('sidebar-nav-mobile');
+      if (mobileNav) {
+        mobileNav.innerHTML = nav.innerHTML;
+        mobileNav.querySelectorAll('.nav-link').forEach(function(link) {
+          link.addEventListener('click', toggleMobileMenu);
+        });
+      }
 
       const linkMap = new Map(
         Array.from(document.querySelectorAll('.nav-link')).map((link) => [link.getAttribute('href').slice(1), link])

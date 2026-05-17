@@ -36,7 +36,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
 .badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
 .exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
 .exercise-body{padding:16px;min-width:0}
 .exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
 .exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
@@ -100,7 +101,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-1">
 <div class="exercise-header">
 <div><span class="exercise-id">Q1</span> <span class="exercise-lecture"> [2 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">exam-info</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#exam-info" target="_blank">exam-info</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">What is the colour version of your exam paper? (Read the top left corner of the cover page!) Make sure that you have also written and marked your ID number correctly in the I.D. No. Box in the MC answer sheet. If you do not do both correctly, you lose the points of this question.
@@ -122,7 +123,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-2">
 <div class="exercise-header">
 <div><span class="exercise-id">Q2</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">definite-integral</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#definite-integral" target="_blank">definite-integral</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Evaluate the integral $\int_{0}^{1} 4 \cos (2 \pi x) \sin ^{2}(\pi x) d x$.
@@ -151,7 +152,7 @@ $$
 <div class="exercise" id="q-3">
 <div class="exercise-header">
 <div><span class="exercise-id">Q3</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Evaluate the improper integral $\int_{0}^{2} \frac{4 x}{\sqrt{4-x^{2}}} d x$.
@@ -180,7 +181,7 @@ $$
 <div class="exercise" id="q-4">
 <div class="exercise-header">
 <div><span class="exercise-id">Q4</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a> <a class="tag" href="../tags.html#divergence" target="_blank">divergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Evaluate the improper integral $\int_{0}^{\infty} \frac{2 x}{\left(x^{2}+1\right)^{2}} d x$.
@@ -249,7 +250,7 @@ $$
 <div class="exercise" id="q-5">
 <div class="exercise-header">
 <div><span class="exercise-id">Q5</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">area-between-curves</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#area-between-curves" target="_blank">area-between-curves</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the area enclosed by the curves $y=x+1, y=\frac{2}{(x+1)(x+2)}$ and $x=4$.
@@ -272,7 +273,7 @@ $$
 <div class="exercise" id="q-6">
 <div class="exercise-header">
 <div><span class="exercise-id">Q6</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#volume-of-revolution" target="_blank">volume-of-revolution</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">The graph of the function $y=3+x^{2}$ over the interval $0 \leq x \leq \sqrt{12}$ is rotated about the $y$-axis to generate a surface of revolution. Find the area of the surface.
@@ -294,7 +295,7 @@ $$
 <div class="exercise" id="q-7">
 <div class="exercise-header">
 <div><span class="exercise-id">Q7</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">polar-coordinates</span> <span class="tag">polar-area</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#polar-coordinates" target="_blank">polar-coordinates</a> <a class="tag" href="../tags.html#polar-area" target="_blank">polar-area</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the area of the region enclosed by the curve defined by the polar equation $r=2 \sqrt{\sin (2 t)} e^{\cos (2 t)}$.
@@ -317,7 +318,7 @@ $$
 <div class="exercise" id="q-8">
 <div class="exercise-header">
 <div><span class="exercise-id">Q8</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">work</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#work" target="_blank">work</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">The shape of a container is obtained by rotating the curve $y=x^{2}$ over the interval $0 \leq x \leq 2$ about the $y$-axis. If the tank is full of water, the work required for pumping all water to the top of the tank can be expressed as an integral $W=\int_{a}^{b} f(y) d y$. Use trapezoidal rule on four subintervals of equal length to estimate the work. (Assume that water density is $\rho \mathrm{kg} / \mathrm{m}^{3}$, and gravity acceleration $g \mathrm{~m} / \mathrm{s}^{2}$.)
@@ -340,7 +341,7 @@ $$
 <div class="exercise" id="q-9">
 <div class="exercise-header">
 <div><span class="exercise-id">Q9</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">comparison-test</span> <span class="tag">divergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a> <a class="tag" href="../tags.html#comparison-test" target="_blank">comparison-test</a> <a class="tag" href="../tags.html#divergence" target="_blank">divergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Which of the following improper integrals is divergent?
@@ -374,7 +375,7 @@ $$
 <div class="exercise" id="q-10">
 <div class="exercise-header">
 <div><span class="exercise-id">Q10</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">divergence-test</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="../tags.html#divergence-test" target="_blank">divergence-test</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty}\left(\frac{3^{n+3}-2^{n}}{4^{n+1}}\right)$.
@@ -403,7 +404,7 @@ $$
 <div class="exercise" id="q-11">
 <div class="exercise-header">
 <div><span class="exercise-id">Q11</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">vector-projection</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#vectors" target="_blank">vectors</a> <a class="tag" href="../tags.html#vector-projection" target="_blank">vector-projection</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the sum of the series: $\sum_{n=1}^{\infty}\left(9^{1 / n}-9^{1 /(n+2)}\right)$.
@@ -499,7 +500,7 @@ $$
 <div class="exercise" id="q-12">
 <div class="exercise-header">
 <div><span class="exercise-id">Q12</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find all convergent infinite series from the following:
@@ -525,7 +526,7 @@ $$
 <div class="exercise" id="q-13">
 <div class="exercise-header">
 <div><span class="exercise-id">Q13</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Which of the following values of $p$ is the smallest to keep the infinite series $\sum_{n=2}^{\infty} \frac{1}{\sqrt{n^{p+2}}(\ln n)^{2}}$ convergent?
@@ -547,7 +548,7 @@ $$
 <div class="exercise" id="q-14">
 <div class="exercise-header">
 <div><span class="exercise-id">Q14</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">taylor-series</span> <span class="tag">maclaurin-series</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="../tags.html#taylor-series" target="_blank">taylor-series</a> <a class="tag" href="../tags.html#maclaurin-series" target="_blank">maclaurin-series</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at 0 ) of the function $f(x)=\left(1+8 x^{2}\right)^{\frac{3}{2}}$.
@@ -569,7 +570,7 @@ $$
 <div class="exercise" id="q-15">
 <div class="exercise-header">
 <div><span class="exercise-id">Q15</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">vector-projection</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#vectors" target="_blank">vectors</a> <a class="tag" href="../tags.html#vector-projection" target="_blank">vector-projection</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the vector projection (orthogonal projection) of the vector $\langle-4,12,-2\rangle$ onto the vector $\langle 1,3,2\rangle$.
@@ -591,7 +592,7 @@ $$
 <div class="exercise" id="q-16">
 <div class="exercise-header">
 <div><span class="exercise-id">Q16</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">distance-point-to-plane</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#vectors" target="_blank">vectors</a> <a class="tag" href="../tags.html#distance-point-to-plane" target="_blank">distance-point-to-plane</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the perpendicular distance from the point given by the vector $\langle 3,0,0\rangle$ to the plane generated by the vectors $\langle 1,2,0\rangle$ and $\langle 1,0,-1\rangle$.
@@ -614,7 +615,7 @@ $$
 <div class="exercise" id="q-17">
 <div class="exercise-header">
 <div><span class="exercise-id">Q17</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">integration-by-parts</span> <span class="tag">reduction-formula</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#integration-by-parts" target="_blank">integration-by-parts</a> <a class="tag" href="../tags.html#reduction-formula" target="_blank">reduction-formula</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Let $I_{n}=\int \frac{x^{n}}{\sqrt{x+1}} d x$, where $n$ is a positive integer.
@@ -679,7 +680,7 @@ $$
 <div class="exercise" id="q-18">
 <div class="exercise-header">
 <div><span class="exercise-id">Q18</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">comparison-test</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a> <a class="tag" href="../tags.html#comparison-test" target="_blank">comparison-test</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Consider the area under the graph of the function $y=\frac{8}{\sqrt{e^{2 x}+4}}$ over the interval $0<x< \infty$.
@@ -727,7 +728,7 @@ $$
 <div class="exercise" id="q-19">
 <div class="exercise-header">
 <div><span class="exercise-id">Q19</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">root-test</span> <span class="tag">comparison-test</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="../tags.html#root-test" target="_blank">root-test</a> <a class="tag" href="../tags.html#comparison-test" target="_blank">comparison-test</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Determine whether the given series is convergent or divergent. Given brief reason to justify your answer.
@@ -783,7 +784,7 @@ $$
 <div class="exercise" id="q-20">
 <div class="exercise-header">
 <div><span class="exercise-id">Q20</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">interval-of-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="../tags.html#interval-of-convergence" target="_blank">interval-of-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Consider a power series $f(x)=\sum_{n=0}^{\infty} \frac{2 n+3}{4^{2 n}}(x-1)^{2 n+1}$.

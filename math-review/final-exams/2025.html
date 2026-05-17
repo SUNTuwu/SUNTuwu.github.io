@@ -36,7 +36,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
 .badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
 .exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
 .exercise-body{padding:16px;min-width:0}
 .exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
 .exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
@@ -100,7 +101,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-1">
 <div class="exercise-header">
 <div><span class="exercise-id">Q1</span> <span class="exercise-lecture"> [2 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">exam-info</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#exam-info" target="_blank">exam-info</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">This is the White version of the examination paper. Choose answer (C) for this question.
@@ -122,7 +123,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-2">
 <div class="exercise-header">
 <div><span class="exercise-id">Q2</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Evaluate the improper integral $\int_{2}^{3} \frac{3 x}{\sqrt{x-2}} d x$.
@@ -144,7 +145,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-3">
 <div class="exercise-header">
 <div><span class="exercise-id">Q3</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a> <a class="tag" href="../tags.html#divergence" target="_blank">divergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Evaluate the improper integral $\int_{1}^{\infty} \frac{2}{x^{2}(x+1)} d x$.
@@ -166,7 +167,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-4">
 <div class="exercise-header">
 <div><span class="exercise-id">Q4</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">numerical-integration</span> <span class="tag">simpsons-rule</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#numerical-integration" target="_blank">numerical-integration</a> <a class="tag" href="../tags.html#simpsons-rule" target="_blank">simpsons-rule</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Apply Simpson's Rule with four subintervals to approximate the integral $\int_{0}^{2} \frac{1}{1+x} d x=\ln 3$ to find a rational number to approximate $\ln 3$.
@@ -188,7 +189,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-5">
 <div class="exercise-header">
 <div><span class="exercise-id">Q5</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#volume-of-revolution" target="_blank">volume-of-revolution</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Suppose the area under the graph of $y=2 \sec x \sqrt{\tan x}$ over the interval $0 \leq x \leq \frac{\pi}{4}$ is rotated about the $x$-axis to form a solid of revolution. Find the volume of the solid.
@@ -210,7 +211,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-6">
 <div class="exercise-header">
 <div><span class="exercise-id">Q6</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#volume-of-revolution" target="_blank">volume-of-revolution</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">The area under the graph of $y=2 \sin ^{2}(\pi x)$, where $0 \leq x \leq 1$, is rotated about the $y$-axis to form a solid of revolution. Find the volume of the solid.
@@ -233,7 +234,7 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 <div class="exercise" id="q-7">
 <div class="exercise-header">
 <div><span class="exercise-id">Q7</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">work</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#work" target="_blank">work</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">A particle is moved along the $x$-axis by a continuous force $y=F(x)$ (in newtons) with its graph shown below.
@@ -258,7 +259,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-8">
 <div class="exercise-header">
 <div><span class="exercise-id">Q8</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">work</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#work" target="_blank">work</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">The cross sections of a water trough with length $4 \sqrt{3} \mathrm{~m}$ are equilateral triangles with side length $2 \sqrt{3} \mathrm{~m}$. Suppose that the trough is filled with water up to a depth of 1.5 m . How much work (in joules) is required to pump all water out of the trough?
@@ -282,7 +283,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-9">
 <div class="exercise-header">
 <div><span class="exercise-id">Q9</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">polar-coordinates</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#polar-coordinates" target="_blank">polar-coordinates</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the slope of the tangent line to the curve defined by the polar equation $r=3 \theta$ at the point on the curve with angular coordinate $\theta=\frac{\pi}{4}$.
@@ -305,7 +306,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-10">
 <div class="exercise-header">
 <div><span class="exercise-id">Q10</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">polar-coordinates</span> <span class="tag">polar-area</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#polar-coordinates" target="_blank">polar-coordinates</a> <a class="tag" href="../tags.html#polar-area" target="_blank">polar-area</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the area enclosed by the curve defined by the polar equation $r=4-2 \cos \theta \sin (3 \theta)$.
@@ -328,7 +329,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-11">
 <div class="exercise-header">
 <div><span class="exercise-id">Q11</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a> <a class="tag" href="../tags.html#divergence" target="_blank">divergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Which of the following improper integrals is divergent?
@@ -350,7 +351,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-12">
 <div class="exercise-header">
 <div><span class="exercise-id">Q12</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">sequence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="../tags.html#sequence" target="_blank">sequence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find all convergent infinite sequence from the following:
@@ -376,7 +377,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-13">
 <div class="exercise-header">
 <div><span class="exercise-id">Q13</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty} \frac{5^{n+1}-2 \cdot 4^{n-1}}{6^{n}}$.
@@ -398,7 +399,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-14">
 <div class="exercise-header">
 <div><span class="exercise-id">Q14</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find all convergent infinite series from the following:
@@ -424,7 +425,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-15">
 <div class="exercise-header">
 <div><span class="exercise-id">Q15</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">taylor-series</span> <span class="tag">maclaurin-series</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="../tags.html#taylor-series" target="_blank">taylor-series</a> <a class="tag" href="../tags.html#maclaurin-series" target="_blank">maclaurin-series</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at $a=0$ ) of the function $f(x)=3 e^{x \sin x}$.
@@ -446,7 +447,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-16">
 <div class="exercise-header">
 <div><span class="exercise-id">Q16</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Let $f(x)=\sum_{n=0}^{\infty} a_{n+1} x^{n}$, where the sequence $a_{n}$ is defined recursively by $a_{0}=0, a_{1}=1$, and $a_{n+2}=\frac{1}{n+1}\left(n a_{n+1}+a_{n}\right)$ for $n \geq 0$. Which of the following is true?
@@ -468,7 +469,7 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 <div class="exercise" id="q-17">
 <div class="exercise-header">
 <div><span class="exercise-id">Q17</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#improper-integral" target="_blank">improper-integral</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Let $a_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos (n x) d x$, and $b_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos ^{2}(n x) d x$, where $n$ is a positive integer.
@@ -515,7 +516,7 @@ $$
 <div class="exercise" id="q-18">
 <div class="exercise-header">
 <div><span class="exercise-id">Q18</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">alternating-series</span> <span class="tag">comparison-test</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#series-convergence" target="_blank">series-convergence</a> <a class="tag" href="../tags.html#alternating-series" target="_blank">alternating-series</a> <a class="tag" href="../tags.html#comparison-test" target="_blank">comparison-test</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Determine whether the given series is convergent or divergent. Give reason to justify your answer for full credit.
@@ -567,7 +568,7 @@ $$
 <div class="exercise" id="q-19">
 <div class="exercise-header">
 <div><span class="exercise-id">Q19</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
-<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">interval-of-convergence</span></div>
+<div class="exercise-tags"><a class="tag" href="../tags.html#power-series" target="_blank">power-series</a> <a class="tag" href="../tags.html#interval-of-convergence" target="_blank">interval-of-convergence</a></div>
 </div>
 <div class="exercise-body">
 <div class="exercise-problem">Let $f$ be defined by the power series $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{(x-1)^{2 n+2}}{(2 n+1) 4^{n}}$.

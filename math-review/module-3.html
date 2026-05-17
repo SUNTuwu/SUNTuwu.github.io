@@ -382,9 +382,9 @@ function copyLaTeX(id) {
     if (!btn) return;
     var ex = btn.closest(".exercise");
     if (!ex) return;
-    var prob = ex.querySelector(".exercise-problem");
-    if (!prob) return;
-    var text = prob.textContent.trim();
+    var pre = ex.querySelector("pre");
+    if (!pre) return;
+    var text = pre.textContent.trim();
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(function() {
             copiedFeedback(btn);

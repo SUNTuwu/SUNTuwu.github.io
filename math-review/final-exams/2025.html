@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Spring 2025 — MATH 1014 Final Exams</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'},
+options:{ignoreHtmlClass:'sidebar|sidebar-mobile|hamburger|home-btn|answer-toggle|codebox|tag',
+processHtmlClass:'exercise-problem|answer-content'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav active" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav active" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+<div class="content">
+<div class="page-header">
+<h2>Spring 2025</h2>
+<div class="subtitle">19 questions · MATH 1014 Calculus II</div>
+</div>
+<div class="exercise" id="q-1">
+<div class="exercise-header">
+<div><span class="exercise-id">Q1</span> <span class="exercise-lecture"> [2 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">exam-info</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">This is the White version of the examination paper. Choose answer (C) for this question.
+(A) Green
+(B) Orange
+(C) White
+(D) Yellow
+(E) None of the others</div>
+<div class="answer-section" id="ans-1">
+<div class="answer-toggle" onclick="toggleAnswer('ans-1')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-2">
+<div class="exercise-header">
+<div><span class="exercise-id">Q2</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the improper integral $\int_{2}^{3} \frac{3 x}{\sqrt{x-2}} d x$.
+(A) 14
+(B) 16
+(C) 18
+(D) 20
+(E) 22</div>
+<div class="answer-section" id="ans-2">
+<div class="answer-toggle" onclick="toggleAnswer('ans-2')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-3">
+<div class="exercise-header">
+<div><span class="exercise-id">Q3</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the improper integral $\int_{1}^{\infty} \frac{2}{x^{2}(x+1)} d x$.
+(A) $2-\ln 2$
+(B) $2+\ln 2$
+(C) $2-2 \ln 2$
+(D) $2+2 \ln 2$
+(E) divergent</div>
+<div class="answer-section" id="ans-3">
+<div class="answer-toggle" onclick="toggleAnswer('ans-3')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-4">
+<div class="exercise-header">
+<div><span class="exercise-id">Q4</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">numerical-integration</span> <span class="tag">simpsons-rule</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Apply Simpson's Rule with four subintervals to approximate the integral $\int_{0}^{2} \frac{1}{1+x} d x=\ln 3$ to find a rational number to approximate $\ln 3$.
+(A) $\frac{9}{10}$
+(B) $\frac{11}{10}$
+(C) $\frac{13}{10}$
+(D) $\frac{9}{5}$
+(E) $\frac{11}{5}$</div>
+<div class="answer-section" id="ans-4">
+<div class="answer-toggle" onclick="toggleAnswer('ans-4')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-5">
+<div class="exercise-header">
+<div><span class="exercise-id">Q5</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Suppose the area under the graph of $y=2 \sec x \sqrt{\tan x}$ over the interval $0 \leq x \leq \frac{\pi}{4}$ is rotated about the $x$-axis to form a solid of revolution. Find the volume of the solid.
+(A) $\pi$
+(B) $2 \pi$
+(C) $3 \pi$
+(D) $4 \pi$
+(E) $5 \pi$</div>
+<div class="answer-section" id="ans-5">
+<div class="answer-toggle" onclick="toggleAnswer('ans-5')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-6">
+<div class="exercise-header">
+<div><span class="exercise-id">Q6</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The area under the graph of $y=2 \sin ^{2}(\pi x)$, where $0 \leq x \leq 1$, is rotated about the $y$-axis to form a solid of revolution. Find the volume of the solid.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-03.jpg?height=486&amp;width=521&amp;top_left_y=1669&amp;top_left_x=799)
+(A) $\pi$
+(B) $2 \pi$
+(C) $\frac{\pi}{2}$
+(D) $\frac{3 \pi}{2}$
+(E) $\frac{2 \pi}{3}$</div>
+<div class="answer-section" id="ans-6">
+<div class="answer-toggle" onclick="toggleAnswer('ans-6')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-7">
+<div class="exercise-header">
+<div><span class="exercise-id">Q7</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">work</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A particle is moved along the $x$-axis by a continuous force $y=F(x)$ (in newtons) with its graph shown below.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-04.jpg?height=467&amp;width=903&amp;top_left_y=281&amp;top_left_x=608)
+
+Find the work done (in joules) by the force over the displacement interval $[0,6]$.
+(A) 10
+(B) 11
+(C) 12
+(D) 13
+(E) 14</div>
+<div class="answer-section" id="ans-7">
+<div class="answer-toggle" onclick="toggleAnswer('ans-7')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-8">
+<div class="exercise-header">
+<div><span class="exercise-id">Q8</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">work</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The cross sections of a water trough with length $4 \sqrt{3} \mathrm{~m}$ are equilateral triangles with side length $2 \sqrt{3} \mathrm{~m}$. Suppose that the trough is filled with water up to a depth of 1.5 m . How much work (in joules) is required to pump all water out of the trough?
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-04.jpg?height=296&amp;width=488&amp;top_left_y=1675&amp;top_left_x=799)
+(Water density: $\rho \mathrm{kg} / \mathrm{m}^{3}$, gravity acceleration: $g \mathrm{~m} / \mathrm{s}^{2}$.)
+(A) $12 \rho g$
+(B) $18 \rho g$
+(C) $24 \rho g$
+(D) $32 \rho g$
+(E) $36 \rho g$</div>
+<div class="answer-section" id="ans-8">
+<div class="answer-toggle" onclick="toggleAnswer('ans-8')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-9">
+<div class="exercise-header">
+<div><span class="exercise-id">Q9</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">polar-coordinates</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the slope of the tangent line to the curve defined by the polar equation $r=3 \theta$ at the point on the curve with angular coordinate $\theta=\frac{\pi}{4}$.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-05.jpg?height=424&amp;width=452&amp;top_left_y=354&amp;top_left_x=833)
+(A) $\frac{4+\pi}{4-\pi}$
+(B) $\frac{4-\pi}{4+\pi}$
+(C) $\frac{2+\pi}{2-\pi}$
+(D) $\frac{2+\pi}{2-\pi}$
+(E) $\frac{2+\pi}{4-\pi}$</div>
+<div class="answer-section" id="ans-9">
+<div class="answer-toggle" onclick="toggleAnswer('ans-9')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-10">
+<div class="exercise-header">
+<div><span class="exercise-id">Q10</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">polar-coordinates</span> <span class="tag">polar-area</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area enclosed by the curve defined by the polar equation $r=4-2 \cos \theta \sin (3 \theta)$.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-05.jpg?height=489&amp;width=519&amp;top_left_y=1568&amp;top_left_x=801)
+(A) $7 \pi$
+(B) $12 \pi$
+(C) $17 \pi$
+(D) $26 \pi$
+(E) $30 \pi$</div>
+<div class="answer-section" id="ans-10">
+<div class="answer-toggle" onclick="toggleAnswer('ans-10')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-11">
+<div class="exercise-header">
+<div><span class="exercise-id">Q11</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Which of the following improper integrals is divergent?
+(A) $\quad \int_{1}^{\infty} \frac{e^{-3 x}}{\sqrt{x}} d x$
+(B) $\int_{2}^{\infty} \frac{1}{x^{2} \ln x} d x$
+(C) $\quad \int_{1}^{\infty} \frac{1}{\sqrt{2 x^{3}-1}} d x$
+(D) $\int_{1}^{\infty} \frac{\ln \left(e^{x}+1\right)}{x^{2}} d x$
+(E) None</div>
+<div class="answer-section" id="ans-11">
+<div class="answer-toggle" onclick="toggleAnswer('ans-11')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-12">
+<div class="exercise-header">
+<div><span class="exercise-id">Q12</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">sequence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find all convergent infinite sequence from the following:
+(i) $a_{n}=\frac{4+2 \sqrt{n}}{3+\sqrt{n}}$
+(ii) $a_{n}=\frac{\cos e^{n}}{n}$
+(iii) $a_{n}=(-1)^{n} \frac{\ln n^{2}}{n}$
+(iv) $a_{n}=\frac{n!}{n^{n}}$
+(A) Only (i) and (ii) are convergent.
+(B) Only (i) and (iii) are convergent.
+(C) Only (i), (ii) and (iii) are convergent.
+(D) Only (i), (iii), and (iv) are convergent.
+(E) All are convergent.</div>
+<div class="answer-section" id="ans-12">
+<div class="answer-toggle" onclick="toggleAnswer('ans-12')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-13">
+<div class="exercise-header">
+<div><span class="exercise-id">Q13</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty} \frac{5^{n+1}-2 \cdot 4^{n-1}}{6^{n}}$.
+(A) 18
+(B) 19
+(C) 21
+(D) 22
+(E) 24</div>
+<div class="answer-section" id="ans-13">
+<div class="answer-toggle" onclick="toggleAnswer('ans-13')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-14">
+<div class="exercise-header">
+<div><span class="exercise-id">Q14</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{\cos \frac{1}{n}}{n}$
+(ii) $\sum_{n=2}^{\infty} \frac{\tan ^{-1} n}{n(\ln n)^{2}}$
+(iii) $\sum_{n=1}^{\infty} \frac{\ln n}{n^{2}+1}$
+(iv) $\sum_{n=1}^{\infty} \frac{2^{n}}{\left(1-\frac{1}{n}\right)^{2 n}}$
+(A) Only (i) and (ii) are convergent.
+(B) Only (ii), and (iii) are convergent.
+(C) Only (i) and (iii) are convergent.
+(D) Only (ii), (iii) and (iv) are convergent.
+(E) All are convergent.</div>
+<div class="answer-section" id="ans-14">
+<div class="answer-toggle" onclick="toggleAnswer('ans-14')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-15">
+<div class="exercise-header">
+<div><span class="exercise-id">Q15</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">taylor-series</span> <span class="tag">maclaurin-series</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at $a=0$ ) of the function $f(x)=3 e^{x \sin x}$.
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5</div>
+<div class="answer-section" id="ans-15">
+<div class="answer-toggle" onclick="toggleAnswer('ans-15')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-16">
+<div class="exercise-header">
+<div><span class="exercise-id">Q16</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $f(x)=\sum_{n=0}^{\infty} a_{n+1} x^{n}$, where the sequence $a_{n}$ is defined recursively by $a_{0}=0, a_{1}=1$, and $a_{n+2}=\frac{1}{n+1}\left(n a_{n+1}+a_{n}\right)$ for $n \geq 0$. Which of the following is true?
+(A) $\quad(1-x) f(x)=2 f^{\prime}(x)$
+(B) $\quad(1-x) f(x)=2 x f^{\prime}(x)$
+(C) $(1-x) f^{\prime}(x)=2 x f(x)$
+(D) $(1-x) f^{\prime}(x)=x f(x)$
+(E) $\quad(1-x) f(x)=x f^{\prime}(x)$</div>
+<div class="answer-section" id="ans-16">
+<div class="answer-toggle" onclick="toggleAnswer('ans-16')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-17">
+<div class="exercise-header">
+<div><span class="exercise-id">Q17</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $a_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos (n x) d x$, and $b_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos ^{2}(n x) d x$, where $n$ is a positive integer.
+(a) Evaluate the integral $\int_{-\pi}^{\pi} e^{-2 x} \cos (n x) d x$, and then find $\lim _{n \rightarrow \infty} a_{n}$.
+
+Show your steps for full credits.
+(b) Find $\lim _{n \rightarrow \infty} b_{n}$.</div>
+<div class="answer-section" id="ans-17">
+<div class="answer-toggle" onclick="toggleAnswer('ans-17')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a)
+
+$$
+\begin{gathered}
+a_{n}=\int_{-\pi}^{\pi} \cos n x d\left(-e^{-2 x} / 2\right)=-\left.\frac{1}{2} e^{-2 x} \cos n x\right|_{-\pi} ^{\pi}-\frac{n}{2} \int_{-\pi}^{\pi} e^{-2 x} \sin n x d x \\
+=\frac{\left(e^{2 \pi}-e^{-2 \pi}\right) \cos n \pi}{2}-\frac{n}{2} \int_{-\pi}^{\pi} \sin n x d\left(-e^{-2 x} / 2\right) \\
+=\frac{\left(e^{2 \pi}-e^{-2 \pi}\right)(-1)^{n}}{2}-\frac{n^{2}}{4} a_{n}
+\end{gathered}
+$$
+
+Hence
+
+$$
+\begin{aligned}
+4 a_{n} &amp; =2\left(e^{2 \pi}-e^{-2 \pi}\right)(-1)^{n}-n^{2} a_{n} \\
+\lim _{n \rightarrow \infty} a_{n} &amp; =\lim _{n \rightarrow \infty} \frac{(-1)^{n} 2\left(e^{2 \pi}-e^{-2 \pi}\right)}{n^{2}+4}=0
+\end{aligned}
+$$
+
+(b)
+
+$$
+\begin{gathered}
+b_{n}=\int_{-\pi}^{\pi} e^{-2 x} \frac{1-\cos 2 n x}{2} d x=\frac{1}{2} \int_{-\pi}^{\pi} e^{-2 x} d x-\frac{1}{2} a_{2 n} \\
+\lim _{n \rightarrow \infty} b_{n}=\frac{e^{2 \pi}-e^{-2 \pi}}{4}+0
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-18">
+<div class="exercise-header">
+<div><span class="exercise-id">Q18</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">alternating-series</span> <span class="tag">comparison-test</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether the given series is convergent or divergent. Give reason to justify your answer for full credit.
+(a) $\sum_{n=1}^{\infty} \frac{2^{n}+5^{n}}{3^{n}+4^{n}}$.
+[4 pts]
+(b) $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{\sqrt{n}+1}{n+1}$
+[4 pts]
+(c) $\sum_{n=1}^{\infty}\left(\sqrt[3]{n^{3}+1}-n\right)$
+[4 pts]</div>
+<div class="answer-section" id="ans-18">
+<div class="answer-toggle" onclick="toggleAnswer('ans-18')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a)
+
+Divergent by the comparison test: since $\frac{2^{n}+5^{n}}{3^{n}+4^{n}}>\frac{5^{n}}{2 \cdot 4^{n}}>\frac{1}{2}$, and $\sum_{n=1}^{\infty} \frac{1}{2}$ is a divergent series. Or by divergence test: $\lim _{n \rightarrow \infty} \frac{2^{n}+5^{n}}{3^{n}+4^{n}}=\infty \neq 0$.
+(b) Convergent by the alternating series test:
+
+$$
+\lim _{n \rightarrow \infty} \frac{\sqrt{n}+1}{n+1}=0
+$$
+
+where $\frac{\sqrt{n}+1}{n+1}$ is a decreasing sequence since
+
+$$
+\begin{aligned}
+&amp; \frac{d}{d x} \frac{\sqrt{x}+1}{x+1}=\frac{(x+1) \frac{1}{2 \sqrt{x}}-(\sqrt{x}+1)}{(x+1)^{2}} \\
+&amp; \quad=\frac{1-x-2 \sqrt{x}}{2 \sqrt{x}(x+1)^{2}}<0 \text { for } x \geq 1
+\end{aligned}
+$$
+
+(c) Convergent by the comparison test:
+
+$$
+\sqrt[3]{n^{3}+1}-n=\frac{n^{3}+1-n^{3}}{\left(n^{3}+1\right)^{2 / 3}+\left(n^{3}+1\right)^{1 / 3} n^{1 / 3}+n^{2 / 3}}<\frac{1}{n^{2}}
+$$
+
+where $\sum_{n=1}^{\infty} \frac{1}{n^{2}}$ is a convergent series.
+Or use the limit comparison test by computing the following with a suitable choice of $p$ :
+
+$$
+\lim _{n \rightarrow \infty} \frac{\sqrt[3]{n^{3}+1}-n}{\frac{1}{n^{p}}}=\lim _{n \rightarrow \infty} \frac{n\left(\left(1+\frac{1}{n^{3}}\right)^{1 / 3}-1\right)}{\frac{1}{n^{p}}}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-19">
+<div class="exercise-header">
+<div><span class="exercise-id">Q19</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">interval-of-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $f$ be defined by the power series $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{(x-1)^{2 n+2}}{(2 n+1) 4^{n}}$.
+(a) Find the 6 -th order derivative: $f^{(6)}(1)$.
+(b) Find the interval of convergence of the power series.
+
+Show your steps for full credit.
+
+19(c) Find the value of the derivative: $f^{\prime}(2)$.
+[6 pts]</div>
+<div class="answer-section" id="ans-19">
+<div class="answer-toggle" onclick="toggleAnswer('ans-19')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) $f^{(6)}(1)=6$ ! coefficient of the $x^{4}$ term $=6!\cdot \frac{(-1)^{2}}{(2 \cdot 2+1) 4^{2}}=9$
+(b) By the Ratio Test, considering
+
+$$
+\lim _{n \rightarrow \infty} \frac{\frac{|x-1|^{2 n+4}}{(2 n+3) 4^{n+1}}}{\frac{|x-1|^{2 n+2}}{(2 n+1) 4^{n}}}=\frac{|x-1|^{2}}{4} \lim _{n \rightarrow \infty} \frac{2 n+1}{2 n+3}=\frac{|x-1|^{2}}{4}<1
+$$
+
+the power series is convergent when $|x-1|<2$, i.e., $-1<x<3$.
+At $x=1 \pm 2$, the series is
+
+$$
+\sum_{n=0}^{\infty} \frac{(-1)^{n} 4}{2 n+1}
+$$
+
+which is is convergent by the Alternating Series Test. The interval of convergence is $-1 \leq x \leq$ 3.
+(c)
+
+$$
+\begin{gathered}
+f^{\prime}(3)=\sum_{n=0}^{\infty}(-1)^{n} \frac{(2 n+2)}{(2 n+1) 9^{n}}=\sum_{n=0}^{\infty}(-1)^{n}\left(1+\frac{1}{2 n+1}\right) \frac{1}{9^{n}} \\
+=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{9^{n}}+3 \sum_{n=0}^{\infty}(-1)^{n} \frac{(1 / 3)^{2 n+1}}{2 n+1} \\
+=\frac{1}{1+\frac{1}{9}}+3 \tan ^{-1} \frac{1}{3}=\frac{9}{10}+3 \tan ^{-1} \frac{1}{3}
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) {
+        MathJax.typesetPromise([content]);
+    }
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

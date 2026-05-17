@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Sample Final Exam — MATH 1014 Final Exams</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'},
+options:{ignoreHtmlClass:'sidebar|sidebar-mobile|hamburger|home-btn|answer-toggle|codebox|tag',
+processHtmlClass:'exercise-problem|answer-content'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav active" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav active" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+<div class="content">
+<div class="page-header">
+<h2>Sample Final Exam</h2>
+<div class="subtitle">20 questions · MATH 1014 Calculus II</div>
+</div>
+<div class="exercise" id="q-1">
+<div class="exercise-header">
+<div><span class="exercise-id">Q1</span> <span class="exercise-lecture"> [2 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">exam-info</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the colour version of your exam paper? (Read the top left corner of the cover page!) Make sure that you have also written and marked your ID number correctly in the I.D. No. Box in the MC answer sheet. If you do not do both correctly, you lose the points of this question.
+(a) Green
+(b) Orange
+(c) White
+(d) Yellow
+(e) Sample</div>
+<div class="answer-section" id="ans-1">
+<div class="answer-toggle" onclick="toggleAnswer('ans-1')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-2">
+<div class="exercise-header">
+<div><span class="exercise-id">Q2</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">definite-integral</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the integral $\int_{0}^{1} 4 \cos (2 \pi x) \sin ^{2}(\pi x) d x$.
+(a) -2
+(b) -1
+(c) 1
+(d) 2
+(e) 4</div>
+<div class="answer-section" id="ans-2">
+<div class="answer-toggle" onclick="toggleAnswer('ans-2')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+
+$$
+\begin{gathered}
+\int_{0}^{1} 4 \cos (2 \pi x) \sin ^{2}(\pi x) d x=\int_{0}^{1} 2 \cos (2 \pi x)(1-\cos (2 \pi x)) d x \\
+=\int_{0}^{1}(2 \cos (2 \pi x)-1-\cos (4 \pi x)) d x=\left[\frac{1}{\pi} \sin (2 \pi x)-x-\frac{1}{4 \pi} \sin (4 \pi x)\right]_{0}^{1}=-1
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-3">
+<div class="exercise-header">
+<div><span class="exercise-id">Q3</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the improper integral $\int_{0}^{2} \frac{4 x}{\sqrt{4-x^{2}}} d x$.
+(a) 2
+(b) 4
+(c) 6
+(d) 8
+(e) 10</div>
+<div class="answer-section" id="ans-3">
+<div class="answer-toggle" onclick="toggleAnswer('ans-3')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+
+$$
+\begin{gathered}
+\int_{0}^{2} \frac{4 x}{\sqrt{4-x^{2}}} d x=\lim _{b \rightarrow 2^{-}} \int_{0}^{b} \frac{4 x}{\sqrt{4-x^{2}}} d x \\
+=\lim _{b \rightarrow 2^{-}}\left[-4\left(4-x^{2}\right)^{1 / 2}\right]_{0}^{b}=\lim _{b \rightarrow 2^{-}}-4\left(4-b^{2}\right)^{1 / 2}+8=8
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-4">
+<div class="exercise-header">
+<div><span class="exercise-id">Q4</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the improper integral $\int_{0}^{\infty} \frac{2 x}{\left(x^{2}+1\right)^{2}} d x$.
+(a) 1
+(b) 2
+(c) 3
+(d) 4
+(e) divergent</div>
+<div class="answer-section" id="ans-4">
+<div class="answer-toggle" onclick="toggleAnswer('ans-4')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+
+$$
+\begin{gathered}
+\int_{0}^{\infty} \frac{2 x}{\left(x^{2}+1\right)^{2}} d x=\lim _{L \rightarrow \infty} \int_{0}^{L} 2 x\left(x^{2}+1\right)^{-2} d x \\
+=\lim _{L \rightarrow \infty}\left[-\left(x^{2}+1\right)^{-1}\right]_{0}^{L} \\
+=\lim _{L \rightarrow \infty}-\frac{1}{L^{2}+1}+1=1
+\end{gathered}
+$$
+
+5. The area is
+
+$$
+\begin{gathered}
+\int_{0}^{4}\left(x+1-\frac{2}{(x+1)(x+2)}\right) d x=\int_{0}^{4}\left(x+1-\frac{2}{x+1}+\frac{2}{x+2}\right) d x \\
+=\left[\frac{x^{2}}{2}+x+2 \ln \frac{x+2}{x+1}\right]_{0}^{4}=12+2 \ln \frac{3}{5}
+\end{gathered}
+$$
+
+6. The area of the surface is
+
+$$
+\begin{aligned}
+&amp; \int_{0}^{\sqrt{12}} 2 \pi x d s=\int_{0}^{\sqrt{12}} 2 \pi x \sqrt{1+4 x^{2}} d x \\
+= &amp; {\left[\frac{\pi}{6}\left(1+4 x^{2}\right)^{3 / 2}\right]_{0}^{\sqrt{12}}=\frac{\pi}{6}\left(7^{3}-1\right)=57 \pi }
+\end{aligned}
+$$
+
+7. The area is
+
+$$
+\begin{aligned}
+&amp; 2 \int_{0}^{\frac{\pi}{2}} \frac{1}{2} \cdot 4 \sin (2 t) e^{2 \cos (2 t)} d t \\
+&amp; =-\left.e^{2 \cos (2 t)}\right|_{0} ^{\frac{\pi}{2}}=e^{2}-e^{-2}
+\end{aligned}
+$$
+
+8. The work integral is
+
+$$
+\int_{0}^{4} \rho g \pi y(4-y) d y
+$$
+
+Using the trapezoidal rule with $n=4$, we have
+
+$$
+T_{4}=\frac{4 \rho g \pi}{2 \cdot 4}[2 \cdot 1 \cdot(4-1)+2 \cdot 2(4-2)+2 \cdot 3(4-3)]=10 \pi \rho g
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-5">
+<div class="exercise-header">
+<div><span class="exercise-id">Q5</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">area-between-curves</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area enclosed by the curves $y=x+1, y=\frac{2}{(x+1)(x+2)}$ and $x=4$.
+![](https://cdn.mathpix.com/cropped/8f7096d2-3007-44f2-9d10-5dd53d477359-03.jpg?height=483&amp;width=513&amp;top_left_y=977&amp;top_left_x=806)
+(a) $\ln \frac{3}{5}+12$
+(b) $\ln \frac{2}{5}+12$
+(c) $2 \ln \frac{3}{5}+12$
+(d) $2 \ln \frac{2}{5}+12$
+(e) $3 \ln \frac{3}{5}+6$</div>
+<div class="answer-section" id="ans-5">
+<div class="answer-toggle" onclick="toggleAnswer('ans-5')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-6">
+<div class="exercise-header">
+<div><span class="exercise-id">Q6</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The graph of the function $y=3+x^{2}$ over the interval $0 \leq x \leq \sqrt{12}$ is rotated about the $y$-axis to generate a surface of revolution. Find the area of the surface.
+(a) $63 \pi$
+(b) $57 \pi$
+(c) $42 \pi$
+(d) $35 \pi$
+(e) $26 \pi$</div>
+<div class="answer-section" id="ans-6">
+<div class="answer-toggle" onclick="toggleAnswer('ans-6')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-7">
+<div class="exercise-header">
+<div><span class="exercise-id">Q7</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">polar-coordinates</span> <span class="tag">polar-area</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the region enclosed by the curve defined by the polar equation $r=2 \sqrt{\sin (2 t)} e^{\cos (2 t)}$.
+![](https://cdn.mathpix.com/cropped/8f7096d2-3007-44f2-9d10-5dd53d477359-04.jpg?height=369&amp;width=390&amp;top_left_y=287&amp;top_left_x=865)
+(a) $\frac{e^{2}-e^{-2}}{2}$
+(b) $e^{2}-e^{-2}$
+(c) $\frac{e^{2}-1}{2}$
+(d) $e^{2}-1$
+(e) $e^{2}-e$</div>
+<div class="answer-section" id="ans-7">
+<div class="answer-toggle" onclick="toggleAnswer('ans-7')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-8">
+<div class="exercise-header">
+<div><span class="exercise-id">Q8</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">work</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The shape of a container is obtained by rotating the curve $y=x^{2}$ over the interval $0 \leq x \leq 2$ about the $y$-axis. If the tank is full of water, the work required for pumping all water to the top of the tank can be expressed as an integral $W=\int_{a}^{b} f(y) d y$. Use trapezoidal rule on four subintervals of equal length to estimate the work. (Assume that water density is $\rho \mathrm{kg} / \mathrm{m}^{3}$, and gravity acceleration $g \mathrm{~m} / \mathrm{s}^{2}$.)
+![](https://cdn.mathpix.com/cropped/8f7096d2-3007-44f2-9d10-5dd53d477359-04.jpg?height=293&amp;width=273&amp;top_left_y=1667&amp;top_left_x=922)
+(a) $6 \pi \rho g$
+(b) $8 \pi \rho g$
+(c) $10 \pi \rho g$
+(d) $12 \pi \rho g$
+(e) $14 \pi \rho g$</div>
+<div class="answer-section" id="ans-8">
+<div class="answer-toggle" onclick="toggleAnswer('ans-8')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-9">
+<div class="exercise-header">
+<div><span class="exercise-id">Q9</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">comparison-test</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Which of the following improper integrals is divergent?
+(i) $\int_{1}^{\infty} x e^{-\sqrt{x}} d x$
+(ii) $\int_{1}^{\infty} \frac{\ln x}{\ln x+x^{2}} d x$
+(iii) $\int_{1}^{\infty} \frac{\tan ^{-1} x}{x^{2}} d x$
+(iv) $\int_{1}^{\infty} \frac{x}{e^{-x}+x^{2}} d x$
+(Recall that another notation for the inverse trigonometric function $\tan ^{-1} x$ is $\arctan x$.)
+(a) None
+(b) (i)
+(c) (ii)
+(d) (iii)
+(e) (iv)</div>
+<div class="answer-section" id="ans-9">
+<div class="answer-toggle" onclick="toggleAnswer('ans-9')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+
+$$
+\begin{gathered}
+\int_{1}^{\infty} \frac{x}{e^{-x}+x^{2}} d x \geq \int_{1}^{\infty} \frac{x}{x^{2}+x^{2}} d x \\
+=\int_{1}^{\infty} \frac{1}{2 x} d x=\left.\frac{1}{2} \ln x\right|_{1} ^{\infty}=\infty
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-10">
+<div class="exercise-header">
+<div><span class="exercise-id">Q10</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">divergence-test</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty}\left(\frac{3^{n+3}-2^{n}}{4^{n+1}}\right)$.
+(a) divergent
+(b) 8
+(c) 12
+(d) 16
+(e) 20</div>
+<div class="answer-section" id="ans-10">
+<div class="answer-toggle" onclick="toggleAnswer('ans-10')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+
+$$
+\begin{gathered}
+\sum_{n=1}^{\infty}\left(\frac{3^{n+3}-2^{n}}{4^{n+1}}\right)=\frac{3^{4}}{4^{2}}\left(1+\frac{3}{4}+\frac{3^{2}}{4^{2}}+\cdots\right)-\frac{2}{4^{2}}\left(1+\frac{2}{4}+\frac{2^{2}}{4^{2}}+\cdots\right) \\
+=\frac{81}{16} \cdot \frac{1}{1-\frac{3}{4}}-\frac{2}{16} \cdot \frac{1}{1-\frac{2}{4}}=\frac{81}{4}-\frac{2}{8}=20
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-11">
+<div class="exercise-header">
+<div><span class="exercise-id">Q11</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">vector-projection</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series: $\sum_{n=1}^{\infty}\left(9^{1 / n}-9^{1 /(n+2)}\right)$.
+(a) 1
+(b) 6
+(c) 9
+(d) 10
+(e) divergent</div>
+<div class="answer-section" id="ans-11">
+<div class="answer-toggle" onclick="toggleAnswer('ans-11')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+
+$$
+\begin{gathered}
+\sum_{n=1}^{\infty}\left(9^{1 / n}-9^{1 /(n+2)}\right)=\lim _{N \rightarrow \infty} \sum_{n=1}^{N}\left(9^{1 / n}-9^{1 /(n+2)}\right) \\
+=\lim _{N \rightarrow \infty}\left[\begin{array}{c}
+\left(9+9^{1 / 2}+9^{1 / 3}+\cdots+9^{1 / N}\right) \\
+- \\
+\left(9^{\frac{1}{3}}+9^{\frac{1}{4}}+\cdots+9^{\frac{1}{N+1}}+9^{\frac{1}{N+2}}\right)
+\end{array}\right] \\
+=\lim _{N \rightarrow \infty}\left(9+9^{1 / 2}-9^{1 /(N+1)}-9^{1 /(N+2)}\right)=9+3-1-1=10
+\end{gathered}
+$$
+
+12. (ii) and (iii) are divergent by the Divergence Test.
+(i) is convergent by the Ratio Test, and (iv) converges absolutely:
+
+$$
+\begin{aligned}
+\lim _{n \rightarrow \infty} \frac{\frac{2^{n+1}(n+1)!}{(2 n+2)!}}{\frac{2^{n} n!}{(2 n)!}}= &amp; \lim _{n \rightarrow \infty} \frac{4(n+1)}{(2 n+2)(2 n+1)} \\
+&amp; =0<1 \\
+\sum_{n=0}^{\infty} \frac{|\sin (n!)|}{n^{2}} &amp; \leq \sum_{n=0}^{\infty} \frac{1}{n^{2}}<\infty
+\end{aligned}
+$$
+
+13. The series is divergent when $p=-1$ by the Limit Comparison Test:
+
+$$
+\lim _{n \rightarrow \infty} \frac{\frac{1}{\sqrt{n^{-1+2}}(\ln n)^{2}}}{\frac{1}{n^{3 / 4}}}=\lim _{n \rightarrow \infty} \frac{n^{1 / 4}}{(\ln n)^{2}}=\infty
+$$
+
+while $\sum_{n=2}^{\infty} \frac{1}{n^{3 / 4}}$ is divergent. The series is convergent when $p \geq 1$, which follows easily from basic comparison test: for $n \geq 2$,
+
+$$
+\frac{1}{n^{\frac{p+2}{2}}(\ln n)^{2}} \leq \frac{1}{n^{\frac{3}{2}}(\ln n)^{2}}<\frac{1}{n^{\frac{3}{2}}(\ln 2)^{2}}
+$$
+
+while $\sum \frac{1}{n^{3 / 2}}$ is convergent.
+14. Just apply the Binomial Series:
+
+$$
+f(x)=1+\frac{3}{2}\left(8 x^{2}\right)+\frac{\frac{3}{2}\left(\frac{3}{2}-1\right)}{2!}\left(8 x^{2}\right)^{2}+\cdots
+$$
+
+and hence the coefficient of the $x^{4}$ term is
+
+$$
+\frac{\frac{3}{2}\left(\frac{3}{2}-1\right)}{2!}(64)=24
+$$
+
+15. The projection is given by
+
+$$
+\begin{gathered}
+\operatorname{Proj}_{\langle 1,3,2\rangle}\langle-4,12,-2\rangle \\
+=\frac{\langle-4,12,-2\rangle \cdot\langle 1,3,2\rangle}{\|\langle 1,3,2\rangle\|^{2}}\langle 1,3,2\rangle \\
+=\frac{28}{14}\langle 1,3,2\rangle=\langle 2,6,4\rangle
+\end{gathered}
+$$
+
+16. The area of the parallelogram generated by $\langle 1,2,0\rangle$ and $\langle 1,0,-1\rangle$ is
+
+$$
+\|\langle 1,2,0\rangle \times\langle 1,0,-1\rangle\|=\|\langle-2,1,2\rangle\|=3
+$$
+
+The volume of the parallelopiped generated by the three vectors is then
+
+$$
+\begin{gathered}
+3 \cdot \text { height }=|\langle 3,0,0\rangle \cdot(\langle 1,2,0\rangle \times\langle 1,0,-1\rangle)| \\
+=|\langle 3,0,0\rangle \cdot\langle-2,1,2\rangle|=|-6| \\
+\text { height }=\frac{6}{3}=2
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-12">
+<div class="exercise-header">
+<div><span class="exercise-id">Q12</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{2^{n} n!}{(2 n)!}$
+(ii) $\sum_{n=1}^{\infty} \frac{\ln \sqrt{n}}{\ln (n+2)}$
+(iii) $\sum_{n=1}^{\infty}(-1)^{n+1} e^{n /(n+1)}$
+(iv) $\sum_{n=1}^{\infty} \frac{\sin (n!)}{n^{2}}$
+(a) Only (i) and (iv) are convergent.
+(b) Only (ii) and (iv) are convergent.
+(c) Only (i) and (iii) are convergent.
+(d) Only (i), (iii), and (iv) are convergent.
+(e) All are convergent.</div>
+<div class="answer-section" id="ans-12">
+<div class="answer-toggle" onclick="toggleAnswer('ans-12')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-13">
+<div class="exercise-header">
+<div><span class="exercise-id">Q13</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Which of the following values of $p$ is the smallest to keep the infinite series $\sum_{n=2}^{\infty} \frac{1}{\sqrt{n^{p+2}}(\ln n)^{2}}$ convergent?
+(a) $p=-4$
+(b) $p=-2$
+(c) $p=-1$
+(d) $p=1$
+(e) $p=2$</div>
+<div class="answer-section" id="ans-13">
+<div class="answer-toggle" onclick="toggleAnswer('ans-13')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-14">
+<div class="exercise-header">
+<div><span class="exercise-id">Q14</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">taylor-series</span> <span class="tag">maclaurin-series</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at 0 ) of the function $f(x)=\left(1+8 x^{2}\right)^{\frac{3}{2}}$.
+(a) 16
+(b) 12
+(c) 24
+(d) 32
+(e) 20</div>
+<div class="answer-section" id="ans-14">
+<div class="answer-toggle" onclick="toggleAnswer('ans-14')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-15">
+<div class="exercise-header">
+<div><span class="exercise-id">Q15</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">vector-projection</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the vector projection (orthogonal projection) of the vector $\langle-4,12,-2\rangle$ onto the vector $\langle 1,3,2\rangle$.
+(a) $\left\langle\frac{4}{3}, 4, \frac{8}{3}\right\rangle$
+(b) $\langle 4,12,8\rangle$
+(c) $\langle 1,3,2\rangle$
+(d) $\langle 3,9,6\rangle$
+(e) $\langle 2,6,4\rangle$</div>
+<div class="answer-section" id="ans-15">
+<div class="answer-toggle" onclick="toggleAnswer('ans-15')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-16">
+<div class="exercise-header">
+<div><span class="exercise-id">Q16</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">distance-point-to-plane</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the perpendicular distance from the point given by the vector $\langle 3,0,0\rangle$ to the plane generated by the vectors $\langle 1,2,0\rangle$ and $\langle 1,0,-1\rangle$.
+![](https://cdn.mathpix.com/cropped/8f7096d2-3007-44f2-9d10-5dd53d477359-07.jpg?height=346&amp;width=419&amp;top_left_y=1379&amp;top_left_x=868)
+(a) 2
+(b) 3
+(c) 4
+(d) 5
+(e) 6</div>
+<div class="answer-section" id="ans-16">
+<div class="answer-toggle" onclick="toggleAnswer('ans-16')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-17">
+<div class="exercise-header">
+<div><span class="exercise-id">Q17</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">integration-by-parts</span> <span class="tag">reduction-formula</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $I_{n}=\int \frac{x^{n}}{\sqrt{x+1}} d x$, where $n$ is a positive integer.
+(a) Find constants $A_{n}, B_{n}$, which depend on $n$, such that
+
+$$
+I_{n}=A_{n} x^{n} \cdot \sqrt{x+1}+B_{n} I_{n-1}
+$$
+
+$$
+A_{n}=
+$$
+
+(Both are some expression in $n$.)
+(b) Using part (a) or otherwise, evaluate the definite integral $\int_{0}^{3} \frac{15 x^{2}}{\sqrt{x+1}} d x$.</div>
+<div class="answer-section" id="ans-17">
+<div class="answer-toggle" onclick="toggleAnswer('ans-17')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) Note that $\frac{d}{d x} 2 \sqrt{x+1}=\frac{1}{\sqrt{x+1}}$.
+
+Using integration by parts with
+
+$$
+u=2 x^{n}, \quad v=\sqrt{x+1}
+$$
+
+we have
+
+$$
+\begin{aligned}
+\int \frac{x^{n}}{\sqrt{x+1}} d x= &amp; \int 2 x^{n} d \sqrt{x+1}=2 x^{n} \sqrt{x+1}-\int 2 n x^{n-1} \sqrt{x+1} d x \\
+&amp; =2 x^{n} \sqrt{x+1}-2 n \int \frac{x^{n-1}(x+1)}{\sqrt{x+1}} d x
+\end{aligned}
+$$
+
+i.e.
+
+$$
+\begin{aligned}
+I_{n} &amp; =2 x^{n} \sqrt{x+1}-2 n I_{n}-2 n I_{n-1} \\
+I_{n} &amp; =\frac{2}{2 n+1} x^{n} \sqrt{x+1}-\frac{2 n}{2 n+1} I_{n-1}
+\end{aligned}
+$$
+
+Hence $A_{n}=\frac{2}{2 n+1}, B=-\frac{2 n}{2 n+1}$.
+(b) Using the reduction formula in part (a), we have
+
+$$
+\begin{gathered}
+\int_{0}^{3} \frac{15 x^{2}}{\sqrt{x+1}} d x=15 \cdot\left[\left.\frac{2}{5} x^{2} \sqrt{x+1}\right|_{0} ^{3}-\frac{4}{5} \int_{0}^{3} \frac{x}{\sqrt{x+1}} d x\right] \\
+=108-12 \int_{0}^{3} \frac{x}{\sqrt{x+1}} d x \\
+=108-12\left[\left.\frac{2}{3} x \sqrt{x+1}\right|_{0} ^{3}-\frac{2}{3} \int_{0}^{3} \frac{1}{\sqrt{x+1}} d x\right] \\
+=108-48+\left.16 \sqrt{x+1}\right|_{0} ^{3}=76
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-18">
+<div class="exercise-header">
+<div><span class="exercise-id">Q18</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">comparison-test</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Consider the area under the graph of the function $y=\frac{8}{\sqrt{e^{2 x}+4}}$ over the interval $0<x< \infty$.
+(a) Rotate the area about the $x$-axis to generate a solid of revolution. Find the volume of the solid thus obtained.
+![](https://cdn.mathpix.com/cropped/8f7096d2-3007-44f2-9d10-5dd53d477359-09.jpg?height=483&amp;width=511&amp;top_left_y=463&amp;top_left_x=1370)
+(b) If the area is rotated about the $y$-axis, does the solid of revolution thus obtained have a finite volume? Show your reasoning for full credit.</div>
+<div class="answer-section" id="ans-18">
+<div class="answer-toggle" onclick="toggleAnswer('ans-18')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) The volume is
+
+$$
+V=\int_{0}^{\infty} \pi y^{2} d x=\int_{0}^{\infty} \frac{64 \pi}{e^{2 x}+4} d x
+$$
+
+Let $u=e^{x}$, such that $d u=e^{x} d x=u d x$. Then we have
+
+$$
+\begin{aligned}
+&amp; \int_{0}^{\infty} \frac{64 \pi}{e^{2 x}+4} d x=64 \pi \int_{1}^{\infty} \frac{1}{u\left(u^{2}+4\right)} d u=64 \pi \int_{1}^{\infty} \frac{1}{4}\left(\frac{1}{u}-\frac{u}{u^{2}+4}\right) d u \\
+= &amp; 16 \pi\left[\ln |u|-\frac{1}{2} \ln \left|u^{2}+4\right|\right]_{1}^{\infty}=16 \pi\left[\lim _{u \rightarrow \infty} \ln \frac{u}{\sqrt{u^{2}+4}}+\frac{1}{2} \ln 5\right]=8 \pi \ln 5
+\end{aligned}
+$$
+
+(b) The volume of the solid is
+
+$$
+\int_{0}^{\infty} 2 \pi x y d x=\int_{0}^{\infty} \frac{16 \pi x}{\sqrt{e^{2 x}+4}} d x
+$$
+
+The volume is finite since
+
+$$
+\begin{gathered}
+\int_{0}^{\infty} \frac{16 \pi x}{\sqrt{e^{2 x}+4}} d x<\int_{0}^{\infty} 16 \pi x e^{-x} d x=-\left.16 \pi x e^{-x}\right|_{0} ^{\infty}+16 \pi \int_{0}^{\infty} e^{-x} d x \\
+=-\left.16 \pi e^{-x}\right|_{0} ^{\infty}=16 \pi<\infty
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-19">
+<div class="exercise-header">
+<div><span class="exercise-id">Q19</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">root-test</span> <span class="tag">comparison-test</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether the given series is convergent or divergent. Given brief reason to justify your answer.
+(a) $\sum_{n=2}^{\infty} \frac{(-1)^{n} n}{\ln n}$
+[3 pts]
+(b) $\sum_{n=0}^{\infty} \sqrt{\frac{n+2}{n^{2}+1}}$
+[3 pts]
+(c) $\sum_{n=1}^{\infty}\left(\frac{n}{n+1}\right)^{n^{3}}$
+[3 pts]
+(d) $\sum_{n=1}^{\infty} e^{-n} \sin n$
+[3 pts]</div>
+<div class="answer-section" id="ans-19">
+<div class="answer-toggle" onclick="toggleAnswer('ans-19')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) Divergent; by the Divergence Test since
+
+$$
+\lim _{n \rightarrow \infty} \frac{(-1)^{n} n}{\ln n} \text { does not exist }
+$$
+
+(b) Divergent; by applying the Limit Comparison Test with respect to the divergent $p$-series $\sum \frac{1}{\sqrt{n}}$ : [3 pts]
+
+$$
+\lim _{n \rightarrow \infty} \frac{\sqrt{\frac{n+2}{n^{2}+1}}}{\frac{1}{\sqrt{n}}}=\lim _{n \rightarrow \infty} \sqrt{\frac{n(n+2)}{n^{2}+1}}=1
+$$
+
+(c) Convergent; by applying the Root Test:
+
+$$
+\lim _{n \rightarrow \infty}\left(\frac{n}{n+1}\right)^{n^{2}}=\lim _{n \rightarrow \infty} e^{n^{2} \ln \frac{n}{n+1}}=0<1
+$$
+
+since
+
+$$
+\begin{aligned}
+&amp; \lim _{x \rightarrow \infty} x^{2} \ln \frac{x}{x+1}=\lim _{x \rightarrow \infty} \frac{\ln x-\ln (x+1)}{x^{-2}} \\
+&amp; =\lim _{x \rightarrow \infty} \frac{\frac{1}{x}-\frac{1}{x+1}}{-2 x^{-3}}=\lim _{x \rightarrow \infty} \frac{-2 x^{3}}{x(x+1)}=-\infty
+\end{aligned}
+$$
+
+(d) Convergent, since it is absolutely convergent
+
+$$
+\sum_{n=1}^{\infty}\left|e^{-n} \sin n\right|<\sum_{n=1}^{\infty} e^{-n}=\frac{e^{-1}}{1-e^{-1}}<\infty
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-20">
+<div class="exercise-header">
+<div><span class="exercise-id">Q20</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">interval-of-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Consider a power series $f(x)=\sum_{n=0}^{\infty} \frac{2 n+3}{4^{2 n}}(x-1)^{2 n+1}$.
+(a) Find the largest open interval (open interval of convergence) in which the given power series converges absolutely. Show your work for full credit.
+(b) Determine if the given power series is convergent at the endpoints of the open interval of convergence of $f(x)$. Justify your answer for full credit.
+(c) Suppose that $H(x)$ is a differentiable function in the open interval of convergence of $f(x)$ such that $\frac{d H}{d x}=(x-1) f(x)$, and $H(1)=-1$. Find the function value $H(2)$.</div>
+<div class="answer-section" id="ans-20">
+<div class="answer-toggle" onclick="toggleAnswer('ans-20')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) Applying the Ratio Test, we have
+
+$$
+\begin{gathered}
+\lim _{n \rightarrow \infty} \frac{\left|\frac{2(n+1)+3}{4^{2(n+1)}}(x-1)^{2(n+1)+1}\right|}{\left|\frac{2 n+3}{4^{2 n}}(x-1)^{2 n+1}\right|}<1 \\
+\lim _{n \rightarrow \infty} \frac{(2 n+5)|x-1|^{2}}{16(2 n+3)}<1 \\
+\frac{1}{16}|x-1|^{2}<1
+\end{gathered}
+$$
+
+The open interval of convergence is given by $|x-1|<4$, i.e., $-3<x<5$.
+(b) Divergent at both endpoints $x=5, x=-3$ :
+
+$$
+\begin{gathered}
+\sum_{n=0}^{\infty} \frac{2 n+3}{4^{2 n}}(5-1)^{2 n+1}=\sum_{n=0}^{\infty} 4(2 n+3)=\infty \\
+\sum_{n=0}^{\infty} \frac{n+2}{4^{2 n}}(-3-1)^{2 n+1}=\sum_{n=0}^{\infty}(-4)(2 n+3)=-\infty
+\end{gathered}
+$$
+
+(c)
+
+$$
+\begin{gathered}
+\int_{1}^{2} H^{\prime}(x) d x=\sum_{n=0}^{\infty} \int_{1}^{2} \frac{2 n+3}{4^{2 n}}(x-1)^{2 n+2} d x \\
+H(2)-H(1)=\left.\sum_{n=0}^{\infty} \frac{1}{4^{2 n}}(x-1)^{2 n+3}\right|_{1} ^{2} \\
+H(2)-(-1)=\sum_{n=0}^{\infty} \frac{1}{4^{2 n}}=\frac{16}{15} \\
+H(2)=\frac{1}{15}
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) {
+        MathJax.typesetPromise([content]);
+    }
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

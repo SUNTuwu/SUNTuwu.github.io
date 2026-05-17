@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Spring 2019 — MATH 1014 Final Exams</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'},
+options:{ignoreHtmlClass:'sidebar|sidebar-mobile|hamburger|home-btn|answer-toggle|codebox|tag',
+processHtmlClass:'exercise-problem|answer-content'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.exercise-lecture{font-size:12px;color:#8b949e}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav active" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav active" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+<div class="content">
+<div class="page-header">
+<h2>Spring 2019</h2>
+<div class="subtitle">19 questions · MATH 1014 Calculus II</div>
+</div>
+<div class="exercise" id="q-1">
+<div class="exercise-header">
+<div><span class="exercise-id">Q1</span> <span class="exercise-lecture"> [2 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">exam-info</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the colour version of your exam paper? (Read the top left corner of the cover page!) Make sure that you have also written and marked your ID number correctly in the I.D. No. Box at the top middle of the MC answer sheet. You will lose the points of this question if you do not do both correctly.
+(a) Green
+(b) Orange
+(c) White
+(d) Yellow
+(e) None of the previous</div>
+<div class="answer-section" id="ans-1">
+<div class="answer-toggle" onclick="toggleAnswer('ans-1')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-2">
+<div class="exercise-header">
+<div><span class="exercise-id">Q2</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">area-between-curves</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area of the region enclosed by the graphs of the functions $y=4 \sin ^{2} x$ and $y=3 \sin ^{3} x$ over the interval $0 \leq x \leq \pi$.
+![](https://cdn.mathpix.com/cropped/415d7925-cf20-4452-ab57-d1a76d4ed2db-02.jpg?height=440&amp;width=467&amp;top_left_y=1692&amp;top_left_x=826)
+(a) $\pi-2$
+(b) $\pi-4$
+(c) $2 \pi-2$
+(d) $2 \pi-3$
+(e) $2 \pi-4$</div>
+<div class="answer-section" id="ans-2">
+<div class="answer-toggle" onclick="toggleAnswer('ans-2')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-3">
+<div class="exercise-header">
+<div><span class="exercise-id">Q3</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">area-between-curves</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the area under the graph of the function $y=\frac{4 x}{\left(x^{2}+1\right)^{3}}$ over the interval $0 \leq x<\infty$.
+![](https://cdn.mathpix.com/cropped/415d7925-cf20-4452-ab57-d1a76d4ed2db-03.jpg?height=439&amp;width=467&amp;top_left_y=306&amp;top_left_x=826)
+(a) 1
+(b) 2
+(c) 3
+(d) 4
+(e) $\infty$</div>
+<div class="answer-section" id="ans-3">
+<div class="answer-toggle" onclick="toggleAnswer('ans-3')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-4">
+<div class="exercise-header">
+<div><span class="exercise-id">Q4</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The area under the graph given below over the interval $[0,8]$ is rotated about the $x$-axis to generate a solid of revolution. Express the volume of the solid as a definite integral and then estimate the integral by the Trapezoidal Rule on four subintervals of equal length. What is the approximate value $T_{4}$ of the volume thus found?
+![](https://cdn.mathpix.com/cropped/415d7925-cf20-4452-ab57-d1a76d4ed2db-03.jpg?height=367&amp;width=684&amp;top_left_y=1244&amp;top_left_x=717)
+(a) $9 \pi$
+(b) $11 \pi$
+(c) $13 \pi$
+(d) $15 \pi$
+(e) $17 \pi$</div>
+<div class="answer-section" id="ans-4">
+<div class="answer-toggle" onclick="toggleAnswer('ans-4')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-5">
+<div class="exercise-header">
+<div><span class="exercise-id">Q5</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">volume-of-revolution</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the volume of the solid of revolution obtained by rotating the area under the graph of $y=9 e^{-3 x}$ over the interval $0 \leq x<\infty$ about the $y$-axis.
+![](https://cdn.mathpix.com/cropped/415d7925-cf20-4452-ab57-d1a76d4ed2db-03.jpg?height=433&amp;width=460&amp;top_left_y=2003&amp;top_left_x=831)
+(a) $\pi$
+(b) $2 \pi$
+(c) $3 \pi$
+(d) $4 \pi$
+(e) $6 \pi$</div>
+<div class="answer-section" id="ans-5">
+<div class="answer-toggle" onclick="toggleAnswer('ans-5')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-6">
+<div class="exercise-header">
+<div><span class="exercise-id">Q6</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the constant $C$ for which the improper integral $\int_{0}^{\infty}\left(\frac{2 x}{x^{2}+2}-\frac{C}{x+3}\right) d x$ is convergent.
+(a) -1
+(b) -2
+(c) 1
+(d) 2
+(e) $\frac{3}{2}$</div>
+<div class="answer-section" id="ans-6">
+<div class="answer-toggle" onclick="toggleAnswer('ans-6')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-7">
+<div class="exercise-header">
+<div><span class="exercise-id">Q7</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Evaluate the improper integral $\int_{2}^{4} \frac{3}{x \sqrt{x^{2}-4}} d x$.
+(a) $\frac{\pi}{4}$
+(b) $\frac{\pi}{2}$
+(c) $\pi$
+(d) $\frac{2 \pi}{3}$
+(e) divergent</div>
+<div class="answer-section" id="ans-7">
+<div class="answer-toggle" onclick="toggleAnswer('ans-7')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-8">
+<div class="exercise-header">
+<div><span class="exercise-id">Q8</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">improper-integral</span> <span class="tag">divergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Which of the following improper integrals is divergent?
+(a) $\int_{1}^{\infty} \frac{e^{\sin x^{3}}}{x^{2}} d x$
+(b) $\int_{0}^{\infty} \frac{1}{\sqrt{x^{6}+1}} d x$
+(c) $\int_{1}^{\infty} \frac{\ln x}{e^{2 x}} d x$
+(d) $\int_{2}^{\infty} \frac{1}{(\ln x)^{2}} d x$
+(e) None of the previous</div>
+<div class="answer-section" id="ans-8">
+<div class="answer-toggle" onclick="toggleAnswer('ans-8')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-9">
+<div class="exercise-header">
+<div><span class="exercise-id">Q9</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">sequence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find all infinite sequences from the following which converge to a finite limit as $n \rightarrow \infty$ ?
+(i) $\left(\frac{e}{\pi}\right)^{n}$,
+(ii) $\frac{n^{n}}{n!}$,
+(iii) $\sqrt{n^{2}+2 n}-n$,
+(iv) $\frac{(\ln n)^{2}}{n}$,
+(v) $\frac{(2 n)!}{(n!)^{2}}$
+(a) (i) and (ii) only
+(b) (ii) and (iii) only
+(c) (iii), (iv) and (v) only
+(d) (i),(iv) and (v) only
+(e) (i), (iii) and (iv) only</div>
+<div class="answer-section" id="ans-9">
+<div class="answer-toggle" onclick="toggleAnswer('ans-9')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-10">
+<div class="exercise-header">
+<div><span class="exercise-id">Q10</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty} \frac{4\left(3^{n+1}\right)+2^{n+1}}{6^{n}}$.
+(a) 8
+(b) 12
+(c) 13
+(d) 15
+(e) 16</div>
+<div class="answer-section" id="ans-10">
+<div class="answer-toggle" onclick="toggleAnswer('ans-10')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-11">
+<div class="exercise-header">
+<div><span class="exercise-id">Q11</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series: $\sum_{n=1}^{\infty}\left(\frac{1}{2^{\frac{1}{n+1}}}-\frac{1}{2^{\frac{1}{n}}}\right)$.
+(a) 0
+(b) $\frac{1}{2}$
+(c) 1
+(d) $\frac{3}{2}$
+(e) $\frac{2}{3}$</div>
+<div class="answer-section" id="ans-11">
+<div class="answer-toggle" onclick="toggleAnswer('ans-11')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-12">
+<div class="exercise-header">
+<div><span class="exercise-id">Q12</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\sqrt[n]{5}}$
+(ii) $\sum_{n=1}^{\infty} \frac{3^{n} n!}{(2 n)!}$
+(iii) $\sum_{n=1}^{\infty} \frac{\sin n}{n^{2}+e^{-n}}$
+(iv) $\sum_{n=1}^{\infty} \frac{2}{\left(2+\frac{1}{n}\right)^{2 n}}$
+(a) Only (i) and (ii) are convergent.
+(b) Only (iii) and (iv) are convergent.
+(c) Only (i), (ii), and (iii) are convergent.
+(d) Only (ii), (iii) and (iv) are convergent.
+(e) All are convergent.</div>
+<div class="answer-section" id="ans-12">
+<div class="answer-toggle" onclick="toggleAnswer('ans-12')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-13">
+<div class="exercise-header">
+<div><span class="exercise-id">Q13</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">taylor-series</span> <span class="tag">maclaurin-series</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the coefficient of the $x^{5}$ term in the Maclaurin series (i.e., Taylor series centered at 0 ) of the function $f(x)=\ln \left(2+x^{2}\right)^{2}$.
+(a) 0
+(b) 1
+(c) $\frac{1}{2}$
+(d) $\frac{1}{3}$
+(e) $\frac{1}{4}$</div>
+<div class="answer-section" id="ans-13">
+<div class="answer-toggle" onclick="toggleAnswer('ans-13')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-14">
+<div class="exercise-header">
+<div><span class="exercise-id">Q14</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the sum of the series $\sum_{n=1}^{\infty} \frac{n}{2^{n-1}}$.
+(a) 6
+(b) 8
+(c) 2
+(d) 3
+(e) 4</div>
+<div class="answer-section" id="ans-14">
+<div class="answer-toggle" onclick="toggleAnswer('ans-14')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-15">
+<div class="exercise-header">
+<div><span class="exercise-id">Q15</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">vector-projection</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Find the orthogonal projection of the vector $\langle 3,5,1\rangle$ onto the vector $\langle 1,2,-1\rangle$.
+(a) $\langle-1,-2,1\rangle$
+(b) $\langle-2,-4,2\rangle$
+(c) $\langle 2,4,-2\rangle$
+(d) $\langle 3,6,-2\rangle$
+(e) $\left\langle\frac{3}{2}, \frac{4}{3},-\frac{3}{2}\right\rangle$</div>
+<div class="answer-section" id="ans-15">
+<div class="answer-toggle" onclick="toggleAnswer('ans-15')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-16">
+<div class="exercise-header">
+<div><span class="exercise-id">Q16</span> <span class="exercise-lecture"> [4 pts]</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"><span class="tag">vectors</span> <span class="tag">cross-product</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Using the cross product of suitable vectors or otherwise, find the area of the triangle $\triangle A B C$ with vertex coordinates given by $A:(8,4,4), B:(6,4,2)$ and $C:(4,2,2)$.
+(a) $2 \sqrt{3}$
+(b) $4 \sqrt{3}$
+(c) $3 \sqrt{3}$
+(d) $5 \sqrt{3}$
+(e) $6 \sqrt{3}$</div>
+<div class="answer-section" id="ans-16">
+<div class="answer-toggle" onclick="toggleAnswer('ans-16')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-17">
+<div class="exercise-header">
+<div><span class="exercise-id">Q17</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">integration-by-parts</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Let $I=\int_{0}^{1} x^{3} \tan ^{-1} x d x$, and recall that $\frac{d \tan ^{-1} x}{d x}=\frac{1}{1+x^{2}}$.
+(a) By applying integration by parts, find a constant $k$ such that
+
+$$
+\int x^{3} \tan ^{-1} x d x=k\left(x^{4} \tan ^{-1} x-\frac{1}{3} x^{3}+x\right)-k \int \frac{1}{1+x^{2}} d x
+$$
+
+Show your steps for full credit.
+(b) Using part (a), or otherwise, find the value of $I=\int_{0}^{1} x^{3} \tan ^{-1} x d x$.</div>
+<div class="answer-section" id="ans-17">
+<div class="answer-toggle" onclick="toggleAnswer('ans-17')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a)
+
+$$
+\begin{aligned}
+&amp; \quad \int x^{3} \tan ^{-1} x d x=\int \tan ^{-1} x d\left(\frac{x^{4}}{4}\right)=\frac{1}{4} x^{4} \tan ^{-1} x-\int \frac{x^{4}}{4} \frac{1}{1+x^{2}} d x \\
+&amp; =\frac{1}{4} x^{4} \tan ^{-1} x-\frac{1}{4} \int\left(x^{2}-1+\frac{1}{1+x^{2}}\right) d x=\frac{1}{4}\left(x^{4} \tan ^{-1} x-\frac{x^{3}}{3}+x\right)-\frac{1}{4} \int \frac{1}{1+x^{2}} d x \\
+&amp; k=\frac{1}{4}
+\end{aligned}
+$$
+
+(b)
+
+$$
+\begin{gathered}
+I=\int_{0}^{1} x^{3} \tan ^{-1} x d x=\frac{1}{4}\left[x^{4} \tan ^{-1} x-\frac{x^{3}}{3}+x-\tan ^{-1} x\right]_{0}^{1} \\
+=\frac{1}{4}\left[\frac{\pi}{4}-\frac{1}{3}+1-\frac{\pi}{4}\right]=\frac{1}{6}
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-18">
+<div class="exercise-header">
+<div><span class="exercise-id">Q18</span> <span class="exercise-lecture"> [12 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">series-convergence</span> <span class="tag">root-test</span> <span class="tag">alternating-series</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Determine whether the given series is convergent or divergent. Give reason to justify your answer for full credit.
+(a) $\sum_{n=0}^{\infty} \frac{(-1)^{n}}{\sqrt{n+1}}$
+[4 pts]
+(b) $\sum_{n=1}^{\infty} \frac{2^{n} 5^{n}}{n^{n}}$
+[4 pts]
+(c) $\sum_{n=1}^{\infty} \ln \frac{n}{2 n+3}$</div>
+<div class="answer-section" id="ans-18">
+<div class="answer-toggle" onclick="toggleAnswer('ans-18')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) Since $\frac{1}{\sqrt{n+1}}$ is a decreasing sequence with $\lim _{n \rightarrow \infty} \frac{1}{\sqrt{n+1}}=0$, the alternating series is convergent by the alternating series test.
+(b) The series is convergent by the root test, since
+
+$$
+\lim _{n \rightarrow \infty} \sqrt[n]{\frac{2^{n} 5^{n}}{n^{n}}}=\lim _{n \rightarrow \infty} \frac{2 \cdot 5}{n}=0<1
+$$
+
+(c) The series is divergent by the divergence test, $\lim _{n \rightarrow \infty} \ln \frac{n}{2 n+3}=\ln \frac{1}{2} \neq 0$.
+</div>
+</div>
+</div>
+</div>
+<div class="exercise" id="q-19">
+<div class="exercise-header">
+<div><span class="exercise-id">Q19</span> <span class="exercise-lecture"> [14 pts]</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"><span class="tag">power-series</span> <span class="tag">interval-of-convergence</span></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The function $f$ is defined by a power series as follows: $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{1}{(n+2) 4^{n}}(x-2)^{n}$.
+(a) Using Ratio Test or otherwise, find the largest open interval (open interval of convergence) in which the given power series converges absolutely. Show your work for full credit.
+(b) Determine whether the given power series is convergent or not at the boundary points of the open interval of convergence of $f(x)$.
+(c) Let $H(x)=(x-2)^{2} f(x)$. Find the derivative $H^{\prime}(4)$.</div>
+<div class="answer-section" id="ans-19">
+<div class="answer-toggle" onclick="toggleAnswer('ans-19')">
+<span class="toggle-icon">▶</span> Show Answer & Solution
+</div>
+<div class="answer-content">
+(a) By applying the Ratio Test:
+
+$$
+\begin{gathered}
+\lim _{n \rightarrow \infty} \frac{\left|\frac{(-1)^{n+2}}{(n+3)^{n+1}}(x-2)^{n+1}\right|}{\left|\frac{(-1)^{n+1}}{(n+2) 4^{n}}(x-2)^{n}\right|}<1 \\
+\lim _{n \rightarrow \infty} \frac{n+2}{4(n+3)}|x-2|<1 \Longleftrightarrow|x-2|<4
+\end{gathered}
+$$
+
+The open interval of convergence is $-2<x<6$.
+(b) At the endpoint $x=-2$, the series is
+
+$$
+\sum_{n=0}^{\infty} \frac{1}{n+2} \geq \sum_{n=1}^{\infty} \frac{1}{n}
+$$
+
+which is divergent.
+At the endpoint $x=6$, the series is
+
+$$
+\sum_{n=0}^{\infty} \frac{(-1)^{n}}{n+2}
+$$
+
+which is convergent by the alternating series test.
+(c)
+
+$$
+\begin{gathered}
+H^{\prime}(x)=\frac{d}{d x} \sum_{n=0}^{\infty} \frac{(-1)^{n}}{(n+2) 4^{n}}(x-2)^{n+2}=\sum_{n=0}^{\infty} \frac{(-1)^{n}}{4^{n}}(x-2)^{n+1} \\
+H^{\prime}(4)=\sum_{n=0}^{\infty}(-1)^{n} \frac{2^{n+1}}{4^{n}}=2 \cdot \frac{1}{1-\frac{-2}{4}}=\frac{4}{3}
+\end{gathered}
+$$
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) {
+        MathJax.typesetPromise([content]);
+    }
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

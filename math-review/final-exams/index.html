@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>MATH 1014 Final Exam Review</title>
+<script>
+var examDate = new Date(2026, 4, 18, 12, 30, 0);
+function updateCountdown() {
+    var now = new Date();
+    var diff = examDate - now;
+    if (diff <= 0) { document.getElementById('cd').innerHTML = '考试开始了！加油！'; return; }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var mins = Math.floor((diff % 3600000) / 60000);
+    var secs = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd').innerHTML =
+        '<span class="days-num">' + days + '</span><span class="unit">天</span><span class="sep"> </span>' +
+        String(hours).padStart(2,'0') + '<span class="unit">时</span><span class="sep"> </span>' +
+        String(mins).padStart(2,'0') + '<span class="unit">分</span><span class="sep"> </span>' +
+        String(secs).padStart(2,'0') + '<span class="unit">秒</span>';
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:960px}
+.countdown-banner{background:linear-gradient(135deg,#1f6feb22,#23863622);border:1px solid #30363d;border-radius:12px;padding:24px 28px;margin-bottom:24px}
+.countdown-banner .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.countdown-info{font-size:15px;color:#e6edf3;line-height:1.7}
+.countdown-info strong{color:#58a6ff;font-size:2em}
+.countdown-timer{font-size:clamp(28px,6vw,56px);color:#f0f6fc;font-weight:800;letter-spacing:2px;text-shadow:0 0 40px rgba(88,166,255,0.15)}
+.countdown-timer .days-num{font-size:2.5em;font-weight:900;color:#D81630;line-height:1}
+.countdown-timer .unit{font-size:clamp(14px,2.5vw,24px);font-weight:600;color:#8b949e;margin-left:4px}
+.countdown-timer .sep{color:#30363d;margin:0 2px}
+.summary-section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin-bottom:24px}
+.summary-section h3{font-size:16px;color:#f0f6fc;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.stat-card{text-align:center;padding:20px;background:#0d1117;border-radius:8px}
+.stat-card .num{font-size:22px;font-weight:700;color:#58a6ff}
+.stat-card .label{font-size:11px;color:#8b949e;margin-top:4px}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="#" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>MATH 1014 <small>Calculus II · Final Exams</small></h1>
+<a class="module-nav" href="#" style="font-weight:700">Home</a>
+<a class="module-nav" href="sample.html">Sample Final Exam<span class="count"></span></a>
+<a class="module-nav" href="2018.html">Spring 2018<span class="count"></span></a>
+<a class="module-nav" href="2019.html">Spring 2019<span class="count"></span></a>
+<a class="module-nav" href="2024.html">Spring 2024<span class="count"></span></a>
+<a class="module-nav" href="2025.html">Spring 2025<span class="count"></span></a>
+</div>
+<div class="content">
+
+<div class="countdown-banner">
+<div class="inner">
+<div class="countdown-info">
+<strong>MATH 1014 Final Exam</strong><br>
+May 18, 2026 · 12:30 PM · S H Ho Sports Hall
+</div>
+<div class="countdown-timer" id="cd">calculating...</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h3>Past Final Exams</h3>
+<div class="stat-grid">
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='sample.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Sample Final Exam</div>
+<div class="label">20 questions</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='2018.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Spring 2018</div>
+<div class="label">19 questions</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='2019.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Spring 2019</div>
+<div class="label">19 questions</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='2024.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Spring 2024</div>
+<div class="label">18 questions</div>
+</div>
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='2025.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Spring 2025</div>
+<div class="label">19 questions</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h3>Total Coverage</h3>
+<div class="stat-grid">
+<div class="stat-card"><div class="num">95</div><div class="label">Total Questions</div></div>
+<div class="stat-card"><div class="num">5</div><div class="label">Exam Years</div></div>
+<div class="stat-card"><div class="num">8</div><div class="label">Knowledge Modules</div></div>
+</div>
+</div>
+
+<p style="color:#8b949e;font-size:12px;text-align:center;margin-top:32px">
+Questions from HKUST MATH1014 past final exams (2018-2025).<br>
+Tags follow the same module classification as the <a href="/math-review/" style="color:#58a6ff">MATH 1014 Review</a> site.
+</p>
+
+</div>
+<script>
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

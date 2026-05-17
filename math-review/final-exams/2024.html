@@ -48,6 +48,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .answer-toggle.open .toggle-icon{transform:rotate(90deg)}
 .answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
 .answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:#0d1117}
 ::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
@@ -110,6 +115,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) White
 (D) Yellow
 (E) None of the others</div>
+<div class="codebox">
+<pre id="latex-q-1">Choose answer (C) for this question. (This is the White version of the examination paper.)
+(A) Green
+(B) Orange
+(C) White
+(D) Yellow
+(E) None of the others</pre>
+<button onclick="copyLaTeX('q-1')" id="btn-q-1">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-1">
 <div class="answer-toggle" onclick="toggleAnswer('ans-1')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -133,6 +147,16 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) $\frac{4}{3}$
 (D) $\frac{5}{3}$
 (E) $\frac{8}{3}$</div>
+<div class="codebox">
+<pre id="latex-q-2">Find the area of the region enclosed by the graphs of the functions $y=3 \sin 2 x$ and $y=\sin x \cos ^{2} x$, where $0 \leq x \leq \frac{\pi}{2}$.
+![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-02.jpg?height=526&amp;width=565&amp;top_left_y=1425&amp;top_left_x=776)
+(A) 1
+(B) 2
+(C) $\frac{4}{3}$
+(D) $\frac{5}{3}$
+(E) $\frac{8}{3}$</pre>
+<button onclick="copyLaTeX('q-2')" id="btn-q-2">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-2">
 <div class="answer-toggle" onclick="toggleAnswer('ans-2')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -161,6 +185,21 @@ Find the value of the integral $\int_{a}^{b} f(x) d x$.
 (C) 15
 (D) 18
 (E) 21</div>
+<div class="codebox">
+<pre id="latex-q-3">The left-endpoint Riemann sum on $n$ subintervals of equal length for an integral $\int_{a}^{b} f(x) d x$ is given by
+
+$$
+L_{n}=\frac{9(n-1)(4 n-3)}{2 n^{2}} .
+$$
+
+Find the value of the integral $\int_{a}^{b} f(x) d x$.
+(A) 9
+(B) 12
+(C) 15
+(D) 18
+(E) 21</pre>
+<button onclick="copyLaTeX('q-3')" id="btn-q-3">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-3">
 <div class="answer-toggle" onclick="toggleAnswer('ans-3')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -183,6 +222,15 @@ Find the value of the integral $\int_{a}^{b} f(x) d x$.
 (C) $2 \ln 3$
 (D) $\frac{2}{3} \ln 3$
 (E) divergent</div>
+<div class="codebox">
+<pre id="latex-q-4">Evaluate the improper integral $\int_{1}^{\infty} \frac{2}{x\left(x^{2}+2\right)} d x$.
+(A) $\frac{1}{3} \ln 3$
+(B) $\frac{1}{2} \ln 3$
+(C) $2 \ln 3$
+(D) $\frac{2}{3} \ln 3$
+(E) divergent</pre>
+<button onclick="copyLaTeX('q-4')" id="btn-q-4">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-4">
 <div class="answer-toggle" onclick="toggleAnswer('ans-4')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -205,6 +253,15 @@ Find the value of the integral $\int_{a}^{b} f(x) d x$.
 (C) 4
 (D) 5
 (E) does not exist</div>
+<div class="codebox">
+<pre id="latex-q-5">Find the constant $C$ for which the improper integral $\int_{0}^{\infty}\left(\frac{4 x^{2}-1}{2 x^{3}+3}-\frac{C x+1}{x^{2}+1}\right) d x$ is convergent.
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) does not exist</pre>
+<button onclick="copyLaTeX('q-5')" id="btn-q-5">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-5">
 <div class="answer-toggle" onclick="toggleAnswer('ans-5')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -228,6 +285,16 @@ Find the value of the integral $\int_{a}^{b} f(x) d x$.
 (C) $\frac{3 \pi^{2}}{2}$
 (D) $\frac{2 \pi^{2}}{3}$
 (E) $\infty$</div>
+<div class="codebox">
+<pre id="latex-q-6">The area under the graph of $y=\frac{2}{\sqrt{x^{2}+4}}$, where $0 \leq x<\infty$, is rotated about the $x$-axis to form a solid of revolution. Find the volume of the solid.
+![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-04.jpg?height=489&amp;width=531&amp;top_left_y=354&amp;top_left_x=794)
+(A) $\frac{\pi^{2}}{2}$
+(B) $\pi^{2}$
+(C) $\frac{3 \pi^{2}}{2}$
+(D) $\frac{2 \pi^{2}}{3}$
+(E) $\infty$</pre>
+<button onclick="copyLaTeX('q-6')" id="btn-q-6">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-6">
 <div class="answer-toggle" onclick="toggleAnswer('ans-6')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -253,6 +320,18 @@ Apply Simpson's rule on four subintervals $S_{4}$ to find an approximate value f
 (C) 12
 (D) 14
 (E) 16</div>
+<div class="codebox">
+<pre id="latex-q-7">A mass is moved along the $x$-axis by a continuous force $y=F(x)$ (in newtons) with its graph shown below.
+![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-04.jpg?height=463&amp;width=898&amp;top_left_y=1573&amp;top_left_x=612)
+
+Apply Simpson's rule on four subintervals $S_{4}$ to find an approximate value for the work done (in joules) by the force over the displacement interval $[0,8]$.
+(A) 8
+(B) 10
+(C) 12
+(D) 14
+(E) 16</pre>
+<button onclick="copyLaTeX('q-7')" id="btn-q-7">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-7">
 <div class="answer-toggle" onclick="toggleAnswer('ans-7')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -277,6 +356,17 @@ Apply Simpson's rule on four subintervals $S_{4}$ to find an approximate value f
 (C) 2450 J
 (D) 2675 J
 (E) 3120 J</div>
+<div class="codebox">
+<pre id="latex-q-8">A water trough has a semicircular cross section with a radius of 1 m and a length of 3 m . Suppose that the trough contains water up to a depth of $1-\frac{\sqrt{3}}{2} \mathrm{~m}$. How much work is required to pump all water out of the trough?
+![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-05.jpg?height=285&amp;width=456&amp;top_left_y=376&amp;top_left_x=831)
+(Water density: $1000 \mathrm{~kg} / \mathrm{m}^{3}$, gravity acceleration: $g=9.8 \mathrm{~m} / \mathrm{s}^{2}$.)
+(A) 1225 J
+(B) 1820 J
+(C) 2450 J
+(D) 2675 J
+(E) 3120 J</pre>
+<button onclick="copyLaTeX('q-8')" id="btn-q-8">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-8">
 <div class="answer-toggle" onclick="toggleAnswer('ans-8')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -299,6 +389,15 @@ Apply Simpson's rule on four subintervals $S_{4}$ to find an approximate value f
 (C) 4
 (D) 5
 (E) 6</div>
+<div class="codebox">
+<pre id="latex-q-9">Find the arc length of the curve defined by the polar equation $r=2 \sec \theta$, where $0 \leq \theta \leq \frac{\pi}{4}$.
+(A) 2
+(B) 3
+(C) 4
+(D) 5
+(E) 6</pre>
+<button onclick="copyLaTeX('q-9')" id="btn-q-9">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-9">
 <div class="answer-toggle" onclick="toggleAnswer('ans-9')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -327,6 +426,21 @@ How many horizontal tangent line does the curve have?
 (C) 3
 (D) 4
 (E) 5</div>
+<div class="codebox">
+<pre id="latex-q-10">A curve in the $x y$-plane is defined by the polar equation
+
+$$
+r=\sin ^{2} \theta+2 \sin \theta .
+$$
+
+How many horizontal tangent line does the curve have?
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5</pre>
+<button onclick="copyLaTeX('q-10')" id="btn-q-10">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-10">
 <div class="answer-toggle" onclick="toggleAnswer('ans-10')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -349,6 +463,15 @@ How many horizontal tangent line does the curve have?
 (C) $\int_{0}^{\infty} \frac{1}{\sqrt{x^{3}+2 x}} d x$
 (D) $\int_{1}^{\infty} \frac{\sin ^{2}(\ln x)}{x^{2}} d x$
 (E) None</div>
+<div class="codebox">
+<pre id="latex-q-11">Which of the following improper integrals is divergent?
+(A) $\quad \int_{1}^{\infty} \frac{e^{-2 x}}{x} d x$
+(B) $\int_{2}^{\infty} \frac{1}{x(\ln x)^{2}} d x$
+(C) $\int_{0}^{\infty} \frac{1}{\sqrt{x^{3}+2 x}} d x$
+(D) $\int_{1}^{\infty} \frac{\sin ^{2}(\ln x)}{x^{2}} d x$
+(E) None</pre>
+<button onclick="copyLaTeX('q-11')" id="btn-q-11">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-11">
 <div class="answer-toggle" onclick="toggleAnswer('ans-11')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -376,6 +499,20 @@ $$
 (C) 5
 (D) 6
 (E) 8</div>
+<div class="codebox">
+<pre id="latex-q-12">Find the limit of the infinite sequence which is recursively defined by
+
+$$
+a_{1}=1, \quad a_{2}=\sqrt{12+a_{1}}, \quad \ldots, \quad a_{n+1}=\sqrt{12+a_{n}}, \quad n=1,2,3, \ldots .
+$$
+
+(A) 3
+(B) 4
+(C) 5
+(D) 6
+(E) 8</pre>
+<button onclick="copyLaTeX('q-12')" id="btn-q-12">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-12">
 <div class="answer-toggle" onclick="toggleAnswer('ans-12')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -398,6 +535,15 @@ $$
 (C) 16
 (D) 17
 (E) 18</div>
+<div class="codebox">
+<pre id="latex-q-13">Find the sum of the series $\sum_{n=1}^{\infty} \frac{2 \cdot 3^{n+1}-2^{n}}{4^{n}}$.
+(A) 14
+(B) 15
+(C) 16
+(D) 17
+(E) 18</pre>
+<button onclick="copyLaTeX('q-13')" id="btn-q-13">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-13">
 <div class="answer-toggle" onclick="toggleAnswer('ans-13')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -424,6 +570,19 @@ $$
 (C) Only (ii), and (iii) are convergent.
 (D) Only (i), (iii) and (iv) are convergent.
 (E) All are convergent.</div>
+<div class="codebox">
+<pre id="latex-q-14">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{\sin \frac{1}{n}}{n}$
+(ii) $\sum_{n=1}^{\infty} \frac{\tan ^{-1} n}{n}$
+(iii) $\sum_{n=1}^{\infty} \frac{\sin n}{n^{2}+4}$
+(iv) $\sum_{n=1}^{\infty} \frac{\pi^{n}}{\left(1+\frac{1}{n}\right)^{2 n}}$
+(A) Only (i) and (ii) are convergent.
+(B) Only (i) and (iii) are convergent.
+(C) Only (ii), and (iii) are convergent.
+(D) Only (i), (iii) and (iv) are convergent.
+(E) All are convergent.</pre>
+<button onclick="copyLaTeX('q-14')" id="btn-q-14">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-14">
 <div class="answer-toggle" onclick="toggleAnswer('ans-14')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -446,6 +605,15 @@ $$
 (C) 36
 (D) 48
 (E) 62</div>
+<div class="codebox">
+<pre id="latex-q-15">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at $a=0$ ) of the function $f(x)=\frac{\ln (1+2 x)}{1-3 x}$.
+(A) 40
+(B) 54
+(C) 36
+(D) 48
+(E) 62</pre>
+<button onclick="copyLaTeX('q-15')" id="btn-q-15">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-15">
 <div class="answer-toggle" onclick="toggleAnswer('ans-15')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -468,6 +636,15 @@ $$
 (C) $86 e$
 (D) $75 e$
 (E) $112 e$</div>
+<div class="codebox">
+<pre id="latex-q-16">Use the Maclaurin polynomial of $x e^{\cos \frac{x}{5}}$ of degree 3 (i.e., Taylor polynomial of degree 3 centered at $a=0$ ) to find an approximate value of the integral $\int_{0}^{1} 200 x e^{\cos \frac{x}{5}} d x$.
+(A) $63 e$
+(B) $99 e$
+(C) $86 e$
+(D) $75 e$
+(E) $112 e$</pre>
+<button onclick="copyLaTeX('q-16')" id="btn-q-16">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-16">
 <div class="answer-toggle" onclick="toggleAnswer('ans-16')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -488,6 +665,13 @@ $$
 (a) Using the substitution $u=e^{2 x}$ and integration by parts, or otherwise, evaluate the improper integral $\int_{0}^{\infty} f(x) d x$.
 (b) If the area under the graph of $f$ is rotated about the $y$-axis to generated a solid of revolution, is the volume of the solid finite? Justify your answer for full credit.
 ![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-08.jpg?height=476&amp;width=469&amp;top_left_y=2067&amp;top_left_x=1416)</div>
+<div class="codebox">
+<pre id="latex-q-17">Let $f(x)=\frac{\ln \left(1+e^{2 x}\right)}{e^{2 x}}$, where $0 \leq x<\infty$.
+(a) Using the substitution $u=e^{2 x}$ and integration by parts, or otherwise, evaluate the improper integral $\int_{0}^{\infty} f(x) d x$.
+(b) If the area under the graph of $f$ is rotated about the $y$-axis to generated a solid of revolution, is the volume of the solid finite? Justify your answer for full credit.
+![](https://cdn.mathpix.com/cropped/9db39384-013f-491a-9c82-1c9ba2dff317-08.jpg?height=476&amp;width=469&amp;top_left_y=2067&amp;top_left_x=1416)</pre>
+<button onclick="copyLaTeX('q-17')" id="btn-q-17">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-17">
 <div class="answer-toggle" onclick="toggleAnswer('ans-17')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -538,6 +722,22 @@ as $e^{2 x}=1+2 x+(2 x)^{2} / 2!+\cdots>(2 x)^{4} / 4!$ for $x \geq 0$. Or show 
 
 Show your steps for full credit.
 (c) Find the value of $f^{\prime}(4)$.</div>
+<div class="codebox">
+<pre id="latex-q-18">Determine whether the given series is convergent or divergent. Give reason to justify your answer for full credit.
+(a) $\sum_{n=1}^{\infty} \frac{2^{n}+3^{n}}{3^{n}+4^{n}}$.
+[4 pts]
+(b) $\sum_{n=1}^{\infty} \frac{(2 n)!}{n^{n}}$
+[4 pts]
+(c) $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n^{2}+\sin ^{2} n}$
+[4 pts]
+19. $[14 p t s]$ Let $f$ be defined by the power series $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{(x-2)^{n+2}}{(n+1) 8^{n}}$.
+(a) Find the 4 -th order derivative $f^{\prime \prime \prime \prime}(2)$.
+(b) Determine the interval of convergence of the power series.
+
+Show your steps for full credit.
+(c) Find the value of $f^{\prime}(4)$.</pre>
+<button onclick="copyLaTeX('q-18')" id="btn-q-18">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-18">
 <div class="answer-toggle" onclick="toggleAnswer('ans-18')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -578,6 +778,31 @@ function toggleAnswer(id) {
     if (isOpen) {
         MathJax.typesetPromise([content]);
     }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var prob = ex.querySelector('.exercise-problem');
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
 }
 function toggleMobileMenu() {
     var s = document.getElementById('mobileSidebar');

@@ -48,6 +48,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .answer-toggle.open .toggle-icon{transform:rotate(90deg)}
 .answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
 .answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:#0d1117}
 ::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
@@ -110,6 +115,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) White
 (d) Yellow
 (e) None of the previous</div>
+<div class="codebox">
+<pre id="latex-q-1">What is the colour version of your exam paper? (Read the top left corner of the cover page!) Make sure that you have also written and marked your ID number correctly in the I.D. No. Box at the top middle of the MC answer sheet.
+(a) Green
+(b) Orange
+(c) White
+(d) Yellow
+(e) None of the previous</pre>
+<button onclick="copyLaTeX('q-1')" id="btn-q-1">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-1">
 <div class="answer-toggle" onclick="toggleAnswer('ans-1')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -132,6 +146,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) 1
 (d) $\frac{4}{3}$
 (e) $\frac{5}{3}$</div>
+<div class="codebox">
+<pre id="latex-q-2">Evaluate the integral $\int_{0}^{\frac{\pi}{2}} 5 \sin ^{2} x \cos ^{3} x d x$.
+(a) $\frac{1}{3}$
+(b) $\frac{2}{3}$
+(c) 1
+(d) $\frac{4}{3}$
+(e) $\frac{5}{3}$</pre>
+<button onclick="copyLaTeX('q-2')" id="btn-q-2">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-2">
 <div class="answer-toggle" onclick="toggleAnswer('ans-2')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -155,6 +178,16 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $3 \pi$
 (d) $4 \pi$
 (e) $6 \pi$</div>
+<div class="codebox">
+<pre id="latex-q-3">Find the area enclosed by the curve defined by the polar equation $r=\sqrt{2+4 \cos ^{2}(2 \theta)}$, where $0 \leq \theta \leq 2 \pi$.
+![](https://cdn.mathpix.com/cropped/cdc24773-e576-4579-9c15-258fed398d12-02.jpg?height=561&amp;width=597&amp;top_left_y=1868&amp;top_left_x=760)
+(a) $\pi$
+(b) $2 \pi$
+(c) $3 \pi$
+(d) $4 \pi$
+(e) $6 \pi$</pre>
+<button onclick="copyLaTeX('q-3')" id="btn-q-3">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-3">
 <div class="answer-toggle" onclick="toggleAnswer('ans-3')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -178,6 +211,16 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $5 \pi$
 (d) $6 \pi$
 (e) $7 \pi$</div>
+<div class="codebox">
+<pre id="latex-q-4">The area under the graph given below over the interval $[1,5]$ is rotated about the $x$-axis to generate a solid of revolution. The volume of the solid thus obtained can be expressed as a definite integral. Which of the following is the approximate value of this volume, found by estimating the volume integral by Simpson's Rule on four subintervals?
+![](https://cdn.mathpix.com/cropped/cdc24773-e576-4579-9c15-258fed398d12-03.jpg?height=485&amp;width=704&amp;top_left_y=420&amp;top_left_x=708)
+(a) $3 \pi$
+(b) $4 \pi$
+(c) $5 \pi$
+(d) $6 \pi$
+(e) $7 \pi$</pre>
+<button onclick="copyLaTeX('q-4')" id="btn-q-4">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-4">
 <div class="answer-toggle" onclick="toggleAnswer('ans-4')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -201,6 +244,16 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $\pi e^{4}-2 \pi$
 (d) $\pi \ln 4$
 (e) $2 \pi \ln 4$</div>
+<div class="codebox">
+<pre id="latex-q-5">The area enclosed by the curves defined by the equations $y=2 \ln x, x=0, y=0$ and $y=4$ respectively is rotated about the $y$-axis to generate a solid of revolution. Find the volume of the solid.
+![](https://cdn.mathpix.com/cropped/cdc24773-e576-4579-9c15-258fed398d12-03.jpg?height=483&amp;width=515&amp;top_left_y=1430&amp;top_left_x=804)
+(a) $\pi e^{4}-\pi$
+(b) $2 \pi e^{4}-\pi$
+(c) $\pi e^{4}-2 \pi$
+(d) $\pi \ln 4$
+(e) $2 \pi \ln 4$</pre>
+<button onclick="copyLaTeX('q-5')" id="btn-q-5">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-5">
 <div class="answer-toggle" onclick="toggleAnswer('ans-5')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -223,6 +276,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $\ln 4$
 (d) $\ln 5$
 (e) $\ln 6$</div>
+<div class="codebox">
+<pre id="latex-q-6">Evaluate the improper integral $\int_{0}^{\infty} \frac{2}{(x+2)(x+4)} d x$.
+(a) $\ln 2$
+(b) $\ln 3$
+(c) $\ln 4$
+(d) $\ln 5$
+(e) $\ln 6$</pre>
+<button onclick="copyLaTeX('q-6')" id="btn-q-6">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-6">
 <div class="answer-toggle" onclick="toggleAnswer('ans-6')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -245,6 +307,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $\pi$
 (d) $\frac{2 \pi}{3}$
 (e) divergent</div>
+<div class="codebox">
+<pre id="latex-q-7">Evaluate the improper integral $\int_{2}^{\infty} \frac{2}{x \sqrt{x^{2}-4}} d x$.
+(a) $\frac{\pi}{4}$
+(b) $\frac{\pi}{2}$
+(c) $\pi$
+(d) $\frac{2 \pi}{3}$
+(e) divergent</pre>
+<button onclick="copyLaTeX('q-7')" id="btn-q-7">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-7">
 <div class="answer-toggle" onclick="toggleAnswer('ans-7')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -267,6 +338,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $\int_{1}^{\infty} \frac{\ln x}{e^{x}} d x$
 (d) $\int_{1}^{\infty} \frac{x}{x^{2}+e^{-x}} d x$
 (e) None</div>
+<div class="codebox">
+<pre id="latex-q-8">Which of the following improper integrals is divergent?
+(a) $\quad \int_{1}^{\infty} \frac{e^{\sin x}}{x^{2}} d x$
+(b) $\int_{1}^{\infty} e^{-x^{3}} d x$
+(c) $\int_{1}^{\infty} \frac{\ln x}{e^{x}} d x$
+(d) $\int_{1}^{\infty} \frac{x}{x^{2}+e^{-x}} d x$
+(e) None</pre>
+<button onclick="copyLaTeX('q-8')" id="btn-q-8">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-8">
 <div class="answer-toggle" onclick="toggleAnswer('ans-8')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -294,6 +374,20 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) (ii), (iii) and (iv)
 (d) (iv) and (v)
 (e) (i),(ii) and (v)</div>
+<div class="codebox">
+<pre id="latex-q-9">Which of the following infinite sequences are convergent as $n \rightarrow \infty$ ?
+(i) $\left(\frac{\pi}{e}\right)^{n}$,
+(ii) $\frac{10^{n}}{n!}$,
+(iii) $\sqrt{n+2}-\sqrt{n}$,
+(iv) $\frac{(-1)^{n} \ln n}{n}$,
+(v) $\frac{(2 n)!}{(n!)^{2}}$
+(a) (i) and (ii)
+(b) (ii) and (iii)
+(c) (ii), (iii) and (iv)
+(d) (iv) and (v)
+(e) (i),(ii) and (v)</pre>
+<button onclick="copyLaTeX('q-9')" id="btn-q-9">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-9">
 <div class="answer-toggle" onclick="toggleAnswer('ans-9')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -316,6 +410,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) 22
 (d) 24
 (e) 26</div>
+<div class="codebox">
+<pre id="latex-q-10">Find the sum of the series $\sum_{n=1}^{\infty} \frac{8\left(3^{n+1}\right)+2^{n+2}}{6^{n}}$.
+(a) 18
+(b) 20
+(c) 22
+(d) 24
+(e) 26</pre>
+<button onclick="copyLaTeX('q-10')" id="btn-q-10">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-10">
 <div class="answer-toggle" onclick="toggleAnswer('ans-10')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -338,6 +441,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) 2
 (d) 3
 (e) 4</div>
+<div class="codebox">
+<pre id="latex-q-11">Find the sum of the series: $\sum_{n=1}^{\infty}\left(4^{\frac{n}{n+1}}-4^{\frac{n-1}{n}}\right)$.
+(a) 0
+(b) 1
+(c) 2
+(d) 3
+(e) 4</pre>
+<button onclick="copyLaTeX('q-11')" id="btn-q-11">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-11">
 <div class="answer-toggle" onclick="toggleAnswer('ans-11')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -364,6 +476,19 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) Only (iii) and (iv) are convergent.
 (d) Only (i), (ii), and (iii) are convergent.
 (e) All are convergent.</div>
+<div class="codebox">
+<pre id="latex-q-12">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\sqrt[n]{3}}$
+(ii) $\sum_{n=1}^{\infty} \frac{2^{n} n!}{(2 n)!}$
+(iii) $\sum_{n=1}^{\infty} \frac{\sin (n!)}{n^{2}}$
+(iv) $\sum_{n=1}^{\infty} \ln \frac{n}{n+1}$
+(a) Only (i) and (ii) are convergent.
+(b) Only (ii) and (iii) are convergent.
+(c) Only (iii) and (iv) are convergent.
+(d) Only (i), (ii), and (iii) are convergent.
+(e) All are convergent.</pre>
+<button onclick="copyLaTeX('q-12')" id="btn-q-12">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-12">
 <div class="answer-toggle" onclick="toggleAnswer('ans-12')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -386,6 +511,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) 1
 (d) 2
 (e) -2</div>
+<div class="codebox">
+<pre id="latex-q-13">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at 0 ) of the function $f(x)=\ln \left(1-2 x^{2}\right)$.
+(a) 4
+(b) -4
+(c) 1
+(d) 2
+(e) -2</pre>
+<button onclick="copyLaTeX('q-13')" id="btn-q-13">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-13">
 <div class="answer-toggle" onclick="toggleAnswer('ans-13')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -408,6 +542,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $\langle 3,3,-3\rangle$
 (d) $\langle 4,4,-4\rangle$
 (e) $\langle 5,5,-5\rangle$</div>
+<div class="codebox">
+<pre id="latex-q-14">Find the vector projection (orthogonal projection) of the vector $\langle 6,6,3\rangle$ onto the vector $\langle 1,1,-1\rangle$.
+(a) $\langle 1,1,-1\rangle$
+(b) $\langle 2,2,-2\rangle$
+(c) $\langle 3,3,-3\rangle$
+(d) $\langle 4,4,-4\rangle$
+(e) $\langle 5,5,-5\rangle$</pre>
+<button onclick="copyLaTeX('q-14')" id="btn-q-14">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-14">
 <div class="answer-toggle" onclick="toggleAnswer('ans-14')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -430,6 +573,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (c) $2 \sqrt{2}$
 (d) $3 \sqrt{2}$
 (e) $\frac{3 \sqrt{2}}{2}$</div>
+<div class="codebox">
+<pre id="latex-q-15">Using the cross product of suitable vectors or otherwise, find the area of the triangle $\triangle A B C$ with vertex coordinates given by $A:(4,2,2), B:(3,2,1)$ and $C:(2,1,1)$.
+(a) $\frac{\sqrt{3}}{2}$
+(b) $\sqrt{3}$
+(c) $2 \sqrt{2}$
+(d) $3 \sqrt{2}$
+(e) $\frac{3 \sqrt{2}}{2}$</pre>
+<button onclick="copyLaTeX('q-15')" id="btn-q-15">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-15">
 <div class="answer-toggle" onclick="toggleAnswer('ans-15')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -450,6 +602,13 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (a) Find the volume of this solid.
 ![](https://cdn.mathpix.com/cropped/cdc24773-e576-4579-9c15-258fed398d12-07.jpg?height=606&amp;width=640&amp;top_left_y=470&amp;top_left_x=1242)
 (b) Suppose that the area is rotated about the $x$-axis to generate another solid of revolution. Explain briefly why the volume of the solid thus obtained must be a finite value.</div>
+<div class="codebox">
+<pre id="latex-q-16">The area under the graph of the function $y=x^{2} e^{-x^{2}}$ over the interval $0 \leq x<\infty$ is rotated about the $y$-axis to generated a solid of revolution.
+(a) Find the volume of this solid.
+![](https://cdn.mathpix.com/cropped/cdc24773-e576-4579-9c15-258fed398d12-07.jpg?height=606&amp;width=640&amp;top_left_y=470&amp;top_left_x=1242)
+(b) Suppose that the area is rotated about the $x$-axis to generate another solid of revolution. Explain briefly why the volume of the solid thus obtained must be a finite value.</pre>
+<button onclick="copyLaTeX('q-16')" id="btn-q-16">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-16">
 <div class="answer-toggle" onclick="toggleAnswer('ans-16')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -489,6 +648,17 @@ i.e., $x^{4} e^{-2 x^{2}}<\frac{3}{4 x^{2}}$. Since $\int_{1}^{\infty} \frac{1}{
 $$
 a_{1}=2, \quad a_{n+1}=6-\frac{4}{a_{n}} .
 $$</div>
+<div class="codebox">
+<pre id="latex-q-17">Find the limit of the infinite sequence.
+(a) $\lim _{n \rightarrow \infty} \cos \frac{n \pi}{2 n+1}$. (No partial credit.)
+(b) $\lim _{n \rightarrow \infty} \frac{\ln n}{\ln (3 n)}$. (No partial credit.)
+(c) $\lim _{n \rightarrow \infty} a_{n}$, where $a_{n}$ is an increasing and bounded sequence defined recursively by
+
+$$
+a_{1}=2, \quad a_{n+1}=6-\frac{4}{a_{n}} .
+$$</pre>
+<button onclick="copyLaTeX('q-17')" id="btn-q-17">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-17">
 <div class="answer-toggle" onclick="toggleAnswer('ans-17')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -534,6 +704,16 @@ Since $a_{1}=2>0$, the limit of the increasing sequence is $L=3+\sqrt{5}$.
 [3 pts]
 (c) $\sum_{n=1}^{\infty}\left(\frac{n}{2 n+1}\right)^{n^{2}}$
 [4 pts]</div>
+<div class="codebox">
+<pre id="latex-q-18">Determine whether the given series is convergent or divergent. Give brief reason to justify your answer for full credit.
+(a) $\sum_{n=0}^{\infty} \sqrt{\frac{n}{n^{2}+1}}$
+[3 pts]
+(b) $\sum_{n=1}^{\infty} e^{-2 n} \sin n$
+[3 pts]
+(c) $\sum_{n=1}^{\infty}\left(\frac{n}{2 n+1}\right)^{n^{2}}$
+[4 pts]</pre>
+<button onclick="copyLaTeX('q-18')" id="btn-q-18">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-18">
 <div class="answer-toggle" onclick="toggleAnswer('ans-18')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -575,6 +755,14 @@ the series is convergent.
 [6 pts]
 (b) Determine whether the given power series is convergent or not at the endpoints of the open interval of convergence of $f(x)$.
 (c) Evaluate the integral $\int_{2}^{3} f(x) d x$.</div>
+<div class="codebox">
+<pre id="latex-q-19">A function is defined by a power series as follows: $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{2 n+1}{4^{2 n}}(x-2)^{2 n}$.
+(a) Find the largest open interval (open interval of convergence) in which the given power series converges absolutely. Show your work for full credit.
+[6 pts]
+(b) Determine whether the given power series is convergent or not at the endpoints of the open interval of convergence of $f(x)$.
+(c) Evaluate the integral $\int_{2}^{3} f(x) d x$.</pre>
+<button onclick="copyLaTeX('q-19')" id="btn-q-19">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-19">
 <div class="answer-toggle" onclick="toggleAnswer('ans-19')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -614,6 +802,31 @@ function toggleAnswer(id) {
     if (isOpen) {
         MathJax.typesetPromise([content]);
     }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var prob = ex.querySelector('.exercise-problem');
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
 }
 function toggleMobileMenu() {
     var s = document.getElementById('mobileSidebar');

@@ -48,6 +48,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .answer-toggle.open .toggle-icon{transform:rotate(90deg)}
 .answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
 .answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
 ::-webkit-scrollbar{width:8px}
 ::-webkit-scrollbar-track{background:#0d1117}
 ::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
@@ -110,6 +115,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) White
 (D) Yellow
 (E) None of the others</div>
+<div class="codebox">
+<pre id="latex-q-1">This is the White version of the examination paper. Choose answer (C) for this question.
+(A) Green
+(B) Orange
+(C) White
+(D) Yellow
+(E) None of the others</pre>
+<button onclick="copyLaTeX('q-1')" id="btn-q-1">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-1">
 <div class="answer-toggle" onclick="toggleAnswer('ans-1')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -132,6 +146,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) 18
 (D) 20
 (E) 22</div>
+<div class="codebox">
+<pre id="latex-q-2">Evaluate the improper integral $\int_{2}^{3} \frac{3 x}{\sqrt{x-2}} d x$.
+(A) 14
+(B) 16
+(C) 18
+(D) 20
+(E) 22</pre>
+<button onclick="copyLaTeX('q-2')" id="btn-q-2">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-2">
 <div class="answer-toggle" onclick="toggleAnswer('ans-2')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -154,6 +177,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) $2-2 \ln 2$
 (D) $2+2 \ln 2$
 (E) divergent</div>
+<div class="codebox">
+<pre id="latex-q-3">Evaluate the improper integral $\int_{1}^{\infty} \frac{2}{x^{2}(x+1)} d x$.
+(A) $2-\ln 2$
+(B) $2+\ln 2$
+(C) $2-2 \ln 2$
+(D) $2+2 \ln 2$
+(E) divergent</pre>
+<button onclick="copyLaTeX('q-3')" id="btn-q-3">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-3">
 <div class="answer-toggle" onclick="toggleAnswer('ans-3')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -176,6 +208,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) $\frac{13}{10}$
 (D) $\frac{9}{5}$
 (E) $\frac{11}{5}$</div>
+<div class="codebox">
+<pre id="latex-q-4">Apply Simpson's Rule with four subintervals to approximate the integral $\int_{0}^{2} \frac{1}{1+x} d x=\ln 3$ to find a rational number to approximate $\ln 3$.
+(A) $\frac{9}{10}$
+(B) $\frac{11}{10}$
+(C) $\frac{13}{10}$
+(D) $\frac{9}{5}$
+(E) $\frac{11}{5}$</pre>
+<button onclick="copyLaTeX('q-4')" id="btn-q-4">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-4">
 <div class="answer-toggle" onclick="toggleAnswer('ans-4')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -198,6 +239,15 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) $3 \pi$
 (D) $4 \pi$
 (E) $5 \pi$</div>
+<div class="codebox">
+<pre id="latex-q-5">Suppose the area under the graph of $y=2 \sec x \sqrt{\tan x}$ over the interval $0 \leq x \leq \frac{\pi}{4}$ is rotated about the $x$-axis to form a solid of revolution. Find the volume of the solid.
+(A) $\pi$
+(B) $2 \pi$
+(C) $3 \pi$
+(D) $4 \pi$
+(E) $5 \pi$</pre>
+<button onclick="copyLaTeX('q-5')" id="btn-q-5">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-5">
 <div class="answer-toggle" onclick="toggleAnswer('ans-5')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -221,6 +271,16 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border
 (C) $\frac{\pi}{2}$
 (D) $\frac{3 \pi}{2}$
 (E) $\frac{2 \pi}{3}$</div>
+<div class="codebox">
+<pre id="latex-q-6">The area under the graph of $y=2 \sin ^{2}(\pi x)$, where $0 \leq x \leq 1$, is rotated about the $y$-axis to form a solid of revolution. Find the volume of the solid.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-03.jpg?height=486&amp;width=521&amp;top_left_y=1669&amp;top_left_x=799)
+(A) $\pi$
+(B) $2 \pi$
+(C) $\frac{\pi}{2}$
+(D) $\frac{3 \pi}{2}$
+(E) $\frac{2 \pi}{3}$</pre>
+<button onclick="copyLaTeX('q-6')" id="btn-q-6">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-6">
 <div class="answer-toggle" onclick="toggleAnswer('ans-6')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -246,6 +306,18 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) 12
 (D) 13
 (E) 14</div>
+<div class="codebox">
+<pre id="latex-q-7">A particle is moved along the $x$-axis by a continuous force $y=F(x)$ (in newtons) with its graph shown below.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-04.jpg?height=467&amp;width=903&amp;top_left_y=281&amp;top_left_x=608)
+
+Find the work done (in joules) by the force over the displacement interval $[0,6]$.
+(A) 10
+(B) 11
+(C) 12
+(D) 13
+(E) 14</pre>
+<button onclick="copyLaTeX('q-7')" id="btn-q-7">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-7">
 <div class="answer-toggle" onclick="toggleAnswer('ans-7')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -270,6 +342,17 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) $24 \rho g$
 (D) $32 \rho g$
 (E) $36 \rho g$</div>
+<div class="codebox">
+<pre id="latex-q-8">The cross sections of a water trough with length $4 \sqrt{3} \mathrm{~m}$ are equilateral triangles with side length $2 \sqrt{3} \mathrm{~m}$. Suppose that the trough is filled with water up to a depth of 1.5 m . How much work (in joules) is required to pump all water out of the trough?
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-04.jpg?height=296&amp;width=488&amp;top_left_y=1675&amp;top_left_x=799)
+(Water density: $\rho \mathrm{kg} / \mathrm{m}^{3}$, gravity acceleration: $g \mathrm{~m} / \mathrm{s}^{2}$.)
+(A) $12 \rho g$
+(B) $18 \rho g$
+(C) $24 \rho g$
+(D) $32 \rho g$
+(E) $36 \rho g$</pre>
+<button onclick="copyLaTeX('q-8')" id="btn-q-8">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-8">
 <div class="answer-toggle" onclick="toggleAnswer('ans-8')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -293,6 +376,16 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) $\frac{2+\pi}{2-\pi}$
 (D) $\frac{2+\pi}{2-\pi}$
 (E) $\frac{2+\pi}{4-\pi}$</div>
+<div class="codebox">
+<pre id="latex-q-9">Find the slope of the tangent line to the curve defined by the polar equation $r=3 \theta$ at the point on the curve with angular coordinate $\theta=\frac{\pi}{4}$.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-05.jpg?height=424&amp;width=452&amp;top_left_y=354&amp;top_left_x=833)
+(A) $\frac{4+\pi}{4-\pi}$
+(B) $\frac{4-\pi}{4+\pi}$
+(C) $\frac{2+\pi}{2-\pi}$
+(D) $\frac{2+\pi}{2-\pi}$
+(E) $\frac{2+\pi}{4-\pi}$</pre>
+<button onclick="copyLaTeX('q-9')" id="btn-q-9">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-9">
 <div class="answer-toggle" onclick="toggleAnswer('ans-9')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -316,6 +409,16 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) $17 \pi$
 (D) $26 \pi$
 (E) $30 \pi$</div>
+<div class="codebox">
+<pre id="latex-q-10">Find the area enclosed by the curve defined by the polar equation $r=4-2 \cos \theta \sin (3 \theta)$.
+![](https://cdn.mathpix.com/cropped/be4f512e-a8e4-43d8-8824-2993bd009541-05.jpg?height=489&amp;width=519&amp;top_left_y=1568&amp;top_left_x=801)
+(A) $7 \pi$
+(B) $12 \pi$
+(C) $17 \pi$
+(D) $26 \pi$
+(E) $30 \pi$</pre>
+<button onclick="copyLaTeX('q-10')" id="btn-q-10">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-10">
 <div class="answer-toggle" onclick="toggleAnswer('ans-10')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -338,6 +441,15 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) $\quad \int_{1}^{\infty} \frac{1}{\sqrt{2 x^{3}-1}} d x$
 (D) $\int_{1}^{\infty} \frac{\ln \left(e^{x}+1\right)}{x^{2}} d x$
 (E) None</div>
+<div class="codebox">
+<pre id="latex-q-11">Which of the following improper integrals is divergent?
+(A) $\quad \int_{1}^{\infty} \frac{e^{-3 x}}{\sqrt{x}} d x$
+(B) $\int_{2}^{\infty} \frac{1}{x^{2} \ln x} d x$
+(C) $\quad \int_{1}^{\infty} \frac{1}{\sqrt{2 x^{3}-1}} d x$
+(D) $\int_{1}^{\infty} \frac{\ln \left(e^{x}+1\right)}{x^{2}} d x$
+(E) None</pre>
+<button onclick="copyLaTeX('q-11')" id="btn-q-11">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-11">
 <div class="answer-toggle" onclick="toggleAnswer('ans-11')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -364,6 +476,19 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) Only (i), (ii) and (iii) are convergent.
 (D) Only (i), (iii), and (iv) are convergent.
 (E) All are convergent.</div>
+<div class="codebox">
+<pre id="latex-q-12">Find all convergent infinite sequence from the following:
+(i) $a_{n}=\frac{4+2 \sqrt{n}}{3+\sqrt{n}}$
+(ii) $a_{n}=\frac{\cos e^{n}}{n}$
+(iii) $a_{n}=(-1)^{n} \frac{\ln n^{2}}{n}$
+(iv) $a_{n}=\frac{n!}{n^{n}}$
+(A) Only (i) and (ii) are convergent.
+(B) Only (i) and (iii) are convergent.
+(C) Only (i), (ii) and (iii) are convergent.
+(D) Only (i), (iii), and (iv) are convergent.
+(E) All are convergent.</pre>
+<button onclick="copyLaTeX('q-12')" id="btn-q-12">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-12">
 <div class="answer-toggle" onclick="toggleAnswer('ans-12')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -386,6 +511,15 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) 21
 (D) 22
 (E) 24</div>
+<div class="codebox">
+<pre id="latex-q-13">Find the sum of the series $\sum_{n=1}^{\infty} \frac{5^{n+1}-2 \cdot 4^{n-1}}{6^{n}}$.
+(A) 18
+(B) 19
+(C) 21
+(D) 22
+(E) 24</pre>
+<button onclick="copyLaTeX('q-13')" id="btn-q-13">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-13">
 <div class="answer-toggle" onclick="toggleAnswer('ans-13')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -412,6 +546,19 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) Only (i) and (iii) are convergent.
 (D) Only (ii), (iii) and (iv) are convergent.
 (E) All are convergent.</div>
+<div class="codebox">
+<pre id="latex-q-14">Find all convergent infinite series from the following:
+(i) $\sum_{n=1}^{\infty} \frac{\cos \frac{1}{n}}{n}$
+(ii) $\sum_{n=2}^{\infty} \frac{\tan ^{-1} n}{n(\ln n)^{2}}$
+(iii) $\sum_{n=1}^{\infty} \frac{\ln n}{n^{2}+1}$
+(iv) $\sum_{n=1}^{\infty} \frac{2^{n}}{\left(1-\frac{1}{n}\right)^{2 n}}$
+(A) Only (i) and (ii) are convergent.
+(B) Only (ii), and (iii) are convergent.
+(C) Only (i) and (iii) are convergent.
+(D) Only (ii), (iii) and (iv) are convergent.
+(E) All are convergent.</pre>
+<button onclick="copyLaTeX('q-14')" id="btn-q-14">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-14">
 <div class="answer-toggle" onclick="toggleAnswer('ans-14')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -434,6 +581,15 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) 3
 (D) 4
 (E) 5</div>
+<div class="codebox">
+<pre id="latex-q-15">Find the coefficient of the $x^{4}$ term in the Maclaurin series (i.e., Taylor series centered at $a=0$ ) of the function $f(x)=3 e^{x \sin x}$.
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+(E) 5</pre>
+<button onclick="copyLaTeX('q-15')" id="btn-q-15">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-15">
 <div class="answer-toggle" onclick="toggleAnswer('ans-15')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -456,6 +612,15 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 (C) $(1-x) f^{\prime}(x)=2 x f(x)$
 (D) $(1-x) f^{\prime}(x)=x f(x)$
 (E) $\quad(1-x) f(x)=x f^{\prime}(x)$</div>
+<div class="codebox">
+<pre id="latex-q-16">Let $f(x)=\sum_{n=0}^{\infty} a_{n+1} x^{n}$, where the sequence $a_{n}$ is defined recursively by $a_{0}=0, a_{1}=1$, and $a_{n+2}=\frac{1}{n+1}\left(n a_{n+1}+a_{n}\right)$ for $n \geq 0$. Which of the following is true?
+(A) $\quad(1-x) f(x)=2 f^{\prime}(x)$
+(B) $\quad(1-x) f(x)=2 x f^{\prime}(x)$
+(C) $(1-x) f^{\prime}(x)=2 x f(x)$
+(D) $(1-x) f^{\prime}(x)=x f(x)$
+(E) $\quad(1-x) f(x)=x f^{\prime}(x)$</pre>
+<button onclick="copyLaTeX('q-16')" id="btn-q-16">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-16">
 <div class="answer-toggle" onclick="toggleAnswer('ans-16')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -477,6 +642,14 @@ Find the work done (in joules) by the force over the displacement interval $[0,6
 
 Show your steps for full credits.
 (b) Find $\lim _{n \rightarrow \infty} b_{n}$.</div>
+<div class="codebox">
+<pre id="latex-q-17">Let $a_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos (n x) d x$, and $b_{n}=\int_{-\pi}^{\pi} e^{-2 x} \cos ^{2}(n x) d x$, where $n$ is a positive integer.
+(a) Evaluate the integral $\int_{-\pi}^{\pi} e^{-2 x} \cos (n x) d x$, and then find $\lim _{n \rightarrow \infty} a_{n}$.
+
+Show your steps for full credits.
+(b) Find $\lim _{n \rightarrow \infty} b_{n}$.</pre>
+<button onclick="copyLaTeX('q-17')" id="btn-q-17">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-17">
 <div class="answer-toggle" onclick="toggleAnswer('ans-17')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -526,6 +699,16 @@ $$
 [4 pts]
 (c) $\sum_{n=1}^{\infty}\left(\sqrt[3]{n^{3}+1}-n\right)$
 [4 pts]</div>
+<div class="codebox">
+<pre id="latex-q-18">Determine whether the given series is convergent or divergent. Give reason to justify your answer for full credit.
+(a) $\sum_{n=1}^{\infty} \frac{2^{n}+5^{n}}{3^{n}+4^{n}}$.
+[4 pts]
+(b) $\sum_{n=1}^{\infty}(-1)^{n+1} \frac{\sqrt{n}+1}{n+1}$
+[4 pts]
+(c) $\sum_{n=1}^{\infty}\left(\sqrt[3]{n^{3}+1}-n\right)$
+[4 pts]</pre>
+<button onclick="copyLaTeX('q-18')" id="btn-q-18">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-18">
 <div class="answer-toggle" onclick="toggleAnswer('ans-18')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -579,6 +762,17 @@ Show your steps for full credit.
 
 19(c) Find the value of the derivative: $f^{\prime}(2)$.
 [6 pts]</div>
+<div class="codebox">
+<pre id="latex-q-19">Let $f$ be defined by the power series $f(x)=\sum_{n=0}^{\infty}(-1)^{n} \frac{(x-1)^{2 n+2}}{(2 n+1) 4^{n}}$.
+(a) Find the 6 -th order derivative: $f^{(6)}(1)$.
+(b) Find the interval of convergence of the power series.
+
+Show your steps for full credit.
+
+19(c) Find the value of the derivative: $f^{\prime}(2)$.
+[6 pts]</pre>
+<button onclick="copyLaTeX('q-19')" id="btn-q-19">Copy LaTeX</button>
+</div>
 <div class="answer-section" id="ans-19">
 <div class="answer-toggle" onclick="toggleAnswer('ans-19')">
 <span class="toggle-icon">▶</span> Show Answer & Solution
@@ -623,6 +817,31 @@ function toggleAnswer(id) {
     if (isOpen) {
         MathJax.typesetPromise([content]);
     }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var prob = ex.querySelector('.exercise-problem');
+    if (!prob) return;
+    var text = prob.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
 }
 function toggleMobileMenu() {
     var s = document.getElementById('mobileSidebar');

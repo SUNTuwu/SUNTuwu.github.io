@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tags — PHYS1114 Final Review</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh}
+::selection{background:#1f6feb44}
+.sidebar{width:280px;min-width:280px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.content{flex:1;padding:32px 48px;max-width:960px}
+.module-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.module-header h2{font-size:24px;color:#f0f6fc}
+.module-header .lectures{font-size:13px;color:#8b949e;margin-top:4px}
+.tag-section{margin-bottom:4px;border:1px solid #30363d;border-radius:6px;overflow:hidden}
+.tag-header{padding:8px 14px;cursor:pointer;background:#1c2128;user-select:none;transition:all .15s}
+.tag-header:hover{background:#1f6feb22}
+.tag-header h3{font-size:14px;color:#58a6ff;display:flex;align-items:center;gap:8px}
+.tag-header .tag-count{font-weight:400;font-size:12px;color:#8b949e}
+.tag-header .toggle-icon{font-size:10px;color:#8b949e;transition:transform .2s}
+.tag-header.open .toggle-icon{transform:rotate(90deg)}
+.tag-body{padding:4px 14px 8px}
+.tag-problem{font-size:13px;padding:6px 0;border-bottom:1px solid #21262d;display:flex;gap:10px;align-items:baseline}
+.tag-problem:last-child{border-bottom:none}
+.tag-problem .pid{color:#f0f6fc;font-weight:600;min-width:55px;flex-shrink:0}
+.tag-problem .pmeta{color:#8b949e;font-size:11px;flex-shrink:0}
+.tag-problem .pmeta a{color:#58a6ff;text-decoration:none}
+.tag-problem .pmeta a:hover{text-decoration:underline}
+.tag-problem .ppreview{color:#8b949e;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:100px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+
+<h1>PHYS1114 <small>General Physics II · Tags</small></h1>
+<a class="module-nav" href="final-exams/index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="final-exams/sample.html">Sample Questions</a>
+<a class="module-nav" href="final-exams/questions-2.html">Questions Set 2</a>
+<a class="module-nav" href="final-exams/2013.html">Summer 2013</a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="final-exams/index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+
+<h1>PHYS1114 <small>General Physics II · Tags</small></h1>
+<a class="module-nav" href="final-exams/index.html" style="font-weight:700">Home</a>
+<a class="module-nav" href="final-exams/sample.html">Sample Questions</a>
+<a class="module-nav" href="final-exams/questions-2.html">Questions Set 2</a>
+<a class="module-nav" href="final-exams/2013.html">Summer 2013</a>
+</div>
+
+<div class="content">
+<div class="module-header">
+<h2>Tags Index</h2>
+<div class="lectures">161 problems · 34 tags</div>
+</div>
+<div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> ampere-law <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q18</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-18" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The figure below shows the cross-section of a hollow cylinder of inner radius $a</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> biot-savart <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q16</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-16" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Three very long, straight, parallel wires each carry currents of 4.00 A , direct</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> capacitor <span class="tag-count">(9)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-28" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A $0.200-\mathrm{A}$ current is charging a capacitor that has circular plates 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q18</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-18" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Radio receivers are usually tuned by adjusting the capacitor of an LC circuit. I</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A total impedance of an $R C$ circuit with a capacitance of $40.0 \mu \mathrm{~F</span>
+</div><div class="tag-problem">
+<span class="pid">Q26</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-26" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A capacitor with parallel circular plates of radius $R$ is discharging via a cur</span>
+</div><div class="tag-problem">
+<span class="pid">Q27</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-27" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A $25.0-\mathrm{mH}$ inductor, a $2.00-\mu \mathrm{F}$ capacitor, and a certain</span>
+</div><div class="tag-problem">
+<span class="pid">Q33</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-33" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In the circuit shown in the figure below, the capacitor and the inductor are bot</span>
+</div><div class="tag-problem">
+<span class="pid">Q34</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-34" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A capacitor is charging in a simple $R C$ circuit with a dc battery. Which one o</span>
+</div><div class="tag-problem">
+<span class="pid">Q35</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-35" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Three capacitors are connected as shown in the figure above. What is the equival</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> current <span class="tag-count">(10)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-7" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A circular loop of diameter 10 cm , carrying a current of 0.20 A , is placed ins</span>
+</div><div class="tag-problem">
+<span class="pid">Q9</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-9" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The figure below shows four different sets of insulated wires that cross each ot</span>
+</div><div class="tag-problem">
+<span class="pid">Q10</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-10" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two very long parallel wires in the $x y$-plane, a distance $2 a$ apart, are par</span>
+</div><div class="tag-problem">
+<span class="pid">Q12</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-12" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A long straight conductor has a constant current flowing to the right. A wire re</span>
+</div><div class="tag-problem">
+<span class="pid">Q16</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-16" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Three very long, straight, parallel wires each carry currents of 4.00 A , direct</span>
+</div><div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-21" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A solenoid has 1000 turns per meter and cross sectional area $\mathrm{A}=4.0 \ma</span>
+</div><div class="tag-problem">
+<span class="pid">Q22</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-22" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A bar magnet is spun at a constant angular speed $\omega$ around an axis as show</span>
+</div><div class="tag-problem">
+<span class="pid">Q4</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-4" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A circular loop of wire lies in the plane of the paper. An increasing magnetic f</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A wire segment 1.2 m long carries a current $I=3.5 \mathrm{~A}$, and is oriented</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A cylindrical insulated wire of diameter 5.0 mm is tightly wound 200 times aroun</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> diffraction <span class="tag-count">(5)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q42</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-42" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In a diffraction grating experiment, light of 600 nm wavelength produces a first</span>
+</div><div class="tag-problem">
+<span class="pid">Q43</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-43" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A metallic sheet has a large number of slits, 5.0 mm wide and 20 cm apart, and i</span>
+</div><div class="tag-problem">
+<span class="pid">Q32</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-32" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In a single slit diffraction experiment, the width of the slit is $3.1 \times 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q2</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-2" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-7" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes throug</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> diffraction-grating <span class="tag-count">(3)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q42</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-42" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In a diffraction grating experiment, light of 600 nm wavelength produces a first</span>
+</div><div class="tag-problem">
+<span class="pid">Q43</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-43" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A metallic sheet has a large number of slits, 5.0 mm wide and 20 cm apart, and i</span>
+</div><div class="tag-problem">
+<span class="pid">Q20</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-20" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">When monochromatic light illuminates a grating with 7000 lines per centimeter, i</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> double-slit <span class="tag-count">(7)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q37</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-37" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Light from a monochromatic source shines through a double slit onto a screen 5.0</span>
+</div><div class="tag-problem">
+<span class="pid">Q38</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-38" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Light of wavelength 575 nm passes through a double-slit and the third order brig</span>
+</div><div class="tag-problem">
+<span class="pid">Q39</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-39" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">At most, how many bright fringes can be formed on each side of the central brigh</span>
+</div><div class="tag-problem">
+<span class="pid">Q16</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-16" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Light of wavelength 575 nm passes through a double-slit and the third order brig</span>
+</div><div class="tag-problem">
+<span class="pid">Q17</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-17" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$ an angle of $6.5^{\circ}$ away from the central fringe. What is the s</span>
+</div><div class="tag-problem">
+<span class="pid">Q2</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-2" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-7" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes throug</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> electric-field <span class="tag-count">(9)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q29</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-29" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The electric field of a sinusoidal electromagnetic wave in vacuum is given: $E{</span>
+</div><div class="tag-problem">
+<span class="pid">Q34</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-34" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A plane electromagnetic wave is traveling in the positive $x$ direction. At the</span>
+</div><div class="tag-problem">
+<span class="pid">Q22</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-22" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A point charge $Q=-500 \mathrm{nC}$ and two unknown point charges, $q{1}$ and $</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A certian electric device generates an oscillating electric field at any point (</span>
+</div><div class="tag-problem">
+<span class="pid">Q26</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-26" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">For an electron moving in a direction opposite to the electric field 27)</span>
+</div><div class="tag-problem">
+<span class="pid">Q23</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-23" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A solid nonconducting sphere of radius $R$ carries a uniform charge density thro</span>
+</div><div class="tag-problem">
+<span class="pid">Q29</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-29" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Following the last question, rank the paths according to the magnitude of the in</span>
+</div><div class="tag-problem">
+<span class="pid">Q31</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-31" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">If the electric potential in a region is given by $V(x)=6 / x^{2}$, the $x$ comp</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-7" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes throug</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> electric-force <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q26</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-26" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">For an electron moving in a direction opposite to the electric field 27)</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> electric-potential <span class="tag-count">(3)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-24" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A current flows through an inductor of 4.0 H from point $a$ to point $b$. The cu</span>
+</div><div class="tag-problem">
+<span class="pid">Q19</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-19" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\mathrm{A}+4.0 \mu \mathrm{C}$-point charge and a $-4.0-\mu \mathrm{C}$ point c</span>
+</div><div class="tag-problem">
+<span class="pid">Q31</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-31" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">If the electric potential in a region is given by $V(x)=6 / x^{2}$, the $x$ comp</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> em-wave <span class="tag-count">(5)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q29</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-29" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The electric field of a sinusoidal electromagnetic wave in vacuum is given: $E{</span>
+</div><div class="tag-problem">
+<span class="pid">Q32</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-32" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">When an electromagnetic wave propagates in water, compared with in vacuum:</span>
+</div><div class="tag-problem">
+<span class="pid">Q34</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-34" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A plane electromagnetic wave is traveling in the positive $x$ direction. At the</span>
+</div><div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-6" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">The energy density of an electromagnetic wave is</span>
+</div><div class="tag-problem">
+<span class="pid">Q4</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-4" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(15pt) The E-field of a travelling EM wave signal is written as $\vec{E}=E{0} \</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> emf <span class="tag-count">(4)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-21" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A solenoid has 1000 turns per meter and cross sectional area $\mathrm{A}=4.0 \ma</span>
+</div><div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-28" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">The figure below shows the cross-section of a cylindrical solenoid with $N$ turn</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div><div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-6" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(30pt) Consider two LRC circuits as shown in the figure.
+![](https://cdn.mathpix</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> faraday-law <span class="tag-count">(6)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-21" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A solenoid has 1000 turns per meter and cross sectional area $\mathrm{A}=4.0 \ma</span>
+</div><div class="tag-problem">
+<span class="pid">Q22</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-22" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A bar magnet is spun at a constant angular speed $\omega$ around an axis as show</span>
+</div><div class="tag-problem">
+<span class="pid">Q31</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-31" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Identical magnets are plunged at the same speed into two coils of wire. Coil A h</span>
+</div><div class="tag-problem">
+<span class="pid">Q4</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-4" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A circular loop of wire lies in the plane of the paper. An increasing magnetic f</span>
+</div><div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-28" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">The figure below shows the cross-section of a cylindrical solenoid with $N$ turn</span>
+</div><div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-6" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(30pt) Consider two LRC circuits as shown in the figure.
+![](https://cdn.mathpix</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> impedance <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A total impedance of an $R C$ circuit with a capacitance of $40.0 \mu \mathrm{~F</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> inductor <span class="tag-count">(4)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-24" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A current flows through an inductor of 4.0 H from point $a$ to point $b$. The cu</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-25" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In the circuit as shown, the inductor has zero resistance. Before the current se</span>
+</div><div class="tag-problem">
+<span class="pid">Q27</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-27" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A $25.0-\mathrm{mH}$ inductor, a $2.00-\mu \mathrm{F}$ capacitor, and a certain</span>
+</div><div class="tag-problem">
+<span class="pid">Q33</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-33" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In the circuit shown in the figure below, the capacitor and the inductor are bot</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> interference <span class="tag-count">(3)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q40</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-40" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">White light is incident normally on a thin soap film having an index of refracti</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-5" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">What is the thickness of a soap bubble film ( $n=1.38$ ) that results in a const</span>
+</div><div class="tag-problem">
+<span class="pid">Q2</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-2" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> magnetic-field <span class="tag-count">(24)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-6" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">An L-shaped metal machine part is made of two equal-length segments that are per</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-7" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A circular loop of diameter 10 cm , carrying a current of 0.20 A , is placed ins</span>
+</div><div class="tag-problem">
+<span class="pid">Q9</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-9" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The figure below shows four different sets of insulated wires that cross each ot</span>
+</div><div class="tag-problem">
+<span class="pid">Q10</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-10" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two very long parallel wires in the $x y$-plane, a distance $2 a$ apart, are par</span>
+</div><div class="tag-problem">
+<span class="pid">Q14</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-14" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A very long, hollow, thin-walled conducting cylindrical shell (like a pipe) of r</span>
+</div><div class="tag-problem">
+<span class="pid">Q15</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-15" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A point charge $Q$ moves on the $x$-axis in the positive direction with a speed</span>
+</div><div class="tag-problem">
+<span class="pid">Q16</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-16" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Three very long, straight, parallel wires each carry currents of 4.00 A , direct</span>
+</div><div class="tag-problem">
+<span class="pid">Q18</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-18" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The figure below shows the cross-section of a hollow cylinder of inner radius $a</span>
+</div><div class="tag-problem">
+<span class="pid">Q19</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-19" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A piece of wire is shaped into a figure of 8 and put in a region of spatially un</span>
+</div><div class="tag-problem">
+<span class="pid">Q23</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-23" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two infinitely long solenoids pass through a circuit as shown. The magnitude of</span>
+</div><div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-28" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A $0.200-\mathrm{A}$ current is charging a capacitor that has circular plates 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q29</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-29" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The electric field of a sinusoidal electromagnetic wave in vacuum is given: $E{</span>
+</div><div class="tag-problem">
+<span class="pid">Q34</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-34" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A plane electromagnetic wave is traveling in the positive $x$ direction. At the</span>
+</div><div class="tag-problem">
+<span class="pid">Q4</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-4" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A circular loop of wire lies in the plane of the paper. An increasing magnetic f</span>
+</div><div class="tag-problem">
+<span class="pid">Q14</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-14" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">An electron, moving horizontally toward the west, enters a uniform magnetic fiel</span>
+</div><div class="tag-problem">
+<span class="pid">Q15</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-15" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$ field the electron curves vertically upward. The direction of the mag</span>
+</div><div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-21" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Solenoid 2 has twice the radius and six times of the number of turns per unit le</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A certian electric device generates an oscillating electric field at any point (</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A wire segment 1.2 m long carries a current $I=3.5 \mathrm{~A}$, and is oriented</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A cylindrical insulated wire of diameter 5.0 mm is tightly wound 200 times aroun</span>
+</div><div class="tag-problem">
+<span class="pid">Q3</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-3" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(15pt) A rigid square conducting loop with length $L$ is released from at rest u</span>
+</div><div class="tag-problem">
+<span class="pid">Q4</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-4" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(15pt) The E-field of a travelling EM wave signal is written as $\vec{E}=E{0} \</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div><div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-6" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(30pt) Consider two LRC circuits as shown in the figure.
+![](https://cdn.mathpix</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> magnetic-force <span class="tag-count">(4)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q6</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-6" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">An L-shaped metal machine part is made of two equal-length segments that are per</span>
+</div><div class="tag-problem">
+<span class="pid">Q8</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-8" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Following the last question, what is the magnitude of the magnetic force acting</span>
+</div><div class="tag-problem">
+<span class="pid">Q13</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-13" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A ring with a clockwise current (as seen from above the ring) is situated with i</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A wire segment 1.2 m long carries a current $I=3.5 \mathrm{~A}$, and is oriented</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> magnetic-torque <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-7" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A circular loop of diameter 10 cm , carrying a current of 0.20 A , is placed ins</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> maxwell-equations <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A certian electric device generates an oscillating electric field at any point (</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> michelson <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q1</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-1" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(5pt) One of the mirrors of a Michelson interferometer is installed incorrectly</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> photon-energy <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q3</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-3" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Given that the wavelengths of visible light range from 400 nm to 700 nm , what i</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> physics <span class="tag-count">(11)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q27</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-27" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In an $L-R$-C series circuit as shown, the current has a very small amplitude if</span>
+</div><div class="tag-problem">
+<span class="pid">Q1</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-1" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">An electron enters a region of perpendicular uniform $\vec{E}$ and $\vec{B}$ fie</span>
+</div><div class="tag-problem">
+<span class="pid">Q2</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-2" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">An $R C$ circuit is connected across an ideal DC voltage source through an open</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-7" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q8</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-8" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q9</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-9" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q10</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-10" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q11</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-11" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q12</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-12" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">$\\\\$</span>
+</div><div class="tag-problem">
+<span class="pid">Q13</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-13" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A microwave oven operates with sinusoidal microwaves at a frequency of 2400 MHz</span>
+</div><div class="tag-problem">
+<span class="pid">Q22</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-22" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">If the radiation from the Sun reaching above atmosphere of Earth is at the rate</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> polarization <span class="tag-count">(2)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q35</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-35" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">For linearly polarized light the plane of polarization is:</span>
+</div><div class="tag-problem">
+<span class="pid">Q36</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-36" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">The diagrams show four pairs of polarizing sheets, with the polarizing direction</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> poynting-vector <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> rc-circuit <span class="tag-count">(2)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-28" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A $0.200-\mathrm{A}$ current is charging a capacitor that has circular plates 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q34</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-34" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A capacitor is charging in a simple $R C$ circuit with a dc battery. Which one o</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> refraction <span class="tag-count">(4)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q40</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-40" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">White light is incident normally on a thin soap film having an index of refracti</span>
+</div><div class="tag-problem">
+<span class="pid">Q41</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-41" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two optically flat glass plates, 16.0 cm long, are in contact at one end and sep</span>
+</div><div class="tag-problem">
+<span class="pid">Q20</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-20" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">An oil layer that is 5.0 cm thick is spread smoothly and evenly over the surface</span>
+</div><div class="tag-problem">
+<span class="pid">Q23</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-23" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A 500 nm light is reflected constructively from a thin layer of oil of index of</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> resistance <span class="tag-count">(10)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q19</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-19" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A piece of wire is shaped into a figure of 8 and put in a region of spatially un</span>
+</div><div class="tag-problem">
+<span class="pid">Q23</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-23" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two infinitely long solenoids pass through a circuit as shown. The magnitude of</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-24" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A current flows through an inductor of 4.0 H from point $a$ to point $b$. The cu</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-25" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In the circuit as shown, the inductor has zero resistance. Before the current se</span>
+</div><div class="tag-problem">
+<span class="pid">Q25</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-25" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A total impedance of an $R C$ circuit with a capacitance of $40.0 \mu \mathrm{~F</span>
+</div><div class="tag-problem">
+<span class="pid">Q27</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-27" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A $25.0-\mathrm{mH}$ inductor, a $2.00-\mu \mathrm{F}$ capacitor, and a certain</span>
+</div><div class="tag-problem">
+<span class="pid">Q30</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-30" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Four resistors of values $2.0 \Omega, 4.0 \Omega, 3.0 \Omega$, and $9.0 \Omega$</span>
+</div><div class="tag-problem">
+<span class="pid">Q33</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-33" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In the circuit shown in the figure below, the capacitor and the inductor are bot</span>
+</div><div class="tag-problem">
+<span class="pid">Q3</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-3" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(15pt) A rigid square conducting loop with length $L$ is released from at rest u</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> resonance <span class="tag-count">(1)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q30</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-30" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Draw the resonance curve for a circuit with electrical components $\mathrm{L}, \</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> single-slit <span class="tag-count">(2)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q32</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-32" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In a single slit diffraction experiment, the width of the slit is $3.1 \times 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q2</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-2" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> solenoid <span class="tag-count">(5)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-21" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A solenoid has 1000 turns per meter and cross sectional area $\mathrm{A}=4.0 \ma</span>
+</div><div class="tag-problem">
+<span class="pid">Q23</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-23" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two infinitely long solenoids pass through a circuit as shown. The magnitude of</span>
+</div><div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-21" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Solenoid 2 has twice the radius and six times of the number of turns per unit le</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A cylindrical insulated wire of diameter 5.0 mm is tightly wound 200 times aroun</span>
+</div><div class="tag-problem">
+<span class="pid">Q28</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-28" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">The figure below shows the cross-section of a cylindrical solenoid with $N$ turn</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> thin-film <span class="tag-count">(2)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q40</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-40" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">White light is incident normally on a thin soap film having an index of refracti</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-5" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">What is the thickness of a soap bubble film ( $n=1.38$ ) that results in a const</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> wavelength <span class="tag-count">(15)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q37</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-37" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Light from a monochromatic source shines through a double slit onto a screen 5.0</span>
+</div><div class="tag-problem">
+<span class="pid">Q38</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-38" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Light of wavelength 575 nm passes through a double-slit and the third order brig</span>
+</div><div class="tag-problem">
+<span class="pid">Q41</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-41" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Two optically flat glass plates, 16.0 cm long, are in contact at one end and sep</span>
+</div><div class="tag-problem">
+<span class="pid">Q42</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-42" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">In a diffraction grating experiment, light of 600 nm wavelength produces a first</span>
+</div><div class="tag-problem">
+<span class="pid">Q43</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-43" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A metallic sheet has a large number of slits, 5.0 mm wide and 20 cm apart, and i</span>
+</div><div class="tag-problem">
+<span class="pid">Q44</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-44" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">Light of wavelength 633 nm from a He-Ne laser passes through a circular aperture</span>
+</div><div class="tag-problem">
+<span class="pid">Q45</span>
+<span class="pmeta"><a href="final-exams/sample.html#q-sample-45" target="_blank">→ Sample Questions</a></span>
+<span class="ppreview">A radio telescope 200 m in diameter is used to investigate sources emitting a $2</span>
+</div><div class="tag-problem">
+<span class="pid">Q3</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-3" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Given that the wavelengths of visible light range from 400 nm to 700 nm , what i</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-5" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">What is the thickness of a soap bubble film ( $n=1.38$ ) that results in a const</span>
+</div><div class="tag-problem">
+<span class="pid">Q16</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-16" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Light of wavelength 575 nm passes through a double-slit and the third order brig</span>
+</div><div class="tag-problem">
+<span class="pid">Q24</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-24" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">A certian electric device generates an oscillating electric field at any point (</span>
+</div><div class="tag-problem">
+<span class="pid">Q21</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-21" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">Light of wavelength 580 nm is incident on a slit of width 0.300 mm . An observin</span>
+</div><div class="tag-problem">
+<span class="pid">Q32</span>
+<span class="pmeta"><a href="final-exams/questions-2.html#q-questions-2-32" target="_blank">→ Questions Set 2</a></span>
+<span class="ppreview">In a single slit diffraction experiment, the width of the slit is $3.1 \times 10</span>
+</div><div class="tag-problem">
+<span class="pid">Q1</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-1" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(5pt) One of the mirrors of a Michelson interferometer is installed incorrectly</span>
+</div><div class="tag-problem">
+<span class="pid">Q7</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-7" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes throug</span>
+</div>
+</div>
+</div><div class="tag-section">
+<div class="tag-header" onclick="toggleTag(this)">
+<h3><span class="toggle-icon">▶</span> work-energy <span class="tag-count">(2)</span></h3>
+</div>
+<div class="tag-body" style="display:none">
+<div class="tag-problem">
+<span class="pid">Q3</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-3" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(15pt) A rigid square conducting loop with length $L$ is released from at rest u</span>
+</div><div class="tag-problem">
+<span class="pid">Q5</span>
+<span class="pmeta"><a href="final-exams/2013.html#q-2013-5" target="_blank">→ Summer 2013</a></span>
+<span class="ppreview">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$,</span>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function toggleTag(header) {
+    var body = header.nextElementSibling;
+    var isOpen = body.style.display === 'block';
+    body.style.display = isOpen ? 'none' : 'block';
+    if (isOpen) { header.classList.remove('open'); }
+    else { header.classList.add('open'); }
+}
+window.addEventListener('load', function() {
+    var hash = window.location.hash.replace('#','');
+    if (hash) {
+        var headers = document.querySelectorAll('.tag-header');
+        for (var h of headers) {
+            if (h.textContent.toLowerCase().includes(hash.toLowerCase())) {
+                var body = h.nextElementSibling;
+                body.style.display = 'block';
+                h.classList.add('open');
+                h.scrollIntoView({behavior:'smooth', block:'center'});
+                h.style.transition = 'box-shadow 0.3s, border-color 0.3s';
+                h.style.border = '1px solid #58a6ff';
+                h.style.boxShadow = '0 0 20px 4px rgba(88,166,255,0.3)';
+                setTimeout(function() { h.style.boxShadow = 'none'; h.style.border = 'none'; }, 2500);
+                break;
+            }
+        }
+    }
+});
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

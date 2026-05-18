@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Questions Set 2 — PHYS1114 Final Exams</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'},
+options:{ignoreHtmlClass:'sidebar|sidebar-mobile|hamburger|home-btn|answer-toggle|codebox|tag',
+processHtmlClass:'exercise-problem|answer-content'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav " href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav active" href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav " href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav " href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav active" href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav " href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+<div class="content">
+<div class="page-header">
+<h2>Questions Set 2</h2>
+<div class="subtitle">42 questions · PHYS1114 General Physics II</div>
+</div>
+<div class="exercise" id="q-questions-2-1">
+<div class="exercise-header">
+<div><span class="exercise-id">Q1</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">An electron enters a region of perpendicular uniform $\vec{E}$ and $\vec{B}$ fields. It is observed that the velocity $\vec{v}$ of the electron is unaffected. A possible form of $\vec{v}$ is:</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-1">An electron enters a region of perpendicular uniform $\vec{E}$ and $\vec{B}$ fields. It is observed that the velocity $\vec{v}$ of the electron is unaffected. A possible form of $\vec{v}$ is:</pre>
+<button onclick="copyLaTeX('q-questions-2-1')" id="btn-q-questions-2-1">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-1">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-1')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-2">
+<div class="exercise-header">
+<div><span class="exercise-id">Q2</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">An $R C$ circuit is connected across an ideal DC voltage source through an open switch. The switch is closed at time $t=0 \mathrm{~s}$. Which of the following statements regarding the circuit are correct?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-2">An $R C$ circuit is connected across an ideal DC voltage source through an open switch. The switch is closed at time $t=0 \mathrm{~s}$. Which of the following statements regarding the circuit are correct?</pre>
+<button onclick="copyLaTeX('q-questions-2-2')" id="btn-q-questions-2-2">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-2">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-2')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-3">
+<div class="exercise-header">
+<div><span class="exercise-id">Q3</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a> <a class="tag" href="../tags.html#photon-energy" target="_blank">photon-energy</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Given that the wavelengths of visible light range from 400 nm to 700 nm , what is the highest frequency of visible light? ( $c=3.0 \times 10^{8} \mathrm{~m} / \mathrm{s}$ )</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-3">Given that the wavelengths of visible light range from 400 nm to 700 nm , what is the highest frequency of visible light? ( $c=3.0 \times 10^{8} \mathrm{~m} / \mathrm{s}$ )</pre>
+<button onclick="copyLaTeX('q-questions-2-3')" id="btn-q-questions-2-3">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-3">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-3')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-4">
+<div class="exercise-header">
+<div><span class="exercise-id">Q4</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#faraday-law" target="_blank">faraday-law</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#current" target="_blank">current</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A circular loop of wire lies in the plane of the paper. An increasing magnetic field points out of the paper. What is the direction of the induced current in the loop?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-4">A circular loop of wire lies in the plane of the paper. An increasing magnetic field points out of the paper. What is the direction of the induced current in the loop?</pre>
+<button onclick="copyLaTeX('q-questions-2-4')" id="btn-q-questions-2-4">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-4">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-4')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-5">
+<div class="exercise-header">
+<div><span class="exercise-id">Q5</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#thin-film" target="_blank">thin-film</a> <a class="tag" href="../tags.html#interference" target="_blank">interference</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">What is the thickness of a soap bubble film ( $n=1.38$ ) that results in a constructive interference in the reflected light if this film is illuminated by a beam of light of wavelength 610 nm ?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-5">What is the thickness of a soap bubble film ( $n=1.38$ ) that results in a constructive interference in the reflected light if this film is illuminated by a beam of light of wavelength 610 nm ?</pre>
+<button onclick="copyLaTeX('q-questions-2-5')" id="btn-q-questions-2-5">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-5">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-5')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-6">
+<div class="exercise-header">
+<div><span class="exercise-id">Q6</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#em-wave" target="_blank">em-wave</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The energy density of an electromagnetic wave is</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-6">The energy density of an electromagnetic wave is</pre>
+<button onclick="copyLaTeX('q-questions-2-6')" id="btn-q-questions-2-6">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-6">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-6')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-7">
+<div class="exercise-header">
+<div><span class="exercise-id">Q7</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-7">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-7')" id="btn-q-questions-2-7">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-7">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-7')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-8">
+<div class="exercise-header">
+<div><span class="exercise-id">Q8</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-8">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-8')" id="btn-q-questions-2-8">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-8">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-8')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-9">
+<div class="exercise-header">
+<div><span class="exercise-id">Q9</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-9">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-9')" id="btn-q-questions-2-9">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-9">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-9')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-10">
+<div class="exercise-header">
+<div><span class="exercise-id">Q10</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-10">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-10')" id="btn-q-questions-2-10">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-10">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-10')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-11">
+<div class="exercise-header">
+<div><span class="exercise-id">Q11</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-11">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-11')" id="btn-q-questions-2-11">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-11">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-11')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-12">
+<div class="exercise-header">
+<div><span class="exercise-id">Q12</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-12">$\_\_\_\_$</pre>
+<button onclick="copyLaTeX('q-questions-2-12')" id="btn-q-questions-2-12">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-12">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-12')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-13">
+<div class="exercise-header">
+<div><span class="exercise-id">Q13</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A microwave oven operates with sinusoidal microwaves at a frequency of 2400 MHz . The height of the oven cavity is 25 cm and the base measures 30 cm by 30 cm . Assume that microwave energy is generated uniformly on the upper surface of the cavity and propagates directly downward toward the base. The base is lined with a material that completely absorbs microwave energy. The total microwave energy content of the cavity is $0.50 \mu \mathrm{~J}$. What magnitude force does the microwave beam exert on the base of the oven? ( $c=3.00 \times 10^{8} \mathrm{~m} / \mathrm{s}, \mu_{0}=4 \pi \times 10^{-7} \mathrm{~T} \cdot \mathrm{~m} / \mathrm{A}, \varepsilon_{0}=8.85 \times 10^{-12} \mathrm{C}^{2} / \mathrm{N}$. $\mathrm{m}^{2}$ )</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-13">A microwave oven operates with sinusoidal microwaves at a frequency of 2400 MHz . The height of the oven cavity is 25 cm and the base measures 30 cm by 30 cm . Assume that microwave energy is generated uniformly on the upper surface of the cavity and propagates directly downward toward the base. The base is lined with a material that completely absorbs microwave energy. The total microwave energy content of the cavity is $0.50 \mu \mathrm{~J}$. What magnitude force does the microwave beam exert on the base of the oven? ( $c=3.00 \times 10^{8} \mathrm{~m} / \mathrm{s}, \mu_{0}=4 \pi \times 10^{-7} \mathrm{~T} \cdot \mathrm{~m} / \mathrm{A}, \varepsilon_{0}=8.85 \times 10^{-12} \mathrm{C}^{2} / \mathrm{N}$. $\mathrm{m}^{2}$ )</pre>
+<button onclick="copyLaTeX('q-questions-2-13')" id="btn-q-questions-2-13">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-13">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-13')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-14">
+<div class="exercise-header">
+<div><span class="exercise-id">Q14</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">An electron, moving horizontally toward the west, enters a uniform magnetic field. Because of this</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-14">An electron, moving horizontally toward the west, enters a uniform magnetic field. Because of this</pre>
+<button onclick="copyLaTeX('q-questions-2-14')" id="btn-q-questions-2-14">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-14">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-14')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-15">
+<div class="exercise-header">
+<div><span class="exercise-id">Q15</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$ field the electron curves vertically upward. The direction of the magnetic field is</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-15">$\_\_\_\_$ field the electron curves vertically upward. The direction of the magnetic field is</pre>
+<button onclick="copyLaTeX('q-questions-2-15')" id="btn-q-questions-2-15">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-15">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-15')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-16">
+<div class="exercise-header">
+<div><span class="exercise-id">Q16</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#double-slit" target="_blank">double-slit</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Light of wavelength 575 nm passes through a double-slit and the third order bright fringe is seen at</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-16">Light of wavelength 575 nm passes through a double-slit and the third order bright fringe is seen at</pre>
+<button onclick="copyLaTeX('q-questions-2-16')" id="btn-q-questions-2-16">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-16">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-16')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-17">
+<div class="exercise-header">
+<div><span class="exercise-id">Q17</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#double-slit" target="_blank">double-slit</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\_\_\_\_$ an angle of $6.5^{\circ}$ away from the central fringe. What is the separation between the double slits?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-17">$\_\_\_\_$ an angle of $6.5^{\circ}$ away from the central fringe. What is the separation between the double slits?</pre>
+<button onclick="copyLaTeX('q-questions-2-17')" id="btn-q-questions-2-17">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-17">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-17')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-18">
+<div class="exercise-header">
+<div><span class="exercise-id">Q18</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Radio receivers are usually tuned by adjusting the capacitor of an LC circuit. If $C=C_{1}$ to receive a $\_\_\_\_$ frequency of 600 kHz , then for a frequency of 1200 kHz , one must adjust $C$ to:</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-18">Radio receivers are usually tuned by adjusting the capacitor of an LC circuit. If $C=C_{1}$ to receive a $\_\_\_\_$ frequency of 600 kHz , then for a frequency of 1200 kHz , one must adjust $C$ to:</pre>
+<button onclick="copyLaTeX('q-questions-2-18')" id="btn-q-questions-2-18">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-18">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-18')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-19">
+<div class="exercise-header">
+<div><span class="exercise-id">Q19</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-potential" target="_blank">electric-potential</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">$\mathrm{A}+4.0 \mu \mathrm{C}$-point charge and a $-4.0-\mu \mathrm{C}$ point charge are placed as shown in the figure below. What $\_\_\_\_$ is the potential difference, $V_{\mathrm{A}}-V_{\mathrm{B}}$, between points $A$ and $B ?\left(k=1 / 4 \pi \varepsilon_{0}=8.99 \times 10^{9} \mathrm{~N} \cdot \mathrm{~m}^{2} / \mathrm{C}^{2}\right)$ ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-2.jpg?height=553&amp;width=822&amp;top_left_y=1697&amp;top_left_x=612)</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-19">$\mathrm{A}+4.0 \mu \mathrm{C}$-point charge and a $-4.0-\mu \mathrm{C}$ point charge are placed as shown in the figure below. What $\_\_\_\_$ is the potential difference, $V_{\mathrm{A}}-V_{\mathrm{B}}$, between points $A$ and $B ?\left(k=1 / 4 \pi \varepsilon_{0}=8.99 \times 10^{9} \mathrm{~N} \cdot \mathrm{~m}^{2} / \mathrm{C}^{2}\right)$ ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-2.jpg?height=553&amp;width=822&amp;top_left_y=1697&amp;top_left_x=612)</pre>
+<button onclick="copyLaTeX('q-questions-2-19')" id="btn-q-questions-2-19">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-19">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-19')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-20">
+<div class="exercise-header">
+<div><span class="exercise-id">Q20</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#refraction" target="_blank">refraction</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">An oil layer that is 5.0 cm thick is spread smoothly and evenly over the surface of water on a $\_\_\_\_$ $\_\_\_\_$ windless day. What is the angle of refraction in the water for a ray of light that has an angle of incidence of $45^{\circ}$ as it enters the oil from the air above? (The index of refraction for the oil is 1.15 , and for water it is 1.33 .)</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-20">An oil layer that is 5.0 cm thick is spread smoothly and evenly over the surface of water on a $\_\_\_\_$ $\_\_\_\_$ windless day. What is the angle of refraction in the water for a ray of light that has an angle of incidence of $45^{\circ}$ as it enters the oil from the air above? (The index of refraction for the oil is 1.15 , and for water it is 1.33 .)</pre>
+<button onclick="copyLaTeX('q-questions-2-20')" id="btn-q-questions-2-20">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-20">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-20')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-21">
+<div class="exercise-header">
+<div><span class="exercise-id">Q21</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#solenoid" target="_blank">solenoid</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Solenoid 2 has twice the radius and six times of the number of turns per unit length as solenoid 1 . $\_\_\_\_$ For the same current, the ratio of the magnetic field generated in the interior of 2 to that in the interior of 1 is:</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-21">Solenoid 2 has twice the radius and six times of the number of turns per unit length as solenoid 1 . $\_\_\_\_$ For the same current, the ratio of the magnetic field generated in the interior of 2 to that in the interior of 1 is:</pre>
+<button onclick="copyLaTeX('q-questions-2-21')" id="btn-q-questions-2-21">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-21">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-21')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-22">
+<div class="exercise-header">
+<div><span class="exercise-id">Q22</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A point charge $Q=-500 \mathrm{nC}$ and two unknown point charges, $q_{1}$ and $q_{2}$, are placed as shown in the $\_\_\_\_$ figure below. The electric field at the origin $O$, due to charges $Q, q_{1}$ and $q_{2}$, is equal to zero. The charge $q_{1}$ is closest to ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-3.jpg?height=527&amp;width=527&amp;top_left_y=872&amp;top_left_x=758)</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-22">A point charge $Q=-500 \mathrm{nC}$ and two unknown point charges, $q_{1}$ and $q_{2}$, are placed as shown in the $\_\_\_\_$ figure below. The electric field at the origin $O$, due to charges $Q, q_{1}$ and $q_{2}$, is equal to zero. The charge $q_{1}$ is closest to ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-3.jpg?height=527&amp;width=527&amp;top_left_y=872&amp;top_left_x=758)</pre>
+<button onclick="copyLaTeX('q-questions-2-22')" id="btn-q-questions-2-22">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-22">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-22')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-23">
+<div class="exercise-header">
+<div><span class="exercise-id">Q23</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#refraction" target="_blank">refraction</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A 500 nm light is reflected constructively from a thin layer of oil of index of refraction 1.25, which $\_\_\_\_$ rests on the top of water of index of refraction 1.33 . What is the minimum thickness of the layer of oil?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-23">A 500 nm light is reflected constructively from a thin layer of oil of index of refraction 1.25, which $\_\_\_\_$ rests on the top of water of index of refraction 1.33 . What is the minimum thickness of the layer of oil?</pre>
+<button onclick="copyLaTeX('q-questions-2-23')" id="btn-q-questions-2-23">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-23">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-23')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-24">
+<div class="exercise-header">
+<div><span class="exercise-id">Q24</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#maxwell-equations" target="_blank">maxwell-equations</a> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A certian electric device generates an oscillating electric field at any point ( $x, y, z$ ) with $E_{x}(x, y, z)=$ $\_\_\_\_$ $E_{y}(x, y, z)=0$ and $E_{z}(x, y, z)=2.0 \cos \left(\pi \times 10^{15}(t-z / c)\right)$, where $c=3 \times 10^{8} \mathrm{~m} / \mathrm{s}$ and everything else is in SI units. How many of the following statements are correct? i. The device generates an EM wave. ii. From Maxwell's law of induction the electric field induces a magnetic field in $y$ direction. iii. Gauss's law implies that there is electric charge oscillation associated with this changing electric field. iv. The wavelength associated with this plane wave is longer than 1 cm .</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-24">A certian electric device generates an oscillating electric field at any point ( $x, y, z$ ) with $E_{x}(x, y, z)=$ $\_\_\_\_$ $E_{y}(x, y, z)=0$ and $E_{z}(x, y, z)=2.0 \cos \left(\pi \times 10^{15}(t-z / c)\right)$, where $c=3 \times 10^{8} \mathrm{~m} / \mathrm{s}$ and everything else is in SI units. How many of the following statements are correct? i. The device generates an EM wave. ii. From Maxwell's law of induction the electric field induces a magnetic field in $y$ direction. iii. Gauss's law implies that there is electric charge oscillation associated with this changing electric field. iv. The wavelength associated with this plane wave is longer than 1 cm .</pre>
+<button onclick="copyLaTeX('q-questions-2-24')" id="btn-q-questions-2-24">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-24">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-24')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-25">
+<div class="exercise-header">
+<div><span class="exercise-id">Q25</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#magnetic-force" target="_blank">magnetic-force</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#current" target="_blank">current</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A wire segment 1.2 m long carries a current $I=3.5 \mathrm{~A}$, and is oriented as shown in the figure below. The $+x$-axis points directly into the page. A uniform magnetic field of magnitude 0.50 T pointing toward the $-x$ direction is present as shown. What is the magnetic force vector on the wire segment? ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-4.jpg?height=237&amp;width=312&amp;top_left_y=294&amp;top_left_x=870)</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-25">A wire segment 1.2 m long carries a current $I=3.5 \mathrm{~A}$, and is oriented as shown in the figure below. The $+x$-axis points directly into the page. A uniform magnetic field of magnitude 0.50 T pointing toward the $-x$ direction is present as shown. What is the magnetic force vector on the wire segment? ![](https://cdn.mathpix.com/cropped/afb14280-7633-4a42-bb58-33cae26de30d-4.jpg?height=237&amp;width=312&amp;top_left_y=294&amp;top_left_x=870)</pre>
+<button onclick="copyLaTeX('q-questions-2-25')" id="btn-q-questions-2-25">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-25">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-25')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-26">
+<div class="exercise-header">
+<div><span class="exercise-id">Q26</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a> <a class="tag" href="../tags.html#electric-force" target="_blank">electric-force</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">For an electron moving in a direction opposite to the electric field 27)</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-26">For an electron moving in a direction opposite to the electric field 27)</pre>
+<button onclick="copyLaTeX('q-questions-2-26')" id="btn-q-questions-2-26">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-26">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-26')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-20">
+<div class="exercise-header">
+<div><span class="exercise-id">Q20</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#diffraction-grating" target="_blank">diffraction-grating</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">When monochromatic light illuminates a grating with 7000 lines per centimeter, its second order</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-20">When monochromatic light illuminates a grating with 7000 lines per centimeter, its second order</pre>
+<button onclick="copyLaTeX('q-questions-2-20')" id="btn-q-questions-2-20">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-20">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-20')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-21">
+<div class="exercise-header">
+<div><span class="exercise-id">Q21</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Light of wavelength 580 nm is incident on a slit of width 0.300 mm . An observing screen is placed</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-21">Light of wavelength 580 nm is incident on a slit of width 0.300 mm . An observing screen is placed</pre>
+<button onclick="copyLaTeX('q-questions-2-21')" id="btn-q-questions-2-21">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-21">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-21')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-22">
+<div class="exercise-header">
+<div><span class="exercise-id">Q22</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#physics" target="_blank">physics</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If the radiation from the Sun reaching above atmosphere of Earth is at the rate of $1350 \mathrm{~W} / \mathrm{m}^{2}$, what</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-22">If the radiation from the Sun reaching above atmosphere of Earth is at the rate of $1350 \mathrm{~W} / \mathrm{m}^{2}$, what</pre>
+<button onclick="copyLaTeX('q-questions-2-22')" id="btn-q-questions-2-22">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-22">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-22')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-23">
+<div class="exercise-header">
+<div><span class="exercise-id">Q23</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A solid nonconducting sphere of radius $R$ carries a uniform charge density throughout its volume. $\_\_\_\_$ At a radial distance $r_{1}=R / 4$ from the center, the electric field has a magnitude $E_{0}$. What is the magnitude of the electric field at a radial distance $r_{2}=2 R$ ?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-23">A solid nonconducting sphere of radius $R$ carries a uniform charge density throughout its volume. $\_\_\_\_$ At a radial distance $r_{1}=R / 4$ from the center, the electric field has a magnitude $E_{0}$. What is the magnitude of the electric field at a radial distance $r_{2}=2 R$ ?</pre>
+<button onclick="copyLaTeX('q-questions-2-23')" id="btn-q-questions-2-23">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-23">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-23')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-24">
+<div class="exercise-header">
+<div><span class="exercise-id">Q24</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#solenoid" target="_blank">solenoid</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#current" target="_blank">current</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A cylindrical insulated wire of diameter 5.0 mm is tightly wound 200 times around a cylindrical core to form a solenoid with adjacent coils touching each other. When a 0.10 A current is sent through the wire, what is the magnitude of the magnetic field on the axis of the solenoid near its center? $\left(\mu_{0}=4 \pi \times 10^{-7} \mathrm{~T} \cdot \mathrm{~m} / \mathrm{A}\right)$</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-24">A cylindrical insulated wire of diameter 5.0 mm is tightly wound 200 times around a cylindrical core to form a solenoid with adjacent coils touching each other. When a 0.10 A current is sent through the wire, what is the magnitude of the magnetic field on the axis of the solenoid near its center? $\left(\mu_{0}=4 \pi \times 10^{-7} \mathrm{~T} \cdot \mathrm{~m} / \mathrm{A}\right)$</pre>
+<button onclick="copyLaTeX('q-questions-2-24')" id="btn-q-questions-2-24">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-24">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-24')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-25">
+<div class="exercise-header">
+<div><span class="exercise-id">Q25</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a> <a class="tag" href="../tags.html#impedance" target="_blank">impedance</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A total impedance of an $R C$ circuit with a capacitance of $40.0 \mu \mathrm{~F}$ is $800 \Omega$. If the frequency of the $\_\_\_\_$ applied ac voltage is 18.0 Hz , what is the resistance of the circuit?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-25">A total impedance of an $R C$ circuit with a capacitance of $40.0 \mu \mathrm{~F}$ is $800 \Omega$. If the frequency of the $\_\_\_\_$ applied ac voltage is 18.0 Hz , what is the resistance of the circuit?</pre>
+<button onclick="copyLaTeX('q-questions-2-25')" id="btn-q-questions-2-25">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-25">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-25')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: A**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-26">
+<div class="exercise-header">
+<div><span class="exercise-id">Q26</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A capacitor with parallel circular plates of radius $R$ is discharging via a current $I(t)=I_{0} e^{-\mathrm{t} / \tau}$. Which $\_\_\_\_$ of the following is wrong?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-26">A capacitor with parallel circular plates of radius $R$ is discharging via a current $I(t)=I_{0} e^{-\mathrm{t} / \tau}$. Which $\_\_\_\_$ of the following is wrong?</pre>
+<button onclick="copyLaTeX('q-questions-2-26')" id="btn-q-questions-2-26">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-26">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-26')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-27">
+<div class="exercise-header">
+<div><span class="exercise-id">Q27</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#inductor" target="_blank">inductor</a> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A $25.0-\mathrm{mH}$ inductor, a $2.00-\mu \mathrm{F}$ capacitor, and a certain resistor are connected in series across an ac</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-27">A $25.0-\mathrm{mH}$ inductor, a $2.00-\mu \mathrm{F}$ capacitor, and a certain resistor are connected in series across an ac</pre>
+<button onclick="copyLaTeX('q-questions-2-27')" id="btn-q-questions-2-27">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-27">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-27')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-28">
+<div class="exercise-header">
+<div><span class="exercise-id">Q28</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#solenoid" target="_blank">solenoid</a> <a class="tag" href="../tags.html#faraday-law" target="_blank">faraday-law</a> <a class="tag" href="../tags.html#emf" target="_blank">emf</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">The figure below shows the cross-section of a cylindrical solenoid with $N$ turns and radius $R$. The $\_\_\_\_$ dashed circles are four integration paths with radii $r_{1}=R / 4, r_{2}=R / 2, r_{3}=3 R / 2$, and $r_{4}=2 R$. Rank the paths according to the magnitude of the induced emf around the paths, least to greatest, when the current is increasing at a constant rate.</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-28">The figure below shows the cross-section of a cylindrical solenoid with $N$ turns and radius $R$. The $\_\_\_\_$ dashed circles are four integration paths with radii $r_{1}=R / 4, r_{2}=R / 2, r_{3}=3 R / 2$, and $r_{4}=2 R$. Rank the paths according to the magnitude of the induced emf around the paths, least to greatest, when the current is increasing at a constant rate.</pre>
+<button onclick="copyLaTeX('q-questions-2-28')" id="btn-q-questions-2-28">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-28">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-28')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-29">
+<div class="exercise-header">
+<div><span class="exercise-id">Q29</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Following the last question, rank the paths according to the magnitude of the induced electric field $\_\_\_\_$ around the paths, least to greatest, when the current is increasing at a constant rate.</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-29">Following the last question, rank the paths according to the magnitude of the induced electric field $\_\_\_\_$ around the paths, least to greatest, when the current is increasing at a constant rate.</pre>
+<button onclick="copyLaTeX('q-questions-2-29')" id="btn-q-questions-2-29">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-29">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-29')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-30">
+<div class="exercise-header">
+<div><span class="exercise-id">Q30</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Four resistors of values $2.0 \Omega, 4.0 \Omega, 3.0 \Omega$, and $9.0 \Omega$ are connected across a DC source with</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-30">Four resistors of values $2.0 \Omega, 4.0 \Omega, 3.0 \Omega$, and $9.0 \Omega$ are connected across a DC source with</pre>
+<button onclick="copyLaTeX('q-questions-2-30')" id="btn-q-questions-2-30">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-30">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-30')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: D**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-31">
+<div class="exercise-header">
+<div><span class="exercise-id">Q31</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a> <a class="tag" href="../tags.html#electric-potential" target="_blank">electric-potential</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">If the electric potential in a region is given by $V(x)=6 / x^{2}$, the $x$ component of the electric field in $\_\_\_\_$ that region is</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-31">If the electric potential in a region is given by $V(x)=6 / x^{2}$, the $x$ component of the electric field in $\_\_\_\_$ that region is</pre>
+<button onclick="copyLaTeX('q-questions-2-31')" id="btn-q-questions-2-31">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-31">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-31')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-32">
+<div class="exercise-header">
+<div><span class="exercise-id">Q32</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#diffraction" target="_blank">diffraction</a> <a class="tag" href="../tags.html#single-slit" target="_blank">single-slit</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">In a single slit diffraction experiment, the width of the slit is $3.1 \times 10^{-5} \mathrm{~m}$ and the distance from the $\_\_\_\_$ slit to the screen is 2.2 m . If the beam of light of wavelength 600 nm passes through the slit and forms a diffraction pattern on the screen, what is the linear distance on the screen from the center of the diffraction pattern to the first dark fringe?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-32">In a single slit diffraction experiment, the width of the slit is $3.1 \times 10^{-5} \mathrm{~m}$ and the distance from the $\_\_\_\_$ slit to the screen is 2.2 m . If the beam of light of wavelength 600 nm passes through the slit and forms a diffraction pattern on the screen, what is the linear distance on the screen from the center of the diffraction pattern to the first dark fringe?</pre>
+<button onclick="copyLaTeX('q-questions-2-32')" id="btn-q-questions-2-32">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-32">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-32')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: E**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-33">
+<div class="exercise-header">
+<div><span class="exercise-id">Q33</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#inductor" target="_blank">inductor</a> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">In the circuit shown in the figure below, the capacitor and the inductor are both ideal (i.e. no internal resistance), with capacitance $C$ and inductance $L$. The switch is kept in position $a$ for a long time. It is then thrown to position $b$ at time $t=0$. Which of the following is correct at time $t>0$ ?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-33">In the circuit shown in the figure below, the capacitor and the inductor are both ideal (i.e. no internal resistance), with capacitance $C$ and inductance $L$. The switch is kept in position $a$ for a long time. It is then thrown to position $b$ at time $t=0$. Which of the following is correct at time $t>0$ ?</pre>
+<button onclick="copyLaTeX('q-questions-2-33')" id="btn-q-questions-2-33">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-33">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-33')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: B**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-34">
+<div class="exercise-header">
+<div><span class="exercise-id">Q34</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#rc-circuit" target="_blank">rc-circuit</a> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">A capacitor is charging in a simple $R C$ circuit with a dc battery. Which one of the following statements about this capacitor is accurate?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-34">A capacitor is charging in a simple $R C$ circuit with a dc battery. Which one of the following statements about this capacitor is accurate?</pre>
+<button onclick="copyLaTeX('q-questions-2-34')" id="btn-q-questions-2-34">Copy LaTeX</button>
+</div>
+
+<div class="answer-section" id="ans-questions-2-34">
+<div class="answer-toggle" onclick="toggleAnswer('ans-questions-2-34')">
+<span class="toggle-icon">▶</span> Show Answer
+</div>
+<div class="answer-content">
+**Answer: C**
+</div>
+</div>
+</div>
+</div><div class="exercise" id="q-questions-2-35">
+<div class="exercise-header">
+<div><span class="exercise-id">Q35</span> <span class="badge-example">MC</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">Three capacitors are connected as shown in the figure above. What is the equivalent capacitance between points A and B ?</div>
+<div class="codebox">
+<pre id="latex-q-questions-2-35">Three capacitors are connected as shown in the figure above. What is the equivalent capacitance between points A and B ?</pre>
+<button onclick="copyLaTeX('q-questions-2-35')" id="btn-q-questions-2-35">Copy LaTeX</button>
+</div>
+
+</div>
+</div>
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) { MathJax.typesetPromise([content]); }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var pre = ex.querySelector('pre');
+    if (!pre) return;
+    var text = pre.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

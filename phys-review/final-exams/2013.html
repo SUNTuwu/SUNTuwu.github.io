@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Summer 2013 — PHYS1114 Final Exams</title>
+<script>
+MathJax = {tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'},
+options:{ignoreHtmlClass:'sidebar|sidebar-mobile|hamburger|home-btn|answer-toggle|codebox|tag',
+processHtmlClass:'exercise-problem|answer-content'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav " href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav " href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav active" href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<a href="index.html" class="home-btn">HOME</a>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav " href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav " href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav active" href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+<div class="content">
+<div class="page-header">
+<h2>Summer 2013</h2>
+<div class="subtitle">7 questions · PHYS1114 General Physics II</div>
+</div>
+<div class="exercise" id="q-2013-1">
+<div class="exercise-header">
+<div><span class="exercise-id">Q1</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#michelson" target="_blank">michelson</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(5pt) One of the mirrors of a Michelson interferometer is installed incorrectly with an offset of 1 mm shorter from the beam splitter than that of the other mirror. To compensate the shorten path, a rectangular dielectric block with dielectric constant $K=1.5$ is inserted in the Michelson interferometer as shown below.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-2.jpg?height=983&amp;width=1207&amp;top_left_y=614&amp;top_left_x=299)
+
+A monochromatic light of wavelength of 600 nm is used. Find a value of $d,(d>0)$, which restores the bright spot in the photo-detector.</div>
+<div class="codebox">
+<pre id="latex-q-2013-1">(5pt) One of the mirrors of a Michelson interferometer is installed incorrectly with an offset of 1 mm shorter from the beam splitter than that of the other mirror. To compensate the shorten path, a rectangular dielectric block with dielectric constant $K=1.5$ is inserted in the Michelson interferometer as shown below.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-2.jpg?height=983&amp;width=1207&amp;top_left_y=614&amp;top_left_x=299)
+
+A monochromatic light of wavelength of 600 nm is used. Find a value of $d,(d>0)$, which restores the bright spot in the photo-detector.</pre>
+<button onclick="copyLaTeX('q-2013-1')" id="btn-q-2013-1">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-2">
+<div class="exercise-header">
+<div><span class="exercise-id">Q2</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#double-slit" target="_blank">double-slit</a> <a class="tag" href="../tags.html#diffraction" target="_blank">diffraction</a> <a class="tag" href="../tags.html#single-slit" target="_blank">single-slit</a> <a class="tag" href="../tags.html#interference" target="_blank">interference</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the ratio $d / a$ such that the first order maximum of interference pattern overlaps with the first order minimum of the single slit diffraction pattern?
+(5pt) When that occurs, show that the intensity of the double slit diffraction and interference pattern equals to the intensity of the single slit diffraction. What is the slit size corresponding this single slit pattern?</div>
+<div class="codebox">
+<pre id="latex-q-2013-2">(10pt) (5pt) For a double slit diffraction and interference pattern, what is the ratio $d / a$ such that the first order maximum of interference pattern overlaps with the first order minimum of the single slit diffraction pattern?
+(5pt) When that occurs, show that the intensity of the double slit diffraction and interference pattern equals to the intensity of the single slit diffraction. What is the slit size corresponding this single slit pattern?</pre>
+<button onclick="copyLaTeX('q-2013-2')" id="btn-q-2013-2">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-3">
+<div class="exercise-header">
+<div><span class="exercise-id">Q3</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#work-energy" target="_blank">work-energy</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(15pt) A rigid square conducting loop with length $L$ is released from at rest under gravity, $\vec{g}=-g \hat{y}$ as shown in the figure. In addition to gravity, there is a magnetic field $\vec{B}=\beta y \hat{z}$. The wire has a mass $m$ and a resistance $R$. Assume that the loop does not rotate when falling and ignore air frictions.
+
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=442&amp;width=396&amp;top_left_y=826&amp;top_left_x=767)
+
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=195&amp;width=271&amp;top_left_y=744&amp;top_left_x=1450)
+
+(15pt) Find the terminal velocity of the wire loop. Ignore the induced magnetic field of the wire.</div>
+<div class="codebox">
+<pre id="latex-q-2013-3">(15pt) A rigid square conducting loop with length $L$ is released from at rest under gravity, $\vec{g}=-g \hat{y}$ as shown in the figure. In addition to gravity, there is a magnetic field $\vec{B}=\beta y \hat{z}$. The wire has a mass $m$ and a resistance $R$. Assume that the loop does not rotate when falling and ignore air frictions.
+
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=442&amp;width=396&amp;top_left_y=826&amp;top_left_x=767)
+
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=195&amp;width=271&amp;top_left_y=744&amp;top_left_x=1450)
+
+(15pt) Find the terminal velocity of the wire loop. Ignore the induced magnetic field of the wire.</pre>
+<button onclick="copyLaTeX('q-2013-3')" id="btn-q-2013-3">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-4">
+<div class="exercise-header">
+<div><span class="exercise-id">Q4</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#em-wave" target="_blank">em-wave</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(15pt) The E-field of a travelling EM wave signal is written as $\vec{E}=E_{0} \cos (k y+\omega t) \hat{z}$. You are given a circular wire loop connected to an oscilloscope to detect the wave by induction.
+(a) (8pt) Find the normal vector of the plane of the wire loop such that the strength of the received signal is maximized.
+Explain your answer.
+[There are two normal vectors representing the same surface. Write down only one of them.]
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=266&amp;width=364&amp;top_left_y=2010&amp;top_left_x=1503)
+(b) ( 7 pt ) If the signal described above is, in fact, a circular light beam with diameter of 1 cm and the power of the beam is 20 W , find the amplitude of the electric and magnetic field of the wave.</div>
+<div class="codebox">
+<pre id="latex-q-2013-4">(15pt) The E-field of a travelling EM wave signal is written as $\vec{E}=E_{0} \cos (k y+\omega t) \hat{z}$. You are given a circular wire loop connected to an oscilloscope to detect the wave by induction.
+(a) (8pt) Find the normal vector of the plane of the wire loop such that the strength of the received signal is maximized.
+Explain your answer.
+[There are two normal vectors representing the same surface. Write down only one of them.]
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-3.jpg?height=266&amp;width=364&amp;top_left_y=2010&amp;top_left_x=1503)
+(b) ( 7 pt ) If the signal described above is, in fact, a circular light beam with diameter of 1 cm and the power of the beam is 20 W , find the amplitude of the electric and magnetic field of the wave.</pre>
+<button onclick="copyLaTeX('q-2013-4')" id="btn-q-2013-4">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-5">
+<div class="exercise-header">
+<div><span class="exercise-id">Q5</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#poynting-vector" target="_blank">poynting-vector</a> <a class="tag" href="../tags.html#capacitor" target="_blank">capacitor</a> <a class="tag" href="../tags.html#resistance" target="_blank">resistance</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#emf" target="_blank">emf</a> <a class="tag" href="../tags.html#work-energy" target="_blank">work-energy</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$, is connected to a battery of $\operatorname{emf} \mathcal{E}$. The circuit has a total resistance, $R$. Assume that the E-field is uniform inside the cylindrical volume between the plates and zero outside. At time $t=0 s$, the circuit is closed.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-4.jpg?height=855&amp;width=1466&amp;top_left_y=532&amp;top_left_x=351)
+(a) (5pt) Find the magnitude of the magnetic field as a function of time $t$ and $d$, the perpendicular distance from the axis passing thought the centers of the circular disks. Neglect the field generated by the wires on the left, right and bottom side of the circuit.
+(b) (10pt) Find the magnitude of the Poynting vector $\vec{S}$ on the surface of the cylindrical volume between the plates as a function of time and indicate its direction.
+(c) (5pt) Show that the total energy delivered by the Poynting vector into the cylindrical volume between the plates equals exactly to the energy stored in the capacitor.</div>
+<div class="codebox">
+<pre id="latex-q-2013-5">(20pt) A circular parallel capacity with radius, $r$, and plate separation, $D$, is connected to a battery of $\operatorname{emf} \mathcal{E}$. The circuit has a total resistance, $R$. Assume that the E-field is uniform inside the cylindrical volume between the plates and zero outside. At time $t=0 s$, the circuit is closed.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-4.jpg?height=855&amp;width=1466&amp;top_left_y=532&amp;top_left_x=351)
+(a) (5pt) Find the magnitude of the magnetic field as a function of time $t$ and $d$, the perpendicular distance from the axis passing thought the centers of the circular disks. Neglect the field generated by the wires on the left, right and bottom side of the circuit.
+(b) (10pt) Find the magnitude of the Poynting vector $\vec{S}$ on the surface of the cylindrical volume between the plates as a function of time and indicate its direction.
+(c) (5pt) Show that the total energy delivered by the Poynting vector into the cylindrical volume between the plates equals exactly to the energy stored in the capacitor.</pre>
+<button onclick="copyLaTeX('q-2013-5')" id="btn-q-2013-5">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-6">
+<div class="exercise-header">
+<div><span class="exercise-id">Q6</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#faraday-law" target="_blank">faraday-law</a> <a class="tag" href="../tags.html#magnetic-field" target="_blank">magnetic-field</a> <a class="tag" href="../tags.html#emf" target="_blank">emf</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(30pt) Consider two LRC circuits as shown in the figure.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-5.jpg?height=748&amp;width=1482&amp;top_left_y=479&amp;top_left_x=287)
+
+The left circuit is powered by an AC sinusoidal supply with voltage amplitude $V_{0}=100 \mathrm{~V}$ at an angular frequency $\omega$ and induces an $\operatorname{emf} \mathcal{E}$ on the right circuit. Consider only the induction due to the magnetic field of the long vertical wire of the left circuit on the square loop of the right circuit. Assume the wire is very long compare to the square loop and neglect the gap of the square loop.
+(a) (5pt) For $C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}$ and $\omega=0.5 \mathrm{GHz}$, find the amplitude of the voltage across $C_{1}$ and the phase angle of $V_{C 1}$ with respect to the supply voltage $V_{s}$.
+(b) (15pt) For $a=10 \mathrm{~cm}$ and $b=50 \mathrm{~cm}$ the same set of parameters in used part (a), find the amplitude of the induced emf $\mathcal{E}$ on the right circuit.
+(c) (5pt) Suppose $C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}, C_{2}=1.0 \mathrm{nF}$ and $R_{2}=1.0 \mathrm{k} \Omega$. Find the value of $L_{2}$ and $\omega$ such that the ratio of amplitude of the induced current $I_{\text {ind }}$ to $V_{0}$ is maximized.
+(d) (5pt) Find the amplitude of the induced current $I_{\text {ind }}$ for $a=10 \mathrm{~cm}, b=50 \mathrm{~cm} C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}, C_{2}=1.0 \mathrm{nF}, R_{2}=1.0 \mathrm{k} \Omega, L_{2}=4.0 \mathrm{mH}, \omega=$ 0.5 GHz and $V_{0}=100 \mathrm{~V}$.</div>
+<div class="codebox">
+<pre id="latex-q-2013-6">(30pt) Consider two LRC circuits as shown in the figure.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-5.jpg?height=748&amp;width=1482&amp;top_left_y=479&amp;top_left_x=287)
+
+The left circuit is powered by an AC sinusoidal supply with voltage amplitude $V_{0}=100 \mathrm{~V}$ at an angular frequency $\omega$ and induces an $\operatorname{emf} \mathcal{E}$ on the right circuit. Consider only the induction due to the magnetic field of the long vertical wire of the left circuit on the square loop of the right circuit. Assume the wire is very long compare to the square loop and neglect the gap of the square loop.
+(a) (5pt) For $C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}$ and $\omega=0.5 \mathrm{GHz}$, find the amplitude of the voltage across $C_{1}$ and the phase angle of $V_{C 1}$ with respect to the supply voltage $V_{s}$.
+(b) (15pt) For $a=10 \mathrm{~cm}$ and $b=50 \mathrm{~cm}$ the same set of parameters in used part (a), find the amplitude of the induced emf $\mathcal{E}$ on the right circuit.
+(c) (5pt) Suppose $C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}, C_{2}=1.0 \mathrm{nF}$ and $R_{2}=1.0 \mathrm{k} \Omega$. Find the value of $L_{2}$ and $\omega$ such that the ratio of amplitude of the induced current $I_{\text {ind }}$ to $V_{0}$ is maximized.
+(d) (5pt) Find the amplitude of the induced current $I_{\text {ind }}$ for $a=10 \mathrm{~cm}, b=50 \mathrm{~cm} C_{1}=3.0 \mathrm{nF}, R_{1}=1.0 \mathrm{k} \Omega, L_{1}=2.0 \mathrm{mH}, C_{2}=1.0 \mathrm{nF}, R_{2}=1.0 \mathrm{k} \Omega, L_{2}=4.0 \mathrm{mH}, \omega=$ 0.5 GHz and $V_{0}=100 \mathrm{~V}$.</pre>
+<button onclick="copyLaTeX('q-2013-6')" id="btn-q-2013-6">Copy LaTeX</button>
+</div>
+
+</div>
+</div><div class="exercise" id="q-2013-7">
+<div class="exercise-header">
+<div><span class="exercise-id">Q7</span> <span class="badge-exercise">Long</span></div>
+<div class="exercise-tags"> <a class="tag" href="../tags.html#double-slit" target="_blank">double-slit</a> <a class="tag" href="../tags.html#diffraction" target="_blank">diffraction</a> <a class="tag" href="../tags.html#electric-field" target="_blank">electric-field</a> <a class="tag" href="../tags.html#wavelength" target="_blank">wavelength</a></div>
+</div>
+<div class="exercise-body">
+<div class="exercise-problem">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes through a double slit which is placed on a mirror as shown below.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-6.jpg?height=487&amp;width=1427&amp;top_left_y=484&amp;top_left_x=296)
+
+The slits are separated by distance $d$ and the lower slit is at a distance $d / 2$ above the mirror. Assume that the slit is very small such that no diffraction effects are noticeable.
+(10pt) Find the angles $\theta \geq 0$ of the first three orders of minima. Explain how to obtain the angles by either phasor diagram, cosine representation or complex representation.
+(Bonus 5 pt ) Take the amplitude of the electric field from each slit to be $E_{0}$. Find the average intensity, $\frac{1}{T} \int_{0}^{T} I(\theta, t) d t$ as a function of $\theta$.</div>
+<div class="codebox">
+<pre id="latex-q-2013-7">(10pt + 5pt bonus) A monochromatic light with wavelength $\lambda$ passes through a double slit which is placed on a mirror as shown below.
+![](https://cdn.mathpix.com/cropped/b4bdcb1c-834d-417f-818d-fa86cce9415c-6.jpg?height=487&amp;width=1427&amp;top_left_y=484&amp;top_left_x=296)
+
+The slits are separated by distance $d$ and the lower slit is at a distance $d / 2$ above the mirror. Assume that the slit is very small such that no diffraction effects are noticeable.
+(10pt) Find the angles $\theta \geq 0$ of the first three orders of minima. Explain how to obtain the angles by either phasor diagram, cosine representation or complex representation.
+(Bonus 5 pt ) Take the amplitude of the electric field from each slit to be $E_{0}$. Find the average intensity, $\frac{1}{T} \int_{0}^{T} I(\theta, t) d t$ as a function of $\theta$.</pre>
+<button onclick="copyLaTeX('q-2013-7')" id="btn-q-2013-7">Copy LaTeX</button>
+</div>
+
+</div>
+</div>
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) { MathJax.typesetPromise([content]); }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var pre = ex.querySelector('pre');
+    if (!pre) return;
+    var text = pre.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

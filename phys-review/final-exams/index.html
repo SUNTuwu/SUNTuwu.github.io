@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>PHYS1114 Final Exam Review</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#e6edf3;display:flex;min-height:100vh;overflow-x:hidden}
+::selection{background:#1f6feb44}
+.sidebar{width:260px;min-width:260px;background:#161b22;border-right:1px solid #30363d;padding:24px 0;height:100vh;position:sticky;top:0;overflow-y:auto}
+.sidebar h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.module-nav{padding:4px 12px;cursor:pointer;border-radius:6px;margin:2px 8px;font-size:13px;color:#c9d1d9;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;transition:all .15s}
+.module-nav:hover{background:#1f6feb22;color:#f0f6fc;box-shadow:0 0 8px rgba(88,166,255,0.15)}
+.module-nav.active{background:#1f6feb33;color:#58a6ff;font-weight:600;box-shadow:0 0 12px rgba(88,166,255,0.3),inset 0 0 8px rgba(88,166,255,0.1)}
+.module-nav .count{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-width:22px;height:22px;padding:0 8px;background:#21262d;border-radius:999px;font-size:11px;line-height:1;color:#8b949e}
+.module-nav.active .count{background:#1f6feb44;color:#58a6ff}
+.content{flex:1;min-width:0;padding:32px 48px;max-width:1000px}
+.page-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #21262d}
+.page-header h2{font-size:24px;color:#f0f6fc}
+.page-header .subtitle{font-size:13px;color:#8b949e;margin-top:4px}
+.exercise{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:16px;overflow:hidden}
+.exercise-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#1c2128;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+.exercise-id{font-weight:600;font-size:14px;color:#f0f6fc}
+.badge-example{font-size:10px;padding:1px 6px;border-radius:8px;background:#23863633;color:#7ee787;border:1px solid #23863666;margin-left:6px}
+.badge-exercise{font-size:10px;padding:1px 6px;border-radius:8px;background:#d2992233;color:#d29922;border:1px solid #d2992266;margin-left:6px}
+.exercise-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:12px;background:#1f6feb22;color:#58a6ff;border:1px solid #1f6feb44;text-decoration:none;transition:all .15s}
+.tag:hover{background:#1f6feb44}
+.exercise-body{padding:16px;min-width:0}
+.exercise-problem{font-size:15px;line-height:1.7;margin-bottom:12px;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.exercise-problem img{max-width:100%;border-radius:6px;margin:8px 0}
+.answer-section{border-top:1px solid #21262d;margin-top:12px;padding-top:12px}
+.answer-toggle{cursor:pointer;color:#58a6ff;font-size:13px;font-weight:600;padding:6px 0;user-select:none;display:flex;align-items:center;gap:6px;transition:color .15s}
+.answer-toggle:hover{color:#79c0ff}
+.answer-toggle .toggle-icon{font-size:10px;transition:transform .2s;display:inline-block}
+.answer-toggle.open .toggle-icon{transform:rotate(90deg)}
+.answer-content{display:none;margin-top:12px;padding:16px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:14px;line-height:1.7;min-width:0;word-break:break-word;overflow-wrap:break-word}
+.answer-content.open{display:block}
+.codebox{display:flex;align-items:stretch;background:#0d1117;border:1px solid #30363d;border-radius:6px;overflow:hidden;font-family:'JetBrains Mono','Fira Code',monospace;font-size:13px;margin-top:12px}
+.codebox pre{flex:1;padding:10px 14px;margin:0;overflow-x:auto;overflow-y:hidden;color:#e6edf3;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;line-height:3.5}
+.codebox button{flex-shrink:0;padding:8px 14px;background:#21262d;border:none;border-left:1px solid #30363d;color:#c9d1d9;cursor:pointer;font-size:12px;transition:all .15s;border-radius:0 6px 6px 0}
+.codebox button:hover{background:#30363d;color:#f0f6fc}
+.codebox button.copied{background:#238636;color:#fff}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#484f58}
+.hamburger{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#161b22;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:22px;padding:7px 12px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;user-select:none}
+.home-btn{display:none;position:fixed;top:16px;right:16px;z-index:1001;background:#1f6feb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;padding:7px 16px;height:34px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;transition:background .15s;line-height:1}
+.home-btn:hover{background:#388bfd}
+.hamburger-overlay{display:none !important;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;background:rgba(0,0,0,0.5)}
+.hamburger-overlay.open{display:block !important}
+.sidebar-mobile{display:none;position:fixed;top:0;left:-300px;width:280px;height:100vh;z-index:1000;background:#161b22;border-right:1px solid #30363d;padding:24px 0;overflow-y:auto;transition:left .3s ease}
+.sidebar-mobile.open{left:0}
+.sidebar-mobile h1{font-size:16px;padding:0 20px 16px;color:#f0f6fc;border-bottom:1px solid #30363d;margin-bottom:12px}
+.sidebar-mobile h1 small{display:block;font-size:12px;color:#8b949e;font-weight:normal;margin-top:4px}
+.sidebar-mobile .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;line-height:1}
+.sidebar-mobile .close-btn:hover{color:#f0f6fc}
+mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:nowrap}
+mjx-container[display="true"]::-webkit-scrollbar{height:3px}
+mjx-container[display="true"]::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
+@media(max-width:768px){.sidebar{display:none}.hamburger{display:flex}.home-btn{display:flex}.sidebar-mobile{display:block}.content{padding:12px 16px}.page-header{margin-bottom:18px;padding-bottom:12px}.page-header h2{font-size:22px;line-height:1.25}.exercise{margin-bottom:12px}.exercise-header{padding:10px 12px}.exercise-body{padding:14px}.exercise-problem{font-size:14px;line-height:1.6}.answer-content{font-size:13px}}
+.countdown-banner{background:linear-gradient(135deg,#1f6feb22,#23863622);border:1px solid #30363d;border-radius:12px;padding:24px 28px;margin-bottom:24px}
+.countdown-banner .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.countdown-info{font-size:15px;color:#e6edf3;line-height:1.7}
+.countdown-info strong{color:#58a6ff;font-size:2em}
+.summary-section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin-bottom:24px}
+.summary-section h3{font-size:16px;color:#f0f6fc;margin-bottom:12px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.stat-card{text-align:center;padding:20px;background:#0d1117;border-radius:8px}
+.stat-card .num{font-size:22px;font-weight:700;color:#58a6ff}
+.stat-card .label{font-size:11px;color:#8b949e;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav active" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav " href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav " href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+<div class="hamburger-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<div class="sidebar-mobile" id="mobileSidebar">
+<button class="close-btn" onclick="toggleMobileMenu()">✕</button>
+<h1>PHYS1114 <small>General Physics II · Final Exams</small></h1>
+<a class="module-nav active" href="index.html" style="font-weight:700">Home</a>
+<a class="module-nav " href="sample.html">Sample Questions<span class="count">35</span></a>
+<a class="module-nav " href="questions-2.html">Questions Set 2<span class="count">42</span></a>
+<a class="module-nav " href="2013.html">Summer 2013<span class="count">7</span></a>
+</div>
+<div class="content">
+
+<div class="countdown-banner">
+<div class="inner">
+<div class="countdown-info">
+<strong>PHYS1114 Final Exam Review</strong><br>
+General Physics II · Past Final Exams
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h3>Past Final Exams</h3>
+<div class="stat-grid">
+<div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='sample.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Sample Questions</div>
+<div class="label">35 questions</div>
+</div><div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='questions-2.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Questions Set 2</div>
+<div class="label">42 questions</div>
+</div><div class="stat-card" style="cursor:pointer;transition:all .25s;box-shadow:0 0 15px rgba(88,166,255,0.08);border:1px solid #30363d;background:#0d1117;border-radius:8px;padding:20px;text-align:center" onclick="window.location='2013.html'" onmouseover="this.style.boxShadow='0 0 30px rgba(88,166,255,0.25)';this.style.borderColor='#58a6ff44'" onmouseout="this.style.boxShadow='0 0 15px rgba(88,166,255,0.08)';this.style.borderColor='#30363d'">
+<div class="num">Summer 2013</div>
+<div class="label">7 questions</div>
+</div>
+</div>
+</div>
+
+<div class="summary-section">
+<h3>Total Coverage</h3>
+<div class="stat-grid">
+<div class="stat-card"><div class="num">84</div><div class="label">Total Questions</div></div>
+<div class="stat-card"><div class="num">3</div><div class="label">Exam Sets</div></div>
+</div>
+</div>
+
+<a href="../tags.html" style="display:flex;align-items:center;justify-content:center;padding:20px 32px;margin-top:24px;background:linear-gradient(135deg,#1f6feb33,#23863633);border:1px solid #1f6feb66;border-radius:12px;color:#58a6ff;text-decoration:none;font-size:24px;font-weight:700;letter-spacing:2px;transition:all .25s;box-shadow:0 0 20px rgba(88,166,255,0.08)" onmouseover="this.style.background='linear-gradient(135deg,#1f6feb55,#23863655)';this.style.borderColor='#58a6ff';this.style.boxShadow='0 0 30px rgba(88,166,255,0.2)'" onmouseout="this.style.background='linear-gradient(135deg,#1f6feb33,#23863633)';this.style.borderColor='#1f6feb66';this.style.boxShadow='0 0 20px rgba(88,166,255,0.08)'">
+👉🎯CLICK TO BROWSE BY TAGS
+</a>
+
+<p style="color:#8b949e;font-size:12px;text-align:center;margin-top:32px">
+Questions from HKUST PHYS1114 past final exams.<br>
+Tags follow common General Physics II topic classification.
+</p>
+
+</div>
+<script>
+function toggleAnswer(id) {
+    var section = document.getElementById(id);
+    var toggle = section.querySelector('.answer-toggle');
+    var content = section.querySelector('.answer-content');
+    var isOpen = content.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    if (isOpen) { MathJax.typesetPromise([content]); }
+}
+function copyLaTeX(id) {
+    var btn = document.getElementById('btn-' + id);
+    if (!btn) return;
+    var ex = btn.closest('.exercise');
+    if (!ex) return;
+    var pre = ex.querySelector('pre');
+    if (!pre) return;
+    var text = pre.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() { copiedFeedback(btn); }).catch(function() { fallbackCopy(text, btn); });
+    } else {
+        fallbackCopy(text, btn);
+    }
+}
+function fallbackCopy(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); copiedFeedback(btn); } catch(e) { btn.textContent = 'Failed'; }
+    document.body.removeChild(ta);
+}
+function copiedFeedback(btn) {
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy LaTeX';btn.classList.remove('copied')}, 2000);
+}
+function toggleMobileMenu() {
+    var s = document.getElementById('mobileSidebar');
+    var o = document.getElementById('mobileOverlay');
+    var isOpen = s.classList.toggle('open');
+    o.classList.toggle('open', isOpen);
+}
+</script>
+</body>
+</html>

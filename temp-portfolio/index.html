@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>一个热爱艺术的技术宅</title>
+  <meta name="description" content="一个热爱艺术的技术宅。香港科技大学大二，现役 RMer，B 站 2.7 万粉丝，小红书 1.5 万粉丝。">
+  <meta name="theme-color" content="#0b0c0e">
+  <link rel="preload" href="fonts/Saira.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="portfolio.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-circuit"></div>
+  <div class="loader-fill"></div>
+  <div class="loader-mark">
+    <small>一个热爱艺术的技术宅</small>
+    <b>SOMO</b>
+    <p class="loader-line">BENI PORTFOLIO</p>
+  </div>
+  <div class="loader-num is-low" id="loaderNum">0<small>%</small></div>
+</div>
+
+<header class="topbar">
+  <a class="logo" href="#profile" aria-label="回到个人档案"><b>SOMO</b><span>桑</span></a>
+  <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">菜单</button>
+  <nav class="nav" id="nav" aria-label="页面导航">
+    <a href="#profile" data-fx-host><b data-fx>PROFILE</b><span>个人档案</span></a>
+    <a href="#fit" data-fx-host><b data-fx>WHY ME</b><span>我能带来什么</span></a>
+    <a href="#tech" data-fx-host><b data-fx>TECH</b><span>技术项目</span></a>
+    <a href="#film" data-fx-host><b data-fx>FILM</b><span>招新影像</span></a>
+    <a href="#lab" data-fx-host><b data-fx>LAB</b><span>小项目</span></a>
+    <a href="#art" data-fx-host><b data-fx>ART</b><span>艺术</span></a>
+    <a href="#contact" data-fx-host><b data-fx>CONTACT</b><span>联系方式</span></a>
+  </nav>
+  <div class="top-links">
+    <a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">B 站</a>
+    <a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">小红书</a>
+  </div>
+</header>
+
+<div class="frame-h" aria-hidden="true"></div>
+<div class="frame-v" aria-hidden="true"></div>
+
+<aside class="rail" id="rail" aria-hidden="true">
+  <div class="rail-count">
+    <div class="rail-no"><span id="railNo">01</span></div>
+    <div class="rail-meta">
+      <span>// <i id="railCur">01</i> / <i id="railTotal">07</i></span>
+      <small>SOMO PORTFOLIO</small>
+      <b id="railLabel">PROFILE</b>
+    </div>
+  </div>
+  <div class="rail-arrows">
+    <button type="button" id="railPrev" tabindex="-1" aria-label="上一屏"><svg viewBox="0 0 40 26"><path d="M2 24 20 8l18 16-5 0L20 13 7 24Z"/><path d="M2 14 20 0l18 14-5 0L20 5 7 14Z"/></svg></button>
+    <button type="button" id="railNext" tabindex="-1" aria-label="下一屏"><svg viewBox="0 0 40 26"><path d="M2 2 20 18 38 2l-5 0L20 13 7 2Z"/><path d="M2 12 20 26 38 12l-5 0L20 21 7 12Z"/></svg></button>
+    <small>SCROLL</small>
+  </div>
+</aside>
+
+<main class="deck-root" id="deck">
+
+  <!-- 01 个人档案 -->
+  <section class="sec sec-profile" id="profile" data-label="PROFILE" aria-labelledby="hName">
+    <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+    <div class="ghost" aria-hidden="true">SOMO</div>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow" data-in style="--i:0"><small>BENI CAMPUS AMBASSADOR ://</small><b>PROFILE</b></div>
+        <h1 id="hName" data-in style="--i:1">Hi~ 我是 <em>SOMO</em></h1>
+        <p class="hero-sub" data-in style="--i:1">一个热爱艺术的技术宅</p>
+        <div class="identity" data-in style="--i:2">
+          <span class="id-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <div>
+            <small>HKUST</small>
+            <p>香港科技大学大二 · Electronic Engineering 学生</p>
+          </div>
+        </div>
+        <dl class="stats" data-in style="--i:3">
+          <div><dt>B 站粉丝</dt><dd>2.7<small>万</small></dd><dd class="stat-go"><a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">进入 B 站</a></dd></div>
+          <div><dt>小红书粉丝</dt><dd>1.5<small>万</small></dd><dd class="stat-go"><a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">进入小红书</a></dd></div>
+          <div class="hot"><dt>最火视频全网播放</dt><dd>200<small>万+</small></dd></div>
+        </dl>
+        <div class="facet-box" data-in style="--i:4"><p id="facetText" aria-live="polite"></p></div>
+        <div class="facets" id="facets" role="group" aria-label="切换自我介绍" data-in style="--i:5"></div>
+      </div>
+      <div class="hero-side">
+        <div class="avatar-wrap">
+          <svg class="avatar-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="99" />
+            <path d="M100 1A99 99 0 0 1 199 100" />
+          </svg>
+          <div class="avatar-flip" id="avatarFlip">
+            <img class="avatar face" src="media/avatar.jpg" alt="SOMO 的头像：一只拿着扳手和刻刀的薮猫">
+            <img class="avatar back" src="media/avatar-real-robot.jpg" alt="SOMO 与机器人合照" loading="lazy">
+          </div>
+          <button class="real-btn" type="button" id="realBtn" aria-pressed="false" aria-controls="avatarFlip">
+            <span class="cam" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 4 7 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3l-1.5-2Zm3.5 4.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Z"/></svg></span>
+            <span><b>真人出镜</b><small>REAL ME</small></span>
+          </button>
+          <div class="flags" id="flags"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 为什么选我：沿用个人档案的黑白背景；左边三条招募要求，右边单独放 Beni 选题 -->
+  <section class="sec sec-fit" id="fit" data-label="WHY ME" aria-labelledby="hFit">
+    <div class="fit-bg" id="fitBg" aria-hidden="true"></div>
+    <div class="ghost" aria-hidden="true">WHY ME</div>
+    <div class="fit-grid">
+      <div class="fit-side">
+        <div class="eyebrow" data-in style="--i:0"><small>// WHY ME</small><h2 id="hFit">我能带来什么</h2></div>
+        <div class="fit-cards" id="fitCards"></div>
+      </div>
+      <article class="beni-card" id="beniCard" data-in style="--i:2" aria-labelledby="hBeni"></article>
+    </div>
+  </section>
+
+  <!-- 03 技术项目 -->
+  <section class="sec sec-tech" id="tech" data-label="TECH" aria-labelledby="hTech">
+    <h2 class="visually-hidden" id="hTech">技术项目</h2>
+    <div class="flow-head"><div class="eyebrow"><small>// TECH</small><b>技术项目</b></div></div>
+    <div class="panels" id="panels"></div>
+    <div class="ghost ghost-low" aria-hidden="true">PROJECTS</div>
+  </section>
+
+  <!-- 04 招新影像 -->
+  <section class="sec sec-film" id="film" data-label="FILM" aria-labelledby="hFilm">
+    <div class="ghost" aria-hidden="true">RM2027</div>
+    <div class="split">
+      <div class="split-side">
+        <div class="eyebrow" data-in style="--i:0"><small>// FILM + WEB</small><b>招新影像</b></div>
+        <p class="meta-line" data-in style="--i:1">RM2027 赛季 <i>//</i> HKUST ENTERPRIZE</p>
+        <h2 class="film-title" id="hFilm" data-in style="--i:1">
+          <a href="https://join.hkustenterprize.com/" target="_blank" rel="noopener">招新宣传片<br>和网页体验<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12h-2.6V8.4L5.8 16 4 14.2l7.6-7.6H4Z"/></svg></a>
+        </h2>
+        <dl class="credits" data-in style="--i:2">
+          <div><dt>动画</dt><dd>3D 动画均由本人制作，部分材质由 GPT-5.6 辅助。</dd></div>
+          <div><dt>网站</dt><dd>策划、动画制作、动效设计、网页框架由本人完成，网页代码由 Kimi-K3 和 GPT-5.6 实现。</dd></div>
+        </dl>
+        <div class="btn-row" data-in style="--i:3">
+          <a class="btn go" href="https://join.hkustenterprize.com/" target="_blank" rel="noopener"><span><b>体验招新网页</b><small>JOIN.HKUSTENTERPRIZE.COM</small></span></a>
+          <a class="btn" href="https://opensource.hkustenterprize.com/" target="_blank" rel="noopener"><span><b>开源档案库</b><small>OPENSOURCE</small></span></a>
+        </div>
+      </div>
+      <div class="split-stage">
+        <div class="stage-media" id="filmStage"></div>
+        <div class="film-tabs" id="filmTabs" role="group" aria-label="切换影片">
+          <button class="chip is-on" type="button" data-film="site">网页 3D 动画</button>
+          <button class="chip" type="button" data-film="promo">招新宣传片</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 小项目 -->
+  <section class="sec sec-lab" id="lab" data-label="LAB" aria-labelledby="hLab">
+    <div class="lab-bg" id="labBg" aria-hidden="true"></div>
+    <button class="lab-round l" type="button" id="labPrev" aria-label="上一张"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 3 5.5 10l7 7 1.9-1.9L9.3 10l5.1-5.1Z"/></svg></button>
+    <button class="lab-round r" type="button" id="labNext" aria-label="下一张"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 3 5.6 4.9 10.7 10l-5.1 5.1L7.5 17l7-7Z"/></svg></button>
+    <div class="lab-ui">
+      <div class="lab-head" data-in style="--i:0">
+        <div class="lab-eyebrow"><i aria-hidden="true"></i><span>LAB</span></div>
+        <h2 id="hLab">小项目</h2>
+      </div>
+      <div class="lab-foot">
+        <div class="lab-info" id="labInfo" aria-live="polite"></div>
+        <div class="lab-actions">
+          <button class="play" type="button" id="labOpen" aria-label="查看当前作品"><svg viewBox="0 0 20 20"><path d="M5 2.5v15L17 10Z"/></svg></button>
+          <a class="more" href="https://space.bilibili.com/177960253" target="_blank" rel="noopener" aria-label="之前的更多作品（B站）"><i aria-hidden="true"></i><span>之前的更多作品</span><svg class="bilibili-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 2 3 4m7-4-3 4"/><rect x="2" y="6" width="20" height="15" rx="3"/><path d="m7 11 1 4m9-4-1 4m-6 2 2 1 2-1"/></svg></a>
+        </div>
+        <p class="lab-also" id="labAlso"></p>
+      </div>
+      <div class="lab-thumbs" id="labThumbs"></div>
+      <div class="lab-dots" id="labDots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 06 艺术 -->
+  <section class="sec sec-art" id="art" data-label="ART" aria-labelledby="hArt">
+    <div class="art-blur" id="artBlur" aria-hidden="true"></div>
+    <div class="art-frame">
+      <i class="star s1" aria-hidden="true"></i><i class="star s2" aria-hidden="true"></i><i class="star s3" aria-hidden="true"></i><i class="star s4" aria-hidden="true"></i>
+      <div class="art-type">
+        <p class="art-kicker" data-in style="--i:0">SOMO <i>//</i> ART</p>
+        <h2 id="hArt" class="art-headline" data-in style="--i:1">
+          <span>DRAW <em>IT</em></span>
+          <span>BUILD <em>IT</em></span>
+          <span>SHOOT <em>IT</em></span>
+        </h2>
+        <p class="art-cn" data-in style="--i:2">擅长绘画，也做摄影、<br>3D 建模和动画。<small id="artNote"></small></p>
+        <div class="art-tabs" id="artTabs" role="group" aria-label="切换作品类型" data-in style="--i:3"></div>
+        <div class="art-thumbs" id="artThumbs" data-scroll data-in style="--i:4"></div>
+      </div>
+      <div class="art-piece" id="artPiece">
+        <i class="geo geo-sun" aria-hidden="true"></i>
+        <i class="geo geo-tri" aria-hidden="true"></i>
+        <i class="geo geo-stripe" aria-hidden="true"></i>
+        <div class="art-ghost" id="artGhost" aria-hidden="true"></div>
+        <button class="art-main" id="artMain" type="button" aria-label="查看大图"></button>
+        <p class="art-cap" id="artCap"></p>
+      </div>
+      <p class="art-side" aria-hidden="true">精选绘画与摄影。更多作品在社交账号。</p>
+    </div>
+  </section>
+
+  <!-- 07 联系 -->
+  <section class="sec sec-contact" id="contact" data-label="CONTACT" aria-labelledby="hContact">
+    <div class="ghost" aria-hidden="true">CONTACT</div>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <div class="eyebrow" data-in style="--i:0"><small>// CONTACT</small><b>联系方式</b></div>
+        <h2 id="hContact" data-in style="--i:1">让 <em>Beni</em> 进赛场，<br>也进我的镜头<span class="dot">。</span></h2>
+        <div class="contact-rule" data-in style="--i:1" aria-hidden="true"></div>
+        <p data-in style="--i:2">我希望申请 Beni 校园大使。我会用 RMer 的视角拆解它，用画笔和镜头记录它的可爱。</p>
+        <ul class="records" data-in style="--i:3">
+          <li><a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener"><i>No.01</i><b>哔哩哔哩</b><span>SOMO桑</span></a></li>
+          <li><a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener"><i>No.02</i><b>小红书</b><span>绘画为主</span></a></li>
+          <li><a href="https://github.com/SUNTuwu" target="_blank" rel="noopener"><i>No.03</i><b>GitHub</b><span>SUNTuwu</span></a></li>
+          <li><a><i>No.04</i><b>微信</b><span>lxySUNT</span></a></li>
+          <li><a href="mailto:xlilv@connect.ust.hk"><i>No.05</i><b>邮箱</b><span>xlilv@connect.ust.hk</span></a></li>
+        </ul>
+      </div>
+      <figure class="wall" data-in style="--i:2" aria-label="照片墙：中间是 Beni，周围是我的作品和日常">
+        <div class="wall-grid" id="wall">
+          <i class="wall-hatch h1" aria-hidden="true"></i>
+          <i class="wall-hatch h2" aria-hidden="true"></i>
+          <i class="wall-corner tl" aria-hidden="true"></i>
+          <i class="wall-corner br" aria-hidden="true"></i>
+          <div class="wall-beni"><img src="media/beni.png" alt="Beni 机器人" loading="lazy"></div>
+          <img class="wall-doodle" src="media/beni-doodle.png" alt="手绘 Beni 贴纸" loading="lazy">        </div>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<!-- 技术项目详情：由竖栏展开 -->
+<div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle" hidden>
+  <div class="detail-side" data-scroll>
+    <button class="back" type="button" id="detailBack"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 3 5.5 10l7 7 1.9-1.9L9.3 10l5.1-5.1Z"/></svg>返回项目列表</button>
+    <div class="detail-tabs" id="detailTabs" role="group" aria-label="切换项目"></div>
+    <div class="detail-body" id="detailBody"></div>
+  </div>
+  <div class="detail-main">
+    <div class="detail-view" id="detailView">
+      <div class="stage-media" id="detailStage"></div>
+      <button class="detail-nav l" type="button" id="detailPrev" aria-label="上一张"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 3 5.5 10l7 7 1.9-1.9L9.3 10l5.1-5.1Z"/></svg></button>
+      <button class="detail-nav r" type="button" id="detailNext" aria-label="下一张"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 3 5.6 4.9 10.7 10l-5.1 5.1L7.5 17l7-7Z"/></svg></button>
+      <p class="detail-count" id="detailCount" aria-live="polite"></p>
+      <div class="detail-cap" id="detailCap" aria-live="polite"></div>
+    </div>
+    <div class="detail-thumbs" id="detailThumbs" data-scroll></div>
+  </div>
+</div>
+
+<dialog class="viewer" id="viewer" aria-label="查看作品">
+  <button class="viewer-close" type="button" id="viewerClose">关闭</button>
+  <div class="viewer-body" id="viewerBody"></div>
+  <p class="viewer-cap" id="viewerCap"></p>
+</dialog>
+
+<noscript><p class="nojs">这个页面的项目展示需要 JavaScript。也可以直接看 <a href="https://space.bilibili.com/177960253">B 站</a> 和 <a href="https://xhslink.cn/o/3qZbS1aUIce">小红书</a>。</p></noscript>
+
+<script src="portfolio.js"></script>
+</body>
+</html>

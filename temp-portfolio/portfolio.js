@@ -9,11 +9,11 @@ const CONTENT = {
     { cn: '现役 RMer', thumb: 'media/facet-rm.jpg',
       text: '港科大 RM 战队算法组，2026 赛季哨兵研发代表，现在主要在搭仿真和 2027 赛季的哨兵，并做自瞄联调。上个赛季主要负责导航和自瞄。' },
     { cn: '仿真 + RL', thumb: 'media/sim-7.jpg',
-      text: '最近的重心是仿真：在 MuJoCo 里搭 RM 赛场和哨兵仿真，也用它训练强化学习四足宠物和六足机器人。' },
+      text: '目前主要开发基于 MuJoCo 的 RM 赛场和哨兵仿真框架。四足宠物项目正在进行强化学习训练，六足机器人已完成训练和实机移植。' },
     { cn: '硬件 DIY', thumb: 'media/facet-hardware.png',
-      text: '热爱 DIY：画过电机驱动板和 AR 驱动板，用逻辑分析仪逆向芯片，也自己写 PCB 抄板工具。机械、硬件、算法都碰过。' },
+      text: '设计过微型电机驱动板和双目 AR 驱动板，使用逻辑分析仪分析 LT8619C 的初始化时序，并开发 PCB 图像处理与走线提取工具。' },
     { cn: '创作者', thumb: 'media/art-1.jpg',
-      text: '课余爱好是 3D 建模、二次元绘画、摄影和动画，之前在 B 站和小红书更新过一些作品。近期忙于 RM 比赛，暂时没有运营。' },
+      text: '课余制作 3D 模型、插画和动画，也拍摄机器人实物与比赛现场。作品曾发布在 B 站和小红书，近期因 RM 比赛暂停更新。' },
   ],
 
   flags: [
@@ -59,7 +59,7 @@ const CONTENT = {
   tech: [
     { id: 'sable', title: '强化学习四足宠物', short: '四足宠物', rail: 'SABLE', titleLong: '强化学习四足宠物 SABLE', en: 'RL QUADRUPED PET', state: '训练中', date: '近期',
       cover: { type: 'image', src: 'media/sable-cover.jpg' },
-      desc: '在小体积约束下寻找"够用"的硬件：机械结构和强化学习同步迭代，用训练结果判断动作做不到，是策略还没学好，还是关节结构、力矩、速度或活动范围不够，再指导下一轮硬件调整。',
+      desc: '在小体积约束下同步迭代机械结构和强化学习策略。通过仿真训练检查步态表现，分析策略训练与关节结构、力矩、速度和活动范围对运动的限制，据此调整硬件设计。',
       fields: [['技术', 'MuJoCo / 强化学习'], ['方法', '机械设计与 RL 同步迭代'], ['现在', '基础步态已能稳定存活，偏航和打滑待解决'], ['方向', '智能宠物和情感陪伴']],
       media: [
         /* cap 是标题，desc 是一句说明，显示在画面左下角 */
@@ -70,25 +70,25 @@ const CONTENT = {
         { type: 'video', src: 'media/sable-retargeted-gaits.mp4', cap: '重定向步态展示', thumbAt: 1,
           desc: '展示重定向后的四足模型步态与关节运动。' },
         { type: 'image', src: 'media/sable-cover.jpg', cap: '形象概念',
-          desc: 'SABLE 以鼬科动物为原型，目标是做一只能陪伴人的小型四足宠物。' },
+          desc: '以鼬科动物为外形原型，面向陪伴用途设计小型四足机器人。' },
         { type: 'image', src: 'media/sable-sketch.jpg', cap: '概念手稿',
           desc: '记录四足宠物的外形构想与身体比例。' },
         { type: 'image', src: 'media/sable-leg.png', cap: '腿部结构模型',
           desc: '腿部结构模型，展示关节位置、连杆布局与尺寸标注。' },
         { type: 'image', src: 'media/sable-actuator-comparison.jpg', cap: '腿部机构与电机实物',
-          desc: '腿部机构与电机的实物照片，旁边放有卡尺。' },
+          desc: '腿部机构与电机实物尺寸对照。' },
         { type: 'image', src: 'media/sable-linear-actuators.jpg', cap: '测试中的步进电机',
           desc: '用于项目测试的多款步进电机。' },
         { type: 'video', src: 'media/sable-early-joint-length-test.mp4', cap: '早期关节长度测试', thumbAt: 1,
-          desc: '在 MuJoCo 中测试关节长度比例；简化的胶囊体四足模型从站立逐渐塌下、趴倒。' },
+          desc: '在 MuJoCo 中测试关节长度比例，记录简化四足模型从站立到失稳的过程。' },
       ] },
     { id: 'sim', title: 'RM 赛场仿真', short: '赛场仿真', rail: 'SIMULATION', titleLong: 'RM 赛场仿真框架', en: 'RM ARENA SIMULATION', state: '研发中', date: '2026.11',
       cover: { type: 'image', src: 'media/sim-7.jpg' },
-      desc: '我把赛场、机器人和传感器接入同一套 MuJoCo 仿真。服务器推进物理状态，Filament 根据状态快照生成相机图像，浏览器也可以独立渲染。最近把同一套灯光效果接进 Blender，改场景时就能对照服务端画面。',
-      fields: [['物理与接口', 'MuJoCo / ROS 2 / WebSocket'], ['11 月进展', 'Blender 本地预览已和服务端对图。红、蓝正视与红色斜视三组画面中，8 位像素值最大相差 2 级。'], ['进行中', '继续检查场景网格和蓝色灯光映射']],
+      desc: '基于 MuJoCo 集成赛场、机器人和传感器仿真。服务端推进物理状态，Filament 根据状态快照生成相机图像，浏览器独立渲染交互画面。目前已将同一套灯光效果接入 Blender，用于场景编辑时与服务端画面对照。',
+      fields: [['物理与接口', 'MuJoCo / ROS 2 / WebSocket'], ['11 月进展', '已对比 Blender 本地预览与服务端输出。红、蓝正视与红色斜视三组画面中，8 位像素值最大相差 2 级。'], ['进行中', '继续检查场景网格和蓝色灯光映射']],
       media: [
         { type: 'video', src: 'media/sim-rune-preview.mp4', cap: '能量机关灯光预览', thumbAt: 3,
-          desc: '仿真赛场中的蓝色能量机关，转动时可以看到灯带和环形图案。' },
+          desc: '蓝色能量机关转动时的灯带与环形图案渲染效果。' },
         { type: 'video', src: 'media/sim-1.mp4', cap: '自瞄视角：移动与射击仿真', thumbAt: 3,
           desc: '展示机器人移动和射击时的自瞄相机视角，并非操作手视角。' },
         { type: 'video', src: 'media/sim-2.mp4', cap: '赛场场景浏览', thumbAt: 1,
@@ -104,14 +104,14 @@ const CONTENT = {
         { type: 'image', src: 'media/sim-server-browser.png', cap: '服务端相机与浏览器预览',
           desc: '相机按仿真时间生成 RGB 图像，通过 ROS 或共享内存发布。浏览器接收模型和后续状态更新，单独绘制交互画面。' },
         { type: 'image', src: 'media/sim-rviz-costmap.png', cap: 'RViz 中的点云与全局代价地图',
-          desc: '把赛场点云叠在 Nav2 的全局代价地图上，查看障碍物轮廓与地图边界。' },
+          desc: '在 Nav2 全局代价地图上叠加赛场点云，检查障碍物轮廓与地图边界。' },
         { type: 'image', src: 'media/sim-4.jpg', cap: '赛场模型总览' },
         { type: 'image', src: 'media/sim-5.jpg', cap: '自研实时灯光合成',
           desc: '展示自研灯光合成器对装甲板灯条与数字区域的显示效果。' },
         { type: 'image', src: 'media/sim-lighting-results.png', cap: '赛场灯光渲染对比',
           desc: '同一赛场中，近处和远处的灯条在橙光、蓝光下呈现出不同的亮度和光晕。' },
         { type: 'image', src: 'media/sim-compositor-nodes.png', cap: 'Blender 灯光合成节点',
-          desc: '节点图中可以看到各颜色通道的处理分支，以及它们如何合成为最终画面。' },
+          desc: '各颜色通道的处理分支与最终画面合成流程。' },
         { type: 'image', src: 'media/sim-compositing-notes.png', cap: '灯光合成笔记',
           desc: '在一张底图上分别提取红、绿、蓝灯条，为各通道生成辉光，再与背景合成。' },
         { type: 'image', src: 'media/sim-lighting-process.png', cap: '灯条轮廓与光晕处理',
@@ -120,7 +120,7 @@ const CONTENT = {
       ] },
     { id: 'hex', title: 'RL 仿生六足蜘蛛', short: '六足蜘蛛', rail: 'HEXAPOD', titleLong: 'RL 仿生六足蜘蛛机器人', en: 'RL HEXAPOD SPIDER', state: '已完成', done: true, date: '2025.04 - 2025.06',
       cover: { type: 'image', src: 'media/hex-1.jpg' },
-      desc: '机械设计、嵌入式代码、RL 训练和 sim2real 均由我独立完成。机械上投入最多的是紧凑收纳和大范围活动：通过腿部构型和关节布局，让六条腿收拢后贴近机身，展开后仍保留较大的活动范围。那是一年前，AI 还没有现在这么智能；RL 部分基于开源框架，针对六足结构做了二次开发和训练。照片为本人拍摄。',
+      desc: '独立完成机械设计、嵌入式代码、RL 训练和 sim2real。机械设计重点是紧凑收纳与腿部活动范围，通过腿部构型和关节布局，使六条腿收拢后贴近机身，展开后保留较大的活动范围。RL 部分基于开源框架，针对六足结构进行二次开发和训练。照片为本人拍摄。',
       fields: [['时间', '2025 年 4 - 6 月'], ['职责', '机械设计 / 嵌入式 / RL 训练 / sim2real'], ['结构', '碳板主体 / 20 路舵机'], ['RL', '开源框架二次开发和训练']],
       media: [
         { type: 'image', src: 'media/hex-1.jpg', cap: '收拢状态 · 正面',
@@ -209,18 +209,18 @@ const CONTENT = {
       { type: 'image', src: 'media/motor-encoder-assembly.jpg', note: '磁编码器与电机驱动板装配图' },
       { type: 'image', src: 'media/motor-closeup.jpg', note: '实物细节' },
     ] },
-    { title: '高功率密度双通道 DC-DC 电源板', tag: '硬件', desc: '2024 年做的一块 30 × 20 mm 电源板。当时把 SW（开关节点）的走线画得太细，没达到预期的 5 A 设计目标。', cover: 0, items: [
+    { title: '高功率密度双通道 DC-DC 电源板', tag: '硬件', desc: '2024 年设计的 30 × 20 mm 双通道电源板。当时对 SW（开关节点）走线宽度考虑不足，走线过细，未达到预期的 5 A 设计目标。', cover: 0, items: [
       { type: 'image', src: 'media/dual-dcdc.jpg', note: 'PCB 布局与尺寸对照' },
     ] },
-    { title: 'IMU 鱼眼「0 延迟」图传', tag: '实时图像处理', desc: '目标是让画面跟上相机转动。两帧视频之间，用 1 kHz IMU 外推显示时刻的朝向，再用 Vulkan 从上一帧鱼眼图像中重投影并裁出 90° 视野，补偿采集到显示之间的旋转。', cover: 0, items: [
+    { title: 'IMU 鱼眼「0 延迟」图传', tag: '实时图像处理', desc: '通过 IMU 姿态外推和鱼眼重投影补偿图传中的旋转延迟。在两帧视频之间，使用 1 kHz IMU 外推显示时刻的朝向，通过 Vulkan 对上一帧鱼眼图像重投影并裁出 90° 视野，补偿采集到显示期间的旋转。', cover: 0, items: [
       { type: 'video', src: 'media/imu-fisheye-demo.mp4', note: '手持转动测试 · 原始鱼眼与补偿画面对照' },
     ] },
-    { title: 'Vtuber 虚拟形象管线', tag: '软件', desc: '用 Blender 插件把真人视频转成虚拟形象。DWPose 通过 DirectML 估计姿态，iPhone 用 Record3D 采集彩色和深度画面，再替换头部并预览卡通渲染效果。', cover: 0, items: [
+    { title: 'Vtuber 虚拟形象管线', tag: '软件', desc: '开发 Blender 插件，实现真人视频到虚拟形象的处理流程。通过 DirectML 运行 DWPose 进行姿态估计，使用 iPhone Record3D 采集 RGB-D 数据，进行头部替换和卡通渲染预览。', cover: 0, items: [
       { type: 'video', src: 'media/vtuber-demo.mp4', note: '管线演示' },
       { type: 'image', src: 'media/vtuber-rgbd-tests.jpg', note: '早期算法迭代 · RGB-D 语义分割与衣领边界测试' },
       { type: 'image', src: 'media/vtuber-hand-tests.jpg', note: '早期算法迭代 · YOLO 与 DeepLab 手部分割对比' },
     ] },
-    { title: 'PCB_Extractor 抄板工具', tag: '软件', desc: '基于 PySide6 和 OpenCV 的 PCB 抄板工具：多层图像配准，Lab 空间 K-means 二值化铜皮，手动修补，识别铜皮孤岛，最后导出走线中心路径。', cover: 3, items: [
+    { title: 'PCB_Extractor 抄板工具', tag: '软件', desc: '基于 PySide6 和 OpenCV 开发 PCB 抄板工具，支持多层图像配准、Lab 空间 K-means 铜皮二值化、手动修补、铜皮孤岛识别和走线中心路径导出。', cover: 3, items: [
       { type: 'image', src: 'media/pcb-front.jpg', note: '板子正面' },
       { type: 'image', src: 'media/pcb-layer-detail.png', note: '板层局部图像' },
       { type: 'image', src: 'media/pcb-mask-detail.png', note: '焊盘与走线二值图' },
@@ -243,7 +243,7 @@ const CONTENT = {
       { type: 'image', src: 'media/cart-upper.jpg', note: '云台模型' },
       { type: 'image', src: 'media/cart-section.jpg', note: '云台与滑环剖面' },
     ] },
-    { title: '3D 打印可变形名片', tag: '3D 打印', desc: '一张能折出来的名片：平时是名片，掰开就是手机支架。模型已经发在 MakerWorld。', cover: 0,
+    { title: '3D 打印可变形名片', tag: '3D 打印', desc: '设计可折叠为手机支架的 3D 打印名片，模型已发布至 MakerWorld。', cover: 0,
       link: { href: 'https://makerworld.com/zh/models/1128870-foldable-business-card-and-phone-stand#profileId-1128739', text: 'MakerWorld 模型页' }, items: [
       { type: 'image', src: 'media/card-personal.jpg', note: '实物' },
     ] },
@@ -253,7 +253,7 @@ const CONTENT = {
     { title: '骰子动画', tag: '动画', desc: '和港科 UP 主合作的片头动画。', cover: 0, items: [
       { type: 'video', src: 'media/dice.mp4', note: '合作片头' },
     ] },
-    { title: 'RM 战队文创', tag: '设计', desc: '给 RM 战队做的工程机器人图案和战队名片展示。', cover: 0, items: [
+    { title: 'RM 战队文创', tag: '设计', desc: '为 RM 战队设计工程机器人图案和战队名片。', cover: 0, items: [
       { type: 'image', src: 'media/merch-engineer.jpg', note: '工程机器人图案' },
       { type: 'image', src: 'media/merch-process.jpg', note: '图案模型预览' },
       { type: 'video', src: 'media/card-enterprize.mp4', note: 'ENTERPRIZE 名片展示' },

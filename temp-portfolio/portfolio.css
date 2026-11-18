@@ -559,8 +559,15 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .contact-grid { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; padding: 30px var(--pad) 48px; }
 .contact-text h2 { margin-top: 14px; font: 800 clamp(28px, 3.4vw, 50px)/1.28 var(--font-text); }
 .contact-text > p { margin-top: 12px; color: #d2d5d9; max-width: 560px; font-size: 15px; line-height: 1.8; }
-.records { margin-top: 20px; max-width: 640px; border-top: 1px solid var(--rule); }
-.records a { position: relative; display: grid; grid-template-columns: 54px 86px 1fr; align-items: center; gap: 6px; min-height: 50px; padding: 8px 0; border-bottom: 1px solid var(--rule); transition: transform .25s var(--snap), color .2s var(--ease); }
+.contact-text .direction-lead { margin-top: 18px; color: var(--ink); font-weight: 700; }
+.direction-paths { margin-top: 10px; }
+.direction-paths > div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--rule); font-size: 14px; line-height: 1.65; }
+.direction-paths dt { color: var(--cyan); font-weight: 700; }
+.direction-paths dd { margin: 0; color: var(--ink-2); }
+.contact-footer { grid-column: 1 / -1; }
+.contact-footer > p { color: var(--ink-2); font-size: 14px; line-height: 1.7; }
+.records { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin-top: 12px; border-top: 1px solid var(--rule); }
+.records a, .contact-record { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 6px; min-height: 64px; padding: 10px 0; border-bottom: 1px solid var(--rule); transition: transform .25s var(--snap), color .2s var(--ease); }
 .records a::before { content: ""; position: absolute; left: -12px; top: 0; bottom: 0; width: 3px; background: var(--cyan); transform: scaleY(0); transform-origin: top; transition: transform .2s var(--snap); }
 .records a:hover { transform: translateX(12px); color: var(--cyan); }
 .records a:hover::before { transform: none; }
@@ -578,8 +585,7 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .records a:hover::after, .records a:focus-visible::after { opacity: 1; right: 6px; }
 .records b { font-size: 15px; }
 .records span { font: 400 13px/1.4 var(--font-text); color: var(--ink-2); overflow-wrap: anywhere; }
-/* Contact: flat 2D collage. Dark cut-corner frames, thin rules and diagonal hatching; the cyan-framed sentry
-   photo in the middle and the RoboMaster sticker are the colourful focus. */
+/* 小型机器人方向：概念形象居中，相关项目环绕。 */
 .wall { position: relative; margin: 0; }
 .wall-grid { position: relative; isolation: isolate; width: min(100%, 460px); aspect-ratio: 1; margin: 0 auto; }
 /* 背景：斜线色块 + 角标线，只做衬底 */
@@ -605,24 +611,14 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 }
 .wall-cell:hover, .wall-cell:focus-visible { z-index: 6; filter: brightness(1.08); translate: 0 -3px; }
 .wall-cell:focus-visible { outline-offset: 4px; }
-.wall-arena { left: 3%; top: 9%; width: 60%; height: 38%; --tilt: -3deg; z-index: 1; }
-.wall-cat { right: 4%; bottom: 7%; width: 42%; height: 45%; --tilt: 3deg; z-index: 2; --cutc: 0px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%); }
-.wall-cat i { border-left-color: var(--yellow); }
-/* RoboMaster 贴纸保留原图，只换成直角细边，和整体统一 */
-.wall-rm { right: 6%; top: 5%; width: 27%; height: auto; aspect-ratio: 1; --tilt: 8deg; z-index: 2; clip-path: none; background: #101113; }
-.wall-rm img { object-fit: contain; }
-.wall-rm::after { box-shadow: inset 0 0 0 2px #fff; }
-.wall-rm i { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; border: 0; }
-/* 卡通猫贴纸：直角方形 + 右上切角，橙黄描边（4px 边框靠橙黄底色 + 内缩的图片露出来，图片切角少 2px 让斜边也有边框） */
-.wall-sticker { left: 2%; bottom: 5%; width: 31%; height: auto; aspect-ratio: 1; padding: 4px; --tilt: -6deg; --cutc: 18px; z-index: 4; background: var(--yellow); }
-.wall-sticker img { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); filter: none; }
-.wall-sticker::after { display: none; }
-.wall-sticker i { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; border: 0; }
-/* 中间的哨兵照片：青色描边（做法同卡通猫贴纸），压在赛场仿真上面 */
-.wall-sentry { left: 30%; top: 26%; width: 40%; height: 46%; padding: 4px; --tilt: -6deg; --cutc: 18px; z-index: 3; background: var(--cyan); }
-.wall-sentry img { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); object-position: 50% 55%; }
-.wall-sentry::after { display: none; }
-.wall-sentry i { left: 4px; bottom: 4px; border-left-color: var(--yellow); }
+.wall-arena { left: 0; top: 3%; width: 48%; height: 32%; --tilt: -5deg; z-index: 1; }
+.wall-hex { right: 0; top: 4%; width: 43%; height: 32%; --tilt: 6deg; z-index: 2; }
+.wall-hardware { right: 0; bottom: 0; width: 45%; height: 32%; --tilt: 4deg; z-index: 2; }
+.wall-sketch { left: 0; bottom: 2%; width: 45%; height: 32%; --tilt: -6deg; z-index: 2; }
+.wall-pet { left: 17%; top: 28%; width: 68%; height: 43%; padding: 4px; --tilt: -3deg; --cutc: 18px; z-index: 3; background: var(--yellow); }
+.wall-pet img { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); }
+.wall-pet::after { display: none; }
+.wall-pet i { left: 4px; bottom: 4px; border-left-color: var(--yellow); }
 .wall figcaption { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; color: var(--ink-2); font-size: 12px; }
 .wall figcaption::before { content: ""; width: 26px; height: 2px; background: var(--yellow); }
 .wall figcaption i { color: var(--cyan); font-style: normal; }
@@ -836,10 +832,12 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .art-piece { min-height: 0; }
 
 /* Deck: contact */
-.deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 54%) minmax(0, 46%); align-items: center; gap: clamp(20px, 4vw, 64px); padding: 0 clamp(24px, 4vw, 70px) clamp(40px, 11vh, 110px) var(--pad); }
-.deck .contact-text h2 { font-size: clamp(30px, 5.6vh, 58px); }
-.deck .records a { min-height: clamp(38px, 5.6vh, 52px); padding-block: 4px; }
-.deck .wall-grid { width: min(100%, 62vh, 560px); }
+.deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; align-items: center; gap: 16px clamp(20px, 4vw, 64px); padding: 16px clamp(24px, 4vw, 70px) clamp(20px, 3vh, 40px) var(--pad); }
+.deck .contact-text { max-height: 100%; overflow-y: auto; padding-right: 8px; }
+.deck .contact-text h2 { font-size: clamp(28px, 4.8vh, 46px); }
+.deck .records { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.deck .records a, .deck .contact-record { min-height: 58px; padding-block: 8px; }
+.deck .wall-grid { width: min(100%, 52vh, 520px); }
 .deck .fit-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 52%); gap: clamp(20px, 3vw, 56px); }
 /* 卡片的擦入动画结束时不裁掉右下角的斜线影子 */
 .deck .sec.is-active .rm-card[data-in] { animation-name: wipeInRm; }

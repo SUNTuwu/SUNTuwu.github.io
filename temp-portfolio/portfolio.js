@@ -10,7 +10,7 @@ const CONTENT = {
       text: '港科大 RM 战队算法组，2026 赛季哨兵研发代表，现在主要在搭仿真和 2027 赛季的哨兵，并做自瞄联调。上个赛季主要负责导航和自瞄。' },
     { cn: '仿真 + RL', thumb: 'media/sim-7.jpg',
       text: '目前主要开发基于 MuJoCo 的 RM 赛场和哨兵仿真框架。四足宠物项目正在进行强化学习训练，六足机器人已完成训练和实机移植。' },
-    { cn: '硬件 DIY', thumb: 'media/facet-hardware.png',
+    { cn: '硬件 DIY', thumb: 'media/facet-hardware.jpg',
       text: '设计过微型电机驱动板和双目 AR 驱动板，使用逻辑分析仪分析 LT8619C 的初始化时序，并开发 PCB 图像处理与走线提取工具。' },
     { cn: '创作者', thumb: 'media/art-1.jpg',
       text: '课余制作 3D 模型、插画和动画，也拍摄机器人实物与比赛现场。作品曾发布在 B 站和小红书，近期因 RM 比赛暂停更新。' },
@@ -103,7 +103,7 @@ const CONTENT = {
           desc: 'MuJoCo 推进物理仿真，传感器插件输出 IMU、激光雷达和相机数据。浏览器通过 WebSocket 接收模型与状态，用 Filament 绘制赛场。' },
         { type: 'image', src: 'media/sim-server-browser.png', cap: '服务端相机与浏览器预览',
           desc: '相机按仿真时间生成 RGB 图像，通过 ROS 或共享内存发布。浏览器接收模型和后续状态更新，单独绘制交互画面。' },
-        { type: 'image', src: 'media/sim-rviz-costmap.png', cap: 'RViz 中的点云与全局代价地图',
+        { type: 'image', src: 'media/sim-rviz-costmap.jpg', cap: 'RViz 中的点云与全局代价地图',
           desc: '在 Nav2 全局代价地图上叠加赛场点云，检查障碍物轮廓与地图边界。' },
         { type: 'image', src: 'media/sim-4.jpg', cap: '赛场模型总览' },
         { type: 'image', src: 'media/sim-5.jpg', cap: '自研实时灯光合成',
@@ -199,8 +199,8 @@ const CONTENT = {
       { type: 'image', src: 'media/ar-layout-chip.jpg', note: 'LT8619C 芯片周围的引脚走线' },
       { type: 'image', src: 'media/ar-layout-power.jpg', note: '驱动板电源走线与铺铜' },
       { type: 'image', src: 'media/ar-photo.jpg', note: '驱动板实物' },
-      { type: 'image', src: 'media/ar-board-closeup.png', note: '驱动板焊接细节' },
-      { type: 'image', src: 'media/ar-flex-layout.png', note: '柔性电路板布线' },
+      { type: 'image', src: 'media/ar-board-closeup.jpg', note: '驱动板焊接细节' },
+      { type: 'image', src: 'media/ar-flex-layout.jpg', note: '柔性电路板布线' },
       { type: 'image', src: 'media/ar-display-test.jpg', note: '微型显示屏点亮测试' },
     ] },
     { title: '微型电机驱动板', tag: '硬件', desc: '微型闭环直流电机驱动板，展示 PCB 设计与实物。', cover: 1, items: [
@@ -222,7 +222,7 @@ const CONTENT = {
     ] },
     { title: 'PCB_Extractor 抄板工具', tag: '软件', desc: '基于 PySide6 和 OpenCV 开发 PCB 抄板工具，支持多层图像配准、Lab 空间 K-means 铜皮二值化、手动修补、铜皮孤岛识别和走线中心路径导出。', cover: 3, items: [
       { type: 'image', src: 'media/pcb-front.jpg', note: '板子正面' },
-      { type: 'image', src: 'media/pcb-layer-detail.png', note: '板层局部图像' },
+      { type: 'image', src: 'media/pcb-layer-detail.jpg', note: '板层局部图像' },
       { type: 'image', src: 'media/pcb-mask-detail.png', note: '焊盘与走线二值图' },
       { type: 'image', src: 'media/pcb-regions.png', note: '铜皮连通区域着色' },
     ] },
@@ -296,13 +296,13 @@ const CONTENT = {
     ] },
   },
 
-  /* 联系页拼贴：中间是 RM 哨兵，周围是实拍相纸和平面贴纸。 */
+  /* 方向页拼贴：小型四足机器人概念与相关项目。 */
   wall: [
-    { src: 'media/rm-sentry-stand.jpg', cap: 'RM 哨兵', style: 'sentry' },
+    { src: 'media/sable-cover.jpg', cap: '小型四足机器人 · 形象概念', style: 'pet' },
     { src: 'media/bubble-arena.jpg', cap: '赛场仿真', style: 'arena' },
-    { src: 'media/wall-robomaster.png', cap: 'RoboMaster', style: 'rm' },
-    { src: 'media/bubble-cat.jpg', cap: '我家猫的日常', style: 'cat' },
-    { src: 'media/wall-cartoon-cat.png', cap: '猫咪贴纸', style: 'sticker' },
+    { src: 'media/hex-1.jpg', cap: '六足机器人', style: 'hex' },
+    { src: 'media/motor-encoder-assembly.jpg', cap: '电机驱动板', style: 'hardware' },
+    { src: 'media/sable-sketch.jpg', cap: '小型四足机器人 · 概念手稿', style: 'sketch' },
   ],
 
   film: {
@@ -335,14 +335,130 @@ function el(tag, props = {}, html) {
   return node;
 }
 
+/* 视频整段下载成 blob 再交给 <video>，同一个文件只下一次。
+   首页第一个背景视频在载入页期间下完；其余的进入页面后按页面顺序在后台下，同时最多两个 */
+const videoBlobs = new Map(); // 地址 -> blob: 地址
+const videoJobs = new Map();
+const videoWaiting = [];
+let videoActive = 0;
+/* 载入页期间，除首屏背景视频外的 <video> 都先不下载，免得和它抢带宽 */
+let holdVideos = true;
+let heroLoaded = 0;
+
+async function downloadVideo(src, onProgress) {
+  try {
+    const res = await fetch(src);
+    if (!res.ok) throw new Error(res.status);
+    const total = +res.headers.get('content-length') || 0;
+    const reader = res.body.getReader();
+    const parts = [];
+    let got = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      parts.push(value);
+      got += value.length;
+      if (onProgress && total) onProgress(got / total);
+    }
+    const url = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
+    videoBlobs.set(src, url);
+    return url;
+  } catch {
+    /* 直接双击打开（file://）或请求失败时，退回普通地址边下边播 */
+    return null;
+  }
+}
+
+function videoJob(src, onProgress) {
+  let job = videoJobs.get(src);
+  if (job) return job;
+  let go;
+  job = { started: false };
+  job.promise = new Promise((ok) => { go = ok; }).then((fetchIt) => (fetchIt ? downloadVideo(src, onProgress) : null));
+  job.run = () => {
+    if (job.started) return;
+    job.started = true;
+    videoActive += 1;
+    go(true);
+    job.promise.then(() => { videoActive -= 1; pumpVideos(); });
+  };
+  /* 还在排队就被页面用到的，直接用普通地址播，不再下第二遍 */
+  job.skip = () => {
+    if (job.started) return;
+    job.started = true;
+    go(false);
+  };
+  videoJobs.set(src, job);
+  return job;
+}
+
+function pumpVideos() {
+  while (videoActive < 2 && videoWaiting.length) videoWaiting.shift().run();
+}
+
+function setVideoSrc(v, url) {
+  v.src = v.dataset.at != null ? `${url}#t=${v.dataset.at}` : url;
+}
+
 function video(src, opts = {}) {
   const v = el('video', { muted: true, playsInline: true, loop: true, preload: opts.preload || 'metadata' });
   v.setAttribute('muted', '');
   v.setAttribute('playsinline', '');
-  v.src = opts.at != null ? `${src}#t=${opts.at}` : src;
+  v.dataset.src = src;
+  if (opts.at != null) v.dataset.at = opts.at;
+  if (holdVideos && !opts.hero) {
+    v.dataset.preload = v.preload;
+    v.preload = 'none';
+  }
+  const job = videoJobs.get(src);
+  if (videoBlobs.has(src)) setVideoSrc(v, videoBlobs.get(src));
+  else if (job?.started) job.promise.then((url) => { if (!v.getAttribute('src')) setVideoSrc(v, url || src); });
+  else { job?.skip(); setVideoSrc(v, src); }
   if (opts.auto) v.dataset.auto = '';
   if (opts.controls) v.controls = true;
   return v;
+}
+
+/* 进入页面后：背景轮播、招新影像、小项目的视频先下，电脑上再把图集里的也下好；
+   已经建好的 <video> 下完后换成 blob，正在播的不打断 */
+function preloadVideos() {
+  holdVideos = false;
+  const order = new Set([...heroList(), CONTENT.film.site.src, CONTENT.film.promo.src]);
+  const walk = (x, into) => {
+    if (typeof x === 'string') { if (/\.mp4$/i.test(x)) into.add(x); }
+    else if (x && typeof x === 'object') Object.values(x).forEach((y) => walk(y, into));
+  };
+  walk(CONTENT.lab, order);
+  /* 手机内存小，图集里的视频还是点开时再边下边播 */
+  if (!isPhone()) walk(CONTENT, order);
+  $$('video[data-preload]').forEach((v) => {
+    if (order.has(v.dataset.src)) return;
+    v.preload = v.dataset.preload;
+    delete v.dataset.preload;
+  });
+  order.forEach((src) => {
+    const job = videoJob(src);
+    if (!job.started) videoWaiting.push(job);
+    job.promise.then((url) => {
+      if (!url) {
+        $$('video[data-preload]').forEach((v) => {
+          if (v.dataset.src !== src) return;
+          v.preload = v.dataset.preload;
+          delete v.dataset.preload;
+        });
+        return;
+      }
+      $$('video').forEach((v) => {
+        if (v.dataset.src !== src || !v.getAttribute('src') || v.src.startsWith('blob:') || !v.paused) return;
+        const t = v.currentTime;
+        setVideoSrc(v, url);
+        if (v.dataset.preload) { v.preload = v.dataset.preload; delete v.dataset.preload; }
+        if (t > 0 && v.dataset.at == null) v.addEventListener('loadedmetadata', () => { v.currentTime = t; }, { once: true });
+      });
+      syncVideos();
+    });
+  });
+  pumpVideos();
 }
 
 function mediaNode(m, opts = {}) {
@@ -676,7 +792,7 @@ function heroList() { return isPhone() ? CONTENT.heroVideosPhone : CONTENT.heroV
 
 function showHero(src, animate) {
   const layer = el('div', { class: 'hb-layer' });
-  const v = video(src, { preload: 'auto' });
+  const v = video(src, { preload: 'auto', hero: true });
   v.autoplay = !reduced;
   layer.append(v);
   const prev = $$('.hb-layer', heroBg).pop();
@@ -1356,28 +1472,85 @@ viewerEl.addEventListener('close', () => {
 });
 
 /* ---------- 载入 ---------- */
+/* 字体、页面里的每张图（含懒加载和背景图）、首屏视频都算一项；单项卡住时到点就跳过 */
+function loadTasks() {
+  const cap = (p, ms) => Promise.race([p, new Promise((ok) => setTimeout(ok, ms))]);
+  const decoded = (img) => (img.decode ? img.decode().catch(() => {}) : Promise.resolve());
+  const tasks = [];
+  if (document.fonts) tasks.push(cap(document.fonts.load('800 40px Saira'), 8000));
+  $$('img').forEach((img) => {
+    /* 懒加载的图不在视口里不会开始下载，这里让它们立刻开始 */
+    img.loading = 'eager';
+    const loaded = img.complete ? Promise.resolve()
+      : new Promise((ok) => { img.addEventListener('load', ok, { once: true }); img.addEventListener('error', ok, { once: true }); });
+    tasks.push(cap(loaded.then(() => decoded(img)), 20000));
+  });
+  const bgs = new Set();
+  $$('main *').forEach((n) => {
+    const m = getComputedStyle(n).backgroundImage.match(/url\("?([^")]+)"?\)/);
+    if (m) bgs.add(m[1]);
+  });
+  bgs.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    tasks.push(cap(decoded(img), 20000));
+  });
+  /* 首页第一个背景视频要整段下完、能播才算好；其余视频进入页面后再下（preloadVideos） */
+  const hero = $('.hb-layer video');
+  if (hero) {
+    const ready = () => hero.readyState >= 3 || new Promise((ok) => {
+      hero.addEventListener('canplay', ok, { once: true });
+      hero.addEventListener('error', ok, { once: true });
+    });
+    tasks.push(cap((videoJobs.get(hero.dataset.src)?.promise || Promise.resolve()).then(ready), 28000));
+  }
+  return tasks;
+}
+
+/* 进入页面后，把弹窗和图集里的图按顺序在后台下好，点开时不用再等 */
+function preloadRest() {
+  const urls = new Set();
+  const walk = (x) => {
+    if (typeof x === 'string') { if (/\.(jpe?g|png|webp|gif)$/i.test(x)) urls.add(new URL(x, location.href).href); }
+    else if (x && typeof x === 'object') Object.values(x).forEach(walk);
+  };
+  walk(CONTENT);
+  $$('img').forEach((img) => urls.delete(img.currentSrc || img.src));
+  const queue = [...urls];
+  const next = () => {
+    const src = queue.shift();
+    if (!src) return;
+    const img = new Image();
+    img.onload = img.onerror = next;
+    img.src = src;
+  };
+  /* 同时两张，不和正在播的视频抢太多带宽 */
+  next();
+  next();
+}
+
 function runLoader(done) {
   const loader = $('#loader');
   if (reduced) { loader.remove(); done(); return; }
   const num = $('#loaderNum');
   const started = performance.now();
   const minMs = 1400;
-  const maxMs = 5000;
-  const tasks = [
-    document.fonts ? document.fonts.load('800 40px Saira') : Promise.resolve(),
-    new Promise((ok) => { const i = new Image(); i.onload = i.onerror = ok; i.src = 'media/avatar.jpg'; }),
-    new Promise((ok) => { const v = $('.hb-layer video'); if (!v) return ok(); v.addEventListener('canplay', ok, { once: true }); v.addEventListener('error', ok, { once: true }); }),
-  ];
+  /* 网太慢时最多等这么久，免得一直进不去 */
+  const maxMs = 30000;
+  const tasks = loadTasks();
   let finished = 0;
-  tasks.forEach((t) => t.catch(() => {}).then(() => { finished += 1; }));
-  let shown = 0;
+  tasks.forEach((t) => t.catch(() => {}).then(() => { finished += 1; }));  let shown = 0;
+  let last = started;
   const tick = (now) => {
     const t = now - started;
-    const real = finished / tasks.length;
+    /* 背景视频是最大的一项，按已下载的字节数算一半进度，其余各项平分另一半 */
+    const real = (finished / tasks.length + heroLoaded) / 2;
     const byTime = Math.min(1, t / minMs);
-    /* 跟着真实进度走；没加载完时最多走到 92% */
-    const target = t >= maxMs || (real === 1 && byTime === 1) ? 1 : Math.min(.92, byTime * (.5 + real * .5));
-    shown += (target - shown) * .16;
+    /* 进度就是已加载完的项数；全部到位前最多走到 97% */
+    const target = t >= maxMs || (real === 1 && byTime === 1) ? 1 : Math.min(.97, byTime, real);
+    /* 按经过的时间追进度，帧率被浏览器压低时也不会拖慢进入 */
+    shown += (target - shown) * (1 - Math.exp(-(now - last) / 90));
+    last = now;
     if (target === 1 && shown > .995) shown = 1;
     loader.style.setProperty('--p', shown.toFixed(4));
     num.firstChild.nodeValue = String(Math.round(shown * 100));
@@ -1398,6 +1571,10 @@ function runLoader(done) {
 
 /* ---------- 启动 ---------- */
 function init() {
+  /* 先开始下首页第一个背景视频，建好的 <video> 会等它下完再用 */
+  const firstHero = videoJob(heroList()[0], (p) => { heroLoaded = p; });
+  firstHero.run();
+  firstHero.promise.then(() => { heroLoaded = 1; });
   buildProfile();
   buildFit();
   buildTech();
@@ -1426,6 +1603,8 @@ function init() {
       secs[cur].classList.add('is-active');
     }
     scheduleHero();
+    preloadVideos();
+    preloadRest();
   });
 }
 

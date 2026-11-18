@@ -7,11 +7,11 @@ const CONTENT = {
 
   facets: [
     { cn: '现役 RMer', thumb: 'media/facet-rm.jpg',
-      text: '港科大 RM 战队算法组，2026 赛季哨兵研发代表，现在主要在搭仿真和 2027 赛季的哨兵，并做自瞄联调。上个赛季主要负责导航和自瞄。' },
+      text: '港科大 RM 战队算法组，2026 赛季哨兵研发代表，现在主要在搭仿真和 2027 赛季的哨兵，并做自瞄联调。上个赛季主要负责导航和自瞄测试。' },
     { cn: '仿真 + RL', thumb: 'media/sim-7.jpg',
       text: '目前主要开发基于 MuJoCo 的 RM 赛场和哨兵仿真框架。四足宠物项目正在进行强化学习训练，六足机器人已完成训练和实机移植。' },
-    { cn: '硬件 DIY', thumb: 'media/facet-hardware.jpg',
-      text: '设计过微型电机驱动板和双目 AR 驱动板，使用逻辑分析仪分析 LT8619C 的初始化时序，并开发 PCB 图像处理与走线提取工具。' },
+    { cn: 'DIY', thumb: 'media/facet-hardware.jpg',
+      text: '热爱 DIY，做过机械设计、硬件开发和算法相关的项目，2024 年获得嘉立创 PCB 初级工程师资格证。目标是成为全栈工程师，做出属于自己的小机器人。' },
     { cn: '创作者', thumb: 'media/art-1.jpg',
       text: '课余制作 3D 模型、插画和动画，也拍摄机器人实物与比赛现场。作品曾发布在 B 站和小红书，近期因 RM 比赛暂停更新。' },
   ],
@@ -63,10 +63,10 @@ const CONTENT = {
       fields: [['技术', 'MuJoCo / 强化学习'], ['方法', '机械设计与 RL 同步迭代'], ['现在', '基础步态已能稳定存活，偏航和打滑待解决'], ['方向', '智能宠物和情感陪伴']],
       media: [
         /* cap 是标题，desc 是一句说明，显示在画面左下角 */
-        { type: 'video', src: 'media/sable-teachers.mp4', cap: '九种教师步态同屏', thumbAt: 8,
-          desc: '展示九种教师步态，目前正在进行策略蒸馏。' },
         { type: 'video', src: 'media/sable-training-six-views.mp4', cap: '六种运动任务训练演示', thumbAt: 1,
           desc: '分屏展示前进、后退、横移等六种运动任务及各自的训练曲线。' },
+        { type: 'video', src: 'media/sable-teachers.mp4', cap: '九种教师步态同屏', thumbAt: 8,
+          desc: '展示九种教师步态，目前正在进行策略蒸馏。' },
         { type: 'video', src: 'media/sable-retargeted-gaits.mp4', cap: '重定向步态展示', thumbAt: 1,
           desc: '展示重定向后的四足模型步态与关节运动。' },
         { type: 'image', src: 'media/sable-cover.jpg', cap: '形象概念',
@@ -87,10 +87,10 @@ const CONTENT = {
       desc: '基于 MuJoCo 集成赛场、机器人和传感器仿真。服务端推进物理状态，Filament 根据状态快照生成相机图像，浏览器独立渲染交互画面。目前已将同一套灯光效果接入 Blender，用于场景编辑时与服务端画面对照。',
       fields: [['物理与接口', 'MuJoCo / ROS 2 / WebSocket'], ['11 月进展', '已对比 Blender 本地预览与服务端输出。红、蓝正视与红色斜视三组画面中，8 位像素值最大相差 2 级。'], ['进行中', '继续检查场景网格和蓝色灯光映射']],
       media: [
-        { type: 'video', src: 'media/sim-rune-preview.mp4', cap: '能量机关灯光预览', thumbAt: 3,
-          desc: '蓝色能量机关转动时的灯带与环形图案渲染效果。' },
         { type: 'video', src: 'media/sim-1.mp4', cap: '自瞄视角：移动与射击仿真', thumbAt: 3,
           desc: '展示机器人移动和射击时的自瞄相机视角，并非操作手视角。' },
+        { type: 'video', src: 'media/sim-rune-preview.mp4', cap: '能量机关灯光预览', thumbAt: 3,
+          desc: '蓝色能量机关转动时的灯带与环形图案渲染效果。' },
         { type: 'video', src: 'media/sim-2.mp4', cap: '赛场场景浏览', thumbAt: 1,
           desc: '通过视角移动展示仿真赛场的场地结构与灯光。' },
         { type: 'video', src: 'media/sim-nav.mp4', cap: '哨兵导航仿真', thumbAt: 12,
@@ -120,8 +120,8 @@ const CONTENT = {
       ] },
     { id: 'hex', title: 'RL 仿生六足蜘蛛', short: '六足蜘蛛', rail: 'HEXAPOD', titleLong: 'RL 仿生六足蜘蛛机器人', en: 'RL HEXAPOD SPIDER', state: '已完成', done: true, date: '2025.04 - 2025.06',
       cover: { type: 'image', src: 'media/hex-1.jpg' },
-      desc: '独立完成机械设计、嵌入式代码、RL 训练和 sim2real。机械设计重点是紧凑收纳与腿部活动范围，通过腿部构型和关节布局，使六条腿收拢后贴近机身，展开后保留较大的活动范围。RL 部分基于开源框架，针对六足结构进行二次开发和训练。照片为本人拍摄。',
-      fields: [['时间', '2025 年 4 - 6 月'], ['职责', '机械设计 / 嵌入式 / RL 训练 / sim2real'], ['结构', '碳板主体 / 20 路舵机'], ['RL', '开源框架二次开发和训练']],
+      desc: '独立完成机械设计、嵌入式代码、RL 训练和 sim2real。机械设计重点是紧凑收纳与腿部活动范围，通过腿部构型和关节布局，使六条腿收拢后贴近机身，展开后保留较大的活动范围。RL 部分基于 ML-Agents 开源框架，针对六足结构进行二次开发和训练。照片为本人拍摄。',
+      fields: [['时间', '2025 年 4 - 6 月'], ['职责', '机械设计 / 嵌入式 / RL 训练 / sim2real'], ['结构', '碳板主体 / 20 路舵机'], ['RL', '基于 ML-Agents 二次开发和训练']],
       media: [
         { type: 'image', src: 'media/hex-1.jpg', cap: '收拢状态 · 正面',
           desc: '六条腿收拢至机身两侧，展示紧凑的收纳形态。' },
@@ -209,9 +209,6 @@ const CONTENT = {
       { type: 'image', src: 'media/motor-encoder-assembly.jpg', note: '磁编码器与电机驱动板装配图' },
       { type: 'image', src: 'media/motor-closeup.jpg', note: '实物细节' },
     ] },
-    { title: '高功率密度双通道 DC-DC 电源板', tag: '硬件', desc: '2024 年设计的 30 × 20 mm 双通道电源板。当时对 SW（开关节点）走线宽度考虑不足，走线过细，未达到预期的 5 A 设计目标。', cover: 0, items: [
-      { type: 'image', src: 'media/dual-dcdc.jpg', note: 'PCB 布局与尺寸对照' },
-    ] },
     { title: 'IMU 鱼眼「0 延迟」图传', tag: '实时图像处理', desc: '通过 IMU 姿态外推和鱼眼重投影补偿图传中的旋转延迟。在两帧视频之间，使用 1 kHz IMU 外推显示时刻的朝向，通过 Vulkan 对上一帧鱼眼图像重投影并裁出 90° 视野，补偿采集到显示期间的旋转。', cover: 0, items: [
       { type: 'video', src: 'media/imu-fisheye-demo.mp4', note: '手持转动测试 · 原始鱼眼与补偿画面对照' },
     ] },
@@ -242,6 +239,9 @@ const CONTENT = {
       { type: 'image', src: 'media/cart-assembly.jpg', note: 'SolidWorks 整车装配' },
       { type: 'image', src: 'media/cart-upper.jpg', note: '云台模型' },
       { type: 'image', src: 'media/cart-section.jpg', note: '云台与滑环剖面' },
+    ] },
+    { title: '高功率密度双通道 DC-DC 电源板', tag: '硬件', desc: '2024 年设计的 30 × 20 mm 双通道电源板。当时对 SW（开关节点）走线宽度考虑不足，走线过细，未达到预期的 5 A 设计目标。', cover: 0, items: [
+      { type: 'image', src: 'media/dual-dcdc.jpg', note: 'PCB 布局与尺寸对照' },
     ] },
     { title: '3D 打印可变形名片', tag: '3D 打印', desc: '设计可折叠为手机支架的 3D 打印名片，模型已发布至 MakerWorld。', cover: 0,
       link: { href: 'https://makerworld.com/zh/models/1128870-foldable-business-card-and-phone-stand#profileId-1128739', text: 'MakerWorld 模型页' }, items: [

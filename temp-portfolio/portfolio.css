@@ -202,15 +202,24 @@ em, i { font-style: normal; }
 .hero-experience { display: grid; gap: 5px; font-size: 14px; line-height: 1.5; }
 .hero-experience div { display: grid; grid-template-columns: 6em 1fr; gap: 10px; }
 .hero-experience dt { color: var(--cyan); font-weight: 600; }
+.hero-experience .interest-label { color: var(--yellow); }
 /* 创作账号：只留一句小字和两个入口，不抢技术经历的位置 */
 .hero-media { max-width: 640px; color: var(--ink-2); font-size: 12px; line-height: 1.6; text-wrap: balance; }
 .hero-media a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .35); text-underline-offset: 3px; }
 .hero-media a:hover, .hero-media a:focus-visible { color: var(--cyan); text-decoration-color: currentColor; }
-/* 黑底叠深灰斜线，和页面背景区分开；右下切角，和按钮一致 */
+/* 黑底与青色斜线衬底分层，右下方露出错位的衬底。 */
 .facet-box {
-  padding: 12px 18px; max-width: 640px;
+  position: relative; isolation: isolate; padding: 12px 18px; max-width: 640px;
+}
+.facet-box::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
-  background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 7px), rgba(0, 0, 0, .9);
+  background: linear-gradient(135deg, var(--yellow) 0 50%, transparent 50%) left top / 18px 18px no-repeat,
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 7px), rgba(0, 0, 0, .9);
+}
+.facet-box::after {
+  content: ""; position: absolute; inset: 8px -8px -8px 10px; z-index: -2; pointer-events: none;
+  background: repeating-linear-gradient(135deg, rgba(0, 224, 198, .55) 0 1.5px, transparent 1.5px 7px);
 }
 .facet-box p { color: #d5d8dc; font-size: 14px; line-height: 1.8; }
 .facet-box p.is-new { animation: wipeIn .28s var(--mech); }
@@ -345,8 +354,9 @@ em, i { font-style: normal; }
 }
 .rm-awards button:hover, .rm-awards button:focus-visible { border-color: var(--yellow); background: #1a1814; }
 .rm-awards img { grid-row: 1 / 3; align-self: center; display: block; height: clamp(56px, 8vh, 78px); aspect-ratio: 5 / 7; object-fit: cover; object-position: 50% 0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .2); }
-.rm-awards b { align-self: end; display: block; font-size: 13.5px; line-height: 1.35; white-space: nowrap; }
-.rm-awards span { align-self: start; display: block; margin-top: 3px; color: var(--ink-3); font-size: 12px; line-height: 1.4; }
+.rm-awards li, .rm-awards b, .rm-awards span { min-width: 0; }
+.rm-awards b { align-self: end; display: block; font-size: 13.5px; line-height: 1.35; white-space: normal; overflow-wrap: anywhere; }
+.rm-awards span { align-self: start; display: block; margin-top: 3px; color: var(--ink-3); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
 @keyframes wipeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 -2% 0 0); } }
 
 /* Tech panels */
@@ -841,12 +851,26 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .contact-rule { margin-top: clamp(8px, 1.2vh, 14px); }
 .deck .direction-paths { margin-top: 8px; }
 .deck .direction-paths > div { grid-template-columns: 8em 1fr; gap: 10px; padding-block: clamp(5px, 1vh, 10px); font-size: clamp(12px, 1.55vh, 14px); line-height: 1.6; }
-.deck .records { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.deck .contact-footer { grid-column: 1; grid-row: 2; }
+.deck .contact-text { grid-column: 1; grid-row: 1; }
+.deck .contact-grid > .wall { grid-column: 2; grid-row: 1 / 3; }
+.deck .records { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .deck .records a, .deck .contact-record { min-height: 58px; padding-block: 8px; }
 .deck .wall-grid { width: min(100%, 52vh, 520px); }
+@media (max-height: 740px) {
+  .deck .contact-grid { row-gap: 8px; }
+  .deck .contact-text h2 { font-size: 24px; }
+  .deck .contact-text > p { line-height: 1.55; }
+  .deck .direction-paths > div { padding-block: 5px; line-height: 1.5; }
+  .deck .contact-footer > p { font-size: 12px; line-height: 1.5; }
+  .deck .records { margin-top: 8px; }
+  .deck .records a, .deck .contact-record { min-height: 46px; gap: 3px; padding-block: 5px; }
+  .deck .records b { font-size: 13px; }
+  .deck .records span { font-size: 12px; }
+}
 .deck .fit-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 52%); gap: clamp(20px, 3vw, 56px); }
 /* 卡片的擦入动画结束时不裁掉右下角的斜线影子 */
-.deck .sec.is-active .rm-card[data-in] { animation-name: wipeInRm; }
+.deck .sec.is-active .rm-card[data-in], .deck .sec.is-active .facet-box[data-in] { animation-name: wipeInRm; }
 @keyframes wipeInRm { from { clip-path: inset(0 100% -20px 0); } to { clip-path: inset(0 -20px -20px 0); } }
 .deck .real-btn { right: -9%; top: -2%; }
 

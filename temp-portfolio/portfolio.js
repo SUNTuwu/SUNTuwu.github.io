@@ -2,48 +2,59 @@
 
 /* ---------- 页面文案和素材，改内容只需要改这里 ---------- */
 const CONTENT = {
-  heroVideos: ['media/rec-promo.mp4', 'media/sable-teachers.mp4', 'media/sim-3.mp4', 'media/rec-site-single.mp4', 'media/dice.mp4'],
-  heroVideosPhone: ['media/rec-promo.mp4', 'media/sim-3.mp4', 'media/rec-site-single.mp4'],
+  heroVideos: ['media/sim-3.mp4', 'media/sable-teachers.mp4', 'media/sim-nav.mp4', 'media/rec-site-single.mp4', 'media/rec-promo.mp4'],
+  heroVideosPhone: ['media/sim-3.mp4', 'media/sable-teachers.mp4', 'media/rec-site-single.mp4'],
 
   facets: [
     { cn: '现役 RMer', thumb: 'media/facet-rm.jpg',
-      text: '现役 RMer，算法组成员，2026 赛季哨兵研发代表。我热爱 DIY，有机械、算法和硬件相关经验。' },
+      text: '港科大 RM 战队算法组，2026 赛季哨兵研发代表，现在主要在搭仿真和 2027 赛季的哨兵，并做自瞄联调。上个赛季主要负责导航和自瞄。' },
+    { cn: '仿真 + RL', thumb: 'media/sim-7.jpg',
+      text: '最近的重心是仿真：在 MuJoCo 里搭 RM 赛场和哨兵仿真，也用它训练强化学习四足宠物和六足机器人。' },
+    { cn: '硬件 DIY', thumb: 'media/facet-hardware.png',
+      text: '热爱 DIY：画过电机驱动板和 AR 驱动板，用逻辑分析仪逆向芯片，也自己写 PCB 抄板工具。机械、硬件、算法都碰过。' },
     { cn: '创作者', thumb: 'media/art-1.jpg',
-      text: '我也是创作者：3D 建模师、二次元画师，也会摄影和动画制作。B 站粉丝 2.7 万，小红书 1.5 万，最火视频全网播放超 200 万。' },
-    { cn: '铲屎官', thumb: 'media/facet-cat.jpg',
-      text: '资深铲屎官 + 究极猫奴！以后的方向是智能宠物和情感陪伴，现在正在训练一只强化学习四足宠物。' },
-    { cn: '为什么是 Beni', thumb: 'media/facet-beni-outdoor.png',
-      text: '锁定、追击、空翻、跳台阶，正是 RMer 心里串联腿该有的样子！Beni 又贴近生活、可爱灵动，就是我期待的小机器人。' },
+      text: '课余爱好是 3D 建模、二次元绘画、摄影和动画，之前在 B 站和小红书更新过一些作品。近期忙于 RM 比赛，暂时没有运营。' },
   ],
 
   flags: [
-    { en: 'ALGORITHM', cn: '算法 + RL', to: 'tech', tone: '' },
-    { en: '3D DESIGN', cn: '3D 建模', to: 'tech', tone: 'alt' },
-    { en: 'ANIMATION', cn: '动画制作', to: 'film', tone: '' },
-    { en: 'ILLUSTRATION', cn: '二次元绘画', to: 'art', tone: 'alt2' },
-    { en: 'PHOTO', cn: '摄影', to: 'art', tone: 'alt', tab: 'photo' },
+    { en: 'NAVIGATION', cn: '导航 + 自瞄', to: 'rm', tone: '' },
+    { en: 'SIMULATION', cn: 'MuJoCo 仿真', to: 'tech', tone: 'alt' },
+    { en: 'RL', cn: '强化学习', to: 'tech', tone: '' },
+    { en: 'HARDWARE', cn: 'PCB + 逆向', to: 'lab', tone: 'alt2' },
+    { en: '3D / ART', cn: '建模与绘画', to: 'art', tone: 'alt' },
   ],
 
-  fit: [
-    { label: 'RM 相关背景', title: '现役 RMer，2026 赛季哨兵研发代表',
-      text: '港科大 RM 战队算法组成员，负责哨兵的导航和决策。正在推进基于 MuJoCo 和 Filament 的 RM 赛场仿真，包含哨兵导航及自瞄仿真。' },
-    { label: '自媒体与影像', title: '<em>2.7 万</em> + <em>1.5 万</em> 粉丝，最火视频全网 <em>200 万+</em> 播放',
-      text: '熟悉摄影和动画制作。B 站近期忙于比赛没有维护，下一阶段计划发科技类长视频；小红书以绘画为主。' },
-    { label: '研究方向', title: '资深铲屎官 + 究极猫奴',
-      text: '方向是智能宠物、强化学习和情感陪伴。正在 MuJoCo 里训练四足宠物的教师步态；也独立做过 RL 六足机器人，机械设计、嵌入式和算法到 sim2real 都是自己完成的。' },
+  /* 02 RM 战队工作：state 是状态，repo 是对应的仓库名 */
+  rm: [
+    { state: '当前重点', repo: 'sentry-sim / mujoco-sim-core', title: 'MuJoCo 赛场仿真框架',
+      text: '服务器推进物理仿真，按仿真时间输出相机画面。浏览器接收模型与状态，也能用 Filament 在本地绘制赛场。' },
+    { state: '进行中', repo: 'RM2027-sentry-ws', title: 'RM2027 哨兵框架搭建',
+      text: '实机和仿真共用一套哨兵软件框架，统一管理串口通信、定位、导航、决策和视觉模块，方便把仿真中验证过的模块直接移植到实机。' },
+    { state: '正在推进', repo: 'Custom-client', title: '自定义客户端',
+      text: '部署开源自定义客户端，并进行框架重构和二次开发。' },
+    { state: '2027 赛季计划', title: '雷达站',
+      text: '预适配新装甲板，训练车辆识别模型。' },
+    { state: '2026 赛季', repo: 'RM2026-omni-cvx-mpc-controller', title: '全向底盘导航 MPC',
+      text: '用 CVXPY 建立全向底盘模型，生成求解器代码，再把初版控制器接入 Nav2。' },
+    { state: '2026 - 2027', repo: 'RM2027-RV / sentry-vision-plugin', title: '自瞄',
+      text: '26 赛季接入两路侧向相机，整理图像队列、绘制线程和坐标变换，并重写海康相机 ROS 2 驱动。' },
   ],
+  rmPast: '<b>2026 年 7 月 · 赛季复盘</b>作为 26 赛季哨兵研发代表，我在赛后反思了算法组成员参与哨兵开发时遇到的壁垒。因此，我把 27 赛季的工作重点放在哨兵框架搭建和仿真上，方便队里联调和实机移植。',
 
-  /* 右侧单独的大卡片：能给 Beni 做的内容 */
-  beni: {
-    title: '为 Beni 规划的内容',
-    ideas: [
-      { title: 'Beni 进 RM 赛场', text: '把 Beni 导入我自研的 RM 赛场仿真，在隧道和台阶间跑酷。', where: 'B 站' },
-      { title: 'RMer 拆解 Beni', text: '用 RMer 的视角讲空翻、追逐和跳台阶背后的 RL 串联腿。', where: 'B 站长视频' },
-      { title: 'DIY Beni 配件', text: '给 Beni 设计可动眼皮、表情功能这类配件，从建模到打印都自己做。', where: 'B 站 / 小红书' },
-      { title: '和猫猫互动', text: '让 Beni 和我家猫见面，记录两只「小家伙」的相处日常。', where: '小红书 / B 站' },
-      { title: 'Beni 主题绘画', text: '把 Beni 画进二次元插画和角色设定。', where: '小红书' },
-    ],
-  },
+  /* 右侧卡片：比赛照片和获奖证书。cap 只用在大图说明里；
+     直播数据和战队合影是同一张上下拼图，最后一行左右各裁一半 */
+  rmPhotos: [
+    { src: 'media/rm-field-debug.jpg', cap: '赛场调试', pos: '50% 40%' },
+    { src: 'media/rm-me-sentry.jpg', cap: '和哨兵一起候场', pos: '70% 50%' },
+    { src: 'media/rm-sentry-stand.jpg', cap: '2026 赛季哨兵', pos: '50% 55%' },
+    { src: 'media/rm-broadcast-team.jpg', cap: '赛事直播数据', pos: '50% 10%' },
+    { src: 'media/rm-broadcast-team.jpg', cap: '战队合影', pos: '50% 92%' },
+  ],
+  awards: [
+    { title: '全国赛三等奖', note: '2026 超级对抗赛', src: 'media/rm-award-national.jpg' },
+    { title: '北部赛区一等奖', note: '2026 超级对抗赛', src: 'media/rm-award-north.jpg' },
+    { title: '3v3 甲级二等奖', note: '2026 高校联盟赛 · 安徽站', src: 'media/rm-award-anhui.jpg' },
+  ],
 
   tech: [
     { id: 'sable', title: '强化学习四足宠物', short: '四足宠物', rail: 'SABLE', titleLong: '强化学习四足宠物 SABLE', en: 'RL QUADRUPED PET', state: '训练中', date: '近期',
@@ -71,13 +82,13 @@ const CONTENT = {
         { type: 'video', src: 'media/sable-early-joint-length-test.mp4', cap: '早期关节长度测试', thumbAt: 1,
           desc: '在 MuJoCo 中测试关节长度比例；简化的胶囊体四足模型从站立逐渐塌下、趴倒。' },
       ] },
-    { id: 'sim', title: 'RM 赛场仿真', short: '赛场仿真', rail: 'SIMULATION', titleLong: '端到端 RM 赛场仿真', en: 'RM ARENA SIMULATION', state: '研发中', date: '近期',
-      /* 第一人称视频整体偏暗，竖栏封面用亮一些的灯光渲染；点开后仍先放第一人称视频 */
+    { id: 'sim', title: 'RM 赛场仿真', short: '赛场仿真', rail: 'SIMULATION', titleLong: 'RM 赛场仿真框架', en: 'RM ARENA SIMULATION', state: '研发中', date: '2026.11',
       cover: { type: 'image', src: 'media/sim-7.jpg' },
-      desc: '我正在推进端到端的 RM 赛场仿真，基于 MuJoCo 和 Filament 渲染器，包含哨兵导航及自瞄仿真，并且自研了灯光合成器。',
-      fields: [['技术', 'MuJoCo / Filament'], ['现在', '正在推进导航及自瞄仿真'], ['下一步', '接入 RL 测试']],
-      beni: '后续计划把 Beni 导入赛场，在仿真里跑酷。',
+      desc: '我把赛场、机器人和传感器接入同一套 MuJoCo 仿真。服务器推进物理状态，Filament 根据状态快照生成相机图像，浏览器也可以独立渲染。最近把同一套灯光效果接进 Blender，改场景时就能对照服务端画面。',
+      fields: [['物理与接口', 'MuJoCo / ROS 2 / WebSocket'], ['11 月进展', 'Blender 本地预览已和服务端对图。红、蓝正视与红色斜视三组画面中，8 位像素值最大相差 2 级。'], ['进行中', '继续检查场景网格和蓝色灯光映射']],
       media: [
+        { type: 'video', src: 'media/sim-rune-preview.mp4', cap: '能量机关灯光预览', thumbAt: 3,
+          desc: '仿真赛场中的蓝色能量机关，转动时可以看到灯带和环形图案。' },
         { type: 'video', src: 'media/sim-1.mp4', cap: '自瞄视角：移动与射击仿真', thumbAt: 3,
           desc: '展示机器人移动和射击时的自瞄相机视角，并非操作手视角。' },
         { type: 'video', src: 'media/sim-2.mp4', cap: '赛场场景浏览', thumbAt: 1,
@@ -86,11 +97,25 @@ const CONTENT = {
           desc: '左上是赛场俯视地图，主画面展示 RoboMaster 2026 赛场中的哨兵导航仿真，目前仍在推进中。' },
         { type: 'video', src: 'media/sim-3.mp4', cap: '赛场仿真画面', thumbAt: 2,
           desc: '展示赛场模型、场内视角与灯光效果。' },
+        { type: 'video', src: 'media/sim-6.mp4', cap: '高斯泼溅测试', thumbAt: 1,
+          desc: '高斯泼溅（Gaussian Splatting）的初步测试画面。' },
+        { type: 'image', src: 'media/sim-architecture.png', cap: '仿真架构与数据流',
+          desc: 'MuJoCo 推进物理仿真，传感器插件输出 IMU、激光雷达和相机数据。浏览器通过 WebSocket 接收模型与状态，用 Filament 绘制赛场。' },
+        { type: 'image', src: 'media/sim-server-browser.png', cap: '服务端相机与浏览器预览',
+          desc: '相机按仿真时间生成 RGB 图像，通过 ROS 或共享内存发布。浏览器接收模型和后续状态更新，单独绘制交互画面。' },
+        { type: 'image', src: 'media/sim-rviz-costmap.png', cap: 'RViz 中的点云与全局代价地图',
+          desc: '把赛场点云叠在 Nav2 的全局代价地图上，查看障碍物轮廓与地图边界。' },
         { type: 'image', src: 'media/sim-4.jpg', cap: '赛场模型总览' },
         { type: 'image', src: 'media/sim-5.jpg', cap: '自研实时灯光合成',
           desc: '展示自研灯光合成器对装甲板灯条与数字区域的显示效果。' },
-        { type: 'video', src: 'media/sim-6.mp4', cap: '高斯泼溅测试', thumbAt: 1,
-          desc: '高斯泼溅（Gaussian Splatting）的初步测试画面。' },
+        { type: 'image', src: 'media/sim-lighting-results.png', cap: '赛场灯光渲染对比',
+          desc: '同一赛场中，近处和远处的灯条在橙光、蓝光下呈现出不同的亮度和光晕。' },
+        { type: 'image', src: 'media/sim-compositor-nodes.png', cap: 'Blender 灯光合成节点',
+          desc: '节点图中可以看到各颜色通道的处理分支，以及它们如何合成为最终画面。' },
+        { type: 'image', src: 'media/sim-compositing-notes.png', cap: '灯光合成笔记',
+          desc: '在一张底图上分别提取红、绿、蓝灯条，为各通道生成辉光，再与背景合成。' },
+        { type: 'image', src: 'media/sim-lighting-process.png', cap: '灯条轮廓与光晕处理',
+          desc: '上图记录远处灯条的亮度补偿、高斯光晕叠加和 Gamma 调整，下图展开灯条轮廓与发光中心的处理节点。' },
         { type: 'image', src: 'media/sim-7.jpg', cap: '灯光渲染效果' },
       ] },
     { id: 'hex', title: 'RL 仿生六足蜘蛛', short: '六足蜘蛛', rail: 'HEXAPOD', titleLong: 'RL 仿生六足蜘蛛机器人', en: 'RL HEXAPOD SPIDER', state: '已完成', done: true, date: '2025.04 - 2025.06',
@@ -164,22 +189,66 @@ const CONTENT = {
   ],
 
   /* 小项目：底部菜单一个项目一张封面（cover 是 items 的序号），项目内可以切换多张 */
-  /* link 会显示在说明下面 */
+  /* link 会显示在说明下面；技术向在前，艺术向在后 */
   lab: [
-    { title: '3D 打印可变形名片', tag: '3D 打印', desc: '一张能折出来的名片：平时是名片，掰开就是手机支架。模型已经发在 MakerWorld。', cover: 0,
-      link: { href: 'https://makerworld.com/zh/models/1128870-foldable-business-card-and-phone-stand#profileId-1128739', text: 'MakerWorld 模型页' }, items: [
-      { type: 'image', src: 'media/card-personal.jpg', note: '实物' },
-    ] },
     { title: 'LT8619C 双目 AR', tag: '硬件', desc: '基于 LT8619C 驱动 ECX335S 的双目 AR 项目，展示结构模型、驱动板设计与实物。', cover: 0, items: [
       { type: 'image', src: 'media/ar-cad.jpg', note: '眼镜模组 CAD' },
       { type: 'image', src: 'media/ar-render.jpg', note: '驱动板 3D 预览' },
       { type: 'image', src: 'media/ar-layout.jpg', note: 'PCB 布线' },
+      { type: 'image', src: 'media/ar-board-outline.jpg', note: 'ECX335 驱动板外形与尺寸' },
+      { type: 'image', src: 'media/ar-layout-chip.jpg', note: 'LT8619C 芯片周围的引脚走线' },
+      { type: 'image', src: 'media/ar-layout-power.jpg', note: '驱动板电源走线与铺铜' },
       { type: 'image', src: 'media/ar-photo.jpg', note: '驱动板实物' },
+      { type: 'image', src: 'media/ar-board-closeup.png', note: '驱动板焊接细节' },
+      { type: 'image', src: 'media/ar-flex-layout.png', note: '柔性电路板布线' },
+      { type: 'image', src: 'media/ar-display-test.jpg', note: '微型显示屏点亮测试' },
     ] },
     { title: '微型电机驱动板', tag: '硬件', desc: '微型闭环直流电机驱动板，展示 PCB 设计与实物。', cover: 1, items: [
       { type: 'image', src: 'media/motor-render.jpg', note: 'PCB 3D 预览' },
       { type: 'image', src: 'media/motor-hand.jpg', note: '装到电机上的实物' },
+      { type: 'image', src: 'media/motor-encoder-assembly.jpg', note: '磁编码器与电机驱动板装配图' },
       { type: 'image', src: 'media/motor-closeup.jpg', note: '实物细节' },
+    ] },
+    { title: '高功率密度双通道 DC-DC 电源板', tag: '硬件', desc: '2024 年做的一块 30 × 20 mm 电源板。当时把 SW（开关节点）的走线画得太细，没达到预期的 5 A 设计目标。', cover: 0, items: [
+      { type: 'image', src: 'media/dual-dcdc.jpg', note: 'PCB 布局与尺寸对照' },
+    ] },
+    { title: 'IMU 鱼眼「0 延迟」图传', tag: '实时图像处理', desc: '目标是让画面跟上相机转动。两帧视频之间，用 1 kHz IMU 外推显示时刻的朝向，再用 Vulkan 从上一帧鱼眼图像中重投影并裁出 90° 视野，补偿采集到显示之间的旋转。', cover: 0, items: [
+      { type: 'video', src: 'media/imu-fisheye-demo.mp4', note: '手持转动测试 · 原始鱼眼与补偿画面对照' },
+    ] },
+    { title: 'Vtuber 虚拟形象管线', tag: '软件', desc: '用 Blender 插件把真人视频转成虚拟形象。DWPose 通过 DirectML 估计姿态，iPhone 用 Record3D 采集彩色和深度画面，再替换头部并预览卡通渲染效果。', cover: 0, items: [
+      { type: 'video', src: 'media/vtuber-demo.mp4', note: '管线演示' },
+      { type: 'image', src: 'media/vtuber-rgbd-tests.jpg', note: '早期算法迭代 · RGB-D 语义分割与衣领边界测试' },
+      { type: 'image', src: 'media/vtuber-hand-tests.jpg', note: '早期算法迭代 · YOLO 与 DeepLab 手部分割对比' },
+    ] },
+    { title: 'PCB_Extractor 抄板工具', tag: '软件', desc: '基于 PySide6 和 OpenCV 的 PCB 抄板工具：多层图像配准，Lab 空间 K-means 二值化铜皮，手动修补，识别铜皮孤岛，最后导出走线中心路径。', cover: 3, items: [
+      { type: 'image', src: 'media/pcb-front.jpg', note: '板子正面' },
+      { type: 'image', src: 'media/pcb-layer-detail.png', note: '板层局部图像' },
+      { type: 'image', src: 'media/pcb-mask-detail.png', note: '焊盘与走线二值图' },
+      { type: 'image', src: 'media/pcb-regions.png', note: '铜皮连通区域着色' },
+    ] },
+    { title: 'LT8619C 逻辑分析仪逆向', tag: '逆向', desc: '抓取驱动板上电时的 I²C 和 SPI 波形，对照解码结果梳理 LT8619C 的配置顺序。', cover: 0, items: [
+      { type: 'image', src: 'media/lt8619c-capture.png', note: '多通道逻辑分析仪抓包' },
+      { type: 'image', src: 'media/lt8619c-timing.png', note: '对照不同通道的时序' },
+      { type: 'image', src: 'media/lt8619c-packets.png', note: '解码后的数据片段' },
+      { type: 'image', src: 'media/ar-display-test.jpg', note: '微型显示屏点亮测试' },
+    ] },
+    { title: '三摩擦发机', tag: '机械', desc: '三摩擦发机的机械结构模型。', cover: 0, items: [
+      { type: 'image', src: 'media/triple-friction-launcher.png', note: '结构模型' },
+    ] },
+    { title: '乱搞的乒乓球小车', tag: '机械', desc: '2024 年 11 月完成。', cover: 0, items: [
+      { type: 'image', src: 'media/cart-photo.jpg', note: '小车实物' },
+      { type: 'video', src: 'media/cart-demo.mp4', note: '小车实拍视频' },
+      { type: 'image', src: 'media/cart-outdoor.jpg', note: '户外实拍' },
+      { type: 'image', src: 'media/cart-assembly.jpg', note: 'SolidWorks 整车装配' },
+      { type: 'image', src: 'media/cart-upper.jpg', note: '云台模型' },
+      { type: 'image', src: 'media/cart-section.jpg', note: '云台与滑环剖面' },
+    ] },
+    { title: '3D 打印可变形名片', tag: '3D 打印', desc: '一张能折出来的名片：平时是名片，掰开就是手机支架。模型已经发在 MakerWorld。', cover: 0,
+      link: { href: 'https://makerworld.com/zh/models/1128870-foldable-business-card-and-phone-stand#profileId-1128739', text: 'MakerWorld 模型页' }, items: [
+      { type: 'image', src: 'media/card-personal.jpg', note: '实物' },
+    ] },
+    { title: '游戏角色关键帧动画（K 帧）', tag: '动画', desc: '2024 年 9 月制作。', cover: 0, items: [
+      { type: 'video', src: 'media/character-keyframes.mp4', note: '角色动作演示' },
     ] },
     { title: '骰子动画', tag: '动画', desc: '和港科 UP 主合作的片头动画。', cover: 0, items: [
       { type: 'video', src: 'media/dice.mp4', note: '合作片头' },
@@ -190,11 +259,8 @@ const CONTENT = {
       { type: 'video', src: 'media/card-enterprize.mp4', note: 'ENTERPRIZE 名片展示' },
       { type: 'video', src: 'media/card-rm.mp4', note: 'RM 战队名片实拍' },
     ] },
-    { title: '三摩擦发机', tag: '机械', desc: '三摩擦发机的机械结构模型。', cover: 0, items: [
-      { type: 'image', src: 'media/triple-friction-launcher.png', note: '结构模型' },
-    ] },
   ],
-  labAlso: '见 <a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">小红书</a>、<a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">B站</a>，还做过 cosplay 道具设计、自研电磁抬笔写字机（高中）、3D 打印机、鱼眼图传等。',
+  labAlso: '见 <a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">小红书</a>、<a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">B站</a>，还做过 cosplay 道具设计、自研电磁抬笔写字机（高中）、3D 打印机（高中）等。',
 
   art: {
     /* year 显示在说明前面；href 是点击作品后新开的页面（不加提示） */
@@ -230,8 +296,9 @@ const CONTENT = {
     ] },
   },
 
-  /* 联系页拼贴：实拍相纸、平面贴纸与 Beni 叠放。 */
+  /* 联系页拼贴：中间是 RM 哨兵，周围是实拍相纸和平面贴纸。 */
   wall: [
+    { src: 'media/rm-sentry-stand.jpg', cap: 'RM 哨兵', style: 'sentry' },
     { src: 'media/bubble-arena.jpg', cap: '赛场仿真', style: 'arena' },
     { src: 'media/wall-robomaster.png', cap: 'RoboMaster', style: 'rm' },
     { src: 'media/bubble-cat.jpg', cap: '我家猫的日常', style: 'cat' },
@@ -698,23 +765,42 @@ function buildProfile() {
   showHero(heroList()[0], false);
 }
 
-/* ---------- 02 为什么选我 ---------- */
+/* ---------- 02 RM 战队工作 ---------- */
 function buildFit() {
   const cards = $('#fitCards');
-  CONTENT.fit.forEach((f, i) => {
-    cards.append(el('div', { class: 'fit-card', 'data-in': '', style: `--i:${i + 1}` },
-      `<small><em>${pad2(i + 1)}</em>招募要求 / ${f.label}</small><h3>${f.title}</h3><p>${f.text}</p>`));
+  CONTENT.rm.forEach((f, i) => {
+    const repo = f.repo ? `<i>${f.repo}</i>` : '';
+    cards.append(el('div', { class: 'fit-card', 'data-in': '', style: `--i:${Math.min(i + 1, 3)}` },
+      `<small><em>${pad2(i + 1)}</em>${f.state}${repo}</small><h3>${f.title}</h3><p>${f.text}</p>`));
   });
-  const b = CONTENT.beni;
-  $('#beniCard').innerHTML = `
-    <img class="beni-pop" src="media/beni-toon.png" alt="" aria-hidden="true">
-    <header><small>// FOR BENI</small><h3 id="hBeni">${b.title}</h3></header>
-    <ol>${b.ideas.map((it, i) => `<li><em>${pad2(i + 1)}</em><div><b>${it.title}</b><span>${it.text}</span></div><i class="beni-where">${it.where}</i></li>`).join('')}</ol>`;
+  $('#fitPast').innerHTML = CONTENT.rmPast;
+
+  const card = $('#rmCard');
+  card.innerHTML = `<header><small>// MATCH RECORD</small><h3 id="hRmCard">比赛照片与奖项</h3></header>`;
+  const photos = el('div', { class: 'rm-photos' });
+  CONTENT.rmPhotos.forEach((p, i) => {
+    const b = el('button', { type: 'button', class: `rm-photo p${i + 1}`, 'aria-label': `查看大图：${p.cap}` },
+      `<img src="${p.src}" alt="" loading="lazy" style="object-position:${p.pos || '50% 50%'}">`);
+    b.addEventListener('click', () => openViewer({ type: 'image', src: p.src, cap: p.cap }));
+    photos.append(b);
+  });
+  card.append(photos);
+  const awards = el('ul', { class: 'rm-awards', 'aria-label': '获奖证书' });
+  for (const a of CONTENT.awards) {
+    const cap = `${a.note} · ${a.title}`;
+    const button = el('button', { type: 'button', 'aria-label': `查看证书：${cap}` },
+      `<img src="${a.src}" alt="" loading="lazy"><b>${a.title}</b><span>${a.note}</span>`);
+    button.addEventListener('click', () => openViewer({ type: 'image', src: a.src, cap }));
+    const item = el('li');
+    item.append(button);
+    awards.append(item);
+  }
+  card.append(awards);
 }
 
-/* 个人档案和为什么选我共用同一个黑白背景：切到哪屏，背景元素就挪到哪屏，只解码一路视频 */
+/* 个人档案和 RM 战队工作共用同一个黑白背景：切到哪屏，背景元素就挪到哪屏，只解码一路视频 */
 function placeHeroBg() {
-  const host = deckOn && secs[cur].id === 'fit' ? $('#fitBg') : $('#profile');
+  const host = deckOn && secs[cur].id === 'rm' ? $('#fitBg') : $('#profile');
   if (heroBg.parentElement !== host) host.prepend(heroBg);
 }
 
@@ -798,7 +884,6 @@ function renderDetail(i) {
   body.append(el('p', { class: 'detail-en', style: '--n:1' }, p.en));
   body.append(el('p', { class: 'detail-desc', style: '--n:2' }, p.desc));
   body.append(el('dl', { class: 'fields', style: '--n:3' }, p.fields.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')));
-  if (p.beni) body.append(el('p', { class: 'detail-beni', style: '--n:4' }, p.beni));
   body.classList.remove('is-new');
   void body.offsetWidth;
   if (!reduced) body.classList.add('is-new');

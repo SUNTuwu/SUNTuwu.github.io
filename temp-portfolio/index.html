@@ -5,7 +5,7 @@
   <base href="/temp-portfolio/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>一个热爱艺术的技术宅</title>
-  <meta name="description" content="一个热爱艺术的技术宅。香港科技大学大二，现役 RMer，B 站 2.7 万粉丝，小红书 1.5 万粉丝。">
+  <meta name="description" content="SOMO 的技术作品集：香港科技大学电子工程，港科大 RM 战队算法组，做哨兵导航、MPC 规划、自瞄和 MuJoCo 赛场仿真，也做强化学习足式机器人、硬件和软件小项目。">
   <meta name="theme-color" content="#0b0c0e">
   <link rel="preload" href="fonts/Saira.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="portfolio.css">
@@ -19,7 +19,7 @@
   <div class="loader-mark">
     <small>一个热爱艺术的技术宅</small>
     <b>SOMO</b>
-    <p class="loader-line">BENI PORTFOLIO</p>
+    <p class="loader-line">TECH PORTFOLIO</p>
   </div>
   <div class="loader-num is-low" id="loaderNum">0<small>%</small></div>
 </div>
@@ -29,17 +29,13 @@
   <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">菜单</button>
   <nav class="nav" id="nav" aria-label="页面导航">
     <a href="#profile" data-fx-host><b data-fx>PROFILE</b><span>个人档案</span></a>
-    <a href="#fit" data-fx-host><b data-fx>WHY ME</b><span>我能带来什么</span></a>
+    <a href="#rm" data-fx-host><b data-fx>ROBOMASTER</b><span>战队工作</span></a>
     <a href="#tech" data-fx-host><b data-fx>TECH</b><span>技术项目</span></a>
     <a href="#film" data-fx-host><b data-fx>FILM</b><span>招新影像</span></a>
     <a href="#lab" data-fx-host><b data-fx>LAB</b><span>小项目</span></a>
     <a href="#art" data-fx-host><b data-fx>ART</b><span>艺术</span></a>
     <a href="#contact" data-fx-host><b data-fx>CONTACT</b><span>联系方式</span></a>
   </nav>
-  <div class="top-links">
-    <a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">B 站</a>
-    <a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">小红书</a>
-  </div>
 </header>
 
 <div class="frame-h" aria-hidden="true"></div>
@@ -69,21 +65,23 @@
     <div class="ghost" aria-hidden="true">SOMO</div>
     <div class="hero-grid">
       <div class="hero-text">
-        <div class="eyebrow" data-in style="--i:0"><small>BENI CAMPUS AMBASSADOR ://</small><b>PROFILE</b></div>
+        <div class="eyebrow" data-in style="--i:0"><small>TECH PORTFOLIO ://</small><b>PROFILE</b></div>
         <h1 id="hName" data-in style="--i:1">Hi~ 我是 <em>SOMO</em></h1>
         <p class="hero-sub" data-in style="--i:1">一个热爱艺术的技术宅</p>
         <div class="identity" data-in style="--i:2">
           <span class="id-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
           <div>
             <small>HKUST</small>
-            <p>香港科技大学大二 · Electronic Engineering 学生</p>
+            <p>我叫李雪阳，香港科技大学大二 · Electronic Engineering 学生</p>
           </div>
         </div>
-        <dl class="stats" data-in style="--i:3">
-          <div><dt>B 站粉丝</dt><dd>2.7<small>万</small></dd><dd class="stat-go"><a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">进入 B 站</a></dd></div>
-          <div><dt>小红书粉丝</dt><dd>1.5<small>万</small></dd><dd class="stat-go"><a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">进入小红书</a></dd></div>
-          <div class="hot"><dt>最火视频全网播放</dt><dd>200<small>万+</small></dd></div>
+        <dl class="hero-experience" data-in style="--i:2">
+          <div><dt>2025.07–08</dt><dd><b>上海高羿实习</b>，做 Go2 导航和 G1 头部外壳重建。</dd></div>
+          <div><dt>近期</dt><dd>港科大 RoboMaster 战队算法组成员，兼任 Beni 校园大使。</dd></div>
         </dl>
+        <p class="hero-media" data-in style="--i:3">
+          课余也做 3D、绘画和视频（<a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener">B 站</a> / <a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener">小红书</a>），最火的一条全网播放 200 万+。近期忙于 RM 比赛，账号暂停更新。
+        </p>
         <div class="facet-box" data-in style="--i:4"><p id="facetText" aria-live="polite"></p></div>
         <div class="facets" id="facets" role="group" aria-label="切换自我介绍" data-in style="--i:5"></div>
       </div>
@@ -107,16 +105,17 @@
     </div>
   </section>
 
-  <!-- 02 为什么选我：沿用个人档案的黑白背景；左边三条招募要求，右边单独放 Beni 选题 -->
-  <section class="sec sec-fit" id="fit" data-label="WHY ME" aria-labelledby="hFit">
+  <!-- 02 RM 战队工作：沿用个人档案的黑白背景；左边是现在和过去做的方向，右边是比赛照片和奖项 -->
+  <section class="sec sec-fit" id="rm" data-label="ROBOMASTER" aria-labelledby="hFit">
     <div class="fit-bg" id="fitBg" aria-hidden="true"></div>
-    <div class="ghost" aria-hidden="true">WHY ME</div>
+    <div class="ghost" aria-hidden="true">RM2027</div>
     <div class="fit-grid">
-      <div class="fit-side">
-        <div class="eyebrow" data-in style="--i:0"><small>// WHY ME</small><h2 id="hFit">我能带来什么</h2></div>
+      <div class="fit-side" data-scroll>
+        <div class="eyebrow" data-in style="--i:0"><small>// HKUST ENTERPRIZE · ROBOMASTER</small><h2 id="hFit">我在 RM 战队做什么</h2></div>
         <div class="fit-cards" id="fitCards"></div>
+        <p class="fit-past" id="fitPast" data-in style="--i:4"></p>
       </div>
-      <article class="beni-card" id="beniCard" data-in style="--i:2" aria-labelledby="hBeni"></article>
+      <article class="rm-card" id="rmCard" data-in style="--i:2" aria-labelledby="hRmCard"></article>
     </div>
   </section>
 
@@ -204,7 +203,6 @@
         <button class="art-main" id="artMain" type="button" aria-label="查看大图"></button>
         <p class="art-cap" id="artCap"></p>
       </div>
-      <p class="art-side" aria-hidden="true">精选绘画与摄影。更多作品在社交账号。</p>
     </div>
   </section>
 
@@ -214,25 +212,23 @@
     <div class="contact-grid">
       <div class="contact-text">
         <div class="eyebrow" data-in style="--i:0"><small>// CONTACT</small><b>联系方式</b></div>
-        <h2 id="hContact" data-in style="--i:1">让 <em>Beni</em> 进赛场，<br>也进我的镜头<span class="dot">。</span></h2>
+        <h2 id="hContact" data-in style="--i:1">从仿真到实机，<br>让机器人<em>动起来</em><span class="dot">。</span></h2>
         <div class="contact-rule" data-in style="--i:1" aria-hidden="true"></div>
-        <p data-in style="--i:2">我希望申请 Beni 校园大使。我会用 RMer 的视角拆解它，用画笔和镜头记录它的可爱。</p>
+        <p data-in style="--i:2">欢迎交流机器人导航规划、仿真、强化学习和视觉相关的工作，也欢迎聊 RM、硬件 DIY 和 3D 创作。代码在 GitHub。</p>
         <ul class="records" data-in style="--i:3">
-          <li><a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener"><i>No.01</i><b>哔哩哔哩</b><span>SOMO桑</span></a></li>
-          <li><a href="https://xhslink.cn/o/3qZbS1aUIce" target="_blank" rel="noopener"><i>No.02</i><b>小红书</b><span>绘画为主</span></a></li>
-          <li><a href="https://github.com/SUNTuwu" target="_blank" rel="noopener"><i>No.03</i><b>GitHub</b><span>SUNTuwu</span></a></li>
-          <li><a><i>No.04</i><b>微信</b><span>lxySUNT</span></a></li>
-          <li><a href="mailto:xlilv@connect.ust.hk"><i>No.05</i><b>邮箱</b><span>xlilv@connect.ust.hk</span></a></li>
+          <li><a href="https://github.com/SUNTuwu" target="_blank" rel="noopener"><i>No.01</i><b>GitHub</b><span>SUNTuwu</span></a></li>
+          <li><a><i>No.02</i><b>微信</b><span>lxySUNT</span></a></li>
+          <li><a href="mailto:xlilv@connect.ust.hk"><i>No.03</i><b>邮箱</b><span>xlilv@connect.ust.hk</span></a></li>
+          <li><a href="https://space.bilibili.com/177960253" target="_blank" rel="noopener"><i>No.04</i><b>哔哩哔哩</b><span>SOMO桑</span></a></li>
         </ul>
       </div>
-      <figure class="wall" data-in style="--i:2" aria-label="照片墙：中间是 Beni，周围是我的作品和日常">
+      <figure class="wall" data-in style="--i:2" aria-label="照片墙：中间是 RM 哨兵，周围是赛场仿真、RoboMaster 和我家猫">
         <div class="wall-grid" id="wall">
           <i class="wall-hatch h1" aria-hidden="true"></i>
           <i class="wall-hatch h2" aria-hidden="true"></i>
           <i class="wall-corner tl" aria-hidden="true"></i>
           <i class="wall-corner br" aria-hidden="true"></i>
-          <div class="wall-beni"><img src="media/beni.png" alt="Beni 机器人" loading="lazy"></div>
-          <img class="wall-doodle" src="media/beni-doodle.png" alt="手绘 Beni 贴纸" loading="lazy">        </div>
+        </div>
       </figure>
     </div>
   </section>

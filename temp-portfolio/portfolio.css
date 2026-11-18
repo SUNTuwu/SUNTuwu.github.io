@@ -115,7 +115,6 @@ em, i { font-style: normal; }
 .nav b { font: 600 18px/1.2 var(--font-ui); font-stretch: 75%; letter-spacing: .02em; }
 .nav span { font-size: 13px; color: var(--ink-2); }
 .nav a[aria-current="true"], .nav a[aria-current="true"] span { color: var(--cyan); }
-.top-links { display: none; }
 
 /* ---------- Frame + rail ---------- */
 .frame-h, .frame-v, .rail { display: none; }
@@ -199,13 +198,19 @@ em, i { font-style: normal; }
 .id-mark i:nth-child(3) { height: 21px; }
 .identity small { display: block; color: var(--cyan); font: 600 10px/1.2 var(--font-ui); font-stretch: 112%; letter-spacing: .08em; }
 .identity p { font-size: 14px; font-weight: 600; line-height: 1.5; }
-.stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 2px clamp(14px, 3vw, 34px); }
-.stats dt { order: 2; font-size: 12px; line-height: 1.3; color: var(--ink-2); }
-.stats div { display: flex; flex-direction: column; }
-.stats dd { font: 800 clamp(30px, 8vw, 44px)/1.1 var(--font-ui); font-stretch: 100%; }
-.stats dd small { margin-left: 2px; font: 700 .42em var(--font-text); }
-.stats .hot dd { color: var(--yellow); }
-.facet-box { padding: 12px 18px; background: rgba(0, 0, 0, .84); max-width: 640px; }
+.hero-experience { display: grid; gap: 5px; font-size: 14px; line-height: 1.5; }
+.hero-experience div { display: grid; grid-template-columns: 6em 1fr; gap: 10px; }
+.hero-experience dt { color: var(--cyan); font-weight: 600; }
+/* 创作账号：只留一句小字和两个入口，不抢技术经历的位置 */
+.hero-media { max-width: 640px; color: var(--ink-2); font-size: 12px; line-height: 1.6; text-wrap: balance; }
+.hero-media a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .35); text-underline-offset: 3px; }
+.hero-media a:hover, .hero-media a:focus-visible { color: var(--cyan); text-decoration-color: currentColor; }
+/* 黑底叠深灰斜线，和页面背景区分开；右下切角，和按钮一致 */
+.facet-box {
+  padding: 12px 18px; max-width: 640px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+  background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 7px), rgba(0, 0, 0, .9);
+}
 .facet-box p { color: #d5d8dc; font-size: 14px; line-height: 1.8; }
 .facet-box p.is-new { animation: wipeIn .28s var(--mech); }
 .facets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; max-width: 560px; }
@@ -216,9 +221,10 @@ em, i { font-style: normal; }
 .facet img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.7) brightness(.72); transition: filter .2s var(--ease); }
 .facet span { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 6px 4px; font-size: 12px; font-weight: 700; line-height: 1.2; text-align: left; background: linear-gradient(transparent, rgba(0, 0, 0, .85)); }
 .facet:hover img { filter: none; }
-.facet.is-on { border-color: var(--cyan); }
+.facet.is-on { border-color: var(--yellow); }
+.facet:focus-visible { outline-color: var(--yellow); }
 .facet.is-on img { filter: none; }
-.facet.is-on::after { content: ""; position: absolute; right: 0; top: 0; border: 8px solid; border-color: var(--cyan) var(--cyan) transparent transparent; }
+.facet.is-on::after { content: ""; position: absolute; right: 0; top: 0; border: 8px solid; border-color: var(--yellow) var(--yellow) transparent transparent; }
 .avatar-wrap { position: relative; width: min(66vw, 300px); aspect-ratio: 1; margin: 6px auto 48px; perspective: 1100px; }
 /* 真人出镜：圆盘绕垂直屏幕的轴转一整圈，同时翻到背面；曲线带回弹，有 Q 弹感。
    --spin / --flip 由脚本每次点击累加，青色圈用 --ring 反向转 */
@@ -251,15 +257,6 @@ em, i { font-style: normal; }
 .real-btn[aria-pressed="true"] { background: var(--cyan); }
 .real-btn[aria-pressed="true"] .cam { color: var(--cyan); }
 .real-btn[aria-pressed="true"] .cam::after { animation: none; opacity: 0; }
-.stat-go { margin-top: 4px; order: 3; }
-.stat-go a {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 26px; padding: 2px 14px 2px 8px; background: rgba(255, 255, 255, .12);
-  font: 700 12px/1.2 var(--font-text); white-space: nowrap;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%);
-  transition: background-color .2s var(--ease), color .2s var(--ease);
-}
-.stat-go a::after { content: ""; width: 6px; height: 6px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); }
-.stat-go a:hover, .stat-go a:focus-visible { background: var(--cyan); color: var(--on-accent); }
 .avatar-ring { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: rgba(255, 255, 255, .3); stroke-width: .6; overflow: visible; }
 .avatar-ring path { stroke: var(--cyan); stroke-width: 1.6; }
 .flags { position: absolute; left: 50%; bottom: -46px; transform: translateX(-50%); display: flex; gap: 6px; width: max-content; max-width: 92vw; flex-wrap: wrap; justify-content: center; }
@@ -306,33 +303,49 @@ em, i { font-style: normal; }
 .fit-card h3 { margin-top: 5px; font-size: 18px; font-weight: 700; line-height: 1.45; }
 .fit-card h3 em { color: var(--yellow); }
 .fit-card p { margin-top: 6px; color: #cfd2d6; font-size: 14px; line-height: 1.75; }
+/* 状态后面跟仓库名，太长就截断 */
+.fit-card small i { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-3); font: 500 11px/1.4 var(--font-ui); font-stretch: 100%; font-style: normal; }
+.fit-past { padding: 2px 0 2px 12px; border-left: 2px solid var(--yellow); color: #cfd2d6; font-size: 13px; line-height: 1.75; }
+.fit-past b { color: var(--yellow); margin-right: 4px; }
 
-.beni-card {
-  position: relative; isolation: isolate; padding: 22px 22px 18px; color: var(--ink);
+/* 比赛照片与奖项卡：黄色顶边，深色底，斜线影子 */
+.rm-card {
+  position: relative; isolation: isolate; padding: 20px 20px 18px; color: var(--ink);
   border-top: 4px solid var(--yellow);
 }
-/* 底色在 ::before，斜线影子在 ::after 并排在底色下面，不会盖到文字 */
-.beni-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(6, 7, 8, .92); }
-.beni-card::after {
+/* 底色在 ::before，斜线影子在 ::after 并排在底色下面，不会盖到内容 */
+.rm-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(6, 7, 8, .92); }
+.rm-card::after {
   content: ""; position: absolute; left: 14px; right: -12px; top: 10px; bottom: -12px; z-index: -2;
   background: repeating-linear-gradient(135deg, rgba(255, 178, 30, .55) 0 1.5px, transparent 1.5px 7px);
 }
-.beni-card header small { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--yellow); font: 600 12px/1.4 var(--font-ui); font-stretch: 112%; letter-spacing: .08em; }
-.beni-card header small i { padding: 1px 8px; background: var(--yellow); color: var(--on-accent); font: 700 12px/1.6 var(--font-text); letter-spacing: 0; }
-.beni-card h3 { margin-top: 6px; font: 800 clamp(24px, 6vw, 34px)/1.25 var(--font-text); }
-.beni-card ol { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--rule); }
-.beni-card li { display: grid; grid-template-columns: 34px 1fr; gap: 4px 10px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
-.beni-card li em { color: var(--cyan); font: 700 20px/1.2 var(--font-ui); font-stretch: 100%; }
-.beni-card li b { display: block; font-size: 16px; line-height: 1.45; }
-.beni-card li span { display: block; margin-top: 3px; color: #cfd2d6; font-size: 14px; line-height: 1.7; }
-.beni-where { grid-column: 2; justify-self: start; padding: 0 7px; background: rgba(255, 255, 255, .1); color: var(--ink-2); font-size: 12px; line-height: 1.7; }
-.beni-foot { margin-top: 12px; color: var(--ink-2); font-size: 12px; }
-/* 透明底的 Beni 压在卡片左上角，标题往右让出位置 */
-.beni-card { margin-top: 46px; }
-.beni-pop { position: absolute; left: -10px; top: -62px; width: 112px; height: auto; pointer-events: none; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .55)); }
-.beni-card header { padding-left: 100px; min-height: 56px; }
-.sec.is-live .beni-pop { animation: beniPop .6s var(--snap) .5s both; }
-@keyframes beniPop { from { opacity: 0; transform: translate(-10px, 16px) rotate(-6deg); } to { opacity: 1; transform: none; } }
+.rm-card header small { color: var(--yellow); font: 600 12px/1.4 var(--font-ui); font-stretch: 112%; letter-spacing: .08em; }
+.rm-card h3 { margin-top: 4px; font: 800 clamp(22px, 5vw, 30px)/1.25 var(--font-text); }
+/* 照片：左边两张横图上下叠，右边竖图跨两行；第三行是直播数据和战队合影各占一半 */
+.rm-photos {
+  --row: clamp(80px, 22vw, 170px);
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: var(--row) var(--row) calc(var(--row) * 1.15);
+  gap: 8px; margin-top: 14px;
+}
+.rm-photo { position: relative; overflow: hidden; padding: 0; border: 0; background: #15171a; color: var(--ink); cursor: zoom-in; }
+.rm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s var(--ease), filter .2s var(--ease); filter: saturate(.9) brightness(.9); }
+.rm-photo:hover img, .rm-photo:focus-visible img { transform: scale(1.04); filter: none; }
+.rm-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18); pointer-events: none; }
+.rm-photo.p1 { grid-column: 1 / 5; grid-row: 1; }
+.rm-photo.p2 { grid-column: 5 / 7; grid-row: 1 / 3; }
+.rm-photo.p3 { grid-column: 1 / 5; grid-row: 2; }
+.rm-photo.p4 { grid-column: 1 / 4; grid-row: 3; }
+.rm-photo.p5 { grid-column: 4 / 7; grid-row: 3; }
+/* 获奖证书：左边证书缩略图，右边奖项名 */
+.rm-awards { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; }
+.rm-awards button {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: center; column-gap: 10px; width: 100%; height: 100%; padding: 6px 10px 6px 6px;
+  border: 1px solid rgba(255, 178, 30, .4); border-left: 3px solid var(--yellow); background: #131313; color: var(--ink); text-align: left; cursor: zoom-in;
+}
+.rm-awards button:hover, .rm-awards button:focus-visible { border-color: var(--yellow); background: #1a1814; }
+.rm-awards img { grid-row: 1 / 3; align-self: center; display: block; height: clamp(56px, 8vh, 78px); aspect-ratio: 5 / 7; object-fit: cover; object-position: 50% 0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .2); }
+.rm-awards b { align-self: end; display: block; font-size: 13.5px; line-height: 1.35; white-space: nowrap; }
+.rm-awards span { align-self: start; display: block; margin-top: 3px; color: var(--ink-3); font-size: 12px; line-height: 1.4; }
 @keyframes wipeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 -2% 0 0); } }
 
 /* Tech panels */
@@ -374,7 +387,6 @@ em, i { font-style: normal; }
 .fields div { display: grid; grid-template-columns: 56px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.6; }
 .fields dt { color: var(--cyan); font-weight: 700; }
 .fields dd { color: #d8dade; }
-.detail-beni { margin-top: 16px; padding: 10px 14px; background: rgba(255, 178, 30, .1); border-left: 3px solid var(--yellow); font-size: 14px; line-height: 1.7; }
 .detail-main { position: relative; display: flex; flex-direction: column; }
 .detail-view { position: relative; aspect-ratio: 16 / 10; }
 .detail-view .stage-media { position: absolute; inset: 0; }
@@ -542,7 +554,6 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .lab-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding-bottom: 1px; color: var(--yellow); border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 700; }
 .lab-link svg { width: 11px; height: 11px; fill: currentColor; }
 .lab-link:hover { color: var(--cyan); }
-.art-side { display: none; }
 
 /* Contact */
 .contact-grid { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; padding: 30px var(--pad) 48px; }
@@ -554,7 +565,7 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .records a:hover { transform: translateX(12px); color: var(--cyan); }
 .records a:hover::before { transform: none; }
 .records i { font: 500 12px/1 var(--font-ui); font-stretch: 100%; color: var(--ink-3); }
-/* 左侧橙黄点缀：「Beni」和句号用撞色，标题下一条斜线色带，编号悬停变橙黄 */
+/* 左侧橙黄点缀：「动起来」和句号用撞色，标题下一条斜线色带，编号悬停变橙黄 */
 .contact-text h2 em { color: var(--yellow); font-style: normal; }
 .contact-text h2 .dot { color: var(--orange); }
 .contact-text .eyebrow small { color: var(--yellow); }
@@ -567,8 +578,8 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .records a:hover::after, .records a:focus-visible::after { opacity: 1; right: 6px; }
 .records b { font-size: 15px; }
 .records span { font: 400 13px/1.4 var(--font-text); color: var(--ink-2); overflow-wrap: anywhere; }
-/* Contact: flat 2D collage. Dark cut-corner frames, thin rules and diagonal hatching; the cyan Beni card,
-   the RoboMaster sticker and the hand-drawn Beni stay as the colourful focus. */
+/* Contact: flat 2D collage. Dark cut-corner frames, thin rules and diagonal hatching; the cyan-framed sentry
+   photo in the middle and the RoboMaster sticker are the colourful focus. */
 .wall { position: relative; margin: 0; }
 .wall-grid { position: relative; isolation: isolate; width: min(100%, 460px); aspect-ratio: 1; margin: 0 auto; }
 /* 背景：斜线色块 + 角标线，只做衬底 */
@@ -602,25 +613,23 @@ html:not(.deck) .detail-cap b { color: var(--cyan); }
 .wall-rm img { object-fit: contain; }
 .wall-rm::after { box-shadow: inset 0 0 0 2px #fff; }
 .wall-rm i { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; border: 0; }
-.wall-doodle { position: absolute; right: 1%; top: -3%; width: 19%; height: auto; aspect-ratio: 1312 / 1199; z-index: 7; --tilt: 12deg; --i: 5; transform: rotate(var(--tilt)); pointer-events: auto; filter: drop-shadow(0 3px 4px #0004); transition: translate .3s var(--snap); }
-@media (hover: hover) { .wall-doodle:hover { translate: 0 -3px; } }
-.wall-doodle:active { translate: 0 -3px; }
 /* 卡通猫贴纸：直角方形 + 右上切角，橙黄描边（4px 边框靠橙黄底色 + 内缩的图片露出来，图片切角少 2px 让斜边也有边框） */
 .wall-sticker { left: 2%; bottom: 5%; width: 31%; height: auto; aspect-ratio: 1; padding: 4px; --tilt: -6deg; --cutc: 18px; z-index: 4; background: var(--yellow); }
 .wall-sticker img { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); filter: none; }
 .wall-sticker::after { display: none; }
 .wall-sticker i { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; border: 0; }
-/* 中间的 Beni 和青色切角底板保留 */
-.wall-beni { position: absolute; left: 31%; top: 27%; width: 44%; height: 43%; z-index: 3; pointer-events: none; --tilt: -9deg; transform: rotate(var(--tilt)); }
-.wall-beni::before { content: ""; position: absolute; inset: 10% -2% 2% 0; background: var(--cyan); clip-path: polygon(8% 0, 100% 8%, 92% 100%, 0 89%); transform: rotate(10deg); }
-.wall-beni img { position: relative; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 8px 10px #0005); }
+/* 中间的哨兵照片：青色描边（做法同卡通猫贴纸），压在赛场仿真上面 */
+.wall-sentry { left: 30%; top: 26%; width: 40%; height: 46%; padding: 4px; --tilt: -6deg; --cutc: 18px; z-index: 3; background: var(--cyan); }
+.wall-sentry img { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); object-position: 50% 55%; }
+.wall-sentry::after { display: none; }
+.wall-sentry i { left: 4px; bottom: 4px; border-left-color: var(--yellow); }
 .wall figcaption { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; color: var(--ink-2); font-size: 12px; }
 .wall figcaption::before { content: ""; width: 26px; height: 2px; background: var(--yellow); }
 .wall figcaption i { color: var(--cyan); font-style: normal; }
-/* 入场：整块擦入时不裁掉伸出去的手绘 Beni（之前顶部被切掉一截） */
+/* 入场：整块擦入时不裁掉倾斜后伸出去的照片角 */
 .deck .sec.is-active .wall[data-in] { animation-name: wipeInWall; }
 @keyframes wipeInWall { from { clip-path: inset(-80px 100% -40px -40px); } to { clip-path: inset(-80px -60px -40px -40px); } }
-.deck .sec.is-active .wall-cell, .deck .sec.is-active .wall-beni, .deck .sec.is-active .wall-doodle { animation: wallIn .5s var(--snap) both; animation-delay: calc(320ms + var(--i, 4) * 45ms); }
+.deck .sec.is-active .wall-cell { animation: wallIn .5s var(--snap) both; animation-delay: calc(320ms + var(--i, 4) * 45ms); }
 @keyframes wallIn { from { opacity: 0; transform: translateY(14px) rotate(var(--tilt, 0deg)) scale(.96); } to { opacity: 1; transform: rotate(var(--tilt, 0deg)); } }
 /* Viewer */
 .viewer { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; color: var(--ink); background: rgba(4, 4, 5, .95); overflow: hidden; }
@@ -657,9 +666,6 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .nav b { display: block; font-size: clamp(16px, 1.42vw, 24px); font-weight: 600; font-stretch: 68%; line-height: 1.1; }
 .deck .nav span { display: block; margin-top: 3px; font-size: clamp(11px, .9vw, 14px); font-weight: 700; line-height: 1.2; color: var(--ink); }
 .deck .nav a:hover, .deck .nav a:hover span { color: var(--cyan); }
-.deck .top-links { display: flex; gap: 6px; }
-.deck .top-links a { display: flex; align-items: center; min-height: 34px; padding: 0 15px 0 9px; font-size: 12px; font-weight: 700; background: rgba(255, 255, 255, .1); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%); transition: background-color .2s var(--ease), color .2s var(--ease); white-space: nowrap; }
-.deck .top-links a:hover { background: var(--cyan); color: var(--on-accent); }
 
 .deck .frame-h, .deck .frame-v { display: block; position: fixed; z-index: 52; background: var(--rule); pointer-events: none; transition: opacity .3s var(--ease); }
 .deck .frame-h { left: 0; right: 0; top: var(--top); height: 1px; }
@@ -713,7 +719,6 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .hero-text { gap: clamp(7px, 1.35vh, 16px); padding: clamp(8px, 1.6vh, 20px) 0; }
 .deck .hero-text h1 { font-size: clamp(38px, 7.2vh, 72px); }
 .deck .hero-sub { font-size: clamp(18px, 3vh, 30px); }
-.deck .stats dd { font-size: clamp(28px, 5vh, 50px); }
 .deck .identity { padding-block: 5px; }
 .deck .facet-box { padding: clamp(8px, 1.3vh, 14px) 18px; }
 .deck .facet-box p { min-height: 5.4em; font-size: clamp(13px, 1.7vh, 15px); line-height: 1.8; }
@@ -737,22 +742,21 @@ html.deck body { height: 100%; overflow: hidden; }
 /* Deck: fit */
 .deck .fit-grid {
   position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid;
+  grid-template-rows: minmax(0, 1fr);
   grid-template-columns: minmax(0, 1fr) minmax(400px, 46%); gap: clamp(24px, 4vw, 80px); align-items: center;
   padding: clamp(14px, 3vh, 34px) clamp(28px, 3.6vw, 64px) clamp(30px, 6vh, 70px) var(--pad);
 }
-.deck .fit-side { gap: clamp(10px, 2vh, 22px); max-width: 520px; }
-.deck .fit-cards { gap: clamp(7px, 1.4vh, 12px); }
-.deck .fit-card { padding: clamp(9px, 1.6vh, 15px) 18px; }
-.deck .fit-card h3 { font-size: clamp(15px, 2.1vh, 18px); }
-.deck .fit-card p { font-size: clamp(12.5px, 1.65vh, 14px); line-height: 1.7; }
-.deck .beni-card { padding: clamp(14px, 2.8vh, 30px) clamp(20px, 2vw, 34px) clamp(12px, 2.2vh, 22px); }
-.deck .beni-card h3 { font-size: clamp(24px, 4.4vh, 40px); }
-.deck .beni-card ol { margin-top: clamp(8px, 1.8vh, 18px); }
-.deck .beni-card li { padding: clamp(7px, 1.5vh, 14px) 0; grid-template-columns: 40px 1fr auto; align-items: baseline; }
-.deck .beni-card li em { font-size: clamp(18px, 3vh, 26px); }
-.deck .beni-card li b { font-size: clamp(15px, 2.1vh, 18px); }
-.deck .beni-card li span { font-size: clamp(12.5px, 1.65vh, 14px); }
-.deck .beni-where { grid-column: 3; grid-row: 1; justify-self: end; white-space: nowrap; }
+.deck .fit-side { gap: clamp(8px, 1.8vh, 20px); max-width: 780px; max-height: 100%; overflow-y: auto; }
+.deck .fit-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(6px, 1.2vh, 12px); }
+.deck .fit-card { padding: clamp(7px, 1.4vh, 14px) clamp(12px, 1.2vw, 18px); }
+.deck .fit-card h3 { margin-top: 3px; font-size: clamp(14.5px, 2vh, 18px); }
+.deck .fit-card p { margin-top: 3px; font-size: clamp(12px, 1.55vh, 14px); line-height: 1.6; }
+.deck .fit-past { font-size: clamp(12px, 1.55vh, 13.5px); line-height: 1.65; }
+.deck .rm-card { padding: clamp(12px, 2.4vh, 26px) clamp(16px, 1.8vw, 28px) clamp(12px, 2.2vh, 22px); }
+.deck .rm-card h3 { font-size: clamp(22px, 3.6vh, 34px); }
+.deck .rm-photos { --row: clamp(70px, 15.5vh, 210px); margin-top: clamp(8px, 1.6vh, 16px); }
+.deck .rm-awards { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(8px, 1.4vh, 14px); }
+.deck .rm-awards img { height: clamp(50px, 7.4vh, 78px); }
 .deck .film-title { font-size: clamp(30px, 5.4vh, 56px); }
 .deck .btn-row .btn { min-height: clamp(46px, 6.4vh, 56px); }
 .deck .film-tabs { left: 14px; top: 14px; }
@@ -790,7 +794,6 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .detail-desc { margin-top: clamp(8px, 1.5vh, 16px); font-size: clamp(13.5px, 1.75vh, 15px); line-height: 1.8; }
 .deck .fields { margin-top: clamp(8px, 1.5vh, 16px); }
 .deck .fields div { padding: clamp(5px, 1vh, 9px) 0; font-size: clamp(13px, 1.65vh, 14px); }
-.deck .detail-beni { margin-top: clamp(8px, 1.5vh, 16px); font-size: clamp(13px, 1.65vh, 14px); }
 .deck .detail-tabs { margin: 2px 0 clamp(8px, 1.6vh, 18px); }
 .deck .detail h2 { font-size: clamp(25px, 4.1vh, 40px); }
 
@@ -817,7 +820,7 @@ html.deck body { height: 100%; overflow: hidden; }
 /* Deck: art */
 .deck .art-frame {
   position: absolute; left: clamp(36px, 8vw, 150px); right: clamp(36px, 8vw, 150px); top: calc(var(--top) + clamp(4px, 2vh, 22px)); bottom: clamp(30px, 6vh, 74px); margin: 0; padding: clamp(14px, 3vh, 36px) clamp(18px, 2.8vw, 54px);
-  display: grid; grid-template-columns: minmax(0, 37%) minmax(0, 1fr) clamp(18px, 2.4vw, 40px); gap: clamp(12px, 2vw, 34px);
+  display: grid; grid-template-columns: minmax(0, 37%) minmax(0, 1fr); gap: clamp(12px, 2vw, 34px);
 }
 .deck .star { display: block; position: absolute; z-index: 3; width: clamp(38px, 3.8vw, 68px); aspect-ratio: 1; background: #fff; clip-path: polygon(50% 0, 56% 44%, 100% 50%, 56% 56%, 50% 100%, 44% 56%, 0 50%, 44% 44%); }
 .star.s1 { left: 0; top: 0; transform: translate(-50%, -50%); }
@@ -831,33 +834,16 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .art-thumbs { flex: 0 1 auto; flex-wrap: wrap; overflow-y: auto; align-content: flex-start; margin-top: clamp(6px, 1.2vh, 12px); }
 .deck .art-thumbs .thumb { width: clamp(46px, 7.8vh, 80px); height: clamp(46px, 7.8vh, 80px); }
 .deck .art-piece { min-height: 0; }
-/* 竖排文字从页面编号下方开始，避免和右上角的 06 重叠 */
-.deck .art-side { display: block; writing-mode: vertical-rl; color: #d9d3c4; font-size: clamp(11px, 1.5vh, 14px); letter-spacing: .1em; line-height: 1.5; align-self: start; margin-top: clamp(56px, 9vh, 96px); }
 
 /* Deck: contact */
 .deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 54%) minmax(0, 46%); align-items: center; gap: clamp(20px, 4vw, 64px); padding: 0 clamp(24px, 4vw, 70px) clamp(40px, 11vh, 110px) var(--pad); }
 .deck .contact-text h2 { font-size: clamp(30px, 5.6vh, 58px); }
 .deck .records a { min-height: clamp(38px, 5.6vh, 52px); padding-block: 4px; }
 .deck .wall-grid { width: min(100%, 62vh, 560px); }
-.deck .fit-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 50%); }
-/* Beni 跨在卡片左上角：--pop-w 是图宽，--pop-out 是伸到卡片左边的距离（不超过两栏间距，免得压到左边的卡片）。
-   标题让开 Beni 后，字号再按卡片剩余宽度封顶（10.4 约等于标题的字宽），任何比例下都不会出界 */
-.deck .beni-card {
-  --pop-w: clamp(96px, 16.5vh, 170px);
-  --pop-h: calc(var(--pop-w) * 1.25);
-  --pop-out: min(calc(var(--pop-w) * .45), calc(clamp(24px, 4vw, 80px) - 6px));
-  --head-pad: calc(var(--pop-w) - var(--pop-out) + 12px - clamp(20px, 2vw, 34px));
-  container-type: inline-size;
-  margin-top: calc(var(--pop-h) * .42);
-}
-.deck .beni-pop { width: var(--pop-w); top: calc(var(--pop-h) * -.45); left: calc(-1 * var(--pop-out)); }
-.deck .beni-card header { padding-left: var(--head-pad); min-height: calc(var(--pop-h) * .55 - clamp(14px, 2.8vh, 30px)); }
-.deck .beni-card h3 { font-size: min(clamp(22px, 3.7vh, 36px), calc((100cqw - var(--head-pad)) / 10.4)); white-space: nowrap; }
-.deck .beni-card li { padding: clamp(5px, 1.15vh, 12px) 0; }
-.deck .beni-card li span { line-height: 1.6; }
-/* 卡片的擦入动画结束时不裁掉上方伸出去的 Beni */
-.deck .sec.is-active .beni-card[data-in] { animation-name: wipeInBeni; }
-@keyframes wipeInBeni { from { clip-path: inset(-200px 100% -40px -120px); } to { clip-path: inset(-200px -40px -40px -120px); } }
+.deck .fit-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 52%); gap: clamp(20px, 3vw, 56px); }
+/* 卡片的擦入动画结束时不裁掉右下角的斜线影子 */
+.deck .sec.is-active .rm-card[data-in] { animation-name: wipeInRm; }
+@keyframes wipeInRm { from { clip-path: inset(0 100% -20px 0); } to { clip-path: inset(0 -20px -20px 0); } }
 .deck .real-btn { right: -9%; top: -2%; }
 
 /* ---------- Reduced motion ---------- */

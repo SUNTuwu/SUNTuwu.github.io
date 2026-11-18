@@ -335,135 +335,55 @@ function el(tag, props = {}, html) {
   return node;
 }
 
-/* 视频整段下载成 blob 再交给 <video>，同一个文件只下一次。
-   首页第一个背景视频在载入页期间下完；其余的进入页面后按页面顺序在后台下，同时最多两个 */
-const videoBlobs = new Map(); // 地址 -> blob: 地址
-const videoJobs = new Map();
-const videoWaiting = [];
-let videoActive = 0;
-/* 载入页期间，除首屏背景视频外的 <video> 都先不下载，免得和它抢带宽 */
-let holdVideos = true;
-let heroLoaded = 0;
+/* 视频交给浏览器分段加载；离屏缩略图不提前请求整段文件。 */
+function loadVideo(v) {
+  if (v.getAttribute('src')) return;
+  v.preload = v.dataset.preload || 'metadata';
+  v.src = v.dataset.at != null ? v.dataset.src + '#t=' + v.dataset.at : v.dataset.src;
+}
 
-async function downloadVideo(src, onProgress) {
-  try {
-    const res = await fetch(src);
-    if (!res.ok) throw new Error(res.status);
-    const total = +res.headers.get('content-length') || 0;
-    const reader = res.body.getReader();
-    const parts = [];
-    let got = 0;
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      parts.push(value);
-      got += value.length;
-      if (onProgress && total) onProgress(got / total);
-    }
-    const url = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
-    videoBlobs.set(src, url);
-    return url;
-  } catch {
-    /* 直接双击打开（file://）或请求失败时，退回普通地址边下边播 */
-    return null;
+const mediaIO = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (!entry.isIntersecting) continue;
+    loadVideo(entry.target);
+    mediaIO.unobserve(entry.target);
   }
-}
-
-function videoJob(src, onProgress) {
-  let job = videoJobs.get(src);
-  if (job) return job;
-  let go;
-  job = { started: false };
-  job.promise = new Promise((ok) => { go = ok; }).then((fetchIt) => (fetchIt ? downloadVideo(src, onProgress) : null));
-  job.run = () => {
-    if (job.started) return;
-    job.started = true;
-    videoActive += 1;
-    go(true);
-    job.promise.then(() => { videoActive -= 1; pumpVideos(); });
-  };
-  /* 还在排队就被页面用到的，直接用普通地址播，不再下第二遍 */
-  job.skip = () => {
-    if (job.started) return;
-    job.started = true;
-    go(false);
-  };
-  videoJobs.set(src, job);
-  return job;
-}
-
-function pumpVideos() {
-  while (videoActive < 2 && videoWaiting.length) videoWaiting.shift().run();
-}
-
-function setVideoSrc(v, url) {
-  v.src = v.dataset.at != null ? `${url}#t=${v.dataset.at}` : url;
-}
+}, { rootMargin: '100px' });
 
 function video(src, opts = {}) {
-  const v = el('video', { muted: true, playsInline: true, loop: true, preload: opts.preload || 'metadata' });
+  const v = el('video', { muted: true, playsInline: true, loop: true, preload: 'none' });
   v.setAttribute('muted', '');
   v.setAttribute('playsinline', '');
   v.dataset.src = src;
+  v.dataset.preload = opts.preload || 'metadata';
   if (opts.at != null) v.dataset.at = opts.at;
-  if (holdVideos && !opts.hero) {
-    v.dataset.preload = v.preload;
-    v.preload = 'none';
-  }
-  const job = videoJobs.get(src);
-  if (videoBlobs.has(src)) setVideoSrc(v, videoBlobs.get(src));
-  else if (job?.started) job.promise.then((url) => { if (!v.getAttribute('src')) setVideoSrc(v, url || src); });
-  else { job?.skip(); setVideoSrc(v, src); }
   if (opts.auto) v.dataset.auto = '';
   if (opts.controls) v.controls = true;
+  if (opts.controls || opts.hero) loadVideo(v);
+  else mediaIO.observe(v);
   return v;
 }
 
-/* 进入页面后：背景轮播、招新影像、小项目的视频先下，电脑上再把图集里的也下好；
-   已经建好的 <video> 下完后换成 blob，正在播的不打断 */
-function preloadVideos() {
-  holdVideos = false;
-  const order = new Set([...heroList(), CONTENT.film.site.src, CONTENT.film.promo.src]);
-  const walk = (x, into) => {
-    if (typeof x === 'string') { if (/\.mp4$/i.test(x)) into.add(x); }
-    else if (x && typeof x === 'object') Object.values(x).forEach((y) => walk(y, into));
-  };
-  walk(CONTENT.lab, order);
-  /* 手机内存小，图集里的视频还是点开时再边下边播 */
-  if (!isPhone()) walk(CONTENT, order);
-  $$('video[data-preload]').forEach((v) => {
-    if (order.has(v.dataset.src)) return;
-    v.preload = v.dataset.preload;
-    delete v.dataset.preload;
-  });
-  order.forEach((src) => {
-    const job = videoJob(src);
-    if (!job.started) videoWaiting.push(job);
-    job.promise.then((url) => {
-      if (!url) {
-        $$('video[data-preload]').forEach((v) => {
-          if (v.dataset.src !== src) return;
-          v.preload = v.dataset.preload;
-          delete v.dataset.preload;
-        });
-        return;
-      }
-      $$('video').forEach((v) => {
-        if (v.dataset.src !== src || !v.getAttribute('src') || v.src.startsWith('blob:') || !v.paused) return;
-        const t = v.currentTime;
-        setVideoSrc(v, url);
-        if (v.dataset.preload) { v.preload = v.dataset.preload; delete v.dataset.preload; }
-        if (t > 0 && v.dataset.at == null) v.addEventListener('loadedmetadata', () => { v.currentTime = t; }, { once: true });
-      });
-      syncVideos();
-    });
-  });
-  pumpVideos();
+/* 首次网络请求失败后重试两次，避免一直留下破图；不无限刷新资源。 */
+function retryImage(img) {
+  if (!(img instanceof HTMLImageElement)) return;
+  const source = img.getAttribute('src');
+  if (!source || /^(data:|blob:)/.test(source)) return;
+  const attempts = Number(img.dataset.retries || 0);
+  if (attempts >= 2) return;
+  img.dataset.retries = String(attempts + 1);
+  setTimeout(() => {
+    if (!img.isConnected || img.getAttribute('src') !== source) return;
+    const url = new URL(source, location.href);
+    url.searchParams.set('image_retry', String(attempts + 1));
+    img.src = url.href;
+  }, 500 * (attempts + 1));
 }
+document.addEventListener('error', (event) => retryImage(event.target), true);
 
 function mediaNode(m, opts = {}) {
   if (m.type === 'video') return video(m.src, opts);
-  const img = el('img', { src: m.src, alt: m.cap || '', decoding: 'async' });
+  const img = el('img', { src: m.src, alt: m.cap || '', decoding: 'async', loading: 'lazy' });
   return img;
 }
 
@@ -590,6 +510,7 @@ function syncVideos() {
   for (const v of $$('video[data-auto]')) {
     if (!seenVideos.has(v)) { seenVideos.add(v); videoIO.observe(v); }
     if (shouldPlay(v)) {
+      loadVideo(v);
       if (v.paused) v.play().catch(() => {});
     } else if (!v.paused) {
       v.pause();
@@ -786,6 +707,7 @@ menuBtn.addEventListener('click', () => {
 /* ---------- 01 个人档案 ---------- */
 let heroIndex = 0;
 let heroTimer = 0;
+let pageReady = false;
 const heroBg = $('#heroBg');
 
 function heroList() { return isPhone() ? CONTENT.heroVideosPhone : CONTENT.heroVideos; }
@@ -826,10 +748,12 @@ function heroIsLive() {
 
 function scheduleHero() {
   clearTimeout(heroTimer);
+  if (!pageReady) return;
   placeHeroBg();
   const v = $$('.hb-layer video', heroBg).pop();
   if (!heroIsLive()) { if (v) v.pause(); return; }
-  if (v && v.paused) v.play().catch(() => {});
+  if (!v) showHero(heroList()[heroIndex], false);
+  else if (v.paused) v.play().catch(() => {});
   heroTimer = setTimeout(() => {
     const list = heroList();
     heroIndex = (heroIndex + 1) % list.length;
@@ -878,7 +802,6 @@ function buildProfile() {
     });
     flags.append(b);
   }
-  showHero(heroList()[0], false);
 }
 
 /* ---------- 02 RM 战队工作 ---------- */
@@ -1472,61 +1395,26 @@ viewerEl.addEventListener('close', () => {
 });
 
 /* ---------- 载入 ---------- */
-/* 字体、页面里的每张图（含懒加载和背景图）、首屏视频都算一项；单项卡住时到点就跳过 */
+/* 只等待当前屏的图片；字体、背景视频和其他页面不阻塞进入。 */
 function loadTasks() {
-  const cap = (p, ms) => Promise.race([p, new Promise((ok) => setTimeout(ok, ms))]);
-  const decoded = (img) => (img.decode ? img.decode().catch(() => {}) : Promise.resolve());
-  const tasks = [];
-  if (document.fonts) tasks.push(cap(document.fonts.load('800 40px Saira'), 8000));
-  $$('img').forEach((img) => {
-    /* 懒加载的图不在视口里不会开始下载，这里让它们立刻开始 */
+  return $$('img', secs[cur]).filter((img) => {
+    const r = img.getBoundingClientRect();
+    return r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
+  }).map((img) => {
     img.loading = 'eager';
-    const loaded = img.complete ? Promise.resolve()
-      : new Promise((ok) => { img.addEventListener('load', ok, { once: true }); img.addEventListener('error', ok, { once: true }); });
-    tasks.push(cap(loaded.then(() => decoded(img)), 20000));
-  });
-  const bgs = new Set();
-  $$('main *').forEach((n) => {
-    const m = getComputedStyle(n).backgroundImage.match(/url\("?([^")]+)"?\)/);
-    if (m) bgs.add(m[1]);
-  });
-  bgs.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-    tasks.push(cap(decoded(img), 20000));
-  });
-  /* 首页第一个背景视频要整段下完、能播才算好；其余视频进入页面后再下（preloadVideos） */
-  const hero = $('.hb-layer video');
-  if (hero) {
-    const ready = () => hero.readyState >= 3 || new Promise((ok) => {
-      hero.addEventListener('canplay', ok, { once: true });
-      hero.addEventListener('error', ok, { once: true });
+    img.fetchPriority = 'high';
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      const finish = () => {
+        img.removeEventListener('load', finish);
+        img.removeEventListener('error', finish);
+        resolve();
+      };
+      img.addEventListener('load', finish, { once: true });
+      img.addEventListener('error', finish, { once: true });
+      setTimeout(finish, 2200);
     });
-    tasks.push(cap((videoJobs.get(hero.dataset.src)?.promise || Promise.resolve()).then(ready), 28000));
-  }
-  return tasks;
-}
-
-/* 进入页面后，把弹窗和图集里的图按顺序在后台下好，点开时不用再等 */
-function preloadRest() {
-  const urls = new Set();
-  const walk = (x) => {
-    if (typeof x === 'string') { if (/\.(jpe?g|png|webp|gif)$/i.test(x)) urls.add(new URL(x, location.href).href); }
-    else if (x && typeof x === 'object') Object.values(x).forEach(walk);
-  };
-  walk(CONTENT);
-  $$('img').forEach((img) => urls.delete(img.currentSrc || img.src));
-  const queue = [...urls];
-  const next = () => {
-    const src = queue.shift();
-    if (!src) return;
-    const img = new Image();
-    img.onload = img.onerror = next;
-    img.src = src;
-  };
-  /* 同时两张，不和正在播的视频抢太多带宽 */
-  next();
-  next();
+  });
 }
 
 function runLoader(done) {
@@ -1534,47 +1422,40 @@ function runLoader(done) {
   if (reduced) { loader.remove(); done(); return; }
   const num = $('#loaderNum');
   const started = performance.now();
-  const minMs = 1400;
-  /* 网太慢时最多等这么久，免得一直进不去 */
-  const maxMs = 30000;
+  const minMs = 450;
+  const maxMs = 2200;
   const tasks = loadTasks();
-  let finished = 0;
-  tasks.forEach((t) => t.catch(() => {}).then(() => { finished += 1; }));  let shown = 0;
-  let last = started;
-  const tick = (now) => {
-    const t = now - started;
-    /* 背景视频是最大的一项，按已下载的字节数算一半进度，其余各项平分另一半 */
-    const real = (finished / tasks.length + heroLoaded) / 2;
-    const byTime = Math.min(1, t / minMs);
-    /* 进度就是已加载完的项数；全部到位前最多走到 97% */
-    const target = t >= maxMs || (real === 1 && byTime === 1) ? 1 : Math.min(.97, byTime, real);
-    /* 按经过的时间追进度，帧率被浏览器压低时也不会拖慢进入 */
-    shown += (target - shown) * (1 - Math.exp(-(now - last) / 90));
-    last = now;
-    if (target === 1 && shown > .995) shown = 1;
-    loader.style.setProperty('--p', shown.toFixed(4));
-    num.firstChild.nodeValue = String(Math.round(shown * 100));
-    /* 色块太窄时，数字先放在色块右边，够宽了再进到色块里 */
-    num.classList.toggle('is-low', shown * innerWidth < num.offsetWidth + 40);
-    if (shown >= 1) {
-      setTimeout(() => {
-        loader.classList.add('is-done');
-        done();
-        setTimeout(() => loader.remove(), 560);
-      }, 220);
-    } else {
-      requestAnimationFrame(tick);
-    }
+  let finished = 0, closed = false, frame = 0;
+  const finish = () => {
+    if (closed) return;
+    closed = true;
+    clearTimeout(deadline);
+    cancelAnimationFrame(frame);
+    loader.style.setProperty('--p', '1');
+    num.firstChild.nodeValue = '100';
+    loader.classList.add('is-done');
+    done();
+    setTimeout(() => loader.remove(), 560);
   };
-  requestAnimationFrame(tick);
+  /* 超时用独立计时器兜底，不依赖视频或动画帧是否继续回调。 */
+  const deadline = setTimeout(finish, maxMs);
+  Promise.all(tasks.map((task) => task.catch(() => {}).then(() => { finished += 1; })))
+    .then(() => { if (!closed) setTimeout(finish, Math.max(0, minMs - (performance.now() - started))); });
+  const tick = (now) => {
+    if (closed) return;
+    const real = tasks.length ? finished / tasks.length : 1;
+    const progress = Math.min(.97, (now - started) / minMs, real);
+    loader.style.setProperty('--p', progress.toFixed(4));
+    num.firstChild.nodeValue = String(Math.round(progress * 100));
+    num.classList.toggle('is-low', progress * innerWidth < num.offsetWidth + 40);
+    frame = requestAnimationFrame(tick);
+  };
+  frame = requestAnimationFrame(tick);
 }
 
 /* ---------- 启动 ---------- */
 function init() {
-  /* 先开始下首页第一个背景视频，建好的 <video> 会等它下完再用 */
-  const firstHero = videoJob(heroList()[0], (p) => { heroLoaded = p; });
-  firstHero.run();
-  firstHero.promise.then(() => { heroLoaded = 1; });
+  $$('img').filter((img) => img.complete && !img.naturalWidth).forEach(retryImage);
   buildProfile();
   buildFit();
   buildTech();
@@ -1602,9 +1483,8 @@ function init() {
       void secs[cur].offsetWidth;
       secs[cur].classList.add('is-active');
     }
+    pageReady = true;
     scheduleHero();
-    preloadVideos();
-    preloadRest();
   });
 }
 

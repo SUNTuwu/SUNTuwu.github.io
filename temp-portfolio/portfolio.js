@@ -2,8 +2,8 @@
 
 /* ---------- 页面文案和素材，改内容只需要改这里 ---------- */
 const CONTENT = {
-  heroVideos: ['media/sim-3.mp4', 'media/sable-teachers.mp4', 'media/sim-nav.mp4', 'media/rec-site-single.mp4', 'media/rec-promo.mp4'],
-  heroVideosPhone: ['media/sim-3.mp4', 'media/sable-teachers.mp4', 'media/rec-site-single.mp4'],
+  heroVideos: ['media/sable-teachers.mp4', 'media/rec-site-single.mp4', 'media/rec-promo.mp4'],
+  heroVideosPhone: ['media/sable-teachers.mp4', 'media/rec-site-single.mp4', 'media/rec-promo.mp4'],
 
   facets: [
     { cn: '现役 RMer', thumb: 'media/facet-rm.jpg',

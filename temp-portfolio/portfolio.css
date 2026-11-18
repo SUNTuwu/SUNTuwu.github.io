@@ -849,5 +849,5 @@ html.deck body { height: 100%; overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .js .loader { display: none; }
+  .js .loader.is-done { display: none; }
 }

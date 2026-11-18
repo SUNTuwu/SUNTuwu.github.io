@@ -732,12 +732,13 @@ function showHero(src, animate) {
       layer.classList.remove('is-in');
       $$('.hb-layer', heroBg).filter((n) => n !== layer).forEach((n) => n.remove());
     }, animate && !reduced ? 900 : 0);
-    if (!heroIsLive()) v.pause(); else v.play().catch(() => {});
+    if (pageReady && !heroIsLive()) v.pause(); else if (!reduced) v.play().catch(() => {});
   };
-  layer.style.visibility = 'hidden';
+  layer.style.visibility = prev ? 'hidden' : '';
   v.addEventListener('canplay', () => { layer.style.visibility = ''; reveal(); }, { once: true });
-  setTimeout(() => { layer.style.visibility = ''; reveal(); }, 2500);
+  v.addEventListener('error', () => { if (prev) layer.remove(); }, { once: true });
   heroBg.append(layer);
+  return v;
 }
 
 function heroIsLive() {
@@ -755,6 +756,8 @@ function scheduleHero() {
   if (!v) showHero(heroList()[heroIndex], false);
   else if (v.paused) v.play().catch(() => {});
   heroTimer = setTimeout(() => {
+    const current = $$('.hb-layer video', heroBg).pop();
+    if (current && current.readyState < 3) { scheduleHero(); return; }
     const list = heroList();
     heroIndex = (heroIndex + 1) % list.length;
     showHero(list[heroIndex], true);
@@ -1395,41 +1398,113 @@ viewerEl.addEventListener('close', () => {
 });
 
 /* ---------- 载入 ---------- */
-/* 只等待当前屏的图片；字体、背景视频和其他页面不阻塞进入。 */
+/* 首页全部图片必须成功；其他页面只等当前可见图片，且不阻塞太久。 */
 function loadTasks() {
+  const required = cur === 0;
   return $$('img', secs[cur]).filter((img) => {
+    if (required) return true;
     const r = img.getBoundingClientRect();
     return r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
-  }).map((img) => {
+  }).map((img) => new Promise((resolve, reject) => {
     img.loading = 'eager';
     img.fetchPriority = 'high';
-    if (img.complete) return Promise.resolve();
-    return new Promise((resolve) => {
-      const finish = () => {
-        img.removeEventListener('load', finish);
-        img.removeEventListener('error', finish);
-        resolve();
-      };
-      img.addEventListener('load', finish, { once: true });
-      img.addEventListener('error', finish, { once: true });
-      setTimeout(finish, 2200);
-    });
+    const cleanup = () => {
+      clearTimeout(timer);
+      img.removeEventListener('load', loaded);
+      img.removeEventListener('error', failed);
+    };
+    const loaded = () => {
+      if (!img.naturalWidth) return;
+      cleanup();
+      (img.decode ? img.decode() : Promise.resolve()).then(resolve, reject);
+    };
+    const failed = () => {
+      if (!required) { cleanup(); resolve(); return; }
+      const retries = Number(new URL(img.src, location.href).searchParams.get('image_retry') || 0);
+      if (retries >= 2) { cleanup(); reject(new Error('首页图片加载失败')); }
+    };
+    const timer = setTimeout(() => {
+      cleanup();
+      if (required) reject(new Error('首页图片加载超时')); else resolve();
+    }, required ? 30000 : 2200);
+    img.addEventListener('load', loaded);
+    img.addEventListener('error', failed);
+    if (img.complete && img.naturalWidth) loaded();
+    else if (img.complete) retryImage(img);
+  }));
+}
+
+/* 只等待当前背景视频的首帧，不下载完整文件；播放受限时让用户点击继续。 */
+function homeVideoReady() {
+  if (cur !== 0) return Promise.resolve();
+  const v = showHero(heroList()[0], false);
+  const loader = $('#loader');
+  const line = $('.loader-line', loader);
+  return new Promise((resolve, reject) => {
+    let settled = false, playButton;
+    let frameId;
+    const cleanup = () => {
+      clearTimeout(timer);
+      v.removeEventListener('error', failed);
+      v.removeEventListener('loadeddata', loaded);
+      v.removeEventListener('playing', playing);
+      if (frameId != null && v.cancelVideoFrameCallback) v.cancelVideoFrameCallback(frameId);
+      playButton?.remove();
+    };
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve();
+    };
+    const failed = () => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      reject(new Error('背景视频加载失败'));
+    };
+    const playing = () => {
+      if (v.readyState < 2 || settled) return;
+      if (v.requestVideoFrameCallback) {
+        if (frameId == null) frameId = v.requestVideoFrameCallback(finish);
+      } else finish();
+    };
+    const play = () => {
+      v.play().then(playing).catch((error) => {
+        if (settled) return;
+        if (error.name !== 'NotAllowedError') { failed(); return; }
+        clearTimeout(timer);
+        loader.removeAttribute('aria-hidden');
+        line.textContent = '浏览器需要点击后播放背景视频';
+        if (!playButton) {
+          playButton = el('button', { type: 'button', class: 'loader-retry' }, '播放背景视频并进入');
+          playButton.addEventListener('click', play);
+          $('.loader-mark', loader).append(playButton);
+        }
+      });
+    };
+    const loaded = () => { if (reduced) finish(); };
+    const timer = setTimeout(failed, 30000);
+    v.addEventListener('error', failed);
+    v.addEventListener('loadeddata', loaded);
+    v.addEventListener('playing', playing);
+    if (reduced) { if (v.readyState >= 2) finish(); }
+    else play();
   });
 }
 
 function runLoader(done) {
   const loader = $('#loader');
-  if (reduced) { loader.remove(); done(); return; }
   const num = $('#loaderNum');
+  const line = $('.loader-line', loader);
   const started = performance.now();
-  const minMs = 450;
-  const maxMs = 2200;
-  const tasks = loadTasks();
+  const minMs = reduced ? 0 : 450;
+  const tasks = [...loadTasks(), homeVideoReady()];
   let finished = 0, closed = false, frame = 0;
+  line.textContent = cur === 0 ? '正在准备首页图片与背景视频' : '正在准备页面';
   const finish = () => {
     if (closed) return;
     closed = true;
-    clearTimeout(deadline);
     cancelAnimationFrame(frame);
     loader.style.setProperty('--p', '1');
     num.firstChild.nodeValue = '100';
@@ -1437,14 +1512,20 @@ function runLoader(done) {
     done();
     setTimeout(() => loader.remove(), 560);
   };
-  /* 超时用独立计时器兜底，不依赖视频或动画帧是否继续回调。 */
-  const deadline = setTimeout(finish, maxMs);
-  Promise.all(tasks.map((task) => task.catch(() => {}).then(() => { finished += 1; })))
-    .then(() => { if (!closed) setTimeout(finish, Math.max(0, minMs - (performance.now() - started))); });
+  Promise.all(tasks.map((task) => task.then(() => { finished += 1; })))
+    .then(() => setTimeout(finish, Math.max(0, minMs - (performance.now() - started))))
+    .catch((error) => {
+      closed = true;
+      cancelAnimationFrame(frame);
+      loader.removeAttribute('aria-hidden');
+      line.textContent = error.message + '，请重试';
+      const retry = el('button', { type: 'button', class: 'loader-retry' }, '重新加载首页');
+      retry.addEventListener('click', () => location.reload());
+      $('.loader-mark', loader).append(retry);
+    });
   const tick = (now) => {
     if (closed) return;
-    const real = tasks.length ? finished / tasks.length : 1;
-    const progress = Math.min(.97, (now - started) / minMs, real);
+    const progress = Math.min(.97, minMs ? (now - started) / minMs : 1, finished / tasks.length);
     loader.style.setProperty('--p', progress.toFixed(4));
     num.firstChild.nodeValue = String(Math.round(progress * 100));
     num.classList.toggle('is-low', progress * innerWidth < num.offsetWidth + 40);

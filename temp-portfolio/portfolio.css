@@ -843,7 +843,7 @@ html.deck body { height: 100%; overflow: hidden; }
 .deck .art-piece { min-height: 0; }
 
 /* Deck: contact */
-.deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; align-items: center; gap: 16px clamp(20px, 4vw, 64px); padding: 16px clamp(24px, 4vw, 70px) clamp(20px, 3vh, 40px) var(--pad); }
+.deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-rows: auto auto; align-content: center; align-items: center; gap: 16px clamp(20px, 4vw, 64px); padding: 16px clamp(24px, 4vw, 70px) clamp(20px, 3vh, 40px) var(--pad); }
 .deck .contact-text { min-height: 0; }
 .deck .contact-text h2 { margin-top: 10px; font-size: clamp(24px, 4.4vh, 42px); }
 .deck .contact-text > p { margin-top: clamp(7px, 1.2vh, 12px); font-size: clamp(12px, 1.7vh, 15px); line-height: 1.65; }

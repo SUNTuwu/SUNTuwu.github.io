@@ -834,8 +834,13 @@ html.deck body { height: 100%; overflow: hidden; }
 
 /* Deck: contact */
 .deck .contact-grid { position: absolute; left: 0; right: var(--rail); top: var(--top); bottom: 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; align-items: center; gap: 16px clamp(20px, 4vw, 64px); padding: 16px clamp(24px, 4vw, 70px) clamp(20px, 3vh, 40px) var(--pad); }
-.deck .contact-text { max-height: 100%; overflow-y: auto; padding-right: 8px; }
-.deck .contact-text h2 { font-size: clamp(28px, 4.8vh, 46px); }
+.deck .contact-text { min-height: 0; }
+.deck .contact-text h2 { margin-top: 10px; font-size: clamp(24px, 4.4vh, 42px); }
+.deck .contact-text > p { margin-top: clamp(7px, 1.2vh, 12px); font-size: clamp(12px, 1.7vh, 15px); line-height: 1.65; }
+.deck .contact-text .direction-lead { margin-top: clamp(10px, 1.7vh, 18px); }
+.deck .contact-rule { margin-top: clamp(8px, 1.2vh, 14px); }
+.deck .direction-paths { margin-top: 8px; }
+.deck .direction-paths > div { grid-template-columns: 8em 1fr; gap: 10px; padding-block: clamp(5px, 1vh, 10px); font-size: clamp(12px, 1.55vh, 14px); line-height: 1.6; }
 .deck .records { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .deck .records a, .deck .contact-record { min-height: 58px; padding-block: 8px; }
 .deck .wall-grid { width: min(100%, 52vh, 520px); }
